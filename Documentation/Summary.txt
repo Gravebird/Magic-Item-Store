@@ -1,0 +1,8 @@
+This project is intended to make random item shops in Dungeons and Dragons V3.5, which is a feature that my friends and I have been talking about for a very long time.
+
+First, I will create a database and fill it with items from the D&D rulebooks, starting with the Dungeon Master's Guide.
+The goal is to have the database filled with every item for version 3.5, but as a start I am just aiming for the Dungeon Master's Guide.
+
+Once the first book is complete (all items added), I will then write a program that pulls items from the database matching criteria that the user can choose (see user stories).
+Once it has this data, it will then randomly select items from the result and store the information into variables. Repeat this process until all criteria have been filled.
+Finally, it will create a simple html page to display the results, with clickable item names to get more information.
