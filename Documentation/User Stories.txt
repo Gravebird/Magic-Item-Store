@@ -1,0 +1,10 @@
+As a DM, I want to populate a shop with random magic items so that I have more realistic shops in my game.
+As a user, I want to find all the items from a specific book so that I can find the entry in the actual book.
+As a user, I want to find all items within a price range so that I can balance my item drops better.
+As a user, I want to find all items of a certain type so that I can compare similar items from different books.
+As a DM, I want to choose how many of each type of item to generate in my shop so that I can have specialized shops (potion shop, scroll shop, weapon shop, etc).
+As a DM, I want each item in the shop to be clickable for additional information so that I don't need to waste time digging through books.
+As a DM, I want to generate a weapon with random abilities so that each weapon is unique.
+As a DM, I want to be able to choose to have non-magical items added to the shop, so that low level parties can still make use of the random shop.
+As a DM, I want to choose how much gold value the shop has in total so that I can control how many items the shop has.
+As a DM, I want to choose what percentage of items in the shop should be above/below the average gold value so that the shop has some variety.
