@@ -7,18 +7,51 @@ INSERT INTO Book VALUES
     
     
 INSERT INTO Weapon VALUES
-	(1, 1, "Gauntlet", "Simple", 2, "Uncommon", "This metal glove protects your hands and lets you deal lethal damage rather than nonlethal damage with unarmed strikes. 
+	(1, 1, "Gauntlet", "Simple", "Unarmed Melee", 2.00, "1d2", "1d3", "x2", null, "B", 1.00, "Uncommon", "This metal glove protects your hands and lets you deal lethal damage rather than nonlethal damage with unarmed strikes. 
     A strike with a guantlet is otherwise considered an unarmed attack. The cost and weight given are for a single gauntlet. 
     Medium and heavy armors (except breastplate) come with gauntlets."),
-    (2, 1, "Dagger", "Simple", 2, "Common", "The dagger is a common secondary weapon. 
+    (2, 1, "Dagger", "Simple", "Light Melee", 2.00, "1d3", "1d4", "19-20/x2", 10, "P or S", 1.00, "Common", "The dagger is a common secondary weapon. 
     You get a +2 bonus on Sleight of Hand checks made to conceal a dagger on your body (see the Sleight of Hand skill)."),
-    (3, 1, "Dagger, punching", "Simple", 2, "Uncommon", "This dagger puts more force from your punch behind it, making it capable of deadly strikes."),
-    (4, 1, "Gauntlet, spiked", "Simple", 5, "Uncommon", "Your opponent cannot use a disarm action to disarm you of spiked gauntlets. 
+    (3, 1, "Dagger, punching", "Simple", "Light Melee", 2.00, "1d3", "1d4", "x3", null, "P", 1.00, "Uncommon", "This dagger puts more force from your punch behind it, making it capable of deadly strikes."),
+    (4, 1, "Gauntlet, spiked", "Simple", "Light Melee", 5.00, "1d3", "1d4", "x2", null, "P", 1.00, "Uncommon", "Your opponent cannot use a disarm action to disarm you of spiked gauntlets. 
     The cost and weight given are for a single gauntlet. 
     An attack with a spiked gauntlet is considered an armed attack."),
-    (5, 1, "Mace, light", "Simple", 5, "Common", "A mace is made of metal, even the haft, which makes it quite heavy and very hard to break."),
-    (6, 1, "Sickle", "Simple", 6, "Uncommon", "This weapon is like a farmer's sickle, but it is strengthened for use as a weapon.
+    (5, 1, "Mace, light", "Simple", "Light Melee", 5.00, "1d4", "1d6", "x2", null, "B", 4.00, "Common", "A mace is made of metal, even the haft, which makes it quite heavy and very hard to break."),
+    (6, 1, "Sickle", "Simple", "Light Melee", 6.00, "1d4", "1d6", "x2", null, "S", 2.00, "Uncommon", "This weapon is like a farmer's sickle, but it is strengthened for use as a weapon.
     It is favored by druids and by anyone who wants a weapon that might be overlooked by guards.
     Because of a sickle's shape, you can use it to make trip attacks.
     If you are tripped during your own trip attempt, you can drop the sickle to avoid being tripped."),
-    (7, 1, "Club", "Simple", 0, "Uncommon", "A wooden club is so easy to find and fashion that it has no cost.");
+    (7, 1, "Club", "Simple", "One-Handed Melee", 0.00, "1d4", "1d6", "x2", 10, "B", 3.00, "Uncommon", "A wooden club is so easy to find and fashion that it has no cost."),
+    (8, 1, "Mace, heavy", "Simple", "One-Handed Melee", 12.00, "1d6", "1d8", "x2", null, "B", 8.00, "Common", "A mace is made of metal, even the haft, which makes it quite heavy and very hard to break"),
+    (9, 1, "Morningstar", "Simple", "One-Handed Melee", 8.00, "1d6", "1d8", "x2", null, "B and P", 6.00, "Uncommon", null),
+    (10, 1, "Shortspear", "Simple", "One-Handed Melee", 1.00, "1d4", "1d6", "x2", 20, "P", 3.00, "Common", "A shortspear is small enough to wield one-handed. It may also be thrown."),
+    (11, 1, "Longspear", "Simple", "Two-Handed Melee", 5.00, "1d6", "1d8", "x3", null, "P", 9.00, "Uncommon", "A longspear has reach. You can strike opponents 10 feet away with it, but you can't use it against an adjacent foe. 
+    If you use a ready action to set a longspear against a charge, you deal double damage on a successful hit against a charging character."),
+    (12, 1, "Quarterstaff", "Simple", "Two-Handed Melee", 0.00, "1d4/1d4", "1d6/1d6", "x2", null, "B", 4.00, "Common", "The quarterstaff is the favorite weapon of many characters, from travelers, peasants, and merchants to monks, rangers, and wizards.
+    A quarterstaff is a double weapon. You can fight with it as though fighting with two weapons, but if you do, you incur all the normal attack penalties associated with fighting with two weapons, just as if you were using a one-handed weapon and a light weapon.
+    You can also strike with either end singly, a fact that allows you to take full advantage of openings in your opponent's defenses.
+    A creature wielding a quarterstaff in one hand can't use it as a double weapon - only one end of the weapon can be used in any given round.
+    The quarterstaff is a special monk weapon. This designation gives a monk wielding a quarterstaff special options."),
+    (13, 1, "Spear", "Simple", "Two-Handed Melee", 2.00, "1d6", "1d8", "x3", 20, "P", 6.00, "Common", "One of the simplest weapons in existence, the spear is favored by druids and sorcerors. It can be thrown.
+    If you use a ready action to set a spear against a charge, you deal double damage on a successful hit against a charging character."),
+    (14, 1, "Crossbow, heavy", "Simple", "Ranged", 50.00, "1d8", "1d10", "19-20/x2", 120, "P", 8.00, "Common", "You draw a heavy crossbow back by turning a small winch. Loading a heavy crossbow is a full-round action that provokes attacks of opportunity.
+    Normally, operating a heavy crossbow requires two hands. However, you can shoot, but not load, a heavy crossbow with one hand at a -4 penalty on attack rolls.
+    You can shoot a heavy crossbow with each hand, but you take a penalty on attack rolls as if attacking with two one-handed weapons. This penalty is cumulative with the penalty for one-handed firing."),
+    (15, 1, "Bolts, crossbow (10)", "Simple", "Ranged", 1.00, null, null, null, null, null, 1.00, "Common", "A crossbow bolt used as a melee weapon is treated as a light improvised weapon (-4 penalty on attack rolls) and deals damage as a dagger of its size (crit x2).
+    Bolts come in a wooden case that holds 10 bolts (or 5, for a repeating crossbow). A bolt that hits its target is destroyed; one that misses has a 50% chance of being destroyed or lost"),
+    (16, 1, "Crossbow, light", "Simple", "Ranged", 35.00, "1d6", "1d8", "19-20/x2", 80, "P", 4.00, "Common", "You draw a light crossbow back by pulling a lever. Loading a light crossbow is a move action that provokes attacks of opportunity.
+    Normally, operating a light crossbow requires two hands. However, you can shoot, but not load, a light crossbow with one hand at a -2 penalty on attack rolls.
+    You can shoot a light crossbow with each hand, but you take a penalty on attack rolls as if attacking with two light weapons. This penalty is cumulative with the penalty for one-handed firing."),
+    (17, 1, "Dart", "Simple", "Ranged", 0.50, "1d3", "1d4", "x2", 20, "P", 0.50, "Common", "A dart is the size of a large arrow and has a weighted head. Essentially, it is a small javelin."),
+    (18, 1, "Javelin", "Simple", "Ranged", 1.00, "1d4", "1d6", "x2", 30, "P", 2.00, "Common", "This weapon is a light, flexible spear intended for throwing. You can use it in melee, but not well.
+    Since it is not designed for melee, you are treated as nonproficient with it and take a -4 penalty on attack rolls if you use a javelin as a melee weapon."),
+    (19, 1, "Sling", "Simple", "Ranged", 0.00, "1d3", "1d4", "x2", 50, "B", 0.00, "Common", "A sling hurls lead bullets. It doesn't shoot as far as a crossbow, nor is it as powerful as a bow, but it's cheap and easy to improvise from common materials.
+    Druids and halflings favor slings. Your Strength modifier applies to damage rolls when you use a sling, just as it does for thrown weapons. You can fire, but not load, a sling with one hand.
+    Loading a sling is a move action that requires two hands and provokes attacks of opportunity.
+    You can hurl ordinary stones with a sling, but stones are not as dense or as round as bullets. Thus, such an attack deals damage as though the weapon were designed for a creature one size category smaller than you (for instance, 1d3 instead of 1d4, or 1d2 instead of 1d3) and you take a -1 penalty on attack rolls."),
+    (20, 1, "Bullets, sling (10)", "Simple", "Ranged", 0.10, null, null, null, null, null, 5.00, "Common", "Bullets are lead spheres, much heavier than stones of the same size. They come in a leather pouch that holds 10 bullets.
+    A bullet that hits its target is destroyed; one that misses has a 50% chance of being destroyed or lost."),
+    (21, 1, "Axe, throwing", "Martial", "Ranged", 8.00, "1d4", "1d6", "x2", 10, "S", 2.00, "Common", "A throwing axe is lighter than a handaxe and balanced for throwing. Gnome fighters often use throwing axes for both melee and ranged attacks."),
+    (22, 1, "Hammer, light", "Martial", "Light Melee", 1.00, "1d3", "1d4", "x2", 20, "B", 2.00, "Uncommon", "This is a small sledge light enough to throw. It is favored by dwarves."),
+    (23, 1, "Handaxe", "Martial", "Light Melee", 6.00, "1d4", "1d6", "x3", null, "S", 3.00, "Uncommon", "Dwarves favor these axes as off-hand weapons"),
+    (24, 1, "Kukri", "Martial", "Light Melee", 8.00, "1d3", "1d4", "18-20/x2", null, "S", 2.00, "Uncommon", "This heavy, curved knife has its sharp edge on the inside of the curve.");
