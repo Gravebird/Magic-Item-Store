@@ -1,0 +1,100 @@
+CREATE DATABASE DnD;
+
+use Dnd;
+
+CREATE TABLE Book (
+	Book_ID int NOT NULL UNIQUE,
+    Book_Name varchar(30) NOT NULL,
+    Book_Version varchar(10) NOT NULL,
+    Book_Print_Date date,
+    PRIMARY KEY (Book_ID)
+);
+
+CREATE TABLE Material (
+	Material_ID int NOT NULL UNIQUE,
+	Book_ID int NOT NULL,
+    Material_Name varchar(15) NOT NULL,
+    Material_Item_Type varchar(6) NOT NULL,
+    Material_Description TEXT,
+    PRIMARY KEY (Material_ID, Book_ID),
+    FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
+);
+
+CREATE TABLE Armor (
+	Armor_ID int NOT NULL UNIQUE,
+    Book_ID int NOT NULL,
+    Armor_Name varchar(15) NOT NULL,
+    Armor_Category varchar(6) NOT NULL,
+    Armor_Cost int NOT NULL,
+    Armor_Rarity varchar(8) NOT NULL,
+    Armor_Description TEXT,
+    PRIMARY KEY (Armor_ID, Book_ID),
+    FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
+);
+
+CREATE TABLE Weapon (
+	Weapon_ID int NOT NULL UNIQUE,
+    Book_ID int NOT NULL,
+    Weapon_Name varchar(20) NOT NULL,
+    Weapon_Category varchar(7) NOT NULL,
+    Weapon_Cost int NOT NULL,
+    Weapon_Rarity varchar(8) NOT NULL,
+    Weapon_Description TEXT,
+    PRIMARY KEY (Weapon_ID, Book_ID),
+    FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
+);
+
+CREATE TABLE Magic_Armor (
+	Magic_Armor_ID int NOT NULL UNIQUE,
+    Book_ID int NOT NULL,
+    Magic_Armor_Name varchar(20) NOT NULL,
+    Magic_Armor_Modifier int,
+    Magic_Armor_Cost int,
+    Magic_Armor_Description TEXT,
+    PRIMARY KEY (Magic_Armor_ID, Book_ID),
+    FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
+);
+
+CREATE TABLE Magic_Weapon (
+	Magic_Weapon_ID int NOT NULL UNIQUE,
+    Book_ID int NOT NULL,
+    Magic_Weapon_Name varchar(20) NOT NULL,
+    Magic_Weapon_Modifier int,
+    Magic_Weapon_Cost int,
+    Magic_Weapon_Description TEXT,
+    PRIMARY KEY (Magic_Weapon_ID, Book_ID),
+    FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
+);
+
+CREATE TABLE Magic_Item (
+	Magic_Item_ID int NOT NULL UNIQUE,
+    Book_ID int NOT NULL,
+    Magic_Item_Name varchar(40) NOT NULL,
+    Magic_Item_Cost int NOT NULL,
+    Magic_Item_Description TEXT,
+    PRIMARY KEY (Magic_Item_ID, Book_ID),
+    FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
+);
+
+CREATE TABLE Spell (
+	Spell_ID int NOT NULL UNIQUE,
+    Book_ID int NOT NULL,
+    Spell_Name varchar(30) NOT NULL,
+    Spell_Level int NOT NULL,
+    Spell_Type varchar(6) NOT NULL,
+    Spell_Description TEXT,
+    PRIMARY KEY (Spell_ID, Book_ID),
+    FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
+);
+
+CREATE TABLE Spell_Item (
+	Spell_Item_ID int NOT NULL UNIQUE,
+    Book_ID int NOT NULL,
+    Spell_Item_Name varchar(30) NOT NULL,
+    Spell_Item_Cost int NOT NULL,
+    Spell_Item_Type varchar(10) NOT NULL,
+    Spell_ID int,
+    PRIMARY KEY (Spell_Item_ID, Book_ID),
+    FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID),
+    FOREIGN KEY (Spell_ID) REFERENCES Spell(Spell_ID)
+);

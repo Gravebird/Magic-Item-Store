@@ -1,0 +1,24 @@
+use Dnd;
+
+
+INSERT INTO Book VALUES
+	(1, "Player's Handbook", "3.5", '2003-07-01'),
+    (2, "Dungeon Master's Guide", "3.5", '2003-07-01');
+    
+    
+INSERT INTO Weapon VALUES
+	(1, 1, "Gauntlet", "Simple", 2, "Uncommon", "This metal glove protects your hands and lets you deal lethal damage rather than nonlethal damage with unarmed strikes. 
+    A strike with a guantlet is otherwise considered an unarmed attack. The cost and weight given are for a single gauntlet. 
+    Medium and heavy armors (except breastplate) come with gauntlets."),
+    (2, 1, "Dagger", "Simple", 2, "Common", "The dagger is a common secondary weapon. 
+    You get a +2 bonus on Sleight of Hand checks made to conceal a dagger on your body (see the Sleight of Hand skill)."),
+    (3, 1, "Dagger, punching", "Simple", 2, "Uncommon", "This dagger puts more force from your punch behind it, making it capable of deadly strikes."),
+    (4, 1, "Gauntlet, spiked", "Simple", 5, "Uncommon", "Your opponent cannot use a disarm action to disarm you of spiked gauntlets. 
+    The cost and weight given are for a single gauntlet. 
+    An attack with a spiked gauntlet is considered an armed attack."),
+    (5, 1, "Mace, light", "Simple", 5, "Common", "A mace is made of metal, even the haft, which makes it quite heavy and very hard to break."),
+    (6, 1, "Sickle", "Simple", 6, "Uncommon", "This weapon is like a farmer's sickle, but it is strengthened for use as a weapon.
+    It is favored by druids and by anyone who wants a weapon that might be overlooked by guards.
+    Because of a sickle's shape, you can use it to make trip attacks.
+    If you are tripped during your own trip attempt, you can drop the sickle to avoid being tripped."),
+    (7, 1, "Club", "Simple", 0, "Uncommon", "A wooden club is so easy to find and fashion that it has no cost.");
