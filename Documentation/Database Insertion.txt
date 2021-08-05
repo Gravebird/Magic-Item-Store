@@ -155,4 +155,77 @@ INSERT INTO Weapon VALUES
     The urgrosh's axe head is a slashing weapon that deals 1d8 points of damage. Its spear head is a piercing weapon that deals 1d6 points of damage. You can use either head as the primary weapon. The other is the off-hand weapon.
     A creature wielding  a dwarven urgrosh in one hand can't use it as a double weapon - only one end of the weapon can be used in any given round.
     If you use a ready action to set an urgrosh against a charge, you deal double damage if you score a hit against a charging character. If you use an urgrosh against a charging character, the spear head is the part of the weapon that deals damage.
-    An urgrosh is also called a spear-axe. Dwarves treat dwarven urgroshes as martial weapons.");
+    An urgrosh is also called a spear-axe. Dwarves treat dwarven urgroshes as martial weapons."),
+    (65, 1, "Bolas", "Exotic", "Ranged", 5.00, "1d3", "1d4", "x2", 10, "B", 2.00, "Uncommon", "A set of bolas consists of two or three heavy wooden spheres connected by lengths of cord.
+    Because the bolas can wrap around an enemy's leg or other limb, you can use this weapon to make a ranged trip attack against an opponent.
+    You can't be tripped during your own trip attempt when using a set of Bolas."),
+    (66, 1, "Crossbow, hand", "Exotic", "Ranged", 100.00, "1d3", "1d4", "19-20/x2", 30, "P", 2.00, "Uncommon", "This exotic weapon is common among rogues and others who favor stealth over power.
+    You can draw a hand crossbow back by hand. Loading a hand crossbow is a move action that provokes attacks of opportunity.
+    You can shoot, but not load, a hand crossbow with one hand at no penalty. You can shoot a hand crossbow with each hand, but you take a penalty on attack rolls as if attacking with two light weapons."),
+    (67, 1, "Crossbow, repeating heavy", "Exotic", "Ranged", 400.00, "1d8", "1d10", "19-20/x2", 120, "P", 12.00, "Uncommon", "The repeating crossbow (whether heavy or light) holds 5 crossbow bolts. As long as it holds bolts, you can reload it by pulling the reloading lever (a free action).
+    Loading a new case of 5 bolts is a full-round action that provokes attacks of opportunity. You can fire a repeating crossbow with one hand or with each hand in the same manner as you would a normal crossbow of the same size.avg
+    However, you must fire the weapon with both hands in order to use the reloading lever, and you must use two hands to load a new case of bolts."),
+    (68, 1, "Crossbow, repeating light", "Exotic", "Ranged", 250.00, "1d6", "1d8", "19-20/x2", 80, "P", 6.00, "Uncommon", "The repeating crossbow (whether heavy or light) holds 5 crossbow bolts. As long as it holds bolts, you can reload it by pulling the reloading lever (a free action).
+    Loading a new case of 5 bolts is a full-round action that provokes attacks of opportunity. You can fire a repeating crossbow with one hand or with each hand in the same manner as you would a normal crossbow of the same size.avg
+    However, you must fire the weapon with both hands in order to use the reloading lever, and you must use two hands to load a new case of bolts."),
+    (69, 1, "Net", "Exotic", "Ranged", 20.00, null, null, null, 10, null, 6.00, "Uncommon", "A fighting net has small barbs in the weave and a trailing rope to control netted opponents. You use it to entangle enemies.
+    When you throw a net, you make a ranged touch attack against your target. A net's maximum range is 10 feet. If you hit, the target is entangled. An entangled creature takes a -2 penalty on attack rolls and a -4 penalty to Dexterity, can move at only half speed, and cannot charge or run.
+    If you control the trailing rope by succeeding on an opposed Strength check while holding it, the entangled creature can move only within the limits that the rope allows. If the entangled creature attempts to cast a spell, it must make a DC 15 Concentration check or be unable to cast the spell.
+    An entangled creature can escape with a DC 20 Escape Artist check (a full-round action). The net has 5 hit points and can be burst with a DC 25 Strength check (also a full-round action).
+    A net is useful only against creatures within one size category of you. For instance, a Small character wielding a net can entangle Tiny, Small, or Medium creatures.
+    A net must be folded to be thrown effectively. The first time you throw your net in a fight, you make a normal ranged touch attack roll. After the net is unfolded, you take a -4 penalty on attack rolls with it.
+    It takes 2 rounds for a proficient user to fold a net and twice that long for a nonproficient one to do so."),
+    (70, 1, "Shuriken (5)", "Exotic", "Ranged", 1.00, "1", "1d2", "x2", 10, "P", 0.50, "Uncommon", "A shuriken is a special monk weapon. This designation gives a monk wielding shuriken special options.
+    A shuriken can't be used as a melee weapon. Although they are thrown weapons, shuriken are treated as ammunition for the purposes of drawing them, crafting masterwork or otherwise special versions of them, and what happens to them after they are thrown.");
+    
+    
+INSERT INTO Armor VALUES
+	(1, 1, "Padded", "Light", 5.00, 1, 8, 0, 5, 30, 20, 10.00, "Uncommon", "Padded armor features quilted layers of cloth and batting. It gets hot quickly and can become foul with sweat, grime, lice, and fleas."),
+    (2, 1, "Leather", "Light", 10.00, 2, 6, 0, 10, 30, 20, 15.00, "Uncommon", "The breastplate and shoulder protectors of this armor are made of leather that has been stiffened by boiling in oil.
+    The rest of the armor is made of softer and more flexible leather."),
+    (3, 1, "Studded Leather", "Light", 25.00, 3, 5, -1, 15, 30, 20, 20.00, "Common", "This armor is made from tough but flexible leather (not hardened leather as with normal leather armor) reinforced with close-set metal rivets."),
+    (4, 1, "Chain Shirt", "Light", 100.00, 4, 4, -2, 20, 30, 20, 25.00, "Common", "A chain shirt protects your torso while leaving your limbs free and mobile.
+    It includes a layer of quilted fabric worn underneath to prevent chafing and to cushion the impact of blows.
+    A chain shirt comes with a steel cap."),
+    (5, 1, "Hide", "Medium", 15.00, 3, 4, -3, 20, 20, 15, 25.00, "Common", "This armor is prepared from multiple layers of leather and animal hides. It is stiff and hard to move in.
+    Druids, who only wear nonmetallic armor, favor hide."),
+    (6, 1, "Scale mail", "Medium", 50.00, 4, 3, -4, 25, 20, 15, 30.00, "Uncommon", "This armor consists of a coat and leggings (and perhaps a separate skirt) of leather covered with overlapping pieces of metal, much like the scales of a fish.
+    The suit includes gauntlets."),
+    (7, 1, "Chainmail", "Medium", 150.00, 5, 2, -5, 30, 20, 15, 40.00, "Uncommon", "This armor is made of interlocking metal rings. It includes a layer of quilted fabric worn underneath to prevent chafing and to cushion the impact of blows.
+    Several layers of mail are hung over vital areas. Most of the armor's weight hangs from the shoulders, making chainmail uncomfortable to wear for long periods of time.
+    The suit includes gauntlets."),
+    (8, 1, "Breastplate", "Medium", 200.00, 5, 3, -4, 25.00, 20, 15, 30.00, "Common", "A breastplate covers your front and your back. It comes with a helmet and greaves (plates to cover your lower legs).
+    A light suit or skirt of studded leather beneath the breastplate protects your limbs without restricting movement much."),
+    (9, 1, "Splint mail", "Heavy", 200.00, 6, 0, -7, 40, 20, 15, 45.00, "Uncommon", "This armor is made of narrow vertical strips of metal riveted to a backing of leather that is worn over cloth padding.
+    Flexible chainmail protects the joints. The suit includes gauntlets."),
+    (10, 1, "Banded mail", "Heavy", 250.00, 6, 1, -6, 35, 20, 15, 35.00, "Uncommon", "This armor is made of overlapping strips of metal sewn to a backing of leather and chainmail. The strips cover vulnerable areas, while the chain and leather protects the joints and provide freedom of movement.
+    Straps and buckles distribute the weight evenly. The suit includes gauntlets."),
+    (11, 1, "Half-plate", "Heavy", 600.00, 7, 0, -7, 40, 20, 15, 50.00, "Uncommon", "This armor is a combination of chainmail with metal plates (breastplate, epaulettes, elbow guards, gauntlets, tasses, and greaves) covering vital areas.
+    Buckles and straps hold the whole suit together and distribute the weight, but the armor still hangs more loosely than full plate. The suit includes gauntlets."),
+    (12, 1, "Full plate", "Heavy", 1500.00, 8, 1, -6, 35, 20, 15, 50.00, "Common", "This armor consists of shaped and fitted metal plates riveted and interlocked to cover the entire body.
+    The suit includes gauntlets, heavy leather boots, a visored helmet, and a thick layer of padding that is worn underneath the armor. Buckles and straps distribute the weight over the body, so full plate hampers movement less than splint mail even though splint is lighter.
+    Each suit of full plate must be individually fitted to its owner by a master armorsmith, although a captured suit can be resized to fit a new owner at a cost of 200 to 800 (2d4 x 100) gold pieces.
+    Full plate is also known as field plate."),
+    (13, 1, "Buckler", "Shield", 15.00, 1, null, -1, 5, null, null, 5.00, "Uncommon", "This small metal shield is worn strapped to your forearm. You can use a bow or crossbow without penalty while carrying it.
+    You can also use your shield arm to wield a weapon (whether you are using an off-hand weapon or using your off hand to help wield a two-handed weapon), but you take a -1 penalty on attack rolls while doing so because of the extra weight on your arm.
+    This penalty stacks with those that may apply for fighting with your off hand and for fighting with two weapons. In any case, if you use a weapon in your off hand, you don't get the buckler's AC bonus for the rest of the round.
+    You can't bash someone with a buckler."),
+    (14, 1, "Shield, light wooden", "Shield", 3.00, 1, null, -1, 5, null, null, 5.00, "Uncommon", "You strap a shield to your forearm and grip it with your hand. A light shield's weight lets you carry other items in that hand, although you cannot use weapons with it.
+    Wooden or Steel: Wooden or steel shields offer the same basic protection, though they respond differently to special attacks (such as warp wood and heat metal).
+    Shield Bash Attacks: You can bash an opponent with a light shield, using it as an off-hand weapon. Used this way, a light shield is a martial bludgeoning weapon. For the purpse of penalties on attack rolls, treat a light shield as a light weapon. If you use your shield as a weapon, you lose its AC bonus until your next action (usually until the next round).
+    An enhancement bonus on a shield does not improve the effectiveness of a shield bash made with it, but the shield can be made into a magic weapon in its own right."),
+    (15, 1, "Shield, light steel", "Shield", 9.00, 1, null, -1, 5, null, null, 6.00, "Uncommon", "You strap a shield to your forearm and grip it with your hand. A light shield's weight lets you carry other items in that hand, although you cannot use weapons with it.
+    Wooden or Steel: Wooden or steel shields offer the same basic protection, though they respond differently to special attacks (such as warp wood and heat metal).
+    Shield Bash Attacks: You can bash an opponent with a light shield, using it as an off-hand weapon. Used this way, a light shield is a martial bludgeoning weapon. For the purpse of penalties on attack rolls, treat a light shield as a light weapon. If you use your shield as a weapon, you lose its AC bonus until your next action (usually until the next round).
+    An enhancement bonus on a shield does not improve the effectiveness of a shield bash made with it, but the shield can be made into a magic weapon in its own right."),
+    (16, 1, "Shield, heavy wooden", "Shield", 7.00, 2, null, -2, 15, null, null, 10.00, "Uncommon", "You strap a shield to your forearm and grip it with your hand. A heavy shield is so heavy that you can't use your shield hand for anything else.
+    Wooden or Steel: Wooden or steel shields offer the same basic protection, though they respond differently to special attacks (such as warp wood and heat metal).
+    Shield Bash Attacks: You can bash an opponent with a heavy shield, using it as an off-hand weapon. Used this way, a heavy shield is a martial bludgeoning weapon. For the purpse of penalties on attack rolls, treat a heavy shield as a one-handed weapon. If you use your shield as a weapon, you lose its AC bonus until your next action (usually until the next round).
+    An enhancement bonus on a shield does not improve the effectiveness of a shield bash made with it, but the shield can be made into a magic weapon in its own right."),
+    (17, 1, "Shield, heavy steel", "Shield", 20.00, 2, null, -2, 15, null, null, 15.00, "Common", "You strap a shield to your forearm and grip it with your hand. A heavy shield is so heavy that you can't use your shield hand for anything else.
+    Wooden or Steel: Wooden or steel shields offer the same basic protection, though they respond differently to special attacks (such as warp wood and heat metal).
+    Shield Bash Attacks: You can bash an opponent with a heavy shield, using it as an off-hand weapon. Used this way, a heavy shield is a martial bludgeoning weapon. For the purpse of penalties on attack rolls, treat a heavy shield as a one-handed weapon. If you use your shield as a weapon, you lose its AC bonus until your next action (usually until the next round).
+    An enhancement bonus on a shield does not improve the effectiveness of a shield bash made with it, but the shield can be made into a magic weapon in its own right."),
+    (18, 1, "Shield, tower", "Shield", 30.00, 4, 2, -10, 50, null, null, 45.00, "Uncommon", "This massive wooden shield is nearly as tall as you are. In most situations, it provides the indicated shield bonus to your AC. However, you can instead use it as total cover, though you must give up your attacks to do so.
+    The shield does not, however, provide cover against targeted spells; a spellcaster can cast a spell on you by targeting the shield you are holding. You cannot bash with a tower shield, nor can you use your shield hand for anything else.
+    When employing a tower shield in combat, you take a -2 penalty on attack rolls because of the shield's encumbrance.");
