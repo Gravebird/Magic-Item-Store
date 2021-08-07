@@ -98,13 +98,13 @@ CREATE TABLE Spell (
     Spell_Divine bool NOT NULL,
     Spell_School varchar(13) NOT NULL CHECK (Spell_School IN ("Abjuration", "Conjuration", "Divination", "Enchantment", "Evocation", "Illusion", "Necromancy", "Transmutation", "Universal", "Other")),
     Spell_Subschool varchar(12) CHECK (Spell_Subschool IN ("Calling", "Creation", "Healing", "Summoning", "Teleporation", "Scrying", "Charm", "Compulsion", "Figment", "Glamer", "Pattern", "Phantasm", "Shadow")),
-    Spell_Descriptor varchar(18) CHECK (Spell_Descriptor IN ("Acid", "Air", "Chaotic", "Cold", "Darkness", "Death", "Earth", "Electricity", "Evil", "Fear", "Fire", "Force", "Good", "Language-Dependant", "Lawful", "Light", "Mind-Affecting", "Sonic", "Water")),
+    Spell_Descriptor varchar(21),
     Spell_Min_Level int NOT NULL CHECK (Spell_Min_Level BETWEEN 0 AND 9),
-    Spell_Components varchar(10) NOT NULL,
+    Spell_Components varchar(18) NOT NULL,
     Spell_Casting_Time varchar(25) NOT NULL,
-    Spell_Range varchar(8) NOT NULL,
+    Spell_Range varchar(9) NOT NULL,
     Spell_Effect_or_Target varchar(108),
-    Spell_Duration varchar(17) NOT NULL,
+    Spell_Duration varchar(39) NOT NULL,
     Spell_Saving_Throw varchar(31),
     Spell_Resistance varchar(22),
     Spell_Short_Description varchar(100),
@@ -142,11 +142,11 @@ CREATE TABLE Class (
 );
 
 CREATE TABLE Class_Spells (
-    Book_ID int NOT NULL,
-    Class_ID int NOT NULL,
+    Spell_Book_ID int NOT NULL,
     Spell_ID int NOT NULL,
-    Spell_Level int NOT NULL,
-    PRIMARY KEY (Book_ID, Class_ID, Spell_ID),
+    Class_ID int NOT NULL,
+    Spell_Level int NOT NULL CHECK (Spell_Level BETWEEN 0 AND 9),
+    PRIMARY KEY (Spell_Book_ID, Spell_ID, Class_ID),
     FOREIGN KEY (Class_ID) REFERENCES Class(Class_ID),
-    FOREIGN KEY (Spell_ID, Book_ID) REFERENCES Spell(Spell_ID, Book_ID)
+    FOREIGN KEY (Spell_ID, Spell_Book_ID) REFERENCES Spell(Spell_ID, Book_ID)
 );
