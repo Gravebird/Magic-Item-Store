@@ -105,7 +105,7 @@ CREATE TABLE Spell (
     Spell_Range varchar(9) NOT NULL,
     Spell_Effect_or_Target varchar(108),
     Spell_Duration varchar(39) NOT NULL,
-    Spell_Saving_Throw varchar(31),
+    Spell_Saving_Throw varchar(41),
     Spell_Resistance varchar(22),
     Spell_Short_Description varchar(100),
     Spell_Description TEXT,

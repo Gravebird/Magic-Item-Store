@@ -470,7 +470,49 @@ INSERT INTO Spell VALUES
 	An awakened tree has characteristics as if it were an animated object, except that it gains the plant type and its Intelligence, Wisdom, and Charisma scores are each 3d6. An awakened plant gains the ability to move its limbs, roots, vines, creepers, and so forth, and it has senses similar to a human’s.
 	An awakened animal gets 3d6 Intelligence, +1d3 Charisma, and +2 HD. Its type becomes magical beast (augmented animal). An awakened animal can’t serve as an animal companion, familiar, or special mount.
 	An awakened tree or animal can speak one language that you know, plus one additional language that you know per point of Intelligence bonus (if any).
-	XP Cost: 250 XP.");
+	XP Cost: 250 XP."),
+    (30, 1, "Baleful Polymorph", true, true, "Transmutation", null, null, 5, "V, S", "1 standard action", "Close", "One creature", "Permanent", "Fortitude negates, Will partial; see text", "Yes",
+    "Transforms subject into harmless animal.",
+    "You change the subject into a Small or smaller animal of no more than 1 HD (such as a dog, lizard, monkey, or toad). The subject takes on all the statistics and special abilities of an average member of the new form in place of its own except as follows:
+	The target retains its own alignment (and personality, within the limits of the new form’s ability scores).
+	The target retains its own hit points.
+	The target is treated as having its normal Hit Dice for purpose of adjudicating effects based on HD, such as the sleep spell, though it uses the new form’s base attack bonus, base save bonuses, and all other statistics derived from Hit Dice.
+	The target also retains the ability to understand (but not to speak) the languages it understood in its original form. It can write in the languages it understands, but only the form is capable of writing in some manner (such as drawing in the dirt with a paw).
+	With those exceptions, the target’s normal game statistics are replaced by those of the new form. The target loses all the special abilities it has in its normal form, including its class features.
+	All items worn or carried by the subject fall to the ground at its feet, even if they could be worn or carried by the new form.
+	If the new form would prove fatal to the creature (for example, if you polymorphed a landbound target into a fish, or an airborne target into a toad), the subject gets a +4 bonus on the save.
+	If the subject remains in the new form for 24 consecutive hours, it must attempt a Will save. If this save fails, it loses its ability to understand language, as well as all other memories of its previous form, and its Hit Dice and hit points change to match an average creature of its new form. These abilities and statistics return to normal if the effect is later ended.
+	Incorporeal or gaseous creatures are immune to baleful polymorph, and a creature with the shapechanger subtype (such as a lycanthrope or a doppelganger) can revert to its natural form as a standard action (which ends the spell’s effect)."),
+    (31, 1, "Bane", false, true, "Enchantment", "Compulsion", "Fear, Mind-Affecting", 1, "V, S, DF", "1 standard action", "50 ft.", "All enemies within 50 ft.", "1 min./level", "Will negates", "Yes",
+    "Enemies take –1 on attack rolls and saves against fear.",
+    "Bane fills your enemies with fear and doubt. Each affected creature takes a -1 penalty on attack rolls and a -1 penalty on saving throws against fear effects.
+	Bane counters and dispels bless."),
+    (32, 1, "Banishment", true, true, "Abjuration", null, null, 6, "V, S, F", "1 standard action", "Close", "One or more extraplanar creatures, no two of which can be more than 30 ft. apart", 
+    "Instantaneous", "Will negates", "Yes", " Banishes 2 HD/level of extraplanar creatures.",
+    "A banishment spell is a more powerful version of the dismissal spell. It enables you to force extraplanar creatures out of your home plane. As many as 2 Hit Dice of creatures per caster level can be banished.
+	You can improve the spell’s chance of success by presenting at least one object or substance that the target hates, fears, or otherwise opposes. For each such object or substance, you gain a +1 bonus on your caster level check to overcome the target’s spell resistance (if any), the saving throw DC increases by 2.
+	Certain rare items might work twice as well as a normal item for the purpose of the bonuses (each providing a +2 bonus on the caster level check against spell resistance and increasing the save DC by 4).
+	Arcane Focus: Any item that is distasteful to the subject (optional, see above)."),
+    (33, 1, "Barkskin", false, true, "Transmutation", null, null, 2, "V, S, DF", "1 standard action", "Touch", "Living creature touched", "10 min./level", "None", "Yes (harmless)",
+    "Grants +2 (or higher) enhancement to natural armor.",
+    "Barkskin toughens a creature’s skin. The effect grants a +2 enhancement bonus to the creature’s existing natural armor bonus. This enhancement bonus increases by 1 for every three caster levels above 3rd, to a maximum of +5 at caster level 12th.
+	The enhancement bonus provided by barkskin stacks with the target’s natural armor bonus, but not with other enhancement bonuses to natural armor. A creature without natural armor has an effective natural armor bonus of +0."),
+    (34, 1, "Bear's Endurance", true, true, "Transmutation", null, null, 2, "V, S, DF", "1 standard action", "Touch", "Creature touched", "1 min./level", "Will negates (harmless)", "Yes",
+    "Subject gains +4 to Con for 1 min./level.",
+    "The affected creature gains greater vitality and stamina. The spell grants the subject a +4 enhancement bonus to Constitution, which adds the usual benefits to hit points, Fortitude saves, Constitution checks, and so forth.
+	Hit points gained by a temporary increase in Constitution score are not temporary hit points. They go away when the subject’s Constitution drops back to normal. They are not lost first as temporary hit points are."),
+    (35, 1, "Bear's Endurance, Mass", true, true, "Transmutation", null, null, 6, "V, S, DF", "1 standard action", "Close", "One creature/level, no two of which can be more than 30 ft. apart",
+    "1 min./level", "Will negates (harmless)", "Yes", "As bear’s endurance, affects one subject/level.",
+    "Mass bear's endurance works like bear's endurance, except that it affects multiple creatures."),
+    (36, 1, "Bestow Curse", true, true, "Necromancy", null, null, 3, "V, S", "1 standard action", "Touch", "Creature touched", "Permanent", "Will negates", "Yes",
+    "–6 to an ability score; –4 on attack rolls, saves, and checks; or 50% chance of losing each action.",
+    "You place a curse on the subject. Choose one of the following three effects.
+	-6 decrease to an ability score (minimum 1).
+	-4 penalty on attack rolls, saves, ability checks, and skill checks.
+	Each turn, the target has a 50% chance to act normally; otherwise, it takes no action.
+	You may also invent your own curse, but it should be no more powerful than those described above.
+	The curse bestowed by this spell cannot be dispelled, but it can be removed with a break enchantment, limited wish, miracle, remove curse, or wish spell.
+	Bestow curse counters remove curse.");
     
 INSERT INTO Class_Spells VALUES
 	(1, 1, 10, 6),
@@ -547,4 +589,26 @@ INSERT INTO Class_Spells VALUES
     (1, 27, 3, 5),
     (1, 27, 4, 5),
     (1, 28, 3, 2),
-    (1, 29, 4, 5);
+    (1, 29, 4, 5),
+    (1, 30, 4, 5),
+    (1, 30, 10, 5),
+    (1, 30, 11, 5),
+    (1, 31, 3, 1),
+    (1, 32, 3, 6),
+    (1, 32, 10, 7),
+    (1, 32, 11, 7),
+    (1, 33, 4, 2),
+    (1, 33, 8, 2),
+    (1, 33, 26, 2),
+    (1, 34, 3, 2),
+    (1, 34, 4, 2),
+    (1, 34, 8, 2),
+    (1, 34, 10, 2),
+    (1, 34, 11, 2),
+    (1, 35, 3, 6),
+    (1, 35, 4, 6),
+    (1, 35, 10, 6),
+    (1, 35, 11, 6),
+    (1, 36, 3, 3),
+    (1, 36, 10, 4),
+    (1, 36, 11, 4);
