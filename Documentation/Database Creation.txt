@@ -99,8 +99,7 @@ CREATE TABLE Spell (
     Spell_School varchar(13) NOT NULL CHECK (Spell_School IN ("Abjuration", "Conjuration", "Divination", "Enchantment", "Evocation", "Illusion", "Necromancy", "Transmutation", "Universal", "Other")),
     Spell_Subschool varchar(12) CHECK (Spell_Subschool IN ("Calling", "Creation", "Healing", "Summoning", "Teleporation", "Scrying", "Charm", "Compulsion", "Figment", "Glamer", "Pattern", "Phantasm", "Shadow")),
     Spell_Descriptor varchar(18) CHECK (Spell_Descriptor IN ("Acid", "Air", "Chaotic", "Cold", "Darkness", "Death", "Earth", "Electricity", "Evil", "Fear", "Fire", "Force", "Good", "Language-Dependant", "Lawful", "Light", "Mind-Affecting", "Sonic", "Water")),
-    Spell_Level int NOT NULL CHECK (Spell_Level BETWEEN 0 AND 9),
-    Spell_Class_Level varchar(23) NOT NULL,
+    Spell_Min_Level int NOT NULL CHECK (Spell_Min_Level BETWEEN 0 AND 9),
     Spell_Components varchar(10) NOT NULL,
     Spell_Casting_Time varchar(25) NOT NULL,
     Spell_Range varchar(8) NOT NULL,
@@ -124,4 +123,30 @@ CREATE TABLE Spell_Item (
     PRIMARY KEY (Spell_Item_ID, Book_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID),
     FOREIGN KEY (Spell_ID) REFERENCES Spell(Spell_ID)
+);
+
+CREATE TABLE Class (
+    Class_ID int NOT NULL UNIQUE,
+    Book_ID int NOT NULL,
+    Class_Name varchar(20) NOT NULL,
+    Class_is_Prestige bool NOT NULL,
+    Class_is_Domain bool NOT NULL,
+    Class_Hit_Dice int CHECK (Class_Hit_Dice IN (4, 6, 8, 10, 12)),
+    Class_Base_Skill_Points int CHECK (Class_Base_Skill_Points IN (2, 4, 6, 8)),
+    Class_Base_Attack_Bonus varchar(6) CHECK (Class_Base_Attack_Bonus IN ("Poor", "Medium", "Good")),
+    Class_Fort_Save varchar(4) CHECK (Class_Fort_Save IN ("Poor", "Good")),
+    Class_Ref_Save varchar(4) CHECK (Class_Ref_Save IN ("Poor", "Good")),
+    Class_Will_Save varchar(4) CHECK (Class_Will_Save IN ("Poor", "Good")),
+    PRIMARY KEY (Class_ID, Book_ID),
+    FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
+);
+
+CREATE TABLE Class_Spells (
+    Book_ID int NOT NULL,
+    Class_ID int NOT NULL,
+    Spell_ID int NOT NULL,
+    Spell_Level int NOT NULL,
+    PRIMARY KEY (Book_ID, Class_ID, Spell_ID),
+    FOREIGN KEY (Class_ID) REFERENCES Class(Class_ID),
+    FOREIGN KEY (Spell_ID, Book_ID) REFERENCES Spell(Spell_ID, Book_ID)
 );

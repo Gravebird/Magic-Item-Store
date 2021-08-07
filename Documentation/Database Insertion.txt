@@ -230,37 +230,87 @@ INSERT INTO Armor VALUES
     The shield does not, however, provide cover against targeted spells; a spellcaster can cast a spell on you by targeting the shield you are holding. You cannot bash with a tower shield, nor can you use your shield hand for anything else.
     When employing a tower shield in combat, you take a -2 penalty on attack rolls because of the shield's encumbrance.");
     
+INSERT INTO Class VALUES
+	(1, 1, "Barbarian", false, false, 12, 4, "Good", "Good", "Poor", "Poor"),
+    (2, 1, "Bard", false, false, 6, 6, "Medium", "Poor", "Good", "Good"),
+    (3, 1, "Cleric", false, false, 8, 2, "Medium", "Good", "Poor", "Good"),
+    (4, 1, "Druid", false, false, 8, 4, "Medium", "Good", "Poor", "Good"),
+    (5, 1, "Fighter", false, false, 10, 2, "Good", "Good", "Poor", "Poor"),
+    (6, 1, "Monk", false, false, 8, 4, "Medium", "Good", "Good", "Good"),
+    (7, 1, "Paladin", false, false, 10, 2, "Good", "Good", "Poor", "Poor"),
+    (8, 1, "Ranger", false, false, 8, 6, "Good", "Good", "Good", "Poor"),
+    (9, 1, "Rogue", false, false, 6, 8, "Medium", "Poor", "Good", "Poor"),
+    (10, 1, "Sorceror", false, false, 4, 2, "Poor", "Poor", "Poor", "Good"),
+    (11, 1, "Wizard", false, false, 4, 2, "Poor", "Poor", "Poor", "Good"),
+    (12, 1, "Air", false, true, null, null, null, null, null, null),
+    (13, 1, "Animal", false, true, null, null, null, null, null, null),
+    (14, 1, "Chaos", false, true, null, null, null, null, null, null),
+    (15, 1, "Death", false, true, null, null, null, null, null, null),
+    (16, 1, "Destruction", false, true, null, null, null, null, null, null),
+    (17, 1, "Earth", false, true, null, null, null, null, null, null),
+    (18, 1, "Evil", false, true, null, null, null, null, null, null),
+    (19, 1, "Fire", false, true, null, null, null, null, null, null),
+    (20, 1, "Good", false, true, null, null, null, null, null, null),
+    (21, 1, "Healing", false, true, null, null, null, null, null, null),
+    (22, 1, "Knowledge", false, true, null, null, null, null, null, null),
+    (23, 1, "Law", false, true, null, null, null, null, null, null),
+    (24, 1, "Luck", false, true, null, null, null, null, null, null),
+    (25, 1, "Magic", false, true, null, null, null, null, null, null),
+    (26, 1, "Plant", false, true, null, null, null, null, null, null),
+    (27, 1, "Protection", false, true, null, null, null, null, null, null),
+    (28, 1, "Strength", false, true, null, null, null, null, null, null),
+    (29, 1, "Sun", false, true, null, null, null, null, null, null),
+    (30, 1, "Travel", false, true, null, null, null, null, null, null),
+    (31, 1, "Trickery", false, true, null, null, null, null, null, null),
+    (32, 1, "War", false, true, null, null, null, null, null, null),
+    (33, 1, "Water", false, true, null, null, null, null, null, null),
+    (34, 2, "Arcane Archer", true, false, 8, 4, "Good", "Good", "Good", "Poor"),
+    (35, 2, "Arcane Trickster", true, false, 4, 4, "Poor", "Poor", "Good", "Good"),
+    (36, 2, "Archmage", true, false, 4, 2, "Poor", "Poor", "Poor", "Good"),
+    (37, 2, "Assassin", true, false, 6, 4, "Medium", "Poor", "Good", "Poor"),
+    (38, 2, "Blackguard", true, false, 10, 2, "Good", "Good", "Poor", "Poor"),
+    (39, 2, "Dragon Disciple", true, false, 12, 2, "Medium", "Good", "Poor", "Good"),
+    (40, 2, "Duelist", true, false, 10, 4, "Good", "Poor", "Good", "Poor"),
+    (41, 2, "Dwarven Defender", true, false, 12, 2, "Good", "Good", "Poor", "Good"),
+    (42, 2, "Eldritch Knight", true, false, 6, 2, "Good", "Good", "Poor", "Poor"),
+    (43, 2, "Hierophant", true, false, 8, 2, "Poor", "Good", "Poor", "Good"),
+    (44, 2, "Horizon Walker", true, false, 8, 4, "Good", "Good", "Poor", "Poor"),
+    (45, 2, "Loremaster", true, false, 4, 4, "Poor", "Poor", "Poor", "Good"),
+    (46, 2, "Mystic Theurge", true, false, 4, 2, "Poor", "Poor", "Poor", "Good"),
+    (47, 2, "Red Wizard", true, false, 4, 2, "Poor", "Poor", "Poor", "Good"),
+    (48, 2, "Shadowdancer", true, false, 8, 6, "Medium", "Poor", "Good", "Poor"),
+    (49, 2, "Thaumaturgist", true, false, 4, 2, "Poor", "Poor", "Poor", "Good");
     
 INSERT INTO Spell VALUES
-	(1, 1, "Acid Fog", true, true, "Conjuration", "Creation", "Acid", 6, "Sor/Wiz 6, Water 7", "V, S, M/DF", "1 standard action", "Medium", "Fog spreads in 20-ft. radius, 20 ft. high", "1 round/level", "None", "No", "Fog deals acid damage",
+	(1, 1, "Acid Fog", true, true, "Conjuration", "Creation", "Acid", 6, "V, S, M/DF", "1 standard action", "Medium", "Fog spreads in 20-ft. radius, 20 ft. high", "1 round/level", "None", "No", "Fog deals acid damage",
     "Acid fog creates a billowing mass of misty vapors similar to that produced by a solid fog spell. In addition to slowing creatures down and obscuring sight, this spell's vapors are highly acidic.
     Each round on your turn, starting when you cast the spell, the fog deals 2d6 points of acid damage to each creature and object within it.
     Arcane Material Component: A pinch of dried, powdered peas combined with powdered animal hoof."),
-    (2, 1, "Acid Splash", true, false, "Conjuration", "Creation", "Acid", 0, "Sor/Wiz 0", "V, S", "1 standard action", "Close", "One Missile of Acid", "Instantaneous", "None", "No",
+    (2, 1, "Acid Splash", true, false, "Conjuration", "Creation", "Acid", 0, "V, S", "1 standard action", "Close", "One Missile of Acid", "Instantaneous", "None", "No",
     "Orb deals 1d3 acid damage.",
     "You fire a small orb of acid at the target. You must succeed on a ranged touch attack to hit your target. The orb deals 1d3 points of acid damage."),
-    (3, 1, "Aid", false, true, "Enchantment", "Compulsion", "Mind-Affecting", 2, "Clr 2, Good 2, Luck 2", "V, S, DF", "1 standard action", "Touch", "Living creature touched", "1 min./level", "None", "Yes (harmless)",
+    (3, 1, "Aid", false, true, "Enchantment", "Compulsion", "Mind-Affecting", 2, "V, S, DF", "1 standard action", "Touch", "Living creature touched", "1 min./level", "None", "Yes (harmless)",
     "+1 on attack rolls, +1 on saves against fear, 1d8 temporary hp +1/level (max +10).", 
     "Aid grants the target a +1 morale bonus on attack rolls and saves against fear effects, plus temporary hit points equal to 1d8 + caster level (to a maximum of 1d8+10 temporary hit points at caster level 10th)."),
-    (4, 1, "Air Walk", false, true, "Transmutation", null, "Air", 4, "Air 4, Clr 4, Drd 4", "V, S, DF", "1 standard action", "Touch", "Creature (Gargantuan or smaller) touched", "10 min./level", "None", "Yes (harmless)",
+    (4, 1, "Air Walk", false, true, "Transmutation", null, "Air", 4, "V, S, DF", "1 standard action", "Touch", "Creature (Gargantuan or smaller) touched", "10 min./level", "None", "Yes (harmless)",
     "Subject treads on air as if solid (climb at 45-degree angle).",
     "The subject can tread on air as if walking on solid ground. Moving upward is similar to walking up a hill. The maximum upward or downward angle possible is 45 degrees, at a rate equal to one-half the air walker's normal speed.
     A strong wind (21+ mph) can push the subject along or hold it back. At the end its turn each round, the wind blows the air walker 5 feet for each 5 miles per hour of wind speed. The creature can, at the DM's option, be subject to additional penalties in exceptionally strong or turbulent winds, such as loss of control over movement or physical damage from being buffeted about.
     Should the spell duration expire while the subject is still aloft, the magic fails slowly. The subject floats downward 60 feet per round for 1d6 rounds. If it reaches the ground in that amount of time, it lands safely. If not, it falls the rest of the distance, taking 1d6 points of damage per 10 feet of fall. Since dispelling a spell effectively ends it, the subject also descends in this way if the air walk spell is dispelled, but not if it is negated by an antimagic field.
     You can cast air walk on a specifically trained mount so it can be ridden through the air. You can train a mount to move with the aid of air walk (counts as a trick; see the handle animal skill) with one week of work and a DC 25 handle animal check."),
-    (5, 1, "Alarm", true, true, "Abjuration", null, null, 1, "Brd 1, Rgr 1, Sor/Wiz 1", "V, S, F/DF", "1 standard action", "Close", "20-ft.-radius emanation centered on a point in space", "2 hours/level (D)",
+    (5, 1, "Alarm", true, true, "Abjuration", null, null, 1, "V, S, F/DF", "1 standard action", "Close", "20-ft.-radius emanation centered on a point in space", "2 hours/level (D)",
     "None", "No", "Wards an area for 2 hours/level.", "Alarm sounds a mental or audible alarm each time a creature of Tiny or larger size enters the warded area or touches it. A creature that speaks the password (determined by you at the time of casting) does not set off the alarm. You decide at the time of casting whether the alarm will be mental or audible.
     Mental Alarm: A mental alarm alerts you (and only you) so long as you remain within 1 mile of the warded area. You note a single mental 'ping' that awakens you from normal sleep, but does not otherwise disturb concentration. A silence spell has not effect on a mental alarm.
     Audible Alarm: An audible alarm produces the sound of a hand bell, and anyone within 60 feet of the warded area can hear it clearly. Reduce the distance by 10 feet for each interposing closed door and by 20 feet for each substantial interposing wall. In quiet conditions, the ringing can be heard faintly as far as 180 feet away. The sound lasts for 1 round. Creatures within a silence spell cannot hear the ringing.
     Ethereal or astral creatures do not trigger the alarm. 
     Alarm can be made permanent with a permanency spell.
     Arcane Focus: A tiny bell and a piece of very fine silver ware"),
-    (6, 1, "Align Weapon", false, true, "Transmutation", null, null, 2, "Clr 2", "V, S, DF", "1 standard action", "Touch", "Weapon touched or fifty projectiles (all of which must be in contact with each other at the time of casting)",
+    (6, 1, "Align Weapon", false, true, "Transmutation", null, null, 2, "V, S, DF", "1 standard action", "Touch", "Weapon touched or fifty projectiles (all of which must be in contact with each other at the time of casting)",
     "1 min./level", "Will negates (harmless, object)", "Yes (harmless, object)", "Weapon becomes good, evil, lawful, or chaotic",
     "Align weapon makes a weapon good, evil, lawful, or chaotic, as you choose. A weapon that is aligned can bypass the damage reduction of certain creatures, usually outsiders of the opposite alignment. This spell has no effect on a weapon that already has an alignment, such as a holy sword.
     You can't cast this spell on a natural weapon, such as an unarmed strike.
     When you make a weapon good, evil, lawful, or chaotic, align weapon is a good, evil, lawful, or chaotic spell, respectively."),
-    (7, 1, "Alter Self", true, false, "Transmutation", null, null, 2, "Brd 2, Sor/Wiz 2", "V, S", "1 standard action", "Personal", "You", "10 min./level (D)", null, null,
+    (7, 1, "Alter Self", true, false, "Transmutation", null, null, 2, "V, S", "1 standard action", "Personal", "You", "10 min./level (D)", null, null,
     "Assume form of a similar creature",
     "You assume the form of a creature of the same type as your normal form (such as humanoid or magical beast). The new form must be within one size category of your normal size. The maximum HD of an assumed form is equal to your caster level, to a maximum of 5 HD at 5th level. You can change into a member of your own kind or even into yourself.
     You retain your own ability scores. Your class and level, hit points, alignment, base attack bonus, and base save bonuses all remain the same. You retain all supernatural and spell-like special attacks and qualities of your normal form, except for those requiring a body part that the new form does not have (such as a mouth for a breath weapon or eyes for a gaze attack). You keep all extraordinary special attacks and qualities derived from class levels (such as a barbarian's rage ability), but you lose any from your normal form that are not derived from class levels (such as a dragon's frightful presence ability).
@@ -271,13 +321,13 @@ INSERT INTO Spell VALUES
     You can freely designate the new form's minor physical qualities (such as hair color, hair texture, and skin color) within the normal ranges for a creature of that kind. The new form's significant physical qualities (such as height, weight, and gender) are also under your control, but they must fall within the norms for the new form's kind. You are effectively disguised as an average member of the new form's race. If you use this spell to create a disguise, you get a +10 bonus on your Disguise check.
     When the change occurs, your equipment, if any, either remains worn or held by the new form, or melds into the new form and becomes nonfunctional. When you revert to your true form, any objects previously melded into the new form reappear on the same location on your body they previously occupied and are once again functional. Any new items you wore in the assumed form and can't wear in your normal form fall off and land at your feet; any that you could wear in either form or carry in a body part common to both forms (mouths, hands, or the like) at the time of reversion are still held in the same way.
     Any part of the body or piece of equipment that is separated from the whole reverts to its true form."),
-    (8, 1, "Analyze Dweomer", true, false, "Divination", null, null, 6, "Brd 6, Sor/Wiz 6", "V, S, F", "1 standard action", "Close", "One object or creature per caster level", "1 round/level (D)",
+    (8, 1, "Analyze Dweomer", true, false, "Divination", null, null, 6, "V, S, F", "1 standard action", "Close", "One object or creature per caster level", "1 round/level (D)",
     "None or Will negates; see text", "No", "Reveals magical aspects of subject.",
     "You discern all spells and magical properties present in a number of creatures or objects. Each round, you may examine a single creature or object that you can see as a free action. In the case of a magic item, you learn its functions, how to activate its functions (if appropriate), and how many charges are left (if it uses charges). In the case of an object or creature with active spells cast upon it, you learn each spell, its effect, and its caster level.
     An attended object may attempt a Will save to resist this effect if its holder so desires. If the save succeeds, you learn nothing about the object except what you can discern by looking at it. An object that makes its save cannot be affected by any ther analyze dweomer spells for 24 hours.
     Analyze dweomer does not function when used on an artifact (see the Dungeon Master's Guide for details on artifacts).
     Focus: A tiny lens of ruby or sapphire set in a small golden loop. The gemstone must be worth at least 1,500 gp."),
-    (9, 1, "Animal Growth", true, true, "Transmutation", null, null, 4, "Drd 5, Rgr 4, Sor/Wiz 5", "V, S", "1 standard action", "Medium", "Up to one animal (Gargantuan or smaller) per two levels, no two of which can be more than 30 ft. apart", "1 min./level", "Fortitude negates", "Yes",
+    (9, 1, "Animal Growth", true, true, "Transmutation", null, null, 4, "V, S", "1 standard action", "Medium", "Up to one animal (Gargantuan or smaller) per two levels, no two of which can be more than 30 ft. apart", "1 min./level", "Fortitude negates", "Yes",
     "One animal/two levels doubles in size.",
     "A number of animals grow to twice their normal size and eight times their normal weight. This alteration changes each animal’s size category to the next largest, grants it a +8 size bonus to Strength and a +4 size bonus to Constitution (and thus an extra 2 hit points per HD), and imposes a -2 size penalty to Dexterity. The creature’s existing natural armor bonus increases by 2. The size change also affects the animal’s modifier to AC and attack rolls and its base damage. The animal’s space and reach change as appropriate to the new size, but its speed does not change.
 	The spell also grants each subject damage reduction 10/magic and a +4 resistance bonus on saving throws. If insufficient room is available for the desired growth, the creature attains the maximum possible size and may make a Strength check (using its increased Strength) to burst any enclosures in the process. If it fails, it is constrained without harm by the materials enclosing it— the spell cannot be used to crush a creature by increasing its size.
@@ -285,7 +335,7 @@ INSERT INTO Spell VALUES
 	Any enlarged item that leaves the enlarged creature’s possession instantly returns to its normal size.
 	The spell gives no means of command or influence over the enlarged animals.
 	Multiple magical effects that increase size do not stack."),
-    (10, 1, "Animal Messenger", true, true, "Enchantment", "Compulsion", "Mind-Affecting", 1, "Brd 2, Drd 2, Rgr 1", "V, S, M", "1 standard action", "Close", "One Tiny animal", "One day/level", "None; see text", "Yes",
+    (10, 1, "Animal Messenger", true, true, "Enchantment", "Compulsion", "Mind-Affecting", 1, "V, S, M", "1 standard action", "Close", "One Tiny animal", "One day/level", "None; see text", "Yes",
     "Sends a Tiny animal to a specific place.",
     "You compel a Tiny animal to go to a spot you designate. The most common use for this spell is to get an animal to carry a message to your allies. The animal cannot be one tamed or trained by someone else, including such creatures as familiars and animal companions.
 	Using some type of food desirable to the animal as a lure, you call the animal to you. It advances and awaits your bidding. You can mentally impress on the animal a certain place well known to you or an obvious landmark. The directions must be simple, because the animal depends on your knowledge and can’t find a destination on its own. You can attach some small item or note to the messenger. The animal then goes to the designated location and waits there until the duration of the spell expires, whereupon it resumes its normal activities.
