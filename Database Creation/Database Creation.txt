@@ -142,11 +142,10 @@ CREATE TABLE Class (
 );
 
 CREATE TABLE Class_Spells (
-    Spell_Book_ID int NOT NULL,
     Spell_ID int NOT NULL,
     Class_ID int NOT NULL,
     Spell_Level int NOT NULL CHECK (Spell_Level BETWEEN 0 AND 9),
-    PRIMARY KEY (Spell_Book_ID, Spell_ID, Class_ID),
+    PRIMARY KEY (Spell_ID, Class_ID),
     FOREIGN KEY (Class_ID) REFERENCES Class(Class_ID),
-    FOREIGN KEY (Spell_ID, Spell_Book_ID) REFERENCES Spell(Spell_ID, Book_ID)
+    FOREIGN KEY (Spell_ID) REFERENCES Spell(Spell_ID)
 );
