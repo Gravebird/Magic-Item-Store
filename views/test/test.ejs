@@ -1,6 +1,19 @@
 <div>
     <% if (result != "undefined") { %>
-        We have a result!
+        <% for (const property in result) { %>
+            <h1><%= result[property].Spell_Name %></h1>
+            <h2><%= result[property].Spell_School %>
+                <% if (result[property].Spell_Subschool != null) { %>
+                    (<%= result[property].Spell_Subschool %>)
+                <% } %>
+                <% if (result[property].Spell_Descriptor != null) { %>
+                    [<%= result[property].Spell_Descriptor %>]
+                <% } %>
+            </h2>
+            <h3><%= result[property].Spell_Short_Description %></h3>
+            <p><%= result[property].Spell_Description %></p>
+            <br>
+        <% } %>
     <% } else { %>
         Uh oh! result is undefined!
     <% } %>

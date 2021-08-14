@@ -2,7 +2,8 @@ const mysql = require('mysql');
 
 
 
-const con = mysql.createConnection({
+const pool = mysql.createPool({
+    connectionLimit: 100,
     host: 'localhost',
     user: 'root',
     password: 'A00768125',
@@ -10,33 +11,20 @@ const con = mysql.createConnection({
 });
 
 
-let databaseController = {
-    connect: () => {
-        con.connect((err) => {
-            if (err) {
-                console.log("Error connecting to Db");
-                console.log(err);
-                return;
-            }
-            console.log("Connection established");
-        })
-    },
-    end: () => {
-        con.end((err) => {
-            // Connection is terminated gracefully
-            // Ensures all remaining queries are executed
-            // Then sends a quit packet to the MySQL server.
+function test() {
+    return new Promise((resolve, reject) => {
+        pool.getConnection(function(err, connection) {
+            if (err) reject(err); // Not connected!
+
+            connection.query('SELECT * FROM Spell WHERE Spell_School = "Necromancy"', function(error, results, fields) {
+                connection.release();
+
+                if (error) reject(err);
+                console.log("Results from Db: ", results);
+                resolve(results);
+            });
         });
-    },
-    test: () => {
-        con.query('SELECT * FROM Spell WHERE "Electricity" IN (Spell_Descriptor)', (err, rows) => {
-            if (err) throw err;
+    });
+}
 
-            console.log('Data received from Db:');
-            console.log(rows);
-            return rows;
-        })
-    }
-};
-
-module.exports = databaseController;
+module.exports = { test };
