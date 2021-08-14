@@ -30,13 +30,13 @@ app.get("/welcome", routeController.welcome);
 
 app.get("/test", async function(req, res, next){
   let results = await databaseController.test();
-  console.log("AFTER EXITING FUNCTION:");
-  /* for (const property in results) {
+  /* console.log("AFTER EXITING FUNCTION:");
+  for (const property in results) {
     console.log(property);
     console.log(results[property]);
-  } */
+  }
   const temp = results[0];
-  console.log(temp.Spell_Short_Description);
+  console.log(temp.Spell_Short_Description); */
   res.render("test/test", {result: results});
 });
 
