@@ -40,4 +40,10 @@ app.get("/test", async function(req, res, next){
   res.render("test/test", {result: results});
 });
 
+app.get("/shop_generator", routeController.shopGenerator);
+
+app.get("/controller/shop_generator_controller", (req, res) => {
+  res.sendFile("controller/shop_generator_controller.js");
+})
+
 module.exports = app

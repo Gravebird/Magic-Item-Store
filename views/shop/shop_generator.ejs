@@ -1,0 +1,36 @@
+<script type="text/javascript">
+    function updatePercentages() {
+        let weaponPercentage = parseInt(document.getElementById("weaponPercentage").value);
+        let armorPercentage = parseInt(document.getElementById("armorPercentage").value);
+        let totalPercentage = weaponPercentage + armorPercentage;
+        document.getElementById("weaponPercentageDisplay").innerText = weaponPercentage + "%";
+        document.getElementById("armorPercentageDisplay").innerText = armorPercentage + "%";
+
+        totalPercentageField = document.getElementById("totalPercentage");
+        totalPercentageField.innerText = "Total Percentage: " + totalPercentage;
+        if (totalPercentage == 100) {
+            totalPercentageField.classList.remove("badPercentage");
+            totalPercentageField.classList.add("goodPercentage");
+        } else {
+            totalPercentageField.classList.remove("goodPercentage");
+            totalPercentageField.classList.add("badPercentage");
+        }
+    }
+</script>
+<div>
+    <p><em>For now only armor and weapons can be generated, and they are all nonmagical. More features coming!</em></p>
+    <br>
+    <div class="shopPercentageContainer">
+        <p>What percentage of weapons should be generated?</p>
+        <input type="range" class="percentageInput" id="weaponPercentage" name="weaponPercentage" min="0" max="100" step="5" oninput="updatePercentages('weapon');" value="50">
+        <p id="weaponPercentageDisplay">50%</p>
+    </div>
+    <div class="shopPercentageContainer">
+        <p>What percentage of armor should be generated?</p>
+        <input type="range" class="percentageInput" id="armorPercentage" name="armorPercentage" min="0" max="100" step="5" oninput="updatePercentages('armor');" value="50">
+        <p id="armorPercentageDisplay">50%</p>
+    </div>
+    <div class="shopTotalPercentageContainer">
+        <h3 id="totalPercentage" class="goodPercentage">Total Percentage: 100</h3>
+    </div>
+</div>

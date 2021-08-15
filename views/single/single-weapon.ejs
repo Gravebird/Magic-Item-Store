@@ -1,0 +1,13 @@
+<div>
+    <h1><%= weapon.Weapon_Name %></h1>
+    <h3>Category: <%= weapon.Weapon_Category %></h3>
+    <h3>Type: <%= weapon.Weapon_Type %></h3>
+    <h4>Damage: <%= weapon.Weapon_Small_Damage %> (small), <%= weapon.Weapon_Medium_Damage %> (medium) - <%= weapon.Weapon_Damage_Type %></h4>
+    <h4>Critical: <%= weapon.Weapon_critical %></h4>
+    <% if (weapon.Weapon_Range_Increment != null) { %>
+        <h4>Range Increment: <%= weapon.Weapon_Range_Increment %></h4>
+    <% } %>
+    <h4>Weight: <%= weapon.Weapon_Weight %></h4>
+    <h4>Cost: <%= weapon.Weapon_Cost %></h4>
+    <p><%= weapon.Weapon_Description %></p>
+</div>
