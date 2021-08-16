@@ -9,29 +9,51 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     margin: 0;
 }
 
-.shopPercentageContainer {
+.shopInputContainer {
     display: inline-block;
+    width: 300px;
     padding: 10px;
     margin: 0;
     padding-left: 20px;
     background-color: #111111;
 }
 
-.shopPercentageContainer p {
+.shopInputContainer p {
     background-color: #111111;
 }
 
 .percentageInput {
-    width: 150px;
+    width: 250px;
     height: 42px;
     line-height: 1.65;
     border: 1px solid #F8DA45;
 }
 
-.goodPercentage {
+.numberInput {
+    width: 100px;
+    height: 30px;
+    line-height: 1.65;
+    border: 1px solid #F8DA45;
+}
+
+.submitButton {
+    padding: 10px;
+    margin: 10px;
+}
+
+.disabledButton {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.goodInput {
     color: green;
 }
 
-.badPercentage {
+.badInput {
     color: red;
 }

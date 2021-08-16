@@ -28,7 +28,7 @@ app.set("view engine", "ejs");
 // Routes
 app.get("/welcome", routeController.welcome);
 
-app.get("/test", async function(req, res, next){
+app.get("/spells", async function(req, res, next){
   let results = await databaseController.test();
   /* console.log("AFTER EXITING FUNCTION:");
   for (const property in results) {

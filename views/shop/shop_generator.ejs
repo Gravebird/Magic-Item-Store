@@ -7,30 +7,83 @@
         document.getElementById("armorPercentageDisplay").innerText = armorPercentage + "%";
 
         totalPercentageField = document.getElementById("totalPercentage");
-        totalPercentageField.innerText = "Total Percentage: " + totalPercentage;
+        totalPercentageField.innerText = "Total Percentage: " + totalPercentage + "%";
         if (totalPercentage == 100) {
-            totalPercentageField.classList.remove("badPercentage");
-            totalPercentageField.classList.add("goodPercentage");
+            totalPercentageField.classList.remove("badInput");
+            totalPercentageField.classList.add("goodInput");
         } else {
-            totalPercentageField.classList.remove("goodPercentage");
-            totalPercentageField.classList.add("badPercentage");
+            totalPercentageField.classList.remove("goodInput");
+            totalPercentageField.classList.add("badInput");
+        }
+        validateInputForButton();
+    }
+
+    function validateNumberInput() {
+        let goldInShopInput = document.getElementById("goldInShop");
+        let maxGoldItemInput = document.getElementById("maxGoldItemInShop");
+
+        if (parseInt(goldInShopInput.value) < 100 || parseInt(goldInShopInput.value) > 9999999) {
+            goldInShopInput.classList.add("badInput");
+        } else {
+            goldInShopInput.classList.remove("badInput");
+        }
+
+        if (parseInt(maxGoldItemInput.value) < 1 || parseInt(maxGoldItemInput.value) > 9999999 || parseInt(maxGoldItemInput.value) > parseInt(goldInShopInput.value)) {
+            maxGoldItemInput.classList.add("badInput");
+        } else {
+            maxGoldItemInput.classList.remove("badInput");
+        }
+        validateInputForButton();
+    }
+
+    function validateInputForButton() {
+        let theButton = document.getElementById("submitButton");
+
+        let badInputs = document.getElementsByClassName("badInput");
+        if (badInputs.length > 0) {
+            theButton.classList.add("disabledButton");
+        } else {
+            theButton.classList.remove("disabledButton");
         }
     }
 </script>
 <div>
     <p><em>For now only armor and weapons can be generated, and they are all nonmagical. More features coming!</em></p>
     <br>
-    <div class="shopPercentageContainer">
-        <p>What percentage of weapons should be generated?</p>
-        <input type="range" class="percentageInput" id="weaponPercentage" name="weaponPercentage" min="0" max="100" step="5" oninput="updatePercentages('weapon');" value="50">
-        <p id="weaponPercentageDisplay">50%</p>
-    </div>
-    <div class="shopPercentageContainer">
-        <p>What percentage of armor should be generated?</p>
-        <input type="range" class="percentageInput" id="armorPercentage" name="armorPercentage" min="0" max="100" step="5" oninput="updatePercentages('armor');" value="50">
-        <p id="armorPercentageDisplay">50%</p>
-    </div>
-    <div class="shopTotalPercentageContainer">
-        <h3 id="totalPercentage" class="goodPercentage">Total Percentage: 100</h3>
-    </div>
+    <form action="/shop_generator" method="POST">
+
+        <div class="shopInputContainer">
+            <p>What percentage of weapons should be generated?</p>
+            <input type="range" class="percentageInput" id="weaponPercentage" name="weaponPercentage" min="0" max="100"
+                step="5" oninput="updatePercentages();" value="50">
+            <p id="weaponPercentageDisplay">50%</p>
+        </div>
+
+        <div class="shopInputContainer">
+            <p>What percentage of armor should be generated?</p>
+            <input type="range" class="percentageInput" id="armorPercentage" name="armorPercentage" min="0" max="100"
+                step="5" oninput="updatePercentages();" value="50">
+            <p id="armorPercentageDisplay">50%</p>
+        </div>
+
+        <div class="shopTotalPercentageContainer">
+            <h3 id="totalPercentage" class="goodInput">Total Percentage: 100%</h3>
+        </div>
+
+        <div class="shopInputContainer">
+            <p>How much money worth of goods does this shop have?</p>
+            <input type="number" class="numberInput" id="goldInShop" name="goldInShop" min="100" max="9999999"
+                onkeyup="validateNumberInput();" value="100">
+        </div>
+
+        <div class="shopInputContainer">
+            <p>What is the most expensive item this shop can have?</p>
+            <input type="number" class="numberInput" id="maxGoldItemInShop" name="maxGoldItemInShop" min="1"
+                max="9999999" onkeyup="validateNumberInput();" value="1">
+        </div>
+
+        <div class="submitContainer">
+            <button id="submitButton" class="submitButton" type="submit">Generate</button>
+        </div>
+    </form>
 </div>
