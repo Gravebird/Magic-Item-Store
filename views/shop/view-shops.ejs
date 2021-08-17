@@ -1,0 +1,10 @@
+<div class="view-shops-container">
+    <h2>View Shops</h2>
+    <% if (shops.length != 0) { %>
+        <% for (shop in shops) { %>
+            <a href=<%= "/view/" + shop.id %>>
+                <button class="view-shop-button" type="button"><%= shop.shopName %></button>
+            </a>
+        <% } %>
+    <% } %>
+</div>

@@ -4,6 +4,7 @@ const path = require("path");
 const ejsLayouts = require("express-ejs-layouts");
 const routeController = require("./controller/route_controller");
 const databaseController = require("./controller/database_controller");
+const shopGeneratorController = require("./controller/shop_generator_controller");
 
 // This starts a session
 const session = require("express-session");
@@ -26,6 +27,8 @@ app.use(ejsLayouts);
 app.set("view engine", "ejs");
 
 // Routes
+app.get("/", routeController.welcome);
+
 app.get("/welcome", routeController.welcome);
 
 app.get("/spells", async function(req, res, next){
@@ -42,8 +45,12 @@ app.get("/spells", async function(req, res, next){
 
 app.get("/shop_generator", routeController.shopGenerator);
 
-app.get("/controller/shop_generator_controller", (req, res) => {
-  res.sendFile("controller/shop_generator_controller.js");
+app.post("/shop_generator", shopGeneratorController.generate);
+
+app.get("/test", async function(req, res, next) {
+  let results = await databaseController.getWeaponIdsUnderGoldCost(5, "Common");
+  console.log(results);
+  res.redirect("/welcome");
 })
 
 module.exports = app

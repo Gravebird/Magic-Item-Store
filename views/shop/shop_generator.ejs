@@ -21,6 +21,7 @@
     function validateNumberInput() {
         let goldInShopInput = document.getElementById("goldInShop");
         let maxGoldItemInput = document.getElementById("maxGoldItemInShop");
+        let averageGoldInput = document.getElementById("averageGoldValue");
 
         if (parseInt(goldInShopInput.value) < 100 || parseInt(goldInShopInput.value) > 9999999) {
             goldInShopInput.classList.add("badInput");
@@ -32,6 +33,24 @@
             maxGoldItemInput.classList.add("badInput");
         } else {
             maxGoldItemInput.classList.remove("badInput");
+        }
+
+        if (parseInt(averageGoldInput.value) < 0 || parseInt(averageGoldInput.value) > 9999999 
+            || parseInt(averageGoldInput.value) > parseInt(maxGoldItemInput.value) || parseInt(averageGoldInput.value) > parseInt(goldInShopInput.value)) {
+                averageGoldInput.classList.add("badInput");
+            } else {
+                averageGoldInput.classList.remove("badInput");
+            }
+        validateInputForButton();
+    }
+
+    function validateShopName() {
+        let shopNameInput = document.getElementById("shopNameInput");
+
+        if (shopNameInput.value.length < 3) {
+            shopNameInput.classList.add("badInput");
+        } else {
+            shopNameInput.classList.remove("badInput");
         }
         validateInputForButton();
     }
@@ -50,7 +69,11 @@
 <div>
     <p><em>For now only armor and weapons can be generated, and they are all nonmagical. More features coming!</em></p>
     <br>
-    <form action="/shop_generator" method="POST">
+    <form action="/shop_generator" method="POST" onkeydown="return event.key != 'Enter';">
+        <div class="shopNameContainer">
+            <p>Enter the name of the shop? (Filename)</p>
+            <input type="text" class="shopNameInput badInput" id="shopNameInput" name="shopNameInput" onkeyup="validateShopName();">
+        </div>
 
         <div class="shopInputContainer">
             <p>What percentage of weapons should be generated?</p>
@@ -82,8 +105,14 @@
                 max="9999999" onkeyup="validateNumberInput();" value="1">
         </div>
 
+        <div class="shopInputContainer">
+            <p>What is the average gold value per item? <em>Enter 0 for fully random.</em></p>
+            <input type="number" class="numberInput" id="averageGoldValue" name="averageGoldValue" min="0" 
+                max="9999999" onkeyup="validateNumberInput();" value="5">
+        </div>
+
         <div class="submitContainer">
-            <button id="submitButton" class="submitButton" type="submit">Generate</button>
+            <button id="submitButton" class="submitButton disabledButton" type="submit">Generate</button>
         </div>
     </form>
 </div>

@@ -9,11 +9,31 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     margin: 0;
 }
 
+.shopNameContainer {
+    display: block;
+    width: 300px;
+    padding: 10px;
+    margin: 0;
+    padding-left: 20px;
+    background-color: #111111;
+}
+
+.shopNameContainer p {
+    background-color: #111111;
+}
+
+.shopNameInput {
+    width: 200px;
+    height: 30px;
+    line-height: 1.65;
+    border: 1px solid #F8DA45;
+}
+
 .shopInputContainer {
     display: inline-block;
     width: 300px;
     padding: 10px;
-    margin: 0;
+    margin: 3px;
     padding-left: 20px;
     background-color: #111111;
 }
