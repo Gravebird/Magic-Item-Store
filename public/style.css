@@ -4,9 +4,63 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
+.sign-in, .register {
+    box-sizing: border-box;
+    border: 2px solid #F8DA45;
+    padding: 10px;
+    margin: auto;
+    margin-top: 50px;
+    width: 300px;
+    height: 350px;
+    text-align: center;
+}
+
+.signin-inputs, .register-inputs {
+    margin-top: 30px;
+    margin-left: 15px;
+    text-align: left;
+}
+
+.signin-button, .register-button {
+    margin-top: 10px;
+    background-color: grey;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.new-register-button, .signin-page-button {
+    border: none;
+    color: grey;
+    margin-top: 50px;
+}
+
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+.header {
+    display: flex;
+}
+
+.nav-element {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    float: left;
+}
+
+.main {
+    text-align: center;
+}
+
+.menu {
+    text-align: center;
 }
 
 .shopNameContainer {

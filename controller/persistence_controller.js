@@ -15,12 +15,14 @@ function saveJSON() {
 
 function createJSON() {
     theData = 
-        {
-            "shops": 
-            [
-
-            ]
-        }
+        [
+            {
+                "id": 1,
+                "username": "test",
+                "password": "test",
+                "shops": []
+            }
+        ]
     fs.writeFileSync("data/data.json", JSON.stringify(theData));
 }
 

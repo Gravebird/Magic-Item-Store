@@ -171,7 +171,7 @@ function getWeaponBonuses(baseWeapon, goldUsed, goldInShop, maxGoldItemInShop, a
 
             if (rng < mwkChance) {
                 // Item is masterwork!
-                properties.push(organizeWeaponPropertyData("masterwork", baseWeapon));
+                properties.push(organizeWeaponPropertyData("Masterwork", baseWeapon));
 
                 // Check if item can have magical properties! (DO LATER)
             }
@@ -222,7 +222,7 @@ function getWeaponBonuses(baseWeapon, goldUsed, goldInShop, maxGoldItemInShop, a
 
             if (rng < mwkChance) {
                 // Item is masterwork!
-                properties.push(organizeArmorPropertyData("masterwork"));
+                properties.push(organizeArmorPropertyData("Masterwork"));
 
                 // Check if item can have magical properties! (DO LATER)
             }
@@ -326,8 +326,6 @@ let shopGeneratorController = {
 
         //TEMPORARY REDIRECT
         //console.log(bodylist);
-        JSONdata["shops"].push(shop);
-        saveData();
         res.redirect("/welcome");
     }
 };

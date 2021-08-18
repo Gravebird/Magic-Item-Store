@@ -1,6 +1,11 @@
 <div class="container-welcome">
     <div class="main">
         <h2>Welcome to the Magic Item Store Generator!</h2>
+        <% if (user != null) { %>
+            <h3>Currently logged in as <%= user %></h3>
+        <% } else { %>
+            <h3>Currently not logged in</h3>
+        <% } %>
     </div>
     <div class="menu">
         <a href="/shop_generator"><h3>Shop Generator</h3></a>

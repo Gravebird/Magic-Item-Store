@@ -21,7 +21,9 @@
     "express-server": "^0.7.0",
     "mysql": "^2.18.1",
     "node-fetch": "^2.6.1",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   },
   "scripts": {
     "start": "nodemon -e js,ejs start.js"
