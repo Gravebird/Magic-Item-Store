@@ -15,7 +15,7 @@ function organizeWeaponData(data, id) {
     theWeapon["Weapon_Name"] = theData.Weapon_Name;
     theWeapon["Weapon_Category"] = theData.Weapon_Category;
     theWeapon["Weapon_Type"] = theData.Weapon_Type;
-    theWeapon["Weapon_Cost"] = theData.Weapon_Cost;
+    theWeapon["Weapon_Cost"] = parseFloat(theData.Weapon_Cost);
     theWeapon["Weapon_Small_Damage"] = theData.Weapon_Small_Damage;
     theWeapon["Weapon_Medium_Damage"] = theData.Weapon_Medium_Damage;
     theWeapon["Weapon_Critical"] = theData.Weapon_Critical;
@@ -43,21 +43,21 @@ function organizeWeaponPropertyData(data, baseWeapon) {
     let theProp = {};
     if (data == "Masterwork") {
         theProp["Property_Name"] = data;
-        if (baseWeapon["Weapon_Medium_Damage"].includes("/")) {
+        if (baseWeapon["Weapon_Medium_Damage"] != null && baseWeapon["Weapon_Medium_Damage"].includes("/")) {
             // Double Weapon = 600 gp
-            theProp["Property_Gold_Cost"] = 600;
+            theProp["Property_Gold_Cost"] = parseFloat(600);
         } else if (baseWeapon["Weapon_Name"] == "Dart") {
             // Darts are single ammunitions = 6 gp
-            theProp["Property_Gold_Cost"] = 6;
+            theProp["Property_Gold_Cost"] = parseFloat(6);
         } else {
             let toCheck = baseWeapon["Weapon_Name"].substring(baseWeapon["Weapon_Name"].length - 4);
             if (toCheck.includes("(") && toCheck.includes(")")) {
                 // Ammunition! cost is 6 gp per ammo
                 amount = parseInt(toCheck.substring(1, 2));
-                theProp["Property_Gold_Cost"] = 6 * amount;
+                theProp["Property_Gold_Cost"] = parseFloat(6 * amount);
             } else {
                 // Normal weapon = 300 gp
-                theProp["Property_Gold_Cost"] = 300;
+                theProp["Property_Gold_Cost"] = parseFloat(300);
             }
         }
         theProp["Property_Bonus_Value"] = 0;
@@ -84,6 +84,7 @@ function organizeWeaponPropertyData(data, baseWeapon) {
             "check penalties (see Masterwork Armor, page 126).";
     } else {
         // Do this later (when weapon properties exist!)
+        console.log("ERROR: organizeWeaponPropertyData - thinks that data is not 'Masterwork'. data = " + data);
     }
 
     return theProp;
@@ -95,7 +96,7 @@ function organizeArmorData(data, id) {
     theArmor["Item_ID"] = id;
     theArmor["Armor_Name"] = theData.Armor_Name;
     theArmor["Armor_Category"] = theData.Armor_Category;
-    theArmor["Armor_Cost"] = theData.Armor_Cost;
+    theArmor["Armor_Cost"] = parseFloat(theData.Armor_Cost);
     theArmor["Armor_AC_Bonus"] = theData.Armor_AC_Bonus;
     theArmor["Armor_Max_Dex"] = theData.Armor_Max_Dex;
     theArmor["Armor_Check_Penalty"] = theData.Armor_Check_Penalty;
@@ -113,7 +114,7 @@ function organizeArmorPropertyData(data) {
     let theProp = {};
     if (data == "Masterwork") {
         theProp["Property_Name"] = data;
-        theProp["Property_Gold_Cost"] = 150;
+        theProp["Property_Gold_Cost"] = parseFloat(150);
         theProp["Property_Bonus_Value"] = 0;
         theProp["Property_Description"] = "Just as with weapons, you can purchase or craft masterwork versions" +
             "of armor or shields. Such a well-made item functions like the normal" +
@@ -131,6 +132,7 @@ function organizeArmorPropertyData(data) {
             "is created; it must be crafted as a masterwork item.";
     } else {
         // Do this later (when weapon properties exist!)
+        console.log("ERROR: organizeArmorPropertyData - thinks that data is not 'Masterwork'. data = " + data);
     }
 
     return theProp;
@@ -238,6 +240,10 @@ function getWeaponBonuses(baseWeapon, goldUsed, goldInShop, maxGoldItemInShop, a
     return properties;
 }
 
+function addFloats(x, y) {
+    return (x * 100 + y * 100) / 100;
+}
+
 let shopGeneratorController = {
     generate: async function(req, res) {
         bodylist = JSON.parse(JSON.stringify(req.body));
@@ -248,16 +254,23 @@ let shopGeneratorController = {
         const maxGoldItemInShop = parseInt(bodylist["maxGoldItemInShop"]);
         const averageGoldValue = parseInt(bodylist["averageGoldValue"]);
 
+        for (theShop in req.user.shops) {
+            if (shopName == theShop.shopName) {
+                console.log("Shop name already exists!");
+                res.redirect("/shop_generator");
+                return;
+            }
+        }
 
         let goldUsed = 0;
         let itemCount = 0;
-        let shop = {"shopName": shopName, "weapons": [], "armor": []};
+        let shop = {"id": null, "shopName": shopName, "weapons": [], "armor": []};
         let commonWeapons = await databaseController.getWeaponIdsUnderGoldCost(maxGoldItemInShop, "Common");
         let uncommonWeapons = await databaseController.getWeaponIdsUnderGoldCost(maxGoldItemInShop, "Uncommon");
         let commonArmors = await databaseController.getArmorIdsUnderGoldCost(maxGoldItemInShop, "Common");
         let uncommonArmors = await databaseController.getArmorIdsUnderGoldCost(maxGoldItemInShop, "Uncommon");
 
-        while (goldUsed < goldInShop && goldUsed < (averageGoldValue / 10)) {
+        while (goldUsed < goldInShop) {
             // Generate a random number between 0 and 99
             let rng = Math.floor(Math.random() * 100);
             let rarityRNG = Math.floor(Math.random() * 100);
@@ -281,12 +294,12 @@ let shopGeneratorController = {
                     let properties = getWeaponBonuses(theWeapon, goldUsed, goldInShop, maxGoldItemInShop, averageGoldValue);
                     let totalCost = theWeapon.Weapon_Cost;
                     if (properties != null) {
-                        for (prop in properties) {
+                        properties.forEach(prop => {
                             theWeapon["Weapon_Properties"].push(prop);
-                            totalCost += prop.Property_Gold_Cost;
-                        }
+                            totalCost = addFloats(totalCost, prop.Property_Gold_Cost);
+                        });
                     }
-                    goldUsed += totalCost;
+                    goldUsed = addFloats(goldUsed, totalCost);
                     shop["weapons"].push(theWeapon);
                 }
             } else if (rng < armorPercentage) {
@@ -308,12 +321,12 @@ let shopGeneratorController = {
                     let properties = getArmorBonuses(theArmor, goldUsed, goldInShop, maxGoldItemInShop, averageGoldValue);
                     let totalCost = theArmor.Armor_Cost;
                     if (properties != null) {
-                        for (prop in properties) {
+                        properties.forEach(prop => {
                             theArmor["Armor_Properties"].push(prop);
-                            totalCost += prop.Property_Gold_Cost;
-                        }
+                            totalCost = addFloats(totalCost, prop.Property_Gold_Cost);
+                        });
                     }
-                    goldUsed += totalCost;
+                    goldUsed = addFloats(goldUsed, totalCost);
                     shop["armor"].push(theArmor);
                 }
             } else {
@@ -322,7 +335,39 @@ let shopGeneratorController = {
             }
 
             itemCount += 1;
+            console.log("goldUsed: " + goldUsed + ", goldInShop: " + goldInShop);
         }
+
+        // Sort each category by price
+        shop.weapons.sort(function(a, b) {
+            let aCost = a.Weapon_Cost;
+            let bCost = b.Weapon_Cost;
+            a.Weapon_Properties.forEach(prop => {
+                aCost += prop.Property_Gold_Cost;
+            });
+            b.Weapon_Properties.forEach(prop => {
+                bCost += prop.Property_Gold_Cost;
+            });
+            return bCost - aCost;
+        });
+
+        shop.armor.sort(function(a, b) {
+            let aCost = a.Armor_Cost;
+            let bCost = b.Armor_Cost;
+            a.Armor_Properties.forEach(prop => {
+                aCost += prop.Property_Gold_Cost;
+            });
+            b.Armor_Properties.forEach(prop => {
+                bCost += prop.Property_Gold_Cost;
+            });
+            return bCost - aCost;
+        })
+
+        let tempShopsObj = req.user.shops;
+        shop["id"] = tempShopsObj.length + 1;
+        tempShopsObj.push(shop);
+        req.user.shops = tempShopsObj;
+        saveData();
 
         //TEMPORARY REDIRECT
         //console.log(bodylist);

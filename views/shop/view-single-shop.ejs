@@ -1,0 +1,43 @@
+<div class="shopContainer">
+    <% if (shop.weapons.length > 0) { %>
+        <div class="weaponsContainer">
+            <h1>Weapons</h1>
+            <% shop.weapons.forEach(function(weapon) { %>
+                <div class="single-weapon-container">
+                    <h3 class="weapon-name"><%= weapon.Weapon_Name %></h3>
+                    <% let totalCost = weapon.Weapon_Cost; 
+                    if (weapon.Weapon_Properties.length > 0) { %>
+                        <h4>Properties:</h4>
+                        <% weapon.Weapon_Properties.forEach(function(prop) {
+                            totalCost += prop.Property_Gold_Cost; %>
+                            <p><%= prop.Property_Name %></p>
+                        <% });
+                    } %>
+                    <h4>Gold Cost: <%= totalCost %></h4>
+                    <br>
+                </div>
+            <% }) %>
+        </div>
+    <% } %>
+
+    <% if (shop.armor.length > 0) { %>
+        <div class="armorContainer">
+            <h1>Armor</h1>
+            <% shop.armor.forEach(function(armor) { %>
+                <div class="single-armor-container">
+                    <h3 class="armor-name"><%= armor.Armor_Name %></h3>
+                    <% let totalCost = armor.Armor_Cost;
+                    if (armor.Armor_Properties.length > 0) { %>
+                        <h4>Properties:</h4>
+                        <% armor.Armor_Properties.forEach(function(prop) {
+                            totalCost += prop.Property_Gold_Cost; %>
+                            <p><%= prop.Property_Name %></p>
+                        <% });
+                    } %>
+                    <h4>Gold Cost: <%= totalCost %></h4>
+                    <br>
+                </div>
+            <% }) %>
+        </div>
+    <% } %>
+</div>

@@ -36,6 +36,10 @@ app.get("/", routeController.welcome);
 
 app.get("/welcome", routeController.welcome);
 
+app.get("/view-shops", ensureAuthenticated, routeController.viewShops);
+
+app.get("/view/:userId/:shopId", routeController.viewOneShop);
+
 app.get("/spells", async function(req, res, next){
   let results = await databaseController.test();
   /* console.log("AFTER EXITING FUNCTION:");
