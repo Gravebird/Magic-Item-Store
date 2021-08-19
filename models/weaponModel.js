@@ -14,10 +14,16 @@ function organizeWeaponPropertyData(data, baseWeapon) {
             // Darts are single ammunitions = 6 gp
             theProp["Property_Gold_Cost"] = parseFloat(6);
         } else {
-            let toCheck = baseWeapon["Weapon_Name"].substring(baseWeapon["Weapon_Name"].length - 4);
+            let toCheck;
+            if (baseWeapon["Weapon_Name"].includes("Shuriken")) {
+                // Shuriken have single-digit ammunition amounts
+                toCheck = baseWeapon["Weapon_Name"].substring(baseWeapon["Weapon_Name"].length - 3);
+            } else {
+                toCheck = baseWeapon["Weapon_Name"].substring(baseWeapon["Weapon_Name"].length - 4);
+            }
             if (toCheck.includes("(") && toCheck.includes(")")) {
                 // Ammunition! cost is 6 gp per ammo
-                amount = parseInt(toCheck.substring(1, 2));
+                amount = parseInt(toCheck.substring(1, toCheck.length - 1));
                 theProp["Property_Gold_Cost"] = parseFloat(6 * amount);
             } else {
                 // Normal weapon = 300 gp
@@ -85,6 +91,7 @@ let weaponModel = {
         theWeapon["Weapon_Description"] = theData.Weapon_Description;
         theWeapon["Weapon_Quantity"] = 1;
         theWeapon["Weapon_Properties"] = [];
+        theWeapon["Weapon_Cost_With_Properties"] = theWeapon.Weapon_Cost;
 
         return theWeapon;
     },
@@ -148,7 +155,7 @@ let weaponModel = {
                 }
                 let match = false;
                 for (let i = 0; i < a.Weapon_Properties.length; i++) {
-                    if (a.Weapon_Properties[i] == b.Weapon_Properties[i]) {
+                    if (a.Weapon_Properties[i].Property_Name == b.Weapon_Properties[i].Property_Name) {
                         match = true;
                     }
                 }
@@ -156,6 +163,14 @@ let weaponModel = {
             }
         }
         return false;
+    },
+
+    calculateCost(weapon) {
+        let baseCost = weapon.Weapon_Cost;
+        weapon.Weapon_Properties.forEach(prop => {
+            baseCost += prop.Property_Gold_Cost;
+        });
+        return baseCost;
     }
 }
 

@@ -44,6 +44,7 @@ let armorModel = {
         theArmor["Armor_Description"] = theData.Armor_Description;
         theArmor["Armor_Quantity"] = 1;
         theArmor["Armor_Properties"] = [];
+        theArmor["Armor_Cost_With_Properties"] = theArmor.Armor_Cost;
 
         return theArmor;
     },
@@ -115,6 +116,14 @@ let armorModel = {
             }
         }
         return false;
+    },
+
+    calculateCost(armor) {
+        let baseCost = armor.Armor_Cost;
+        armor.Armor_Properties.forEach(prop => {
+            baseCost += prop.Property_Gold_Cost;
+        });
+        return baseCost;
     }
 }
 

@@ -2,44 +2,206 @@
     <% if (shop.weapons.length > 0) { %>
         <div class="weaponsContainer">
             <h1>Weapons</h1>
-            <% shop.weapons.forEach(function(weapon) { %>
-                <div class="single-weapon-container">
-                    <h3 class="weapon-name"><%= weapon.Weapon_Name %></h3>
-                    <% let totalCost = weapon.Weapon_Cost; 
-                    if (weapon.Weapon_Properties.length > 0) { %>
-                        <h4>Properties:</h4>
-                        <% weapon.Weapon_Properties.forEach(function(prop) {
-                            totalCost += prop.Property_Gold_Cost; %>
-                            <p><%= prop.Property_Name %></p>
-                        <% });
-                    } %>
-                    <h4>Quantity: <%= weapon.Weapon_Quantity %></h4>
-                    <h4>Gold Cost: <%= totalCost %></h4>
-                    <br>
-                </div>
-            <% }) %>
+            <table class="shop-table weapon-table">
+                <thead>
+                    <tr>
+                        <th><button class="table-header" onclick="sortWeaponsByName()">Name</button></th>
+                        <th><button class="table-header" onclick="sortWeaponsByCost()">Cost</button></th>
+                        <th><button class="table-header" onclick="sortWeaponsByQuantity()">Quantity</button></th>
+                        <th><button class="table-header" onclick="sortWeaponsByProperties()">Properties</button></th>
+                    </tr>
+                </thead>
+                <tbody id="weapon-table-body">
+                    <% for (let i = 0; i < shop.weapons.length; i++) { %>
+                        <tr>
+                            <td><a href=<%= "/view-item/" + user_ID + "/" + shop_ID + "/" + shop.weapons[i].Item_ID %>><%= shop.weapons[i].Weapon_Name %></a></td>
+                            <td><%= shop.weapons[i].Weapon_Cost_With_Properties %></td>
+                            <td><%= shop.weapons[i].Weapon_Quantity %></td>
+                            <td>
+                                <% if (shop.weapons[i].Weapon_Properties.length > 0) { %>
+                                    <% shop.weapons[i].Weapon_Properties.forEach(function(prop) { %>
+                                        <%= prop.Property_Name %>
+                                    <% }); %>
+                                <% } else { %>
+                                    None
+                                <% } %>
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
         </div>
     <% } %>
 
     <% if (shop.armor.length > 0) { %>
         <div class="armorContainer">
             <h1>Armor</h1>
-            <% shop.armor.forEach(function(armor) { %>
-                <div class="single-armor-container">
-                    <h3 class="armor-name"><%= armor.Armor_Name %></h3>
-                    <% let totalCost = armor.Armor_Cost;
-                    if (armor.Armor_Properties.length > 0) { %>
-                        <h4>Properties:</h4>
-                        <% armor.Armor_Properties.forEach(function(prop) {
-                            totalCost += prop.Property_Gold_Cost; %>
-                            <p><%= prop.Property_Name %></p>
-                        <% });
-                    } %>
-                    <h4>Quantity: <%= armor.Armor_Quantity %></h4>
-                    <h4>Gold Cost: <%= totalCost %></h4>
-                    <br>
-                </div>
-            <% }) %>
+            <table class="shop-table armor-table">
+                <thead>
+                    <tr>
+                        <th><button class="table-header" onclick="sortArmorByName()">Name</button></th>
+                        <th><button class="table-header" onclick="sortArmorByCost()">Cost</button></th>
+                        <th><button class="table-header" onclick="sortArmorByQuantity()">Quantity</button></th>
+                        <th><button class="table-header" onclick="sortArmorByProperties()">Properties</button></th>
+                    </tr>
+                </thead>
+                <tbody id="armor-table-body">
+                    <% for (let i = 0; i < shop.armor.length; i++) { %>
+                        <tr>
+                            <td><a href=<%= "/view-item/" + user_ID + "/" + shop_ID + "/" + shop.weapons[i].Item_ID %>><%= shop.armor[i].Armor_Name %></a></td>
+                            <td><%= shop.armor[i].Armor_Cost_With_Properties %></td>
+                            <td><%= shop.armor[i].Armor_Quantity %></td>
+                            <td>
+                                <% if (shop.armor[i].Armor_Properties.length > 0) { %>
+                                    <% shop.armor[i].Armor_Properties.forEach(function(prop) { %>
+                                        <%= prop.Property_Name %>
+                                    <% }); %>
+                                <% } else { %>
+                                    None
+                                <% } %>
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
         </div>
     <% } %>
 </div>
+
+<script>
+    const weaponsTableBody = document.getElementById("weapon-table-body");
+    const armorTableBody = document.getElementById("armor-table-body");
+    
+    let lastWeaponSort = "CostDesc";
+    let lastArmorSort = "CostDesc";
+
+    function tableSort(tbody, colNum, cmp) {
+        let rows = [...tbody.rows];
+        rows.sort((a, b) => cmp(a.cells[colNum].textContent, b.cells[colNum].textContent))
+            .map(row => tbody.appendChild(row));
+    }
+
+    // Weapons
+    function sortWeaponsByName() {
+        if (lastWeaponSort == "NameAsc") {
+            sortWeaponNameDescending();
+            lastWeaponSort = "NameDesc";
+        } else {
+            sortWeaponNameAscending();
+            lastWeaponSort = "NameAsc";
+        }
+    }
+    function sortWeaponsByCost() {
+        if (lastWeaponSort == "CostAsc") {
+            sortWeaponCostDescending();
+            lastWeaponSort = "CostDesc";
+        } else {
+            sortWeaponCostAscending();
+            lastWeaponSort = "CostAsc";
+        }
+    }
+    function sortWeaponsByQuantity() {
+        if (lastWeaponSort == "QtyAsc") {
+            sortWeaponQuantityDescending();
+            lastWeaponSort = "QtyDesc";
+        } else {
+            sortWeaponQuantityAscending();
+            lastWeaponSort = "QtyAsc";
+        }
+    }
+    function sortWeaponsByProperties() {
+        if (lastWeaponSort == "PropAsc") {
+            sortWeaponPropertiesDescending();
+            lastWeaponSort = "PropDesc";
+        } else {
+            sortWeaponPropertiesAscending();
+            lastWeaponSort = "PropAsc";
+        }
+    }
+    function sortWeaponNameAscending() {
+        tableSort(weaponsTableBody, 0, (a, b) => a.localeCompare(b));
+    }
+    function sortWeaponNameDescending() {
+        tableSort(weaponsTableBody, 0, (a, b) => b.localeCompare(a));
+    }
+    function sortWeaponCostAscending() {
+        tableSort(weaponsTableBody, 1, (a, b) => a - b);
+    }
+    function sortWeaponCostDescending() {
+        tableSort(weaponsTableBody, 1, (a, b) => b - a);
+    }
+    function sortWeaponQuantityAscending() {
+        tableSort(weaponsTableBody, 2, (a, b) => a - b);
+    }
+    function sortWeaponQuantityDescending() {
+        tableSort(weaponsTableBody, 2, (a, b) => b - a);
+    }
+    function sortWeaponPropertiesAscending() {
+        tableSort(weaponsTableBody, 3, (a, b) => a.localeCompare(b));
+    }
+    function sortWeaponPropertiesDescending() {
+        tableSort(weaponsTableBody, 3, (a, b) => b.localeCompare(a));
+    }
+
+    // Armor
+    function sortArmorByName() {
+        if (lastArmorSort == "NameAsc") {
+            sortArmorNameDescending();
+            lastArmorSort = "NameDesc";
+        } else {
+            sortArmorNameAscending();
+            lastArmorSort = "NameAsc";
+        }
+    }
+    function sortArmorByCost() {
+        if (lastArmorSort == "CostAsc") {
+            sortArmorCostDescending();
+            lastArmorSort = "CostDesc";
+        } else {
+            sortArmorCostAscending();
+            lastArmorSort = "CostAsc";
+        }
+    }
+    function sortArmorByQuantity() {
+        if (lastArmorSort == "QtyAsc") {
+            sortArmorQuantityDescending();
+            lastArmorSort = "QtyDesc";
+        } else {
+            sortArmorQuantityAscending();
+            lastArmorSort = "QtyAsc";
+        }
+    }
+    function sortArmorByProperties() {
+        if (lastArmorSort == "PropAsc") {
+            sortArmorPropertiesDescending();
+            lastArmorSort = "PropDesc";
+        } else {
+            sortArmorPropertiesAscending();
+            lastArmorSort = "PropAsc";
+        }
+    }
+    function sortArmorNameAscending() {
+        tableSort(armorTableBody, 0, (a, b) => a.localeCompare(b));
+    }
+    function sortArmorNameDescending() {
+        tableSort(armorTableBody, 0, (a, b) => b.localeCompare(a));
+    }
+    function sortArmorCostAscending() {
+        tableSort(armorTableBody, 1, (a, b) => a - b);
+    }
+    function sortArmorCostDescending() {
+        tableSort(armorTableBody, 1, (a, b) => b - a);
+    }
+    function sortArmorQuantityAscending() {
+        tableSort(armorTableBody, 2, (a, b) => a - b);
+    }
+    function sortArmorQuantityDescending() {
+        tableSort(armorTableBody, 2, (a, b) => b - a);
+    }
+    function sortArmorPropertiesAscending() {
+        tableSort(armorTableBody, 3, (a, b) => a.localeCompare(b));
+    }
+    function sortArmorPropertiesDescending() {
+        tableSort(armorTableBody, 3, (a, b) => b.localeCompare(a));
+    }
+</script>

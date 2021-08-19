@@ -155,3 +155,22 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 .badInput {
     color: red;
 }
+
+table {
+    border-collapse: separate;
+    border-spacing: 20px 0;
+}
+
+td {
+    padding: 2px 0;
+}
+
+.table-header {
+    background: none;
+    border: none;
+    padding: 0;
+    text-decoration: none;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+}
