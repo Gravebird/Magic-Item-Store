@@ -72,7 +72,7 @@ let routeController = {
         })
 
         if (itemToView != null && itemType != null) {
-            res.render("shop/view-single-item", {item: itemToView, type: itemType});
+            res.render("shop/view-single-item", {item: itemToView, type: itemType, user_ID: userId, shop_ID: shopId});
         } else {
             console.log("ERROR: Unable to find item/item type in route_controller.js!");
             res.redirect("/welcome");
