@@ -83,6 +83,7 @@ let weaponModel = {
         theWeapon["Weapon_Damage_Type"] = dmgType;
         theWeapon["Weapon_Weight"] = theData.Weapon_Weight;
         theWeapon["Weapon_Description"] = theData.Weapon_Description;
+        theWeapon["Weapon_Quantity"] = 1;
         theWeapon["Weapon_Properties"] = [];
 
         return theWeapon;
@@ -137,6 +138,24 @@ let weaponModel = {
             }
         }
         return properties;
+    },
+
+    isDuplicateWeapon(a, b) {
+        if (a.Weapon_Name == b.Weapon_Name) {
+            if (a.Weapon_Properties.length == b.Weapon_Properties.length) {
+                if (a.Weapon_Properties.length == 0) {
+                    return true;
+                }
+                let match = false;
+                for (let i = 0; i < a.Weapon_Properties.length; i++) {
+                    if (a.Weapon_Properties[i] == b.Weapon_Properties[i]) {
+                        match = true;
+                    }
+                }
+                return match;
+            }
+        }
+        return false;
     }
 }
 

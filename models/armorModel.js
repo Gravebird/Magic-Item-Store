@@ -42,6 +42,7 @@ let armorModel = {
         theArmor["Armor_20_Speed"] = theData.Armor_20_Speed;
         theArmor["Armor_Weight"] = theData.Armor_Weight;
         theArmor["Armor_Description"] = theData.Armor_Description;
+        theArmor["Armor_Quantity"] = 1;
         theArmor["Armor_Properties"] = [];
 
         return theArmor;
@@ -96,6 +97,24 @@ let armorModel = {
             }
         }
         return properties;
+    },
+
+    isDuplicateArmor(a, b) {
+        if (a.Armor_Name == b.Armor_Name) {
+            if (a.Armor_Properties.length == b.Armor_Properties.length) {
+                if (a.Armor_Properties.length == 0) {
+                    return true;
+                }
+                let match = false;
+                for (let i = 0; i < a.Armor_Properties.length; i++) {
+                    if (a.Armor_Properties[i].Property_Name == b.Armor_Properties[i].Property_Name) {
+                        match = true;
+                    }
+                }
+                return match;
+            }
+        }
+        return false;
     }
 }
 

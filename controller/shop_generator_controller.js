@@ -9,6 +9,64 @@ function addFloats(x, y) {
     return (x * 100 + y * 100) / 100;
 }
 
+function lowerRNGForRandomArmor(armors, rng, highAverage) {
+    let currentCost = armors[rng].Armor_Cost;
+    console.log("LOWERING");
+    if (currentCost <= highAverage) {
+        // Cost is below the high average, we are done here!
+        console.log("Cost is below high average! currentCost: " + currentCost + ", highAverage: " + highAverage);
+        console.log("Returning rng: " + rng);
+        return rng;
+    } else {
+        // Cost is too high! Lower it!
+        if (rng == 0) {
+            // Cannot lower cost anymore!
+            console.log("Cannot lower anymore, returning rng: " + rng);
+            return rng;
+        } else {
+            // Lower the cost until its within range!
+            console.log("Lowering rng to: " + (rng - 1));
+            return lowerRNGForRandomArmor(armors, rng - 1, highAverage);
+        }
+    }
+}
+
+function increaseRNGForRandomArmor(armors, rng, highAverage, maxCost) {
+    let currentCost = armors[rng].Armor_Cost;
+    console.log("INCREASING");
+    if (currentCost >= maxCost) {
+        // Cannot increase cost anymore!
+        console.log("Cannot increase cost anymore! currentCost: " + currentCost + ", maxCost: " + maxCost);
+        console.log("Returning rng: " + rng);
+        return rng;
+    }
+    if (currentCost <= highAverage) {
+        // Cost is too low! increase it!
+        console.log("Increasing rng to: " + (rng + 1));
+        return increaseRNGForRandomArmor(armors, rng + 1);
+    }
+    // Cost is already above average!
+    return rng;
+}
+
+function adjustRngForRandomArmor(armors, rng, averageGoldValue) {
+    if (armors.length == 0) {
+        console.log("No armor in array, returning rng: " + rng);
+        return rng;
+    }
+    let costRNG = Math.floor(Math.random() * 100);
+    let highAverage = averageGoldValue * 3 / 2;
+    let maxCost = armors[armors.length - 1].Armor_Cost;
+
+    if (costRNG < 75) {
+        // Cost should be below the high average!
+        return lowerRNGForRandomArmor(armors, rng, highAverage);
+    } else {
+        // Cost can be higher than the average!
+        return increaseRNGForRandomArmor(armors, rng, highAverage, maxCost);
+    }
+}
+
 let shopGeneratorController = {
     generate: async function(req, res) {
         bodylist = JSON.parse(JSON.stringify(req.body));
@@ -65,7 +123,19 @@ let shopGeneratorController = {
                         });
                     }
                     goldUsed = addFloats(goldUsed, totalCost);
-                    shop["weapons"].push(theWeapon);
+
+                    let duplicateFound = false;
+                    for (let i = 0; i < shop.weapons.length; i++) {
+                        if (weaponModel.isDuplicateWeapon(shop.weapons[i], theWeapon)) {
+                            duplicateFound = true;
+                            shop.weapons[i].Weapon_Quantity = shop.weapons[i].Weapon_Quantity + 1;
+                            break;
+                        }
+                    };
+
+                    if (duplicateFound == false) {
+                        shop["weapons"].push(theWeapon);
+                    }
                 }
             } else if (rng < armorPercentage) {
                 // Generate an armor
@@ -80,6 +150,13 @@ let shopGeneratorController = {
                     rng = Math.floor(Math.random() * uncommonArmors.length);
                     armors = uncommonArmors;
                 }
+                // Check Armor_Cost of the rng, decide if it should be higher or lower based on average
+                console.log("RNG before adjusting: " + rng);
+                console.log("chosen armor before adjusting: " + armors[rng].Armor_ID);
+                rng = adjustRngForRandomArmor(armors, rng);
+                console.log("RNG after adjusting: " + rng);
+
+                // Grab armor data and work with it
                 if (armors.length > 0) {
                     armorData = await databaseController.getArmorDetailsById(armors[rng].Armor_ID);
                     let theArmor = armorModel.organizeArmorData(armorData, itemCount);
@@ -92,7 +169,19 @@ let shopGeneratorController = {
                         });
                     }
                     goldUsed = addFloats(goldUsed, totalCost);
-                    shop["armor"].push(theArmor);
+
+                    let duplicateFound = false;
+                    for (let i = 0; i < shop.armor.length; i++) {
+                        if (armorModel.isDuplicateArmor(shop.armor[i], theArmor)) {
+                            duplicateFound = true;
+                            shop.armor[i].Armor_Quantity = shop.armor[i].Armor_Quantity + 1;
+                            break;
+                        }
+                    }
+
+                    if (duplicateFound == false) {
+                        shop["armor"].push(theArmor);
+                    }
                 }
             } else {
                 console.log("ERROR: rng in shop_generator_controller.generate is out of range!");
