@@ -1,3 +1,66 @@
+const databaseController = require("../controller/database_controller");
+
+function weaponIsAmmo(weaponName) {
+    if (weaponName == "Dart" || weaponName == "Shuriken" || weaponName.includes("bolt") || weaponName.includes("arrow") || weaponName.includes("bullets")) {
+        return true;
+    }
+    return false;
+}
+
+function weaponisMostlyMetal(weaponName) {
+    if (weaponName == "Quarterstaff" || weaponName.includes("club") || weaponName == "Bolas" || weaponName == "Net"
+            || (weaponName == "sling" && !weaponIsAmmo(weaponName))
+            || (weaponName.includes("bow") && !weaponIsAmmo(weaponName))) {
+        return false;
+    }
+    return true;
+}
+
+function weaponIsWooden(weaponName) {
+    if ((weaponName.includes("Bow") && !weaponIsAmmo(weaponName))
+            || weaponName == "Quarterstaff" || weaponName.includes("club")) {
+            return true;
+    }
+    return false;
+}
+
+function materialIsValidForWeapon(weaponName, materialName) {
+    let valid = false;
+    if (materialName == "Adamantine") {
+        // Adamantine must be mostly made of metal!
+        if (weaponisMostlyMetal(weaponName)) {
+            valid = true;
+        }
+    } else if (materialName == "Darkwood") {
+        // Darkwood must be made out of wood!
+        if (weaponIsWooden(weaponName)) {
+            valid = true;
+        }
+    } else if (materialName == "Iron, Cold") {
+        // Cold Iron must be mostly made of metal!
+        if (weaponisMostlyMetal(weaponName)) {
+            valid = true;
+        }
+    } else if (materialName == "Mithral") {
+        // Mithral must be mostly made of metal!
+        if (weaponisMostlyMetal(weaponName)) {
+            valid = true;
+        }
+    } else if (materialName == "Silver, Alchemical") {
+        // Silver must be mostly made of metal!
+        if (weaponisMostlyMetal(weaponName)) {
+            valid = true;
+        }
+    } else {
+        console.log("ERROR! Unrecognized Special Material for Weapon: " + materialName);
+    }
+
+    if (!valid) {
+        console.log(weaponName + " cannot be " + materialName + "!");
+    }
+    return valid;
+}
+
 /**
 * This function will organize the data from a database query about 
 * @param {*} data 
@@ -60,6 +123,77 @@ function organizeWeaponPropertyData(data, baseWeapon) {
     return theProp;
 }
 
+async function getSpecialMaterial(baseWeapon, goldLeft, maxGoldItemInShop, averageGoldValue) {
+    materials = await databaseController.getMaterialIDsForWeapons();
+
+    let rng = Math.floor(Math.random() * materials.length);
+    material = (await databaseController.getMaterialDetailsById(materials[rng].Material_ID))[0];
+    let cost = null;
+
+    if (materialIsValidForWeapon(baseWeapon.Weapon_Name, material.Material_Name)) {
+        if (material.Material_Name == "Adamantine") {
+            if (weaponIsAmmo(baseWeapon.Weapon_Name)) {
+                cost = 60;
+            } else {
+                cost = 3000;
+            }
+        } else if (material.Material_Name == "Darkwood") {
+            cost = 10 * baseWeapon.Weapon_Weight;
+
+        } else if (material.Material_Name == "Iron, Cold") {
+            cost = 300 + baseWeapon.Weapon_Cost;
+
+        } else if (material.Material_Name == "Mithral") {
+            cost = 500 * baseWeapon.Weapon_Weight;
+
+        } else if (material.Material_Name == "Silver, Alchemical") {
+            if (weaponIsAmmo(baseWeapon.Weapon_Name)) {
+                cost = 2;
+            } else if (baseWeapon.Weapon_Type == "Light Melee") {
+                cost = 20;
+            } else if (baseWeapon.Weapon_Type == "One-Handed Melee") {
+                cost = 90;
+            } else if (baseWeapon.Weapon_Type == "Two-Handed Melee") {
+                cost = 180;
+            } else {
+                console.log("ERROR: baseWeapon is not light, one-handed, or two-handed. Received: " + baseWeapon.Weapon_Type);
+            }
+        } else {
+            // Error! We don't have code for this material!
+            console.log("ERROR: No code for material: " + material.Material_Name + " in weaponModel.js - getSpecialMaterials");
+        }
+
+
+        // Check that we can afford to put this material on the weapon!
+        if (cost > goldLeft) {
+            // Too expensive!
+            return null;
+        } else if (baseWeapon.Weapon_Cost + cost + 300 > maxGoldItemInShop) {
+            // Also too expensive!
+            return null;
+        } else {
+            let highAverage = averageGoldValue * 3 / 2;
+            if (baseWeapon.Weapon_Cost + cost + 300 > highAverage) {
+                // Too expensive again!
+                return null;
+            }
+        }
+        // Cost is within bounds!
+
+
+        // We have the cost, now we put together the object
+        let theMaterial = {};
+        theMaterial["Material_Name"] = material.Material_Name;
+        theMaterial["Material_Gold_Cost"] = cost;
+        theMaterial["Material_Description"] = material.Material_Description;
+        return theMaterial;
+    }
+    // Material is not valid for this weapon!
+    console.log("Invalid material/weapon combo detected!");
+
+    return null;
+}
+
 let weaponModel = {
 
     /**
@@ -90,6 +224,7 @@ let weaponModel = {
         theWeapon["Weapon_Weight"] = theData.Weapon_Weight;
         theWeapon["Weapon_Description"] = theData.Weapon_Description;
         theWeapon["Weapon_Quantity"] = 1;
+        theWeapon["Weapon_Material"] = null;
         theWeapon["Weapon_Properties"] = [];
         theWeapon["Weapon_Cost_With_Properties"] = theWeapon.Weapon_Cost;
 
@@ -105,7 +240,7 @@ let weaponModel = {
  * @param {*} maxGoldItemInShop the highest value item the shop can have
  * @param {*} averageGoldValue the average value among items the shop can have
  */
-    getWeaponBonuses: (baseWeapon, goldUsed, goldInShop, maxGoldItemInShop, averageGoldValue) => {
+    getWeaponBonuses: async function (baseWeapon, goldUsed, goldInShop, maxGoldItemInShop, averageGoldValue) {
         let properties = [];
         if (goldUsed > goldInShop) {
             // No gold left!
@@ -131,7 +266,26 @@ let weaponModel = {
 
                 if (rng < mwkChance) {
                     // Item is masterwork!
-                    properties.push(organizeWeaponPropertyData("Masterwork", baseWeapon));
+                    // Check if it is made of a special material before adding the masterwork property (some materials count as masterwork)
+                    // We can reuse rng here since all checks have been finished!
+                    rng = Math.floor(Math.random() * 100);
+
+                    if (rng < 10) {
+                        // There is a special material!
+                        material = await getSpecialMaterial(baseWeapon, goldLeft, maxGoldItemInShop, averageGoldValue);
+                        if (material != null) {
+                            baseWeapon["Weapon_Material"] = material;
+
+                            if (material.Material_Name == "Iron, Cold" || material.Material_Name == "Silver, Alchemical"
+                                || material.Material_Name == "Darkwood") {
+                                // Silver and cold iron don't automatically count as masterwork!
+                                properties.push(organizeWeaponPropertyData("Masterwork", baseWeapon));
+                            }
+                        }
+                    } else {
+                        // No special material!
+                        properties.push(organizeWeaponPropertyData("Masterwork", baseWeapon));
+                    }
 
                     // Check if item can have magical properties! (DO LATER)
                 }
@@ -167,6 +321,9 @@ let weaponModel = {
 
     calculateCost(weapon) {
         let baseCost = weapon.Weapon_Cost;
+        if (weapon.Weapon_Material != null) {
+            baseCost += weapon.Weapon_Material.Material_Gold_Cost;
+        }
         weapon.Weapon_Properties.forEach(prop => {
             baseCost += prop.Property_Gold_Cost;
         });

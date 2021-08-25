@@ -13,8 +13,9 @@ CREATE TABLE Book (
 CREATE TABLE Material (
 	Material_ID int NOT NULL UNIQUE,
 	Book_ID int NOT NULL,
-    Material_Name varchar(15) NOT NULL,
-    Material_Item_Type varchar(6) NOT NULL,
+    Material_Name varchar(18) NOT NULL,
+    Material_Can_Be_Weapon bool NOT NULL,
+    Material_Can_Be_Armor bool NOT NULL,
     Material_Description TEXT,
     PRIMARY KEY (Material_ID, Book_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)

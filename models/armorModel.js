@@ -1,3 +1,44 @@
+const databaseController = require("../controller/database_controller");
+
+function armorIsMostlyMetal(armorName) {
+    if (armorName == "Padded" || armorName.includes("Leather") || armorName == "Hide") {
+        return false;
+    }
+    return true;
+}
+
+function materialIsValidForArmor(baseArmor, materialName) {
+    let valid = false;
+    let armorName = baseArmor.Armor_Name;
+    let armorType = baseArmor.Armor_Category;
+    if (materialName == "Adamantine") {
+        // Adamantine must be mostly made of metal!
+        if (armorIsMostlyMetal(armorName)) {
+            valid = true;
+        }
+    } else if (materialName == "Darkwood") {
+        // Darkwood can only apply to shields, not armor!
+        if (armorType == "Shield") {
+            valid = true;
+        }
+    } else if (materialName == "Dragonhide") {
+        // Dragonhide can work on any armor!
+        valid = true;
+    } else if (materialName == "Mithral") {
+        // Mithral must be mostly made of metal!
+        if (armorIsMostlyMetal(armorName)) {
+            valid = true;
+        }
+    } else {
+        console.log("ERROR! Unrecognized Special Material for Armor: " + materialName);
+    }
+
+    if (!valid) {
+        console.log(armorName + " cannot be " + materialName + "!");
+    }
+    return valid;
+}
+
 function organizeArmorPropertyData(data) {
     let theProp = {};
     if (data == "Masterwork") {
@@ -26,6 +67,75 @@ function organizeArmorPropertyData(data) {
     return theProp;
 }
 
+async function getSpecialMaterial(baseArmor, goldLeft, maxGoldItemInShop, averageGoldValue) {
+    materials = await databaseController.getMaterialIDsForArmor();
+
+    let rng = Math.floor(Math.random() * materials.length);
+    material = (await databaseController.getMaterialDetailsById(materials[rng].Material_ID))[0];
+    let cost = null;
+
+    if (materialIsValidForArmor(baseArmor, material.Material_Name)) {
+        let armorType = baseArmor.Armor_Category;
+        if (material.Material_Name == "Adamantine") {
+            if (armorType == "Light") {
+                cost = 5000;
+            } else if (armorType == "Medium") {
+                cost = 10000;
+            } else if (armorType == "Heavy") {
+                cost = 15000;
+            } else {
+                cost = 3000;
+            }
+        } else if (material.Material_Name == "Darkwood") {
+            cost = 10 * baseArmor.Armor_Weight;
+
+        } else if (material.Material_Name == "Dragonhide") {
+            cost = 300 + baseArmor.Armor_Cost;
+        } else if (material.Material_Name == "Mithral") {
+            if (armorType == "Light") {
+                cost = 1000;
+            } else if (armorType == "Medium") {
+                cost = 4000;
+            } else if (armorType == "Heavy") {
+                cost = 9000;
+            } else {
+                cost = 1000;
+            }
+        } else {
+            // Error! We don't have code for this material!
+            console.log("ERROR: No code for material: " + material.Material_Name + " in armorModel.js - getSpecialMaterial");
+        }
+
+        // Check that we can afford to put this material on the armor!
+        if (cost > goldLeft) {
+            // Too expensive!
+            return null;
+        } else if (baseArmor.Armor_Cost + cost + 150 > maxGoldItemInShop) {
+            // Also too expensive!
+            return null;
+        } else {
+            let highAverage = averageGoldValue * 3 / 2;
+            if (baseArmor.Armor_Cost + cost + 150 > highAverage) {
+                // Too expensive again!
+                return null;
+            }
+        }
+        // Cost is within bounds!
+
+
+        // We have the cost, now we put together the object
+        let theMaterial = {};
+        theMaterial["Material_Name"] = material.Material_Name;
+        theMaterial["Material_Gold_Cost"] = cost;
+        theMaterial["Material_Description"] = material.Material_Description;
+        return theMaterial;
+    }
+    // Material is not valid for this armor!
+    console.log("Invalid material/armor combo detected!");
+
+    return null;
+}
+
 let armorModel = {
     organizeArmorData: (data, id) => {
         theData = data[0]
@@ -43,6 +153,7 @@ let armorModel = {
         theArmor["Armor_Weight"] = theData.Armor_Weight;
         theArmor["Armor_Description"] = theData.Armor_Description;
         theArmor["Armor_Quantity"] = 1;
+        theArmor["Armor_Material"] = null;
         theArmor["Armor_Properties"] = [];
         theArmor["Armor_Cost_With_Properties"] = theArmor.Armor_Cost;
 
@@ -58,7 +169,7 @@ let armorModel = {
  * @param {*} maxGoldItemInShop the highest value item the shop can have
  * @param {*} averageGoldValue the average value among items the shop can have
  */
-    getArmorBonuses: (baseArmor, goldUsed, goldInShop, maxGoldItemInShop, averageGoldValue) => {
+    getArmorBonuses: async function (baseArmor, goldUsed, goldInShop, maxGoldItemInShop, averageGoldValue) {
         let properties = [];
         if (goldUsed > goldInShop) {
             // No gold left!
@@ -84,7 +195,25 @@ let armorModel = {
 
                 if (rng < mwkChance) {
                     // Item is masterwork!
-                    properties.push(organizeArmorPropertyData("Masterwork"));
+                    // Check if it is made of a special material before aadding the masterwork property
+                    // We can reuse rng here since all checks have been finished
+                    rng = Math.floor(Math.random() * 100);
+
+                    if (rng < 10) {
+                        // There is a special material!
+                        material = await getSpecialMaterial(baseArmor, goldLeft, maxGoldItemInShop, averageGoldValue);
+                        if (material != null) {
+                            baseArmor["Armor_Material"] = material;
+
+                            if (material.Material_Name == "Darkwood") {
+                                properties.push(organizeArmorPropertyData("Masterwork"));
+                            }
+                        }
+                    }
+                    else {
+                        // No special material!
+                        properties.push(organizeArmorPropertyData("Masterwork"));
+                    }
 
                     // Check if item can have magical properties! (DO LATER)
                 }

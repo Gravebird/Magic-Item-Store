@@ -104,7 +104,7 @@ let shopGeneratorController = {
                 if (weapons.length > 0) {
                     weaponData = await databaseController.getWeaponDetailsById(weapons[rng].Weapon_ID);
                     let theWeapon = weaponModel.organizeWeaponData(weaponData, itemCount);
-                    let properties = weaponModel.getWeaponBonuses(theWeapon, goldUsed, goldInShop, maxGoldItemInShop, averageGoldValue);
+                    let properties = await weaponModel.getWeaponBonuses(theWeapon, goldUsed, goldInShop, maxGoldItemInShop, averageGoldValue);
                     if (properties != null) {
                         properties.forEach(prop => {
                             theWeapon["Weapon_Properties"].push(prop);
@@ -148,7 +148,7 @@ let shopGeneratorController = {
                 if (armors.length > 0) {
                     armorData = await databaseController.getArmorDetailsById(armors[rng].Armor_ID);
                     let theArmor = armorModel.organizeArmorData(armorData, itemCount);
-                    let properties = armorModel.getArmorBonuses(theArmor, goldUsed, goldInShop, maxGoldItemInShop, averageGoldValue);
+                    let properties = await armorModel.getArmorBonuses(theArmor, goldUsed, goldInShop, maxGoldItemInShop, averageGoldValue);
                     if (properties != null) {
                         properties.forEach(prop => {
                             theArmor["Armor_Properties"].push(prop);

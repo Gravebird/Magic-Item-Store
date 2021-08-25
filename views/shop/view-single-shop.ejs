@@ -18,11 +18,14 @@
                             <td><%= shop.weapons[i].Weapon_Cost_With_Properties %></td>
                             <td><%= shop.weapons[i].Weapon_Quantity %></td>
                             <td>
+                                <% if (shop.weapons[i].Weapon_Material != null) { %>
+                                    [<%= shop.weapons[i].Weapon_Material.Material_Name %>]
+                                <% } %>
                                 <% if (shop.weapons[i].Weapon_Properties.length > 0) { %>
                                     <% shop.weapons[i].Weapon_Properties.forEach(function(prop) { %>
-                                        <%= prop.Property_Name %>
+                                        [<%= prop.Property_Name %>]
                                     <% }); %>
-                                <% } else { %>
+                                <% } else if (shop.weapons[i].Weapon_Material == null) { %>
                                     None
                                 <% } %>
                             </td>
@@ -52,11 +55,14 @@
                             <td><%= shop.armor[i].Armor_Cost_With_Properties %></td>
                             <td><%= shop.armor[i].Armor_Quantity %></td>
                             <td>
+                                <% if (shop.armor[i].Armor_Material != null ) { %>
+                                    [<%= shop.armor[i].Armor_Material.Material_Name %>]
+                                <% } %>
                                 <% if (shop.armor[i].Armor_Properties.length > 0) { %>
                                     <% shop.armor[i].Armor_Properties.forEach(function(prop) { %>
-                                        <%= prop.Property_Name %>
+                                        [<%= prop.Property_Name %>]
                                     <% }); %>
-                                <% } else { %>
+                                <% } else if (shop.armor[i].Armor_Material == null) { %>
                                     None
                                 <% } %>
                             </td>

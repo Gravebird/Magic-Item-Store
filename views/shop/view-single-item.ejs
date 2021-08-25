@@ -33,6 +33,14 @@
         </table>
         <h3>Description:</h3>
         <p><%= item.Weapon_Description %></p>
+        <% if (item.Weapon_Material != null) { %>
+            <h2>Special Material:</h2>
+            <div class="weapon-property-container">
+                <h3><%= item.Weapon_Material.Material_Name %></h3>
+                <p>Cost: <%= item.Weapon_Material.Material_Gold_Cost %> gp</p>
+                <p><%= item.Weapon_Material.Material_Description %></p>
+            </div>
+        <% } %>
         <% if (item.Weapon_Properties.length > 0) { %>
             <h2>Properties:</h2>
             <% item.Weapon_Properties.forEach(prop => { %>
@@ -88,6 +96,14 @@
         </table>
         <h3>Description:</h3>
         <p><%= item.Armor_Description %></p>
+        <% if (item.Armor_Material != null) { %>
+            <h2>Special Material:</h2>
+            <div class="armor-property-container">
+                <h3><%= item.Armor_Material.Material_Name %></h3>
+                <p>Cost: <%= item.Armor_Material.Material_Gold_Cost %> gp</p>
+                <p><%= item.Armor_Material.Material_Description %></p>
+            </div>
+        <% } %>
         <% if (item.Armor_Properties.length > 0) { %>
             <h2>Properties:</h2>
             <% item.Armor_Properties.forEach(prop => { %>

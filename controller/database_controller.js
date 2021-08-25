@@ -22,7 +22,7 @@ function query(query) {
             });
         });
     }).catch(function(error) {
-        console.log(error);
+        console.log("DB query error: " + error);
     });
 }
 
@@ -48,6 +48,18 @@ let databaseController = {
 
     getArmorDetailsById: async function(armorID) {
         return await query('SELECT * FROM Armor WHERE Armor_ID = ' + armorID);
+    },
+
+    getMaterialIDsForWeapons: async function() {
+        return await query('SELECT Material_ID FROM Material WHERE Material_Can_Be_Weapon = true');
+    },
+
+    getMaterialIDsForArmor: async function() {
+        return await query('SELECT Material_ID FROM Material WHERE Material_Can_Be_Armor = true');
+    },
+
+    getMaterialDetailsById: async function(materialID) {
+        return await query('SELECT Material_ID, Material_Name, Material_Description FROM Material WHERE Material_ID = ' + materialID);
     }
 }
 
