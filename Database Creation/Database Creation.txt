@@ -91,11 +91,17 @@ CREATE TABLE Magic_Weapon (
     Book_ID int NOT NULL,
     Magic_Weapon_Name varchar(20) NOT NULL,
     Magic_Weapon_Modifier int NOT NULL,
-    Magic_Weapon_Can_Be_Ranged bool NOT NULL,
-    Magic_Weapon_Can_Be_Melee bool NOT NULL,
     Magic_Weapon_Description TEXT,
     PRIMARY KEY (Magic_Weapon_ID, Book_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
+);
+
+CREATE TABLE Compatible_Magic_Weapons (
+    Weapon_ID int NOT NULL,
+    Magic_Weapon_ID int NOT NULL,
+    PRIMARY KEY (Magic_Weapon_ID, Weapon_ID),
+    FOREIGN KEY (Magic_Weapon_ID) REFERENCES Magic_Weapon(Magic_Weapon_ID),
+    FOREIGN KEY (Weapon_ID) REFERENCES Weapon(Weapon_ID)
 );
 
 CREATE TABLE Magic_Item (
