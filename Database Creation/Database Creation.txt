@@ -76,9 +76,11 @@ CREATE TABLE Material_For_Weapon (
 CREATE TABLE Magic_Armor (
 	Magic_Armor_ID int NOT NULL UNIQUE,
     Book_ID int NOT NULL,
-    Magic_Armor_Name varchar(20) NOT NULL,
+    Magic_Armor_Name varchar(32) NOT NULL,
     Magic_Armor_Modifier int,
     Magic_Armor_Cost decimal(9,2),
+    Magic_Armor_Can_Be_Shield bool NOT NULL,
+    Magic_Armor_Can_Be_Armor bool NOT NULL,
     Magic_Armor_Description TEXT,
     PRIMARY KEY (Magic_Armor_ID, Book_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
@@ -88,8 +90,9 @@ CREATE TABLE Magic_Weapon (
 	Magic_Weapon_ID int NOT NULL UNIQUE,
     Book_ID int NOT NULL,
     Magic_Weapon_Name varchar(20) NOT NULL,
-    Magic_Weapon_Modifier int,
-    Magic_Weapon_Cost decimal(9,2),
+    Magic_Weapon_Modifier int NOT NULL,
+    Magic_Weapon_Can_Be_Ranged bool NOT NULL,
+    Magic_Weapon_Can_Be_Melee bool NOT NULL,
     Magic_Weapon_Description TEXT,
     PRIMARY KEY (Magic_Weapon_ID, Book_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
