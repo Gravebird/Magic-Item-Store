@@ -1,44 +1,5 @@
 const databaseController = require("../controller/database_controller");
 
-function armorIsMostlyMetal(armorName) {
-    if (armorName == "Padded" || armorName.includes("Leather") || armorName == "Hide") {
-        return false;
-    }
-    return true;
-}
-
-function materialIsValidForArmor(baseArmor, materialName) {
-    let valid = false;
-    let armorName = baseArmor.Armor_Name;
-    let armorType = baseArmor.Armor_Category;
-    if (materialName == "Adamantine") {
-        // Adamantine must be mostly made of metal!
-        if (armorIsMostlyMetal(armorName)) {
-            valid = true;
-        }
-    } else if (materialName == "Darkwood") {
-        // Darkwood can only apply to shields, not armor!
-        if (armorType == "Shield") {
-            valid = true;
-        }
-    } else if (materialName == "Dragonhide") {
-        // Dragonhide can work on any armor!
-        valid = true;
-    } else if (materialName == "Mithral") {
-        // Mithral must be mostly made of metal!
-        if (armorIsMostlyMetal(armorName)) {
-            valid = true;
-        }
-    } else {
-        console.log("ERROR! Unrecognized Special Material for Armor: " + materialName);
-    }
-
-    if (!valid) {
-        console.log(armorName + " cannot be " + materialName + "!");
-    }
-    return valid;
-}
-
 function organizeArmorPropertyData(data) {
     let theProp = {};
     if (data == "Masterwork") {
@@ -68,72 +29,76 @@ function organizeArmorPropertyData(data) {
 }
 
 async function getSpecialMaterial(baseArmor, goldLeft, maxGoldItemInShop, averageGoldValue) {
-    materials = await databaseController.getMaterialIDsForArmor();
+    materials = await databaseController.getMaterialIDsForArmor(baseArmor.Armor_Name);
+
+    console.log(materials);
+
+    if (materials == undefined || materials.length < 1) {
+        // No materials can apply to this armor
+        return null;
+    }
 
     let rng = Math.floor(Math.random() * materials.length);
     material = (await databaseController.getMaterialDetailsById(materials[rng].Material_ID))[0];
     let cost = null;
 
-    if (materialIsValidForArmor(baseArmor, material.Material_Name)) {
-        let armorType = baseArmor.Armor_Category;
-        if (material.Material_Name == "Adamantine") {
-            if (armorType == "Light") {
-                cost = 5000;
-            } else if (armorType == "Medium") {
-                cost = 10000;
-            } else if (armorType == "Heavy") {
-                cost = 15000;
-            } else {
-                cost = 3000;
-            }
-        } else if (material.Material_Name == "Darkwood") {
-            cost = 10 * baseArmor.Armor_Weight;
-
-        } else if (material.Material_Name == "Dragonhide") {
-            cost = 300 + baseArmor.Armor_Cost;
-        } else if (material.Material_Name == "Mithral") {
-            if (armorType == "Light") {
-                cost = 1000;
-            } else if (armorType == "Medium") {
-                cost = 4000;
-            } else if (armorType == "Heavy") {
-                cost = 9000;
-            } else {
-                cost = 1000;
-            }
+    let armorType = baseArmor.Armor_Category;
+    if (material.Material_Name == "Adamantine") {
+        if (armorType == "Light") {
+            cost = 5000;
+        } else if (armorType == "Medium") {
+            cost = 10000;
+        } else if (armorType == "Heavy") {
+            cost = 15000;
         } else {
-            // Error! We don't have code for this material!
-            console.log("ERROR: No code for material: " + material.Material_Name + " in armorModel.js - getSpecialMaterial");
+            cost = 3000;
         }
+    } else if (material.Material_Name == "Darkwood") {
+        cost = 10 * baseArmor.Armor_Weight;
 
-        // Check that we can afford to put this material on the armor!
-        if (cost > goldLeft) {
-            // Too expensive!
-            return null;
-        } else if (baseArmor.Armor_Cost + cost + 150 > maxGoldItemInShop) {
-            // Also too expensive!
-            return null;
+    } else if (material.Material_Name == "Dragonhide") {
+        cost = 300 + baseArmor.Armor_Cost;
+    } else if (material.Material_Name == "Mithral") {
+        if (armorType == "Light") {
+            cost = 1000;
+        } else if (armorType == "Medium") {
+            cost = 4000;
+        } else if (armorType == "Heavy") {
+            cost = 9000;
         } else {
-            let highAverage = averageGoldValue * 3 / 2;
-            if (baseArmor.Armor_Cost + cost + 150 > highAverage) {
-                // Too expensive again!
-                return null;
-            }
+            cost = 1000;
         }
-        // Cost is within bounds!
-
-
-        // We have the cost, now we put together the object
-        let theMaterial = {};
-        theMaterial["Material_Name"] = material.Material_Name;
-        theMaterial["Material_Gold_Cost"] = cost;
-        theMaterial["Material_Description"] = material.Material_Description;
-        return theMaterial;
+    } else {
+        // Error! We don't have code for this material!
+        console.log("ERROR: No code for material: " + material.Material_Name + " in armorModel.js - getSpecialMaterial");
     }
-    // Material is not valid for this armor!
-    console.log("Invalid material/armor combo detected!");
 
-    return null;
+    // Check that we can afford to put this material on the armor!
+    if (cost > goldLeft) {
+        // Too expensive!
+        console.log("Too expensive! 1:", cost, goldLeft);
+        return null;
+    } else if (baseArmor.Armor_Cost + cost + 150 > maxGoldItemInShop) {
+        // Also too expensive!
+        console.log("Too expensive! 2:", cost, maxGoldItemInShop)
+        return null;
+    } else {
+        let highAverage = averageGoldValue * 3 / 2;
+        if (baseArmor.Armor_Cost + cost + 150 > highAverage) {
+            // Too expensive again!
+            console.log("Too expensive! 3:", cost, highAverage);
+            return null;
+        }
+    }
+    // Cost is within bounds!
+
+
+    // We have the cost, now we put together the object
+    let theMaterial = {};
+    theMaterial["Material_Name"] = material.Material_Name;
+    theMaterial["Material_Gold_Cost"] = cost;
+    theMaterial["Material_Description"] = material.Material_Description;
+    return theMaterial;
 }
 
 let armorModel = {
@@ -230,25 +195,49 @@ let armorModel = {
     },
 
     isDuplicateArmor(a, b) {
+        let match = false;
+        // First check if they share a name
         if (a.Armor_Name == b.Armor_Name) {
-            if (a.Armor_Properties.length == b.Armor_Properties.length) {
-                if (a.Armor_Properties.length == 0) {
-                    return true;
-                }
-                let match = false;
-                for (let i = 0; i < a.Armor_Properties.length; i++) {
-                    if (a.Armor_Properties[i].Property_Name == b.Armor_Properties[i].Property_Name) {
+            // They have the same name!
+            // Do they share a material?
+            if (a.Armor_Material == null && b.Armor_Material == null) {
+                // neither has a material
+                match = true;
+            } else if (a.Armor_Material != null && b.Armor_Material != null &&
+                    a.Armor_Material.Material_Name == b.Armor_Material.Material_Name) {
+                        // they both have the same material!
                         match = true;
+            }
+
+            if (match) {
+                // Now we can check if they share properties
+                if (a.Armor_Properties.length == b.Armor_Properties.length) {
+                    // They have the same number of properties
+                    if (a.Armor_Properties.length > 0) {
+                        for (let i = 0; i < a.Armor_Properties.length; i++) {
+                            // We already know they have the same length
+                            // We just need to look for differences
+                            if (a.Armor_Properties[i].Property_Name != b.Armor_Properties[i].Property_Name) {
+                                match = false;
+                                console.log("DEBUG: " + a.Armor_Properties[i].Property_Name + " is not equal to " + b.Armor_Properties[i].Property_Name);
+                                break;
+                            }
+                        }
                     }
+                } else {
+                    // They have a different number of properties!
+                    match = false;
                 }
-                return match;
             }
         }
-        return false;
+        return match;
     },
 
     calculateCost(armor) {
         let baseCost = armor.Armor_Cost;
+        if (armor.Armor_Material != null) {
+            baseCost += armor.Armor_Material.Material_Gold_Cost;
+        }
         armor.Armor_Properties.forEach(prop => {
             baseCost += prop.Property_Gold_Cost;
         });

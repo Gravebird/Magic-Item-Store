@@ -50,12 +50,20 @@ let databaseController = {
         return await query('SELECT * FROM Armor WHERE Armor_ID = ' + armorID);
     },
 
-    getMaterialIDsForWeapons: async function() {
-        return await query('SELECT Material_ID FROM Material WHERE Material_Can_Be_Weapon = true');
+    getMaterialIDsForWeapon: async function(weaponName) {
+        theQuery = 'SELECT Material.Material_ID FROM Material ' +
+        'JOIN Material_For_Weapon ON Material.Material_ID = Material_For_Weapon.Material_ID ' +
+        'JOIN Weapon ON Material_For_Weapon.Weapon_ID = Weapon.Weapon_ID ' +
+        'WHERE Weapon.Weapon_Name = "' + weaponName + '"';
+        return await query(theQuery);
     },
 
-    getMaterialIDsForArmor: async function() {
-        return await query('SELECT Material_ID FROM Material WHERE Material_Can_Be_Armor = true');
+    getMaterialIDsForArmor: async function(armorName) {
+        theQuery = 'SELECT Material.Material_ID FROM Material ' +
+        'JOIN Material_For_Armor ON Material.Material_ID = Material_For_Armor.Material_ID ' +
+        'JOIN Armor ON Material_For_Armor.Armor_ID = Armor.Armor_ID ' +
+        'WHERE Armor.Armor_Name = "' + armorName + '"';
+        return await query(theQuery);
     },
 
     getMaterialDetailsById: async function(materialID) {

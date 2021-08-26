@@ -14,8 +14,6 @@ CREATE TABLE Material (
 	Material_ID int NOT NULL UNIQUE,
 	Book_ID int NOT NULL,
     Material_Name varchar(18) NOT NULL,
-    Material_Can_Be_Weapon bool NOT NULL,
-    Material_Can_Be_Armor bool NOT NULL,
     Material_Description TEXT,
     PRIMARY KEY (Material_ID, Book_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
@@ -57,6 +55,22 @@ CREATE TABLE Weapon (
     Weapon_Description TEXT,
     PRIMARY KEY (Weapon_ID, Book_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
+);
+
+CREATE TABLE Material_For_Armor (
+    Armor_ID int NOT NULL,
+    Material_ID int NOT NULL,
+    PRIMARY KEY (Armor_ID, Material_ID),
+    FOREIGN KEY (Armor_ID) REFERENCES Armor(Armor_ID),
+    FOREIGN KEY (Material_ID) REFERENCES Material(Material_ID)
+);
+
+CREATE TABLE Material_For_Weapon (
+    Weapon_ID int NOT NULL,
+    Material_ID int NOT NULL,
+    PRIMARY KEY (Weapon_ID, Material_ID),
+    FOREIGN KEY (Weapon_ID) REFERENCES Weapon(Weapon_ID),
+    FOREIGN KEY (Material_ID) REFERENCES Material(Material_ID)
 );
 
 CREATE TABLE Magic_Armor (
