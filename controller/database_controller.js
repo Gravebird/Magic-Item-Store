@@ -68,6 +68,10 @@ let databaseController = {
 
     getMaterialDetailsById: async function(materialID) {
         return await query('SELECT Material_ID, Material_Name, Material_Description FROM Material WHERE Material_ID = ' + materialID);
+    },
+
+    getEnhancementBonusForMagicWeapon: async function(value) {
+        return await query('SELECT Magic_Weapon_Name, Magic_Weapon_Modifier, Magic_Weapon_Description FROM Magic_Weapon WHERE Magic_Weapon_Name = "Enhancement +' + value + '"');
     }
 }
 

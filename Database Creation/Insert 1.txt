@@ -361,94 +361,94 @@ INSERT INTO Magic_Armor VALUES
     
     
 INSERT INTO Magic_Weapon VALUES
-	(1, 2, "Enhancement +1", 1, "This weapon is enchanted with a +1 enhancement bonus on attack and damage rolls, as well as causing it to deal magic damage."),
-    (2, 2, "Enhancement +2", 2, "This weapon is enchanted with a +2 enhancement bonus on attack and damage rolls, as well as causing it to deal magic damage."),
-    (3, 2, "Enhancement +3", 3, "This weapon is enchanted with a +3 enhancement bonus on attack and damage rolls, as well as causing it to deal magic damage."),
-    (4, 2, "Enhancement +4", 4, "This weapon is enchanted with a +4 enhancement bonus on attack and damage rolls, as well as causing it to deal magic damage."),
-    (5, 2, "Enhancement +5", 5, "This weapon is enchanted with a +5 enhancement bonus on attack and damage rolls, as well as causing it to deal magic damage."),
-    (6, 2, "Anarchic", 2, "An anarchic weapon is chaotically aligned and infused with the power of chaos. It makes the weapon chaos-aligned and thus bypasses the corresponding damage reduction. 
+	(1, 2, "Enhancement +1", 1, null, null, null, null, null, null, "This weapon is enchanted with a +1 enhancement bonus on attack and damage rolls, as well as causing it to deal magic damage."),
+    (2, 2, "Enhancement +2", 2, null, null, null, null, null, null, "This weapon is enchanted with a +2 enhancement bonus on attack and damage rolls, as well as causing it to deal magic damage."),
+    (3, 2, "Enhancement +3", 3, null, null, null, null, null, null, "This weapon is enchanted with a +3 enhancement bonus on attack and damage rolls, as well as causing it to deal magic damage."),
+    (4, 2, "Enhancement +4", 4, null, null, null, null, null, null, "This weapon is enchanted with a +4 enhancement bonus on attack and damage rolls, as well as causing it to deal magic damage."),
+    (5, 2, "Enhancement +5", 5, null, null, null, null, null, null, "This weapon is enchanted with a +5 enhancement bonus on attack and damage rolls, as well as causing it to deal magic damage."),
+    (6, 2, "Anarchic", 2, true, true, true, true, true, true, "An anarchic weapon is chaotically aligned and infused with the power of chaos. It makes the weapon chaos-aligned and thus bypasses the corresponding damage reduction. 
     It deals an extra 2d6 points of damage against all of lawful alignment. It bestows one negative level on any lawful creature attempting to wield it. The negative level remains as long as the weapon is in hand and disappears when the weapon is no longer wielded. 
     This negative level never results in actual level loss, but it cannot be overcome in any way (including restoration spells) while the weapon is wielded. 
     Bows, crossbows, and slings so crafted bestow the chaotic power upon their ammunition."),
-    (7, 2, "Axiomatic", 2, "An axiomatic weapon is lawfully aligned and infused with the power of law. It makes the weapon law-aligned and thus bypasses the corresponding damage reduction. It deals 
+    (7, 2, "Axiomatic", 2, true, true, true, true, true, true, "An axiomatic weapon is lawfully aligned and infused with the power of law. It makes the weapon law-aligned and thus bypasses the corresponding damage reduction. It deals 
     an extra 2d6 points of damage against all of chaotic alignment. It bestows one negative level on any chaotic creature attempting to wield it. The negative level remains as long as the weapon is in hand and 
     disappears when the weapon is no longer wielded. This negative level never results in actual level loss, but it cannot be overcome in any way (including restoration spells) while the weapon is wielded. 
     Bows, crossbows, and slings so crafted bestow the lawful power on their ammunition."),
-    (8, 2, "Bane", 1, "A bane weapon excels at attacking one type or subtype of creature. Against its designated foe, its effective enhancement bonus is +2 better than its normal enhancement bonus 
+    (8, 2, "Bane", 1, true, true, true, true, true, true, "A bane weapon excels at attacking one type or subtype of creature. Against its designated foe, its effective enhancement bonus is +2 better than its normal enhancement bonus 
     (so a +1 longsword is a +3 longsword against its foe). It deals an extra 2d6 points of damage against the foe. Bows, crossbows, and slings so crafted bestow the bane quality upon their ammunition. To 
     randomly determine a weapon's designated foe, roll on the following table."),
-    (9, 2, "Brilliant Energy", 4, "A brilliant energy weapon has its significant portion - such as its blade, axe head, or arrowhead - transformed into light, although this does not modify the item's 
+    (9, 2, "Brilliant Energy", 4, true, true, true, false, true, true, "A brilliant energy weapon has its significant portion - such as its blade, axe head, or arrowhead - transformed into light, although this does not modify the item's 
     weight. It always gives off light as a torch (20-foot radius). A brilliant energy weapon ignores nonliving matter. Armor bonuses to AC (including any enhancement bonuses to that armor) do not count against it 
     because the weapon passes through armor. (Dexterity, deflection, dodge, natural armor, and other such bonuses still apply.) A brilliant energy weapon cannot harm undead, constructs, and objects. This property 
     can only be applied to melee weapons, thrown weapons, and ammunition."),
-    (10, 2, "Dancing", 4, "As a standard action, a dancing weapon can be loosed to attack on its own. It fights for 4 rounds using the base attack bonus of the one who loosed it and then 
+    (10, 2, "Dancing", 4, true, true, true, false, false, false, "As a standard action, a dancing weapon can be loosed to attack on its own. It fights for 4 rounds using the base attack bonus of the one who loosed it and then 
     drops. While dancing, it cannot make attacks of opportunity, and the person who activated it is not considered armed with the weapon. In all other respects, it is considered wielded or attended by the 
     creature for all maneuvers and effects that target items (such as the sunder action or the heat metal spell). While dancing, it takes up the same space as the activating character and can attack adjacent foes 
     (weapons with reach can attack opponents up to 10 feet away). The dancing weapon accompanies the person who activated it everywhere, whether she moves by physical or magical means. If the wielder who loosed 
     it has an unoccupied hand, she can grasp it while it is attacking on its own as a free action; when so retrieved the weapon can't dance (attack on its own) again for 4 rounds."),
-    (11, 2, "Defending", 1, "A defending weapon allows the wielder to transfer some or all of the sword's enhancement bonus to his AC as a bonus that stacks with all others. As a free action, 
+    (11, 2, "Defending", 1, true, true, true, false, false, false, "A defending weapon allows the wielder to transfer some or all of the sword's enhancement bonus to his AC as a bonus that stacks with all others. As a free action, 
     the wielder chooses how to allocate the weapon's enhancement bonus at the start of his turn before using the weapon, and the effect to AC lasts until his next turn."),
-    (12, 2, "Disruption", 2, "A weapon of disruption is the bane of all undead. Any undead creature struck in combat must succeed on a DC 14 Will save or be destroyed. A weapon of diruption must be a bludgeoning 
+    (12, 2, "Disruption", 2, false, false, true, false, false, false, "A weapon of disruption is the bane of all undead. Any undead creature struck in combat must succeed on a DC 14 Will save or be destroyed. A weapon of diruption must be a bludgeoning 
     weapon. (If you roll this property randomly for a piercing or slashing weapon, reroll.)"),
-    (13, 2, "Distance", 1, "This property can only be placed on a ranged weapon. A weapon of distance has double the range increment of other weapons of its kind."),
-    (14, 2, "Flaming", 1, "Upon command, a flaming weapon is sheathed in fire. The fire does not harm the wielder. The effect remains until another command is given. A flaming weapon deals an extra 1d6 points of 
+    (13, 2, "Distance", 1, false, false, false, true, false, false, "This property can only be placed on a ranged weapon. A weapon of distance has double the range increment of other weapons of its kind."),
+    (14, 2, "Flaming", 1, true, true, true, true, true, true, "Upon command, a flaming weapon is sheathed in fire. The fire does not harm the wielder. The effect remains until another command is given. A flaming weapon deals an extra 1d6 points of 
     fire damage on a successful hit. Bows, crossbows, and slings so crafted bestow the fire energy upon their ammunition."),
-    (15, 2, "Flaming Burst", 2, "A flaming burst weapon functions as a flaming weapon that also explodes with flame upon striking a successful critical hit. The fire does not harm the wielder. In addition to the 
+    (15, 2, "Flaming Burst", 2, true, true, true, true, true, true, "A flaming burst weapon functions as a flaming weapon that also explodes with flame upon striking a successful critical hit. The fire does not harm the wielder. In addition to the 
     extra 1d6 fire damage from the flaming ability, a flaming burst weapon deals an extra 1d10 points of fire damage on a successful critical hit. If the weapon's critical multiplier is x3, add an extra 2d10 points 
     of fire damage instead, and if the multiplier is x4, add an extra 3d10 points of fire damage. Bows, crossbows, and slings so crafted bestow the fire energy upon their ammunition. Even if the flaming ability is 
     not active, the weapon still deals its extra fire damage on a successful critical hit."),
-    (16, 2, "Frost", 1, "Upon command, a frost weapon is sheathed in icy cold. The cold does not harm the wielder. The effect remains until another command is given. A frost weapon deals an extra 1d6 points of 
+    (16, 2, "Frost", 1, true, true, true, true, true, true, "Upon command, a frost weapon is sheathed in icy cold. The cold does not harm the wielder. The effect remains until another command is given. A frost weapon deals an extra 1d6 points of 
     cold damage on a successful hit. Bows, crossbows, and slings so crafted bestow the cold energy upon their ammunition."),
-    (17, 2, "Ghost Touch", 1, "A ghost touch weapon deals damage normally against incorporeal creatures, regardless of its bonus. (An incorporeal creature's 50% chance to avoid damage does not apply to attacks 
+    (17, 2, "Ghost Touch", 1, true, true, true, false, false, false, "A ghost touch weapon deals damage normally against incorporeal creatures, regardless of its bonus. (An incorporeal creature's 50% chance to avoid damage does not apply to attacks 
     with ghost touch weapons.) The weapon can be picked up and moved by an incorporeal creature at any time. A manifesting ghost can wield the weapon against corpreal foes. Essentially, a ghost touch weapon counts 
     as either corporeal or incorporeal at any given time, whichever is more beneficial to the wielder."),
-    (18, 2, "Holy", 2, "A holy weapon is imbued with holy power. This power makes the weapon good-aligned and thus bypasses the corresponding damage reduction. It deals an extra 2d6 points of damage against all of 
+    (18, 2, "Holy", 2, true, true, true, true, true, true, "A holy weapon is imbued with holy power. This power makes the weapon good-aligned and thus bypasses the corresponding damage reduction. It deals an extra 2d6 points of damage against all of 
     evil alignment. It bestows one negative level on any evil creature attempting to wield it. The negative level remains as long as the weapon is in hand and disappears when the weapon is no longer wielded. This 
     negative level never results in actual level loss, but it cannot be overcome in any way (including restoration spells) while the weapon is wielded. Bows, crossbows, and slings so crafted bestow the holy power 
     upon their ammunition."),
-    (19, 2, "Icy Burst", 2, "An icy burst weapon functions as a frost weapon that also explodes with frost upon striking a successful critical hit. The frost does not harm the wielder. In addition to the extra 1d6 
+    (19, 2, "Icy Burst", 2, true, true, true, true, true, true, "An icy burst weapon functions as a frost weapon that also explodes with frost upon striking a successful critical hit. The frost does not harm the wielder. In addition to the extra 1d6 
     cold damage from the frost ability, an icy burst weapon deals an extra 1d10 points of cold damage on a successful critical hit. If the weapon's critical multiplier is x3, add an extra 2d10 points of cold damage 
     instead, and if the multiplier is x4, add an extra 3d10 points. Bows, crossbows, and slings so crafted bestow the cold energy upon their ammunition. Even if the frost ability is not active, the weapon still deals 
     its extra cold damage on a successful critical hit."),
-    (20, 2, "Keen", 1, "This ability doubles the threat range of a weapon. For instance, if it is placed on a longsword (which has a normal threat range of 19-20), the keen longsword scores a threat on a 17-20. 
+    (20, 2, "Keen", 1, true, true, false, false, false, false, "This ability doubles the threat range of a weapon. For instance, if it is placed on a longsword (which has a normal threat range of 19-20), the keen longsword scores a threat on a 17-20. 
     Only piercing or slashing weapons can be keen. (If you roll this property randomly for an inappropriate weapon, reroll). This benefit doesn't stack with any other effect that expands the threat range of a weapon 
     (such as the keen edge spell or the Improved Critical feat)."),
-    (21, 2, "Ki Focus", 1, "The magic weapon serves as a channel for the wielder's ki, allowing her to use her special ki attacks through the weapon as if they were unarmed attacks. These attacks include the 
+    (21, 2, "Ki Focus", 1, true, true, true, false, false, false, "The magic weapon serves as a channel for the wielder's ki, allowing her to use her special ki attacks through the weapon as if they were unarmed attacks. These attacks include the 
     monk's stunning attack, ki strike, and quivering palm, as well as the Stunning Fist feat. Only melee weapons can have the ki focus ability."),
-    (22, 2, "Merciful", 1, "This weapon deals an extra 1d6 points of damage, and all damage it deals is nonlethal damage. On command, the weapon supresses this ability until commanded to resume it. Bows, 
+    (22, 2, "Merciful", 1, true, true, true, true, true, true, "This weapon deals an extra 1d6 points of damage, and all damage it deals is nonlethal damage. On command, the weapon supresses this ability until commanded to resume it. Bows, 
     crossbows, and slings so crafted bestow the merciful effect upon their ammunition."),
-    (23, 2, "Mighty Cleaving", 1, "A mighty cleaving weapon allows a wielder with the Cleave feat to make one additional cleave attempt in a round."),
-    (24, 2, "Returning", 1, "This special ability can only be placed on a weapon that can be thrown. A returning weapon flies through the air back to the creature that threw it. It returns to the thrower just before 
+    (23, 2, "Mighty Cleaving", true, true, true, false, false, false, 1, "A mighty cleaving weapon allows a wielder with the Cleave feat to make one additional cleave attempt in a round."),
+    (24, 2, "Returning", 1, false, false, false, false, true, false, "This special ability can only be placed on a weapon that can be thrown. A returning weapon flies through the air back to the creature that threw it. It returns to the thrower just before 
     the creature's next turn (and is therefore ready to use again that turn). Catching a returning weapon when it comes back is a free action. If the character can't catch it, or if the character has moved since throwing 
     it, the weapon drops to the ground in the square from which it was thrown."),
-    (25, 2, "Seeking", 1, "Only ranged weapons can have the seeking ability. The weapon veers toward its target, negating any miss chances that would otherwise apply, such as from concealment. (The wielder still has to aim the weapon 
+    (25, 2, "Seeking", 1, false, false, false, true, false, false, "Only ranged weapons can have the seeking ability. The weapon veers toward its target, negating any miss chances that would otherwise apply, such as from concealment. (The wielder still has to aim the weapon 
     at the right square. Arrows mistakenly shot into an empty space, for example, do not veer and hit invisible enemies, even if they are nearby.)"),
-    (26, 2, "Shock", 1, "Upon command, a shock weapon is sheathed in crackling electricity. The electricity does not harm the wielder. The effect remains until another command is given. A shock weapon deals an 
+    (26, 2, "Shock", 1, true, true, true, true, true, true, "Upon command, a shock weapon is sheathed in crackling electricity. The electricity does not harm the wielder. The effect remains until another command is given. A shock weapon deals an 
     extra 1d6 points of electricity damage on a successful hit. Bows, crossbows, and slings so crafted bestow the electricity energy upon their ammunition."),
-    (27, 2, "Shocking Burst", 2, "A shocking burst weapon functions as a shocking weapon that also explodes with electricity upon striking a successful critical hit. The electricity does not harm the wielder. 
+    (27, 2, "Shocking Burst", 2, true, true, true, true, true, true, "A shocking burst weapon functions as a shocking weapon that also explodes with electricity upon striking a successful critical hit. The electricity does not harm the wielder. 
     In addition to the extra 1d6 electricity damage from the shock ability, a shocking burst weapon deals an extra 1d10 points of electricity damage on a successful critical hit. If the weapon's critical 
     multiplier is x3, add an extra 2d10 points of electricity damage instead, and if the multiplier is x4, add an extra 3d10 points. Bows, crossbows, and slings so crafted bestow the electricity energy upon 
     their ammunition. Even if the shock ability is not active, the weapon still deals its extra electricity damage on a successful critical hit."),
-    (28, 2, "Speed", 3, "When making a full attack action, the wielder of a speed weapon may make on extra attack with it. The attack uses the wielder's full base attack bonus, plus any modifiers appropriate to 
+    (28, 2, "Speed", 3, true, true, true, true, true, false, "When making a full attack action, the wielder of a speed weapon may make on extra attack with it. The attack uses the wielder's full base attack bonus, plus any modifiers appropriate to 
     the situation. (This benefit is not cumulative with similar effects, such as a haste spell.)"),
-    (29, 2, "Spell Storing", 1, "A spell storing weapon allows a spellcaster to store a single targeted spell of up to 3rd level in the weapon. (The spell must have a casting time of 1 standard action.) Any time 
+    (29, 2, "Spell Storing", 1, true, true, true, false, false, false, "A spell storing weapon allows a spellcaster to store a single targeted spell of up to 3rd level in the weapon. (The spell must have a casting time of 1 standard action.) Any time 
     the weapon strikes a creature and the creature takes damage from it, the weapon can immediately cast the spell on that creature as a free action if the wielder desires. (This special ability is an exception 
     to the general rule that casting a spell from an item takes at least as long as casting the spell normally.) Inflict serious wounds, contagion, blindness, and hold person are all common choices for the stored 
     spell. Once the spell has been cast from the weapon, a spellcaster can cast any other targeted spell of up to 3rd level into it. The weapon magically imparts to the wielder the name of the spell currently stored 
     within it. A randomly rolled spell storing weapon has a 50% chance to have a spell stored in it already."),
-    (30, 2, "Thundering", 1, "A thundering weapon creates a cacophonous roar like thunder upon striking a successful critical hit. The sonic energy does not harm the wielder. A thundering weapon deals an extra 1d8 
+    (30, 2, "Thundering", 1, true, true, true, true, true, true, "A thundering weapon creates a cacophonous roar like thunder upon striking a successful critical hit. The sonic energy does not harm the wielder. A thundering weapon deals an extra 1d8 
     points of sonic damage on a successful critical hit. If the weapon's critical multiplier is x3, add an extra 2d8 points of sonic damage instead, and if the multiplier is x4, add an extra 3d8 points od sonic damage. 
     Bows, crossbows, and slings so crafted bestow the sonic energy upon their ammunition. Subjects dealt a critical hit by a thundering weapon must make a DC 14 Fortitude save or be deafened permanently."),
-    (31, 2, "Throwing", 1, "This ability can only be placed on a melee weapon. A melee weapon crafted with this ability gains a range increment of 10 feet and can be thrown by a wielder proficient in its normal use."),
-    (32, 2, "Unholy", 2, "An unholy weapon is imbued with unholy power. This power makes the weapon evil-aligned and thus bypasses the corresponding damage reduction. It deals an extra 2d6 points of damage against 
+    (31, 2, "Throwing", 1, true, true, true, false, false, false, "This ability can only be placed on a melee weapon. A melee weapon crafted with this ability gains a range increment of 10 feet and can be thrown by a wielder proficient in its normal use."),
+    (32, 2, "Unholy", 2, true, true, true, true, true, true, "An unholy weapon is imbued with unholy power. This power makes the weapon evil-aligned and thus bypasses the corresponding damage reduction. It deals an extra 2d6 points of damage against 
     all of good alignment. It bestows one negative level on any good creature attempting to wield it. The negative level remains as long as the weapon is in hand and disappears when the weapon is no longer wielded. 
     This negative level never results in actual level loss, but it cannot be overcome in any way (including restoration spells) while the weapon is wielded. Bows, crossbows, and slings so crafted bestow the unholy 
     power upon their ammunition."),
-    (33, 2, "Vicious", 1, "When a vicious weapon strikes an opponent, it creates a flash of disruptive energy that resonates between the opponent and the wielder. This energy deals an extra 2d6 points of damage to 
+    (33, 2, "Vicious", 1, true, true, true, false, false, false, "When a vicious weapon strikes an opponent, it creates a flash of disruptive energy that resonates between the opponent and the wielder. This energy deals an extra 2d6 points of damage to 
     the opponent and 1d6 points of damage to the wielder. Only melee weapons can be vicious."),
-    (34, 2, "Vorpal", 5, "This potent and feared ability allows the weapon to sever the heads of those it strikes. Upon a roll of natural 20 (followed by a successful roll to confirm the critical hit), the weapon 
+    (34, 2, "Vorpal", 5, true, false, false, false, false, false, "This potent and feared ability allows the weapon to sever the heads of those it strikes. Upon a roll of natural 20 (followed by a successful roll to confirm the critical hit), the weapon 
     severs the opponent's head (if it has one) from its body. Some creatures, such as many aberrations and all oozes, have no heads. Others, such as golems and undead creatures other than vampires, are not 
     affected by the loss of their heads. Most other creatures, however, die when their heads are cut off. The DM may have to make judgement calls about this sword's effect. A vorpal weapon must be a slashing 
     weapon. (If you roll this property randomly for an inappropriate weapon, reroll.)"),
-    (35, 2, "Wounding", 2, "A wounding weapon deals 1 point of Constitution damage from blood loss when it hits a creature. A critical hit does not multiply the Constitution damage. Creatures immune to critical hits (such as plants 
+    (35, 2, "Wounding", 2, true, true, true, false, false, false, "A wounding weapon deals 1 point of Constitution damage from blood loss when it hits a creature. A critical hit does not multiply the Constitution damage. Creatures immune to critical hits (such as plants 
     and constructs) are immune to the Constitution damage dealt by this weapon.");

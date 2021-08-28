@@ -1,7 +1,7 @@
 const databaseController = require("../controller/database_controller");
 
 function weaponIsAmmo(weaponName) {
-    if (weaponName == "Dart" || weaponName == "Shuriken" || weaponName.includes("Bolt") || weaponName.includes("Arrow") || weaponName.includes("Bullets")) {
+    if (weaponName == "Dart" || weaponName == "Shuriken" || weaponName.includes("Bolt") || weaponName.includes("Arrow") || weaponName.includes("Bullet")) {
         return true;
     }
     return false;
@@ -67,7 +67,11 @@ function organizeWeaponPropertyData(data, baseWeapon) {
             "check penalties (see Masterwork Armor, page 126).";
     } else {
         // Do this later (when weapon properties exist!)
-        console.log("ERROR: organizeWeaponPropertyData - thinks that data is not 'Masterwork'. data = " + data);
+        theData = data[0];
+        theProp["Property_Name"] = theData.Magic_Weapon_Name;
+        theProp["Property_Gold_Cost"] = null;
+        theProp["Property_Bonus_Value"] = theData.Magic_Weapon_Modifier;
+        theProp["Property_Description"] = theData.Magic_Weapon_Description;
     }
 
     return theProp;
@@ -75,8 +79,6 @@ function organizeWeaponPropertyData(data, baseWeapon) {
 
 async function getSpecialMaterial(baseWeapon, goldLeft, maxGoldItemInShop, averageGoldValue) {
     materials = await databaseController.getMaterialIDsForWeapon(baseWeapon.Weapon_Name);
-
-    console.log(materials);
 
     if (materials == undefined || materials.length < 1) {
         // no materials can apply to this weapon
@@ -107,7 +109,7 @@ async function getSpecialMaterial(baseWeapon, goldLeft, maxGoldItemInShop, avera
             cost = 2;
         } else if (baseWeapon.Weapon_Type == "Light Melee") {
             cost = 20;
-        } else if (baseWeapon.Weapon_Type == "One-Handed Melee") {
+        } else if (baseWeapon.Weapon_Type == "One-Handed Melee" || baseWeapon.Weapon_Type == "Ranged") {
             cost = 90;
         } else if (baseWeapon.Weapon_Type == "Two-Handed Melee") {
             cost = 180;
@@ -240,7 +242,87 @@ let weaponModel = {
                         properties.push(organizeWeaponPropertyData("Masterwork", baseWeapon));
                     }
 
-                    // Check if item can have magical properties! (DO LATER)
+                    // Check if item can have magical properties!
+                    let lowAverage = averageGoldValue / 2;
+                    let highAverage = averageGoldValue * 3 / 2;
+                    if (highAverage > maxGoldItemInShop) {
+                        highAverage = maxGoldItemInShop;
+                    }
+                    let targetGoldValue = Math.floor(Math.random() * (highAverage - lowAverage + 1)) + lowAverage;
+                    let extraCostForMaterialEnchantment = 0;
+                    console.log("Target Value: " + targetGoldValue);
+
+                    let remainingGoldForItem = targetGoldValue - baseWeapon.Weapon_Cost;
+                    if (baseWeapon.Weapon_Material != null) {
+                        remainingGoldForItem -= baseWeapon.Weapon_Material.Material_Gold_Cost;
+                        console.log("Gold left after accounting for material: " + remainingGoldForItem);
+                        if (baseWeapon.Weapon_Material.Material_Name == "Iron, Cold") {
+                            extraCostForMaterialEnchantment = 2000;
+                        }
+                    }
+                    if (properties != null && properties.length > 0) {
+                        properties.forEach(prop => {
+                            remainingGoldForItem -= prop.Property_Gold_Cost;
+                        })
+                        console.log("Gold left after accounting for properties: " + remainingGoldForItem);
+                    }
+
+                    /*
+                    ------------------------------------------------------------
+                    This next section does not work for ammunition or double weapons!
+                    This needs to be fixed.
+                    ------------------------------------------------------------
+                    */
+
+
+                    //Determine how many modifiers this weapon can have
+                    // Equation is (Cost = mod^2 * 2000), reversed it is (mod = sqrt(cost / 2000))
+                    let totalModifiers = Math.floor(Math.sqrt((remainingGoldForItem - extraCostForMaterialEnchantment) / 2000));
+                    console.log("Modifiers allowed for this item: " + totalModifiers);
+
+                    if (!isNaN(totalModifiers) && totalModifiers > 0) {
+                        // We can have enchantments, and we know how many!
+                        //First we determine how many of the enchantments are simply enhancement bonuses (most should be)
+                        // We can reuse rng again since we are done with its current use
+                        rng = Math.floor(Math.random() * 100);
+                        let theProperty = null;
+
+                        if (rng < 50) {
+                            // As many enhancements as possible
+                            if (totalModifiers > 5) {
+                                // Enhancement +5, then some abilities until no modifiers are left
+                                theProperty = await databaseController.getEnhancementBonusForMagicWeapon(5);
+                                totalModifiers -= 5;
+                            } else {
+                                // Enhancement equal to the totalModifiers value
+                                theProperty = await databaseController.getEnhancementBonusForMagicWeapon(totalModifiers);
+                                totalModifiers = 0;
+                            }
+                        } else if (rng < 80) {
+                            // Mixed enhancements and abilities
+                            let enhanceValue = Math.floor(Math.random() * totalModifiers) + 1;
+                            theProperty = await databaseController.getEnhancementBonusForMagicWeapon(enhanceValue);
+                            totalModifiers -= enhanceValue;
+                        } else {
+                            // Minimum enhancements, maximum abilities
+                            theProperty = await databaseController.getEnhancementBonusForMagicWeapon(1);
+                            totalModifiers -= 1;
+                        }
+
+                        properties.push(organizeWeaponPropertyData(theProperty));
+
+                        while (totalModifiers > 0) {
+                            // Loop and continue finding special abilities for the weapon now that enhancements are done
+                            break;
+                        }
+                    }
+
+                    /*
+                    ------------------------------------------------------------
+                    End of the section that needs to be fixed!
+                    ------------------------------------------------------------
+                    */
+
                 }
                 else {
                     // Item is not masterwork!
@@ -295,14 +377,28 @@ let weaponModel = {
     },
 
     calculateCost(weapon) {
-        let baseCost = weapon.Weapon_Cost;
+        let cost = weapon.Weapon_Cost;
+        let modifiers = 0;
+        let additionalCostForEnchantingMaterials = 0;
         if (weapon.Weapon_Material != null) {
-            baseCost += weapon.Weapon_Material.Material_Gold_Cost;
+            cost += weapon.Weapon_Material.Material_Gold_Cost;
+            if (weapon.Weapon_Material.Material_Name == "Iron, Cold") {
+                additionalCostForEnchantingMaterials = 2000;
+            }
         }
         weapon.Weapon_Properties.forEach(prop => {
-            baseCost += prop.Property_Gold_Cost;
+            if (prop.Property_Gold_Cost != null) {
+                cost += prop.Property_Gold_Cost;
+            } else {
+                // If the gold cost is null, its because the modifier is used instead!
+                modifiers += prop.Property_Bonus_Value;
+            }
         });
-        return baseCost;
+        if (modifiers > 0) {
+            cost += additionalCostForEnchantingMaterials;
+            cost += (modifiers * modifiers * 2000);
+        }
+        return cost;
     }
 }
 

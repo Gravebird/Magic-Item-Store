@@ -113,3 +113,4 @@ INSERT INTO Material_For_Weapon VALUES
     (67, 2),
     (68, 2),
     (70, 1), (70, 4), (70, 5), (70, 6);
+    

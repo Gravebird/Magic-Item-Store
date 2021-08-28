@@ -31,8 +31,6 @@ function organizeArmorPropertyData(data) {
 async function getSpecialMaterial(baseArmor, goldLeft, maxGoldItemInShop, averageGoldValue) {
     materials = await databaseController.getMaterialIDsForArmor(baseArmor.Armor_Name);
 
-    console.log(materials);
-
     if (materials == undefined || materials.length < 1) {
         // No materials can apply to this armor
         return null;
