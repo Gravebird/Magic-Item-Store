@@ -28,6 +28,11 @@
                                 <% } else if (shop.weapons[i].Weapon_Material == null) { %>
                                     None
                                 <% } %>
+                                <% if (shop.weapons[i].Double_Weapon_Properties.length > 0) { %>
+                                    <% shop.weapons[i].Double_Weapon_Properties.forEach(function(prop) { %>
+                                        [<%=prop.Property_Name %>]
+                                    <% }); %>
+                                <% } %>
                             </td>
                         </tr>
                     <% } %>

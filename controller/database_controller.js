@@ -72,6 +72,33 @@ let databaseController = {
 
     getEnhancementBonusForMagicWeapon: async function(value) {
         return await query('SELECT Magic_Weapon_Name, Magic_Weapon_Modifier, Magic_Weapon_Description FROM Magic_Weapon WHERE Magic_Weapon_Name = "Enhancement +' + value + '"');
+    },
+
+    getEnchantmentIDsForMeleeWeapon: async function(targetModifier, canBeThrown) {
+        theQuery = 'SELECT Magic_Weapon_ID FROM Magic_Weapon ' +
+        'WHERE (Melee_Slashing = true OR Melee_Piercing = true OR Melee_Bludgeoning = true';
+        if (canBeThrown) {
+            theQuery = theQuery + ' OR Thrown_Weapon = true';
+        }
+        theQuery = theQuery + ') AND Magic_Weapon_Modifier = ' + targetModifier;
+        console.log("DB DEBUG:", theQuery);
+        return await query(theQuery);
+    },
+
+    getEnchantmentIDsForRangedWeapon: async function(targetModifier, isAmmo) {
+        theQuery = 'SELECT Magic_Weapon_ID FROM Magic_Weapon WHERE ';
+        if (isAmmo) {
+            theQuery = theQuery + 'Ranged_Ammunition = true';
+        } else {
+            theQuery = theQuery + 'Ranged_Weapon = true';
+        }
+        theQuery = theQuery + ' AND Magic_Weapon_Modifier = ' + targetModifier;
+        console.log("DB DEBUG", theQuery);
+        return await query(theQuery);
+    },  
+
+    getEnchantmentDetailsByID: async function(id) {
+        return await query("SELECT * FROM Magic_Weapon WHERE Magic_Weapon_ID = " + id);
     }
 }
 

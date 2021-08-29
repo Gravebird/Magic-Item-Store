@@ -1,7 +1,32 @@
+const e = require("express");
 const databaseController = require("../controller/database_controller");
 
+/**
+ * 
+ * @param {String} weaponName the name of the weapon
+ * @returns the number of ammunition of this weapon. (0 if not ammo, > 0 if ammo)
+ */
 function weaponIsAmmo(weaponName) {
-    if (weaponName == "Dart" || weaponName == "Shuriken" || weaponName.includes("Bolt") || weaponName.includes("Arrow") || weaponName.includes("Bullet")) {
+    let toCheck = 0;
+    if (weaponName == "Dart") {
+        return 1;
+    } else if (weaponName.includes("Shuriken")) {
+        toCheck = weaponName.substring(weaponName.length - 3);
+    } else {
+        toCheck = weaponName.substring(weaponName.length - 4)
+    }
+
+    if (toCheck.includes("(") && toCheck.includes(")")) {
+        return parseInt(toCheck.substring(1, toCheck.length - 1));
+    }
+    return 0;
+}
+
+function isDoubleWeapon(baseWeapon) {
+    if (baseWeapon.Weapon_Medium_Damage == null) {
+        return false;
+    }
+    if (baseWeapon.Weapon_Medium_Damage.includes("/")) {
         return true;
     }
     return false;
@@ -147,6 +172,199 @@ async function getSpecialMaterial(baseWeapon, goldLeft, maxGoldItemInShop, avera
     return theMaterial;
 }
 
+function enchantmentIsAligned(theProp) {
+    let name = theProp.Magic_Weapon_Name;
+
+    if (name == "Holy" || name == "Unholy" || name == "Axiomatic" || name == "Anarchic") {
+        return true;
+    }
+    return false;
+}
+
+function enchantmentIsValid(theProp, properties, baseWeapon) {
+    if (theProp[0].Magic_Weapon_Name == "Keen") {
+        // Keen can only apply to slashing or piercing weapons
+        if (!baseWeapon.Weapon_Damage_Type.includes("S") && !baseWeapon.Weapon_Damage_Type.includes("P")) {
+            return false;
+        }
+    }
+
+    if (theProp[0].Magic_Weapon_Name == "Disruption") {
+        // Disruption can only apply to bludgeoning weapons
+        if (!baseWeapon.Weapon_Damage_Type.includes("B")) {
+            return false;
+        }
+    }
+
+    if (enchantmentIsAligned(theProp[0])) {
+        properties.forEach(prop => {
+            if (enchantmentIsAligned(prop[0])) {
+                // Can only have one alignment enchantment per weapon
+                return false;
+            }
+        })
+        baseWeapon.Weapon_Properties.forEach(prop => {
+            if (enchantmentIsAligned(prop)) {
+                return false;
+            }
+        })
+    } else {
+        properties.forEach(prop => {
+            if (theProp[0].Magic_Weapon_Name == prop[0].Magic_Weapon_Name) {
+                return false;
+            }
+        })
+    }
+    return true;
+}
+
+function getBaneTargetForMagicWeapon() {
+    let rng = Math.floor(Math.random() * 100);
+    let target = null;
+
+    if (rng < 5) {
+        target = "Aberrations";
+    } else if (rng < 9) {
+        target = "Animals";
+    } else if (rng < 16) {
+        target = "Constructs";
+    } else if (rng < 22) {
+        target = "Dragons";
+    } else if (rng < 27) {
+        target = "Elementals";
+    } else if (rng < 32) {
+        target = "Fey";
+    } else if (rng < 39) {
+        target = "Giants";
+    } else if (rng < 40) {
+        target = "Humanoids, aquatic";
+    } else if (rng < 42) {
+        target = "Humanoids, dwarf";
+    } else if (rng < 44) {
+        target = "Humanoids, elf";
+    } else if (rng < 45) {
+        target = "Humanoids, gnoll";
+    } else if (rng < 46) {
+        target = "Humanoids, gnome";
+    } else if (rng < 49) {
+        target = "Humanoids, goblinoid";
+    } else if (rng < 50) {
+        target = "Humanoids, halfling";
+    } else if (rng < 54) {
+        target = "Humanoids, human";
+    } else if (rng < 57) {
+        target = "Humanoids, reptilian";
+    } else if (rng < 60) {
+        target = "Humanoids, orc";
+    } else if (rng < 65) {
+        target = "Magical beasts";
+    } else if (rng < 70) {
+        target = "Monstrous humanoids";
+    } else if (rng < 72) {
+        target = "Oozes";
+    } else if (rng < 73) {
+        target = "Outsiders, air";
+    } else if (rng < 76) {
+        target = "Outsiders, chaotic";
+    } else if (rng < 77) {
+        target = "Outsiders, earth";
+    } else if (rng < 80) {
+        target = "Outsiders, evil";
+    } else if (rng < 81) {
+        target = "Outsiders, fire";
+    } else if (rng < 84) {
+        target = "Outsiders, good";
+    } else if (rng < 87) {
+        target = "Outsiders, lawful";
+    } else if (rng < 88) {
+        target = "Outsiders, water";
+    } else if (rng < 90) {
+        target = "Plants";
+    } else if (rng < 98) {
+        target = "Undead";
+    } else {
+        target = "Vermin";
+    }
+    return target;
+}
+
+
+async function getEnchantmentsForWeapon(baseWeapon, totalModifiers) {
+    if (totalModifiers > 10) {
+        totalModifiers = 10;
+    }
+    rng = Math.floor(Math.random() * 100);
+    let theProperty;
+    let theProperties = [];
+
+    if (rng < 50) {
+        // As many enhancements as possible
+        if (totalModifiers > 5) {
+            // Enhancement +5, then some abilities until no modifiers are left
+            theProperty = await databaseController.getEnhancementBonusForMagicWeapon(5);
+            totalModifiers -= 5;
+        } else {
+            // Enhancement equal to the totalModifiers value
+            theProperty = await databaseController.getEnhancementBonusForMagicWeapon(totalModifiers);
+            totalModifiers = 0;
+        }
+    } else if (rng < 90) {
+        // Mixed enhancements and abilities
+        let enhanceValue = Math.floor(Math.random() * totalModifiers) + 1;
+        if (enhanceValue > 5) {
+            enhanceValue = 5;
+        }
+        theProperty = await databaseController.getEnhancementBonusForMagicWeapon(enhanceValue);
+        totalModifiers -= enhanceValue;
+    } else {
+        // Minimum enhancements, maximum abilities
+        theProperty = await databaseController.getEnhancementBonusForMagicWeapon(1);
+        totalModifiers -= 1;
+    }
+
+    console.log("DEBUG in weaponModel.js - getEnchantmentsForWeapon");
+    console.log("DEBUG --- theProperty = " + theProperty);
+
+    theProperties.push(theProperty);
+
+    let throwing_weapon = baseWeapon.Weapon_Range_Increment != null;
+
+    while (totalModifiers > 0) {
+        // Loop and continue finding special abilities for the weapon now that enhancements are done
+        let targetModifier = Math.floor(Math.random() * totalModifiers) + 1;
+        let propertyList;
+        if (baseWeapon.Weapon_Type == "Ranged") {
+            propertyList = await databaseController.getEnchantmentIDsForRangedWeapon(targetModifier, weaponIsAmmo(baseWeapon.Weapon_Name));
+        } else {
+            propertyList = await databaseController.getEnchantmentIDsForMeleeWeapon(targetModifier, throwing_weapon);
+        }
+        // This gets us an array of objects from the DB, but we need only one
+
+
+        if (propertyList.length > 0) {
+            rng = Math.floor(Math.random() * propertyList.length);
+            theProperty = await databaseController.getEnchantmentDetailsByID(propertyList[rng].Magic_Weapon_ID);
+
+            if (theProperty[0].Magic_Weapon_Name == "Bane") {
+                // Decide what the bane targets!
+                baneTarget = getBaneTargetForMagicWeapon();
+                theProperty[0].Magic_Weapon_Name = theProperty[0].Magic_Weapon_Name + " (" + baneTarget + ")";
+            }
+
+
+            if (enchantmentIsValid(theProperty, theProperties, baseWeapon)) {
+                theProperties.push(theProperty);
+                totalModifiers -= theProperty[0].Magic_Weapon_Modifier;
+                if (theProperty[0].Magic_Weapon_Name == "Throwing") {
+                    throwing_Weapon = true;
+                }
+            }
+        }
+    }
+
+    return theProperties;
+}
+
 let weaponModel = {
 
     /**
@@ -179,6 +397,7 @@ let weaponModel = {
         theWeapon["Weapon_Quantity"] = 1;
         theWeapon["Weapon_Material"] = null;
         theWeapon["Weapon_Properties"] = [];
+        theWeapon["Double_Weapon_Properties"] = [];
         theWeapon["Weapon_Cost_With_Properties"] = theWeapon.Weapon_Cost;
 
         return theWeapon;
@@ -250,12 +469,10 @@ let weaponModel = {
                     }
                     let targetGoldValue = Math.floor(Math.random() * (highAverage - lowAverage + 1)) + lowAverage;
                     let extraCostForMaterialEnchantment = 0;
-                    console.log("Target Value: " + targetGoldValue);
 
                     let remainingGoldForItem = targetGoldValue - baseWeapon.Weapon_Cost;
                     if (baseWeapon.Weapon_Material != null) {
                         remainingGoldForItem -= baseWeapon.Weapon_Material.Material_Gold_Cost;
-                        console.log("Gold left after accounting for material: " + remainingGoldForItem);
                         if (baseWeapon.Weapon_Material.Material_Name == "Iron, Cold") {
                             extraCostForMaterialEnchantment = 2000;
                         }
@@ -264,64 +481,44 @@ let weaponModel = {
                         properties.forEach(prop => {
                             remainingGoldForItem -= prop.Property_Gold_Cost;
                         })
-                        console.log("Gold left after accounting for properties: " + remainingGoldForItem);
                     }
-
-                    /*
-                    ------------------------------------------------------------
-                    This next section does not work for ammunition or double weapons!
-                    This needs to be fixed.
-                    ------------------------------------------------------------
-                    */
 
 
                     //Determine how many modifiers this weapon can have
                     // Equation is (Cost = mod^2 * 2000), reversed it is (mod = sqrt(cost / 2000))
-                    let totalModifiers = Math.floor(Math.sqrt((remainingGoldForItem - extraCostForMaterialEnchantment) / 2000));
-                    console.log("Modifiers allowed for this item: " + totalModifiers);
+                    // The price for ammunition is based on buying 50 at a time, so the cost would be #/50 * price
+                    let ammo = weaponIsAmmo(baseWeapon.Weapon_Name);
+                    let totalModifiers = 0;
+                    if (ammo > 0) {
+                        // We have ammunition!
+                        totalModifiers = Math.floor(Math.sqrt(((remainingGoldForItem - extraCostForMaterialEnchantment) * 50 / ammo) / 2000));
+                    } else {
+                        // Not ammunition
+                        totalModifiers = Math.floor(Math.sqrt((remainingGoldForItem - extraCostForMaterialEnchantment) / 2000));
+                    }
+                    let doubleModifiers = Math.floor(totalModifiers / 2);
+
+                    if (isDoubleWeapon(baseWeapon)) {
+                        totalModifiers -= doubleModifiers;
+                    }
+
+                    
 
                     if (!isNaN(totalModifiers) && totalModifiers > 0) {
                         // We can have enchantments, and we know how many!
-                        //First we determine how many of the enchantments are simply enhancement bonuses (most should be)
+                        // First we determine how many of the enchantments are simply enhancement bonuses (most should be)
                         // We can reuse rng again since we are done with its current use
-                        rng = Math.floor(Math.random() * 100);
-                        let theProperty = null;
-
-                        if (rng < 50) {
-                            // As many enhancements as possible
-                            if (totalModifiers > 5) {
-                                // Enhancement +5, then some abilities until no modifiers are left
-                                theProperty = await databaseController.getEnhancementBonusForMagicWeapon(5);
-                                totalModifiers -= 5;
-                            } else {
-                                // Enhancement equal to the totalModifiers value
-                                theProperty = await databaseController.getEnhancementBonusForMagicWeapon(totalModifiers);
-                                totalModifiers = 0;
-                            }
-                        } else if (rng < 80) {
-                            // Mixed enhancements and abilities
-                            let enhanceValue = Math.floor(Math.random() * totalModifiers) + 1;
-                            theProperty = await databaseController.getEnhancementBonusForMagicWeapon(enhanceValue);
-                            totalModifiers -= enhanceValue;
-                        } else {
-                            // Minimum enhancements, maximum abilities
-                            theProperty = await databaseController.getEnhancementBonusForMagicWeapon(1);
-                            totalModifiers -= 1;
-                        }
-
-                        properties.push(organizeWeaponPropertyData(theProperty));
-
-                        while (totalModifiers > 0) {
-                            // Loop and continue finding special abilities for the weapon now that enhancements are done
-                            break;
+                        let mainProperties = await getEnchantmentsForWeapon(baseWeapon, totalModifiers);
+                        mainProperties.forEach(prop => {
+                            baseWeapon.Weapon_Properties.push(organizeWeaponPropertyData(prop));
+                        })
+                        if (isDoubleWeapon(baseWeapon) && doubleModifiers > 0) {
+                            let secondaryProperties = await getEnchantmentsForWeapon(baseWeapon, doubleModifiers);
+                            secondaryProperties.forEach(prop => {
+                                baseWeapon.Double_Weapon_Properties.push(organizeWeaponPropertyData(prop));
+                            })
                         }
                     }
-
-                    /*
-                    ------------------------------------------------------------
-                    End of the section that needs to be fixed!
-                    ------------------------------------------------------------
-                    */
 
                 }
                 else {
@@ -379,6 +576,7 @@ let weaponModel = {
     calculateCost(weapon) {
         let cost = weapon.Weapon_Cost;
         let modifiers = 0;
+        let doubleModifiers = 0;
         let additionalCostForEnchantingMaterials = 0;
         if (weapon.Weapon_Material != null) {
             cost += weapon.Weapon_Material.Material_Gold_Cost;
@@ -394,9 +592,25 @@ let weaponModel = {
                 modifiers += prop.Property_Bonus_Value;
             }
         });
+        weapon.Double_Weapon_Properties.forEach(prop => {
+            if (prop.Property_Gold_Cost != null) {
+                cost += prop.Property_Gold_Cost;
+            } else {
+                doubleModifiers += prop.Property_Bonus_Value;
+            }
+        })
         if (modifiers > 0) {
             cost += additionalCostForEnchantingMaterials;
-            cost += (modifiers * modifiers * 2000);
+            let ammo = weaponIsAmmo(weapon.Weapon_Name);
+            if (ammo) {
+                cost += (modifiers * modifiers * 2000) * ammo / 50;
+            } else {
+                cost += (modifiers * modifiers * 2000);
+            }
+        }
+        if (doubleModifiers > 0) {
+            cost += additionalCostForEnchantingMaterials;
+            cost += (doubleModifiers * doubleModifiers * 2000);
         }
         return cost;
     }

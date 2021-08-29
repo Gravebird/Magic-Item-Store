@@ -55,6 +55,22 @@
                 </div>
             <% }) %>
         <% } %>
+
+        <% if (item.Double_Weapon_Properties.length > 0) { %>
+            <h2>Secondary Properties:</h2>
+            <% item.Double_Weapon_Properties.forEach(prop => { %>
+                <div class="weapon-property-container">
+                    <h3><%= prop.Property_Name %></h3>
+                    <% if (prop.Property_Gold_Cost != null) { %>
+                        <p>Cost: <%=prop.Property_Gold_Cost %> gp</p>
+                    <% } else { %>
+                        <p>Modifier: <%=prop.Property_Bonus_Value %></p>
+                    <% } %>
+                    <p><%= prop.Property_Description %></p>
+                </div>
+            <% }) %>
+        <% } %>
+
     <% } else if (type == "armor") { %>
         <h1><%= item.Armor_Name %></h1>
         <h2><%= item.Armor_Category %></h2>
