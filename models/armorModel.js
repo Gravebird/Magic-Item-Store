@@ -1,3 +1,4 @@
+const e = require("express");
 const databaseController = require("../controller/database_controller");
 
 function organizeArmorPropertyData(data) {
@@ -21,8 +22,11 @@ function organizeArmorPropertyData(data) {
             "You can’t add the masterwork quality to armor or a shield after it" +
             "is created; it must be crafted as a masterwork item.";
     } else {
-        // Do this later (when weapon properties exist!)
-        console.log("ERROR: organizeArmorPropertyData - thinks that data is not 'Masterwork'. data = " + data);
+        theData = data[0];
+        theProp["Property_Name"] = theData.Magic_Armor_Name;
+        theProp["Property_Gold_Cost"] = theData.Magic_Armor_Cost;
+        theProp["Property_Bonus_Value"] = theData.Magic_Armor_Modifier;
+        theProp["Property_Description"] = theData.Magic_Armor_Description;
     }
 
     return theProp;
@@ -97,6 +101,114 @@ async function getSpecialMaterial(baseArmor, goldLeft, maxGoldItemInShop, averag
     theMaterial["Material_Gold_Cost"] = cost;
     theMaterial["Material_Description"] = material.Material_Description;
     return theMaterial;
+}
+
+function enchantmentIsValid(theProp, properties) {
+    for (let i = 0; i < properties.length; i++) {
+        if (theProp[0].Magic_Armor_Name == properties[i][0].Magic_Armor_Name) {
+            return false;
+        }
+    }
+    return true;
+}
+
+async function getEnchantmentsForArmor(baseArmor, totalModifiers, remainingGoldForItem) {
+    console.log("\nNEXT ARMOR:\n");
+    if (totalModifiers > 10) {
+        totalModifiers = 10;
+    }
+    let rng = Math.floor(Math.random() * 100);
+    let theProperty;
+    let theProperties = [];
+
+    if (rng < 50) {
+        // As many enhancements as possible
+        if (totalModifiers > 5) {
+            // Enhancement +5, then some abilities until no modifiers are left
+            theProperty = await databaseController.getEnhancementBonusForMagicArmor(5);
+            totalModifiers -= 5;
+        } else {
+            // Enhancement equal to the totalModifiers value
+            theProperty = await databaseController.getEnhancementBonusForMagicArmor(totalModifiers);
+            totalModifiers = 0;
+        }
+    } else if (rng < 90) {
+        // Mixed enhancements and abilities
+        let enhanceValue = Math.floor(Math.random() * totalModifiers) + 1;
+        if (enhanceValue > 5) {
+            enhanceValue = 5;
+        }
+        theProperty = await databaseController.getEnhancementBonusForMagicArmor(enhanceValue);
+        totalModifiers -= enhanceValue;
+    } else {
+        // Minimum enhancements, maximum abilities
+        theProperty = await databaseController.getEnhancementBonusForMagicArmor(1);
+        totalModifiers -= 1;
+    }
+
+    theProperties.push(theProperty);
+
+    while (totalModifiers > 0) {
+        console.log("1", totalModifiers);
+        let goldLeft = remainingGoldForItem;
+        let numMods = 0;
+        for (let i = 0; i < theProperties.length; i++) {
+            if (theProperties[i][0].Property_Gold_Cost != null) {
+                // Property costs gold
+                goldLeft -= parseInt(theProperties[i][0].Magic_Armor_Cost);
+            } else {
+                // Property has a modifier
+                numMods += parseInt(theProperties[i][0].Magic_Armor_Modifier);
+            }
+        }
+        // Figure out how many modifiers this weapon still has money for
+        totalModifiers = Math.floor(Math.sqrt(goldLeft / 1000));
+        totalModifiers -= numMods;
+
+        // We have used goldLeft, now we need to change its value based on the current modifiers
+        goldLeft -= (numMods * numMods * 1000);
+
+        console.log("Modifiers remaining: " + totalModifiers);
+        console.log("Gold left: " + goldLeft);
+
+        if (totalModifiers > 0 || goldLeft > 20000) {
+            // We can still put enchantments on this armor!
+            let propertyList;
+            if (baseArmor.Armor_Category == "Shield") {
+                propertyList = await databaseController.getEnchantmentIDsForArmor(totalModifiers, goldLeft, true);
+            } else {
+                propertyList = await databaseController.getEnchantmentIDsForArmor(totalModifiers, goldLeft, false);
+            }
+
+            console.log("2", propertyList.length);
+
+            if (propertyList.length > 0) {
+                rng = Math.floor(Math.random() * propertyList.length);
+                theProperty = await databaseController.getArmorEnchantmentDetailsByID(propertyList[rng].Magic_Armor_ID);
+                console.log("3", theProperty);
+            } else {
+                console.log("ERROR in armorModel.js - getEnchantmentsForArmor");
+                console.log("propertyList from DB is length < 0");
+                theProperty = null;
+                break;
+            }
+
+            if (theProperty != null) {
+                if (enchantmentIsValid(theProperty, theProperties)) {
+                    theProperties.push(theProperty);
+                    if (theProperty[0].Magic_Armor_Cost != null) {
+                        // Cost is null, this means that it has a modifier
+                        totalModifiers -= theProperty[0].Magic_Armor_Modifier;
+                    } else {
+                        // Has a cost
+                        goldLeft -= theProperty[0].Magic_Armor_Cost;
+                    }
+                }
+            }
+        }
+    }
+
+    return theProperties;
 }
 
 let armorModel = {
@@ -179,6 +291,34 @@ let armorModel = {
                     }
 
                     // Check if item can have magical properties! (DO LATER)
+                    let lowAverage = averageGoldValue / 2;
+                    let highAverage = averageGoldValue * 3 / 2;
+                    if (highAverage > maxGoldItemInShop) {
+                        highAverage = maxGoldItemInShop;
+                    }
+                    let targetGoldValue = Math.floor(Math.random() * (highAverage - lowAverage + 1)) + lowAverage;
+                    let remainingGoldForItem = targetGoldValue - baseArmor.Armor_Cost;
+                    if (baseArmor.Armor_Material != null) {
+                        remainingGoldForItem -= baseArmor.Armor_Material.Material_Gold_Cost;
+                    }
+
+                    if (properties != null && properties.length > 0) {
+                        properties.forEach(prop => {
+                            remainingGoldForItem -= prop.Property_Gold_Cost;
+                        })
+                    }
+
+                    // Determine how many modifiers this armor can have
+                    // Equation is (Cost = mod^2 * 1000), reversed it is (mod = sqrt(cost / 1000))
+                    let totalModifiers = Math.floor(Math.sqrt(remainingGoldForItem / 1000));
+
+                    if (!isNaN(totalModifiers) && totalModifiers > 0) {
+                        // We can have enchantments and we know how many!
+                        let theProperties = await getEnchantmentsForArmor(baseArmor, totalModifiers, remainingGoldForItem);
+                        theProperties.forEach(prop => {
+                            baseArmor.Armor_Properties.push(organizeArmorPropertyData(prop));
+                        })
+                    }
                 }
                 else {
                     // Item is not masterwork!
@@ -217,7 +357,6 @@ let armorModel = {
                             // We just need to look for differences
                             if (a.Armor_Properties[i].Property_Name != b.Armor_Properties[i].Property_Name) {
                                 match = false;
-                                console.log("DEBUG: " + a.Armor_Properties[i].Property_Name + " is not equal to " + b.Armor_Properties[i].Property_Name);
                                 break;
                             }
                         }
@@ -232,14 +371,23 @@ let armorModel = {
     },
 
     calculateCost(armor) {
-        let baseCost = armor.Armor_Cost;
+        let cost = armor.Armor_Cost;
+        let modifiers = 0;
         if (armor.Armor_Material != null) {
-            baseCost += armor.Armor_Material.Material_Gold_Cost;
+            cost += armor.Armor_Material.Material_Gold_Cost;
         }
         armor.Armor_Properties.forEach(prop => {
-            baseCost += prop.Property_Gold_Cost;
+            if (prop.Property_Gold_Cost != null) {
+                cost += prop.Property_Gold_Cost;
+            } else {
+                // If the gold cost is null, its because the modifier is used instead!
+                modifiers += prop.Property_Bonus_Value;
+            }
         });
-        return baseCost;
+        if (modifiers > 0) {
+            cost += (modifiers * modifiers * 1000);
+        }
+        return cost;
     }
 }
 

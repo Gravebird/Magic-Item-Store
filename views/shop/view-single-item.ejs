@@ -129,8 +129,10 @@
                     <h3><%= prop.Property_Name %></h3>
                     <% if (prop.Property_Gold_Cost != null) { %>
                         <p>Cost: <%= prop.Property_Gold_Cost %></p>
-                        <p><%= prop.Property_Description %></p>
+                    <% } else { %>
+                        <p>Modifier: <%= prop.Property_Bonus_Value %></p>
                     <% } %>
+                    <p><%= prop.Property_Description %></p>
                 </div>
             <% }) %>
         <% } %>

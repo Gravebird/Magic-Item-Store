@@ -81,7 +81,6 @@ let databaseController = {
             theQuery = theQuery + ' OR Thrown_Weapon = true';
         }
         theQuery = theQuery + ') AND Magic_Weapon_Modifier = ' + targetModifier;
-        console.log("DB DEBUG:", theQuery);
         return await query(theQuery);
     },
 
@@ -93,12 +92,31 @@ let databaseController = {
             theQuery = theQuery + 'Ranged_Weapon = true';
         }
         theQuery = theQuery + ' AND Magic_Weapon_Modifier = ' + targetModifier;
-        console.log("DB DEBUG", theQuery);
         return await query(theQuery);
     },  
 
-    getEnchantmentDetailsByID: async function(id) {
+    getWeaponEnchantmentDetailsByID: async function(id) {
         return await query("SELECT * FROM Magic_Weapon WHERE Magic_Weapon_ID = " + id);
+    },
+
+    getEnhancementBonusForMagicArmor: async function(value) {
+        return await query('SELECT Magic_Armor_Name, Magic_Armor_Modifier, Magic_Armor_Description FROM Magic_Armor WHERE Magic_Armor_Name = "Enhancement +' + value + '"');
+    },
+
+    getEnchantmentIDsForArmor: async function(modifiersLeft, goldLeft, isShield) {
+        theQuery = 'SELECT Magic_Armor_ID FROM Magic_Armor WHERE ';
+        if (isShield) {
+            theQuery = theQuery + 'Magic_Armor_Can_Be_Shield = true';
+        } else {
+            theQuery = theQuery + 'Magic_Armor_Can_Be_Armor = true';
+        }
+        theQuery = theQuery + ' AND (Magic_Armor_Modifier <= ' + modifiersLeft + ' OR Magic_Armor_Cost <= ' + goldLeft + ')';
+        console.log("DB DEBUG:", theQuery);
+        return await query(theQuery);
+    },
+
+    getArmorEnchantmentDetailsByID: async function(id) {
+        return await query('SELECT * FROM Magic_Armor WHERE Magic_Armor_ID = ' + id);
     }
 }
 

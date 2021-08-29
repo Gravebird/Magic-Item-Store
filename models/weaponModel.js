@@ -58,11 +58,6 @@ function getMasterworkCost(baseWeapon) {
     }
 }
 
-/**
-* This function will organize the data from a database query about 
-* @param {*} data 
-* @returns 
-*/
 function organizeWeaponPropertyData(data, baseWeapon) {
     let theProp = {};
     if (data == "Masterwork") {
@@ -91,7 +86,6 @@ function organizeWeaponPropertyData(data, baseWeapon) {
             "rolls. Instead, masterwork armor and shields have lessened armor" +
             "check penalties (see Masterwork Armor, page 126).";
     } else {
-        // Do this later (when weapon properties exist!)
         theData = data[0];
         theProp["Property_Name"] = theData.Magic_Weapon_Name;
         theProp["Property_Gold_Cost"] = null;
@@ -181,6 +175,22 @@ function enchantmentIsAligned(theProp) {
     return false;
 }
 
+function enchantmentAlignmentConflicts(prop1, prop2) {
+    let name1 = prop1.Magic_Weapon_Name;
+    let name2 = prop2.Magic_Weapon_Name;
+
+    if (name1 == "Holy" && name2 == "Unholy") {
+        return true;
+    } else if (name1 = "Unholy" && name2 == "Holy") {
+        return true;
+    } else if (name1 == "Axiomatic" && name2 == "Anarchic") {
+        return true;
+    } else if (name1 == "Anarchic" && name2 == "Axiomatic") {
+        return true;
+    }
+    return false;
+} 
+
 function enchantmentIsValid(theProp, properties, baseWeapon) {
     if (theProp[0].Magic_Weapon_Name == "Keen") {
         // Keen can only apply to slashing or piercing weapons
@@ -197,24 +207,29 @@ function enchantmentIsValid(theProp, properties, baseWeapon) {
     }
 
     if (enchantmentIsAligned(theProp[0])) {
-        properties.forEach(prop => {
-            if (enchantmentIsAligned(prop[0])) {
-                // Can only have one alignment enchantment per weapon
-                return false;
+        for (let i = 0; i < properties.length; i++) {
+            if (enchantmentIsAligned(properties[i][0])) {
+                if (enchantmentAlignmentConflicts(theProp[0], properties[i][0])) {
+                    return false;
+                }
             }
-        })
-        baseWeapon.Weapon_Properties.forEach(prop => {
-            if (enchantmentIsAligned(prop)) {
-                return false;
+        }
+        for (let i = 0; i < baseWeapon.Weapon_Properties.length; i++) {
+            if (enchantmentIsAligned(baseWeapon.Weapon_Properties[i])) {
+                if (enchantmentAlignmentConflicts(theProp[0], baseWeapon.Weapon_Properties[i])) {
+                    return false;
+                }
             }
-        })
-    } else {
-        properties.forEach(prop => {
-            if (theProp[0].Magic_Weapon_Name == prop[0].Magic_Weapon_Name) {
-                return false;
-            }
-        })
+        }
     }
+
+
+    for (let i = 0; i < properties.length; i++) {
+        if (theProp[0].Magic_Weapon_Name == properties[i][0].Magic_Weapon_Name) {
+            return false;
+        }
+    }
+
     return true;
 }
 
@@ -293,7 +308,7 @@ async function getEnchantmentsForWeapon(baseWeapon, totalModifiers) {
     if (totalModifiers > 10) {
         totalModifiers = 10;
     }
-    rng = Math.floor(Math.random() * 100);
+    let rng = Math.floor(Math.random() * 100);
     let theProperty;
     let theProperties = [];
 
@@ -322,9 +337,6 @@ async function getEnchantmentsForWeapon(baseWeapon, totalModifiers) {
         totalModifiers -= 1;
     }
 
-    console.log("DEBUG in weaponModel.js - getEnchantmentsForWeapon");
-    console.log("DEBUG --- theProperty = " + theProperty);
-
     theProperties.push(theProperty);
 
     let throwing_weapon = baseWeapon.Weapon_Range_Increment != null;
@@ -343,7 +355,7 @@ async function getEnchantmentsForWeapon(baseWeapon, totalModifiers) {
 
         if (propertyList.length > 0) {
             rng = Math.floor(Math.random() * propertyList.length);
-            theProperty = await databaseController.getEnchantmentDetailsByID(propertyList[rng].Magic_Weapon_ID);
+            theProperty = await databaseController.getWeaponEnchantmentDetailsByID(propertyList[rng].Magic_Weapon_ID);
 
             if (theProperty[0].Magic_Weapon_Name == "Bane") {
                 // Decide what the bane targets!
@@ -559,7 +571,6 @@ let weaponModel = {
                             // We just need to look for differences
                             if (a.Weapon_Properties[i].Property_Name != b.Weapon_Properties[i].Property_Name) {
                                 match = false;
-                                console.log("DEBUG: " + a.Weapon_Properties[i].Property_Name + " is not equal to " + b.Weapon_Properties[i].Property_Name);
                                 break;
                             }
                         }
