@@ -118,7 +118,7 @@ async function getSpecialMaterial(baseWeapon, goldLeft, maxGoldItemInShop, avera
         cost = 10 * baseWeapon.Weapon_Weight;
 
     } else if (material.Material_Name == "Iron, Cold") {
-        cost = getMasterworkCost(baseWeapon) + baseWeapon.Weapon_Cost;
+        cost = baseWeapon.Weapon_Cost;
 
     } else if (material.Material_Name == "Mithral") {
         cost = 500 * baseWeapon.Weapon_Weight;
@@ -133,7 +133,7 @@ async function getSpecialMaterial(baseWeapon, goldLeft, maxGoldItemInShop, avera
         } else if (baseWeapon.Weapon_Type == "Two-Handed Melee") {
             cost = 180;
         } else {
-            console.log("ERROR: baseWeapon is not light, one-handed, or two-handed. Received: " + baseWeapon.Weapon_Type);
+            console.log("ERROR: baseWeapon is not light, one-handed, two-handed, or ranged. Received: " + baseWeapon.Weapon_Type);
         }
     } else {
         // Error! We don't have code for this material!
@@ -226,6 +226,15 @@ function enchantmentIsValid(theProp, properties, baseWeapon) {
 
     for (let i = 0; i < properties.length; i++) {
         if (theProp[0].Magic_Weapon_Name == properties[i][0].Magic_Weapon_Name) {
+            return false;
+        }
+        if (theProp[0].Magic_Weapon_Name.includes("Flaming") && properties[i][0].Magic_Weapon_Name.includes("Flaming")) {
+            return false;
+        }
+        if ((theProp[0].Magic_Weapon_Name.includes("Frost") || theProp[0].Magic_Weapon_Name.includes("Icy Burst")) && (properties[i][0].Magic_Weapon_Name.includes("Frost") || properties[i][0].Magic_Weapon_Name.includes("Icy Burst"))) {
+            return false;
+        }
+        if (theProp[0].Magic_Weapon_Name.includes("Shock") && properties[i][0].Magic_Weapon_Name.includes("Shock")) {
             return false;
         }
     }

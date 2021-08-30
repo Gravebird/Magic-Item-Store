@@ -1,1 +1,0 @@
-Fix bug where armor costs are not being calculated properly. Material is being left out

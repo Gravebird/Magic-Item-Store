@@ -103,9 +103,47 @@ async function getSpecialMaterial(baseArmor, goldLeft, maxGoldItemInShop, averag
     return theMaterial;
 }
 
-function enchantmentIsValid(theProp, properties) {
+function duplicateEnchantment(a, b) {
+    if (a == b) {
+        return true;
+    }
+    if (a.includes("Fortification") && b.includes("Fortification")) {
+        return true;
+    }
+    if (a.includes("Slick") && b.includes("Slick")) {
+        return true;
+    }
+    if (a.includes("Silent Moves") && b.includes("Silent Moves")) {
+        return true;
+    }
+    if (a.includes("Shadow") && b.includes("Shadow")) {
+        return true;
+    }
+
+    let i = a.indexOf("Resistance");
+    if (i >= 0) {
+        console.log("\nResistance found! - " + a);
+        console.log("Comparing with " + b);
+
+        let word = a.substring(0, i);
+        console.log("Word is " + word);
+        if (a.includes(word) && b.includes(word)) {
+            console.log("Match!");
+            return true;
+        }
+        console.log("No match!");
+    }
+    return false;
+}
+
+function enchantmentIsValid(theProp, properties, baseArmor) {
+    if (baseArmor.Armor_Name.includes("Wood")) {
+        if (theProp[0].Magic_Armor_Name == "Reflecting") {
+            return false;
+        }
+    }
     for (let i = 0; i < properties.length; i++) {
-        if (theProp[0].Magic_Armor_Name == properties[i][0].Magic_Armor_Name) {
+        if (duplicateEnchantment(theProp[0].Magic_Armor_Name, properties[i][0].Magic_Armor_Name)) {
             return false;
         }
     }
@@ -194,7 +232,7 @@ async function getEnchantmentsForArmor(baseArmor, totalModifiers, remainingGoldF
             }
 
             if (theProperty != null) {
-                if (enchantmentIsValid(theProperty, theProperties)) {
+                if (enchantmentIsValid(theProperty, theProperties, baseArmor)) {
                     theProperties.push(theProperty);
                     if (theProperty[0].Magic_Armor_Cost != null) {
                         // Cost is null, this means that it has a modifier
@@ -283,6 +321,8 @@ let armorModel = {
                             if (material.Material_Name == "Darkwood") {
                                 properties.push(organizeArmorPropertyData("Masterwork"));
                             }
+                        } else {
+                            properties.push(organizeArmorPropertyData("Masterwork"));
                         }
                     }
                     else {

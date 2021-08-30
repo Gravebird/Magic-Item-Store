@@ -1,7 +1,10 @@
+<div class="shop-header">
+    <h1><%= shop.shopName %></h1>
+</div>
 <div class="shopContainer">
     <% if (shop.weapons.length > 0) { %>
         <div class="weaponsContainer">
-            <h1>Weapons</h1>
+            <h1 class="shop-category-label">Weapons</h1>
             <table class="shop-table weapon-table">
                 <thead>
                     <tr>
@@ -43,7 +46,7 @@
 
     <% if (shop.armor.length > 0) { %>
         <div class="armorContainer">
-            <h1>Armor</h1>
+            <h1 class="shop-category-label">Armor</h1>
             <table class="shop-table armor-table">
                 <thead>
                     <tr>

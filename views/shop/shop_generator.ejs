@@ -35,7 +35,7 @@
             maxGoldItemInput.classList.remove("badInput");
         }
 
-        if (parseInt(averageGoldInput.value) < 0 || parseInt(averageGoldInput.value) > 9999999 
+        if (parseInt(averageGoldInput.value) <= 0 || parseInt(averageGoldInput.value) > 9999999 
             || parseInt(averageGoldInput.value) > parseInt(maxGoldItemInput.value) || parseInt(averageGoldInput.value) > parseInt(goldInShopInput.value)) {
                 averageGoldInput.classList.add("badInput");
             } else {
@@ -93,22 +93,26 @@
             <h3 id="totalPercentage" class="goodInput">Total Percentage: 100%</h3>
         </div>
 
-        <div class="shopInputContainer">
-            <p>How much money worth of goods does this shop have?</p>
-            <input type="number" class="numberInput" id="goldInShop" name="goldInShop" min="100" max="9999999"
-                onkeyup="validateNumberInput();" value="100">
-        </div>
-
-        <div class="shopInputContainer">
-            <p>What is the most expensive item this shop can have?</p>
-            <input type="number" class="numberInput" id="maxGoldItemInShop" name="maxGoldItemInShop" min="1"
-                max="9999999" onkeyup="validateNumberInput();" value="1">
-        </div>
-
-        <div class="shopInputContainer">
-            <p>What is the average gold value per item? <em>Enter 0 for fully random.</em></p>
-            <input type="number" class="numberInput" id="averageGoldValue" name="averageGoldValue" min="0" 
-                max="9999999" onkeyup="validateNumberInput();" value="5">
+        <div class="number-input-area">
+        
+            <div class="shopInputContainer">
+                <p>How much money worth of goods does this shop have?</p>
+                <input type="number" class="numberInput" id="goldInShop" name="goldInShop" min="100" max="9999999"
+                    onkeyup="validateNumberInput();" value="100">
+            </div>
+        
+            <div class="shopInputContainer">
+                <p>What is the most expensive item this shop can have?</p>
+                <input type="number" class="numberInput" id="maxGoldItemInShop" name="maxGoldItemInShop" min="1" max="9999999"
+                    onkeyup="validateNumberInput();" value="1">
+            </div>
+        
+            <div class="shopInputContainer">
+                <p>What is the average gold value per item?</p>
+                <input type="number" class="numberInput" id="averageGoldValue" name="averageGoldValue" min="0" max="9999999"
+                    onkeyup="validateNumberInput();" value="5">
+            </div>
+        
         </div>
 
         <div class="submitContainer">
