@@ -30,6 +30,7 @@ This project uses a mysql database and a node.js server to populate item shops i
 - Rods
 - Wonderous Items
 - Potions
+- Store saved data in database instead of JSON
 
 # Installation instructions
 1. Install Node JS.
