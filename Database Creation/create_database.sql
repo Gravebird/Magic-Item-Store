@@ -151,6 +151,9 @@ CREATE TABLE Spell (
     Spell_Resistance varchar(22),
     Spell_Short_Description varchar(100),
     Spell_Description TEXT,
+    Spell_Material_Component varchar(696),
+    Spell_Focus varchar(300),
+    Spell_XP_Cost varchar(136),
     PRIMARY KEY (Spell_ID, Book_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
