@@ -827,4 +827,107 @@ null, null, null),
 (105, 1, "Cure Critical Wounds, Mass", false, true, "Conjuration", "Healing", null, 8, "V, S", "1 standard action", "Close", "One creature/level, no two of which can be more than 30 ft. apart", "Instantaneous", "Will half (harmless) or Will half; see text", "Yes (harmless) or Yes; see text",
 "Cures 4d8 damage +1/level for many creatures.",
 "This spell functions like mass cure light wounds, except that it cures 4d8 points of damage +1 point per caster level (maximum +40).",
-null, null, null);
+null, null, null),
+
+(106, 1, "Cure Light Wounds", true, true, "Conjuration", "Healing", null, 1, "V, S", "1 standard action", "Touch", "Creature touched", "Instantaneous", "Will half (harmless); see text", "Yes (harmless); see text",
+"Cures 1d8 damage +1/level (max +5).",
+"When laying your hand upon a living creature, you channel positive energy that cures 1d8 points of damage +1 point per caster level (maximum +5).\n
+Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a Will save to take half damage.",
+null, null, null),
+
+(107, 1, "Cure Light Wounds, Mass", true, true, "Conjuration", "Healing", null, 5, "V, S", "1 standard action", "Close", "One creature/level, no two of which can be more than 30 ft. apart", "Instantaneous", "Will half (harmless) or Will half; see text", "Yes (harmless) or Yes; see text",
+"Cures 1d8 damage +1/level for many creatures.",
+"You channel positive energy to cure 1d8 points of damage +1 point per caster level (maximum +25) in each selected creature.\n
+Like other cure spells, mass cure light wounds deals damage to undead in its area rather than curing them. Each affected undead may attempt a Will save for half damage.",
+null, null, null),
+
+(108, 1, "Cure Minor Wounds", false, true, "Conjuration", "Healing", null, 0, "V, S", "1 standard action", "Touch", "Creature touched", "Instantaneous", "Will half (harmless); see text", "Yes (harmless); see text",
+"Cures 1 point of damage.",
+"This spell functions like cure light wounds, except that it cures only 1 point of damage.",
+null, null, null),
+
+(109, 1, "Cure Moderate Wounds", true, true, "Conjuration", "Healing", null, 2, "V, S", "1 standard action", "Touch", "Creature touched", "Instantaneous", "Will half (harmless); see text", "Yes (harmless); see text",
+"Cures 2d8 damage +1/level (max +10).",
+"This spell functions like cure light wounds, except that it cures 2d8 points of damage +1 point per caster level (maximum +10).",
+null, null, null),
+
+(110, 1, "Cure Moderate Wounds, Mass", true, true, "Conjuration", "Healing", null, 6, "V, S", "1 standard action", "Close", "One creature/level, no two of which can be more than 30 ft. apart", "Instantaneous", "Will half (harmless) or Will half; see text", "Yes (harmless) or Yes; see text",
+"Cures 2d8 points of damage +1/level for many creatures.",
+"This spell functions like mass cure light wounds, except that it cures 2d8 points of damage +1 per caster level (maximum +30).",
+null, null, null),
+
+(111, 1, "Cure Serious Wounds", true, true, "Conjuration", "Healing", null, 3, "V, S", "1 standard action", "Touch", "Creature touched", "Instantaneous", "Will half (harmless); see text", "Yes (harmless); see text",
+"Cures 3d8 damage +1/level (max +15).",
+"This spell functions like cure light wounds, except that it cures 3d8 points of damage +1 point per caster level (maximum +15).",
+null, null, null),
+
+(112, 1, "Cure Serious Wounds, Mass", false, true, "Conjuration", "Healing", null, 7, "V, S", "1 standard action", "Close", "One creature/level, no two of which can be more than 30 ft. apart", "Instantaneous", "Will half (harmless) or Will half; see text", "Yes (harmless) or Yes; see text",
+"Cures 3d8 damage +1/level for many creatures.",
+"This spell functions like mass cure light wounds, except that it cures 3d8 points of damage +1 point per caster level (maximum +35).",
+null, null, null),
+
+(113, 1, "Curse Water", false, true, "Necromancy", null, "Evil", 1, "V, S, M", "1 minute", "Touch", "Flask of water touched", "Instantaneous", "Will negates (object)", "Yes (object)",
+"Makes unholy water.",
+"This spell imbues a flask (1 pint) of water with negative energy, turning it into unholy water. Unholy water damaged good outsiders the way holy water damaged undead and evil outsiders.",
+"5 pounds of powdered silver (worth 25 gp).", null, null),
+
+(114, 1, "Dancing Lights", true, false, "Evocation", null, "Light", 0, "V, S", "1 standard action", "Medium", "Up to four lights, all within a 10-ft.-radius area", "1 minute (D)", "None", "No",
+"Creates torches or other lights.",
+"Depending on the version selected, you create up to four lights that resemble lanterns or torches (and cast that amount of light), or up to four glowing spheres of light (which look like will-o'-wisps), or one faintly glowing, vaguely humanoid shape. The dancing lights must stay within a 10-foot-radius area in relation to each other but otherwise move as you desire (no concentration required): forward or back, up or down, straight or turning corners, or the linke. The lights can move up to 100 feet per round. A light winks out if the distance between you and it exceeds the spell's range.\n
+Dancing lights can be made permanent with a permanency spell.",
+null, null, null),
+
+(115, 1, "Darkness", true, true, "Evocation", null, "Darkness", 2, "V, M/DF", "1 standard action", "Touch", "Object touched", "10 min./level (D)", "None", "No",
+"20-ft. radius of supernatural shadow.",
+"This spell causes an object to radiate shadowy illumination out to a 20-foot radius. All creatures in the area gain concealment (20% miss chance). Even creatures that can normally see in such conditions (such as with darkvision or low-light vision) have the miss chance in an area shrouded in magical darkness.\n
+Normal lights (torches, candles, lanterns, and so forth) are incapable of brightening the area, as are light spells of lower level. Higher level light spells are not affected by darkness.\n
+If darkness is cast on a small object that is then placed inside or under a lightproof covering, the spell’s effect is blocked until the covering is removed.\n
+Darkness counters or dispels any light spell of equal or lower spell level.",
+"(Arcane) A bit of bat fur and either a drop of pitch or a piece of coal.", null, null),
+
+(116, 1, "Darkvision", true, true, "Transmutation", null, null, 2, "V, S, M", "1 standard action", "Touch", "Creature touched", "1 hour/level", "Will negates (harmless)/None", "Yes (harmless)",
+"See 60 ft. in total darkness.",
+"The subject gains the ability to see 60 feet even in total darkness. Darkvision is black and white only but otherwise like normal sight. Darkvision does not grant one the ability to see in magical darkness.\n
+Darkvision can be made permanent with a permanency spell.",
+"Either a pinch of dried carrot or an agate", null, null),
+
+(117, 1, "Daylight", true, true, "Evocation", null, "Light", 3, "V, S", "1 standard action", "Touch", "Object touched", "10 min./level (D)", "None", "No",
+"60-ft. radius of bright light.",
+"The object touched sheds light as bright as full daylight in a 60-foot radius, and dim light for an additional 60 feet beyond that. Creatures that take penalties in bright light also take them while within the radius of this magical light. Despite its name, this spell is not the equivalent of daylight for the purposes of creatures that are damaged or destroyed by bright light.\n
+If daylight is cast on a small object that is then placed inside or under a light-proof covering, the spell’s effects are blocked until the covering is removed.\n
+Daylight brought into an area of magical darkness (or vice versa) is temporarily negated, so that the otherwise prevailing light conditions exist in the overlapping areas of effect.\n
+Daylight counters or dispels any darkness spell of equal or lower level, such as darkness.",
+null, null, null),
+
+(118, 1, "Daze", true, false, "Enchantment", "Compulsion", "Mind-Affecting", 0, "V, S, M", "1 standard action", "Close", "One humanoid creature of 4 HD or less", "1 round", "Will negates", "Yes",
+"Humanoid creature of 4 HD or less loses next action.",
+"This enchantment clouds the mind of a humanoid creature with 4 or fewer Hit Dice so that it takes no actions. Humanoids of 5 or more HD are not affected. A dazed subject is not stunned, so attackers get no special advantage against it.",
+"A pinch of wool or similar substance", null, null),
+
+(119, 1, "Daze Monster", true, false, "Enchantment", "Compulsion", "Mind-Affecting", 2, "V, S, M", "1 standard action", "Medium", "One living creature of 6 HD or less", "1 round", "Will negates", "Yes",
+"Living creature of 6 HD or less loses next action.",
+"This spell functions like daze, but daze monster can affect any one living creature of any type. Creatures of 7 or more HD are not affected.",
+"A pinch of wool or similar substance", null, null),
+
+(120, 1, "Death Knell", false, true, "Necromancy", null, "Death, Evil", 2, "V, S", "1 standard action", "Touch", "Living creature touched", "Instantaneous/10 minutes per HD of subject; see text", "Will negates", "Yes",
+"Kills dying creature; you gain 1d8 temporary hp, +2 to Str, and +1 level.",
+"You draw forth the ebbing life force of a creature and use it to fuel your own power. Upon casting this spell, you touch a living creature that has -1 or fewer hit points. If the subject fails its saving throw, it dies, and you gain 1d8 temporary hit points and a +2 bonus to Strength. Additionally, your effective caster level goes up by +1, improving spell effects dependent on caster level. (This increase in effective caster level does not grant you access to more spells.) These effects last for 10 minutes per HD of the subject creature.",
+null, null, null),
+
+(121, 1, "Death Ward", false, true, "Necromancy", null, null, 4, "V, S, DF", "1 standard action", "Touch", "Living creature touched", "1 min./level", "Will negates (harmless)", "Yes (harmless)",
+"Grants immunity to death spells and negative energy effects.",
+"The subject is immune to all death spells, magical death effects, energy drain, and any negative energy effects (such as from inflict spells or chill touch).\n
+This spell doesn't remove negative levels that the subject has already gained, nor does it affect the saving throw necessary 24 hours after gaining a negative level.\n
+Death ward does not protect against other sorts of attacks, such as hit point loss, poison, or petrification, even if those attacks might be lethal.",
+null, null, null),
+
+(122, 1, "Deathwatch", false, true, "Necromancy", null, "Evil", 1, "V, S", "1 standard action", "30 ft.", "Cone-shaped emanation", "10 min./level", "None", "No",
+"Reveals how near death subjects within 30 ft. are.",
+"Using the foul sight granted by the powers of unlife, you can determine the condition of creatures near death within the spell's range. You instantly know whether each creature within the area is dead, fragile (alive and wounded, with 3 or fewer hit points left), fighting off death (alive with 4 or more hit points), undead, or neither alive nor dead (such as a construct).\n
+Deathwatch sees through any spell or ability that allows creatures to feign death.",
+null, null, null),
+
+(123, 1, "Deep Slumber", true, false, "Enchantment", "Compulsion", "Mind-Affecting", 3, "V, S, M", "1 round", "Close", "One or more living creatures within a 10-ft.-radius burst", "1 min./level", "Will negates", "Yes",
+"Puts 10 HD of creatures to sleep.",
+"This spell functions like sleep, except that it affects 10 HD of creatures.",
+"A pinch of fine sand, rose petals, or a live cricket.", null, null);
