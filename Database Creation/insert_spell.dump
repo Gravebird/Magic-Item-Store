@@ -458,7 +458,7 @@ null, null, null),
 "A pinch of cat fur.", null, null),
 
 (61, 1, "Cat's Grace, Mass", true, true, "Transmutation", null, null, 6, "V, S, M", "1 standard action", "Close", "One creature/level, no two of which can be more than 30 ft. apart", "1 min./level", "Will negates (harmless)", "Yes",
-"As cat’s grace, affects one subject/level.", "This spell functions like cat's grace, except that it affects multiple creatures.",
+"As cat's grace, affects one subject/level.", "This spell functions like cat's grace, except that it affects multiple creatures.",
 "A pinch of cat fur.", null, null),
 
 (62, 1, "Cause Fear", true, true, "Necromancy", null, "Fear, Mind-Affecting", 1, "V, S", "1 standard action", "Close", "One living creature with 5 or fewer HD", "1d4 rounds or 1 round; see text",
@@ -723,4 +723,108 @@ Light spells counter and dispel darkness spells of an equal or lower level.",
 "Control actions of one or more plant creatures.",
 "This spell enables you to control the actions of one or more plant creatures for a short period of time. You command the creatures by voice and they understand you, no matter what language you speak. Even if vocal communication is impossible (in the area of a silence spell, for instance), the controlled plants do not attack you. At the end of the spell, the subject's revert to their normal behavior\n
 Suicidal or self-destructive commands are simply ignored",
+null, null, null),
+
+(94, 1, "Control Undead", true, false, "Necromancy", null, null, 7, "V, S, M", "1 standard action", "Close", "Up to 2 HD/level of undead creatures, no two of which can be more than 30 ft. apart", "1 min./level", "Will negates", "Yes",
+"Undead don't attack you while under your command.",
+"This spell enables you to command undead creatures for a short period of time. You command them by voice and they understand you, no matter what language you speak. Even if vocal communication is impossible (in the area of a silence spell, for instance), the controlled undead do not attack you. At the end of the spell, the subjects revert to their normal behaviour. Intelligent undead creatures remember that you controlled them.",
+"A small piece of bone and a small piece of raw meat", null, null),
+
+(95, 1, "Control Water", true, true, "Transmutation", null, "Water", 4, "V, S, M/DF", "1 standard action", "Long", "Water in a volume of 10 ft./level by 10 ft./level by 2 ft./level (S)", "10 min./level (D)", "None", "No",
+"Raises or lowers bodies of water",
+"Depending on the version you choose, the control water spell raises or lowers water.\n
+Lower Water
+This causes water or similar liquid to reduce its depth by as much as 2 feet per caster level (to a minimum depth of 1 inch). The water is lowered within a squarish depression whose sides are up to caster level × 10 feet long. In extremely large and deep bodies of water, such as a deep ocean, the spell creates a whirlpool that sweeps ships and similar craft downward, putting them at risk and rendering them unable to leave by normal movement for the duration of the spell. When cast on water elementals and other water-based creatures, this spell acts as a slow spell (Will negates). The spell has no effect on other creatures.\n
+Raise Water
+This causes water or similar liquid to rise in height, just as the lower water version causes it to lower. Boats raised in this way slide down the sides of the hump that the spell creates. If the area affected by the spell includes riverbanks, a beach, or other land nearby, the water can spill over onto dry land.\n
+With either version, you may reduce one horizontal dimension by half and double the other horizontal dimension.",
+"(Arcane) A drop of water (for raise water) or a pinch of dust (for lower water)", null, null),
+
+(96, 1, "Control Weather", true, true, "Transmutation", null, null, 7, "V, S", "10 minutes; see text", "2 miles", "2-mile-radius circle, centered on you; see text", "4d12 hours; see text", "None", "No",
+"Changes weather in local area.",
+"You change the weather in the local area. It takes 10 minutes to cast the spell and an additional 10 minutes for the effects to manifest. You can call forth weather appropriate to the climate and season of the area you are in.\n
+Season          Possible Weather
+Spring          Tornado, thunderstorm, sleet storm, or hot weather
+Summer          Torrential rain, heat wave, or hailstorm
+Autumn          Hot or cold weather, fog, or sleet
+Winter          Frigid cold, blizzard, or thaw
+Late Winter     Hurricane-force winds or early spring (coastal area)\n
+You control the general tendencies of the weather, such as the direction and intensity of the wind. You cannot control specific applications of the weather—where lightning strikes, for example, or the exact path of a tornado. When you select a certain weather condition to occur, the weather assumes that condition 10 minutes later (changing gradually, not abruptly). The weather continues as you left it for the duration, or until you use a standard action to designate a new kind of weather (which fully manifests itself 10 minutes later). Contradictory conditions are not possible simultaneously.\n
+Control weather can do away with atmospheric phenomena (naturally occurring or otherwise) as well as create them.\n
+A druid casting this spell doubles the duration and affects a circle with a 3-mile radius.",
+null, null, null),
+
+(97, 1, "Control Winds", false, true, "Transmutation", null, "Air", 5, "V, S", "1 standard action", "40 ft./level", "40 ft./level radius cylinder 40 ft. high", "10 min./level", "Fortitude negates", "No",
+"Change wind direction and speed",
+"You alter wind force in the area surrounding you. You can make the wind blow in a certain direction or manner, increase its strength, or decrease its strength. The new wind direction and strength persist until the spell ends or until you choose to alter your handiwork, which requires concentration. You may create an “eye” of calm air up to 80 feet in diameter at the center of the area if you so desire, and you may choose to limit the area to any cylindrical area less than your full limit.\n
+Wind Direction
+You may choose one of four basic wind patterns to function over the spell’s area.\n
+A downdraft blows from the center outward in equal strength in all directions.
+An updraft blows from the outer edges in toward the center in equal strength from all directions, veering upward before impinging on the eye in the center.
+A rotation causes the winds to circle the center in clockwise or counterclockwise fashion.
+A blast simply causes the winds to blow in one direction across the entire area from one side to the other.
+Wind Strength
+For every three caster levels, you can increase or decrease wind strength by one level. Each round on your turn, a creature in the wind must make a Fortitude save or suffer the effect of being in the windy area.\n
+Strong winds (21+ mph) make sailing difficult.\n
+A severe wind (31+ mph) causes minor ship and building damage.\n
+A windstorm (51+ mph) drives most flying creatures from the skies, uproots small trees, knocks down light wooden structures, tears off roofs, and endangers ships.\n
+Hurricane force winds (75+ mph) destroy wooden buildings, sometimes uproot even large trees, and cause most ships to founder.\n
+A tornado (175+ mph) destroys all nonfortified buildings and often uproots large trees.",
+null, null, null),
+
+(98, 1, "Create Food and Water", false, true, "Conjuration", "Creation", null, 3, "V, S", "10 minutes", "Close", "Food and water to sustain three humans or one horse/level for 24 hours", "24 hours; see text", "None", "No",
+"Feeds three humans (or one horse)/level.",
+"The food that this spell creates is simple fare of your choice - highly nourishing if rather bland. Food so created decays and becomes inedible within 24 hours, although it can be kept fresh for another 24 hours by casting a purify food and water spell on it. The water created by this spell is just like clean rain water, and it doesn't go bad as the food does.",
+null, null, null),
+
+(99, 1, "Create Greater Undead", true, true, "Necromancy", null, "Evil", 8, "V, S, M", "1 hour", "Close", "One corpse", "Instantaneous", "None", "No",
+"Create shadows, wraiths, spectres, or devourers.",
+"This spell functions like create undead, except that you can create more powerful and intelligent sorts of undead: shadows, wraiths, spectres, and devourers (see the Monster Manual for more information on all types of undead). The type or types of undead you can create is based on your caster level, as shown on the table below.\n
+Caster Level        Undead Created
+15th or lower       Shadow
+16th-17th           Wraith
+18th-19th           Spectre
+20th or higher      Devourer",
+"A clay pot filled with grave dirt and another filled with brackish water. The spell must be cast on a dead body. You must place a black onyx gem worth at least 50 gp per HD of the undead to be created into the mouth or eye socket of each corpse. The magic of the spell turns these gems into worthless shells.",
+null, null),
+
+(100, 1, "Create Undead", true, true, "Necromancy", null, "Evil", 6, "V, S, M", "1 hour", "Close", "One corpse", "Instantaneous", "None", "No",
+"Create ghouls, ghasts, mummies, or mohrgs.",
+"A much more potent spell than animate dead, this evil spell allows you to create more powerful sorts of undead: ghouls, ghasts, mummies, and mohrgs (see the Monster Manual for more information on all types of undead). The type or types of undead you can create is based on your caster level, as shown on the table below.\n
+Caster Level        Undead Created
+11th or lower       Ghoul
+12th-14th           Ghast
+15th-17th           Mummy
+18th or higher      Mohrg\n
+You may create less powerful undead than your level would allow if you choose. For example, at 16th level you could decide to create a ghoul or a ghast instead of a mummy. Doing this may be a good idea, because created undead are not automatically under the control of their animator. If you are capable of commanding undead, you may attempt to command the undead creature as it forms (see Turn or Rebuke Undead, page 159 [Player's Handbook]).\n
+This spell must be cast at night.",
+"A clay pot filled with grave dirt and another filled with brackish water. The spell must be cast on a dead body. You must place a black onyx gem worth at least 50 gp per HD of the undead to be created into the mouth or eye socket of each corpse. The magic of the spell turns these gems into worthless shells.",
+null, null),
+
+(101, 1, "Create Water", false, true, "Conjuration", "Creation", "Water", 0, "V, S", "1 standard action", "Close", "Up to 2 gallons of water/level", "Instantaneous", "None", "No",
+"Creates 2 gallons/level of pure water",
+"This spell generates wholesome, drinkable water. Water can be created in an area as small as will actually contain the liquid, or in an area three times as large - possibly creating a downpour or filling many small receptacles.\n
+Note: Conjuration spells can't create substances or objects within a creature. Water weighs about 8 pounds per gallon. One cubic foot of water contains roughly 8 gallons and weighs about 60 pounds.",
+null, null, null),
+
+(102, 1, "Creeping Doom", false, true, "Conjuration", "Summoning", null, 7, "V, S", "1 round", "Close; see text", "One swarm of centipedes per two levels", "1 min./level", "None", "No",
+"Swarms of centipedes attack at your command.",
+"When you utter the spell of creeping doom, you call forth a mass of centipede swarms (one per two caster levels, to a maximum of ten swarms at 20th level), which need not appear adjacent to one another.\n
+You may summon the centipede swarms so that they share the area of other creatures. The swarms remain stationary, attacking any creatures in their area, unless you command the creeping doom to move (a standard action). As a standard action, you can command any number of the swarms to move toward any prey within 100 feet of you. You cannot command any swarm to move more than 100 feet away from you, and if you move more than 100 feet from any swarm, that swarm remains stationary, attacking any creatures in its area (but it can be commanded again if you move within 100 feet).",
+null, null, null),
+
+(103, 1, "Crushing Despair", true, false, "Enchantment", "Compulsion", "Mind-Affecting", 3, "V, S, M", "1 standard action", "30 ft.", "Cone-shaped burst", "1 min./level", "Will negates", "Yes",
+"Subjects take -2 on attack rolls, damage rolls, saves, and checks.",
+"An invisible cone of despair causes great sadness in the subjects. Each affected creature takes a -2 penalty on attack rolls, saving throws, ability checks, skill checks, and weapon damage rolls.\n
+Crushing despair counters and dispels good hope.",
+"A vial of tears", null, null),
+
+(104, 1, "Cure Critical Wounds", true, true, "Conjuration", "Healing", null, 4, "V, S", "1 standard action", "Touch", "Creature touched", "Instantaneous", "Will half (harmless); see text", "Yes (harmless); see text",
+"Cures 4d8 damage +1/level (max +20).",
+"This spell functions like cure light wounds, except that it cures 4d8 points of damage +1 point per caster level (maximum +20).",
+null, null, null),
+
+(105, 1, "Cure Critical Wounds, Mass", false, true, "Conjuration", "Healing", null, 8, "V, S", "1 standard action", "Close", "One creature/level, no two of which can be more than 30 ft. apart", "Instantaneous", "Will half (harmless) or Will half; see text", "Yes (harmless) or Yes; see text",
+"Cures 4d8 damage +1/level for many creatures.",
+"This spell functions like mass cure light wounds, except that it cures 4d8 points of damage +1 point per caster level (maximum +40).",
 null, null, null);
