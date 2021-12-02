@@ -641,4 +641,86 @@ d%      Behaviour
 51-70   Flee away from caster at top possible speed.
 71-100  Attack nearest creature (for this purpose, a familiar counts as part of the subject's self).\n
 A confused character who can't carry out the indicated action does nothing but babble incoherently. Attackers are not at any special advantage when attacking a confused character. Any confused character who is attacked automatically attacks its attackers on its next turn, as long as it is still confused when its turn comes. Note that a confused character will not make attacks of opportunity against any creature that it is not already devoted to attacking (either because of its most recent action or because it has just been attacked).",
-"(Arcane) A set of three nut shells", null, null);
+"(Arcane) A set of three nut shells", null, null),
+
+(87, 1, "Confusion, Lesser", true, false, "Enchantment", "Compulsion", "Mind-Affecting", 1, "V, S, DF", "1 standard action", "Close", "One living creature", "1 round", "Will negates", "Yes",
+"One creature is confused for 1 round.",
+"This spell causes a single creature to become confused for 1 round. See the confusion spell, above, to determine the exact effect on the subject.
+The table is replicated here for convenience:
+d%      Behaviour
+01-10   Attack caster with melee or ranged weapons (or close with caster if attack is not possible).
+11-20   Act normally.
+21-50   Do nothing but babble incoherently.
+51-70   Flee away from caster at top possible speed.
+71-100  Attack nearest creature (for this purpose, a familiar counts as part of the subject's self).",
+null, null, null),
+
+(88, 1, "Consecrate", false, true, "Evocation", null, "Good", 2, "V, S, M, DF", "1 standard action", "Close", "20-ft.-radus emanation", "2 hours/level", "None", "No",
+"Fills area with positive energy, making undead weaker.",
+"This spell blesses an area with positive energy. Each Charisma check made to turn undead within this area gains a +3 sacred bonus. Every undead creature entering a consecrated area suffers minor disruption, giving it a -1 penalty on attack rolls, damage rolls, and saves. Undead cannot be created within or summoned into a consecrated area.\n
+If the consecrated area contains an altar, shrine, or other permanent fixture dedicated to your deity, pantheon, or aligned higher power, the modifiers given above are doubled (+6 sacred bonus on turning checks, -2 penalties for undead in the area). You cannot consecrate an area with a similar fixture of a deity other than your own patron.\n
+If the area does contain an altar, shrine, or other permanent fixture of a deity, pantheon, or higher power other than your patron, the consecrate spell instead curses the area, cutting off its connection with the associated deity or power. This secondary function, if used, does not also grant the bonuses and penalties relating to undead, as given above.\n
+Consecrate counters and dispels Desecrate",
+"A vial of holy water and 25 gp worth (5 pounds) of silver dust, all of which must be sprinkled around the area",
+null, null),
+
+(89, 1, "Contact Other Plane", true, false, "Divination", null, null, 5, "V", "10 minutes", "Personal", "You", "Concentration", null, null,
+"Lets you ask question of extraplanar entity.",
+"You send your mind to another plane of existence (an Elemental Plane or some plane farther removed) in order to receive advice and information from powers there. (See the accompanying table for possible consequences and results of the attempt.) The powers reply in a language you understand, but they resent such contact and give only brief answers to your questions. (All questions are answered with “yes,” “no,” “maybe,” “never,” “irrelevant,” or some other one-word answer.)\n
+You must concentrate on maintaining the spell (a standard action) in order to ask questions at the rate of one per round. A question is answered by the power during the same round. For every two caster levels, you may ask one question.\n
+Contact with minds far removed from your home plane increases the probability that you will incur a decrease to Intelligence and Charisma, but the chance of the power knowing the answer, as well as the probability of the entity answering correctly, are likewise increased by moving to distant planes.\n
+Once the Outer Planes are reached, the power of the deity contacted determines the effects. (Random results obtained from the table are subject to the personalities of individual deities.)\n
+On rare occasions, this divination may be blocked by an act of certain deities or forces.\n
+d% is rolled for the result shown on the table:\n
+Plane contacted                     Avoid Int/Cha Decrease(1)   True Answer (2)     Don't Know (3)      Lie (4)     Random Answer (5)
+Elemental Plane                     DC 7/1 week                 01-34               35-62               63-83       84-100
+    (appropriate)                   (DC 7/1 week)               (01-68)             (69-75)             (68-98)     (99-100)
+Positive/Negative Energy Plane      DC 8/1 week                 01-39               40-65               66-86       87-100
+Astral Plane                        DC 9/1 week                 01-44               45-67               68-88       89-100
+Outer Plane, demideity              DC 10/2 weeks               01-49               50-70               71-91       92-100
+Outer Plane, lesser deity           DC 12/3 weeks               01-60               61-75               76-95       96-100
+Outer Plane, intermediate deity     DC 14/4 weeks               01-73               74-81               82-98       99-100
+Outer Plane, greater deity          DC 16/5 weeks               01-88               89-90               91-99       100\n
+(1): You must succeed on an Intelligence check against this DC to avoid a decrease in Intelligence and Charisma. If the check fails, your Intelligence and Charisma scores each fall to 8 for the stated duration, and you become unable to cast arcane spells. If you lose Intelligence and Charisma, the effect strikes as soon as the first question is asked, and no answer is received. (The entries in parentheses are for questions that pertain to the appropriate Elemental Plane.)
+(2): You get a true, one-word answer. Questions that cannot be answered this way are answered randomly.
+(3): The entity tells you that it doesn't know.
+(4): The entity intentionally lies to you.
+(5): The entity tries to lie but doesn't know the answer, so it makes one up.",
+null, null, null),
+
+(90, 1, "Contagion", true, true, "Necromancy", null, "Evil", 3, "V, S", "1 standard action", "Touch", "Living creature touched", "Instantaneous", "Fortitude negates", "Yes",
+"Infects subject with chosen disease.",
+"The subject contracts a disease selected from the table below, which strikes immediately (no incubation period). The DC noted is for the subsequent saves (use contagion's normal save DC for the initial saving throw).\n
+Disease             DC      Damage
+Blinding Sickness   16      1d4 Str(1)
+Cackle Fever        16      1d6 Wis
+Filth Fever         12      1d3 Dex and 1d3 Con
+Mindfire            12      1d4 Int
+Red ache            15      1d6 Str
+Shakes              13      1d8 Dex
+Slimy doom          14      1d4 Con\n
+(1): Each time a victim takes 2 or more points of Strength damage from blinding sickness, he or she must make another Fortitude save (using disease's save DC) or be permanently blinded.\n
+See the Dungeon Master's Guide for descriptions of each disease, as well as for the general effects of disease.",
+null, null, null),
+
+(91, 1, "Contingency", true, false, "Evocation", null, null, 6, "V, S, M, F", "At least 10 minutes; see text", "Personal", "You", "One day/level (D) or until discharged", null, null,
+"Sets trigger condition for another spell.",
+"You can place another spell upon your person so that it comes into effect under some condition you dictate when casting contingency. The contingency spell and the companion spell are cast at the same time. The 10-minute casting time is the minimum total for both castings; if the companion spell has a casting time longer than 10 minutes, use that instead.\n
+The spell to be brought into effect by the contingency must be one that affects your person and be of a spell level no higher than one-third your caster level (rounded down, maximum 6th level).\n
+The conditions needed to bring the spell into effect must be clear, although they can be general. In all cases, the contingency immediately brings into effect the companion spell, the latter being “cast” instantaneously when the prescribed circumstances occur. If complicated or convoluted conditions are prescribed, the whole spell combination (contingency and the companion magic) may fail when called on. The companion spell occurs based solely on the stated conditions, regardless of whether you want it to.\n
+You can use only one contingency spell at a time; if a second is cast, the first one (if still active) is dispelled.",
+"That of the companion spell, plus quicksilver and an eyelash of an ogre mage, rakshasa, or similar spell-using creature.",
+"A statuette of you carved from elephant ivory and decorated with gems (worth at least 1,500 gp). You must carry the focus for the contingency to work.",
+null),
+
+(92, 1, "Continual Flame", true, true, "Evocation", null, "Light", 2, "V, S, M", "1 standard action", "Touch", "Object touched/Magical, heatless flame", "Permanent", "None", "No",
+"Makes a permanent, heatless torch.",
+"A flame, equivalent in brightness to a torch, springs forth from an object that you touch. The effect looks like a regular flame, but it creates no heat and doesn't use oxygen. A continual flame can be covered and hidden but not smothered or quenched.\n
+Light spells counter and dispel darkness spells of an equal or lower level.",
+"You sprinkle ruby dust (worth 50 gp) on the item that is to carry the flame", null, null),
+
+(93, 1, "Control Plants", false, true, "Transmutation", null, null, 8, "V, S, DF", "1 standard action", "Close", "Up to 2HD/level of plant creatures, no two of which can be more than 30 ft. apart", "1 min./level", "Will negates", "No",
+"Control actions of one or more plant creatures.",
+"This spell enables you to control the actions of one or more plant creatures for a short period of time. You command the creatures by voice and they understand you, no matter what language you speak. Even if vocal communication is impossible (in the area of a silence spell, for instance), the controlled plants do not attack you. At the end of the spell, the subject's revert to their normal behavior\n
+Suicidal or self-destructive commands are simply ignored",
+null, null, null);
