@@ -269,7 +269,7 @@ Hit points gained by a temporary increase in Constitution score are not temporar
 null, null, null),
 
 (35, 1, "Bear's Endurance, Mass", true, true, "Transmutation", null, null, 6, "V, S, DF", "1 standard action", "Close", "One creature/level, no two of which can be more than 30 ft. apart",
-"1 min./level", "Will negates (harmless)", "Yes", "As bear’s endurance, affects one subject/level.",
+"1 min./level", "Will negates (harmless)", "Yes", "As bear's endurance, affects one subject/level.",
 "Mass bear's endurance works like bear's endurance, except that it affects multiple creatures.", null, null, null),
 
 (36, 1, "Bestow Curse", true, true, "Necromancy", null, null, 3, "V, S", "1 standard action", "Touch", "Creature touched", "Permanent", "Will negates", "Yes",
@@ -424,7 +424,7 @@ null, null, null),
 "(Arcane) A few hairs, or a pinch of dung, from a bull.", null, null),
 
 (54, 1, "Bull's Strength, Mass", true, true, "Transmutation", null, null, 6, "V, S, M/DF", "1 standard action", "Close", "One creature/level, no two of which can be more than 30 ft. apart", "1 min./level", "Will negates (harmless)", "Yes (harmless)",
-"As bull’s strength, affects one subject/level.", "This spell functions like bull's strength, except that it affects multiple creatures.",
+"As bull's strength, affects one subject/level.", "This spell functions like bull's strength, except that it affects multiple creatures.",
 "(Arcane) A few hairs, or a pinch of dung, from a bull.", null, null),
 
 (55, 1, "Burning Hands", true, true, "Evocation", null, "Fire", 1, "V, S", "1 standard action", "15 ft.", "Cone-shaped burst", "Instantaneous", "Reflex half", "Yes",
@@ -930,4 +930,70 @@ null, null, null),
 (123, 1, "Deep Slumber", true, false, "Enchantment", "Compulsion", "Mind-Affecting", 3, "V, S, M", "1 round", "Close", "One or more living creatures within a 10-ft.-radius burst", "1 min./level", "Will negates", "Yes",
 "Puts 10 HD of creatures to sleep.",
 "This spell functions like sleep, except that it affects 10 HD of creatures.",
-"A pinch of fine sand, rose petals, or a live cricket.", null, null);
+"A pinch of fine sand, rose petals, or a live cricket.", null, null),
+
+(124, 1, "Deeper Darkness", false, true, "Evocation", null, "Darkness", 3, "V, M/DF", "1 standard action", "Touch", "Object touched", "One day/level (D)", "None", "No",
+"Object sheds supernatural shadow in 60-ft. radius.",
+"This spell functions like darkness, except that the object radiates shadowy illumination in a 60-foot radius and the darkness lasts longer.\n
+Daylight brought into an area of deeper darkness (or vice versa) is temporarily negated, so that the otherwise prevailing light conditions exist in the overlapping areas of effect.\n
+Deeper darkness counters and dispels any light spell of equal or lower level, including daylight and light.",
+"(Arcane) A bit of bat fur and either a drop of pitch or a piece of coal.", null, null),
+
+(125, 1, "Delay Poison", true, true, "Conjuration", "Healing", null, 1, "V, S, DF", "1 standard action", "Touch", "Creature touched", "1 hour/level", "Fortitude negates (harmless)", "Yes (harmless)",
+"Stops poison from harming subject for 1 hour/level.",
+"The subject becomes temporarily immune to poison. Any poison in its system or any poison to which it is exposed during the spell's duration does not affect the subject until the spell's duration has expired. Delay poison does not cure any damage that poison may have already done.",
+null, null, null),
+
+(126, 1, "Delayed Blast Fireball", true, false, "Evocation", null, "Fire", 7, "V, S, M", "1 standard action", "Long", "20-ft.-radius spread", "5 rounds or less; see text", "Reflex half", "Yes",
+"1d6/level fire damage; you can postpone blast for 5 rounds.",
+"This spell functions like fireball, except that it is more powerful and can detonate up to 5 rounds after the spell is cast. The burst of flame deals 1d6 points of damage per caster level (maximum 20d6).\n
+The glowing bead created by delayed blast fireball can detonate immediately if you desire, or you can choose to delay the burst for as many as 5 rounds. You select the amount of delay upon completing the spell, and that time cannot change once it has been set unless someone touches the bead (see below). If you choose to delay, the glowing bead sits at its destination until it detonates. A creature can pick up and hurl the bead as a thrown weapon (range increment 10 feet). If a creature handles and moves the bead within 1 round of its detonation, there is a 25% chance that the bead detonates while being handled.",
+"A tiny ball of bat guano and sulfur", null, null),
+
+(127, 1, "Demand", true, false, "Enchantment", "Compulsion", "Mind-Affecting", 8, "V, S, M/DF", "10 minutes", "See text", "One creature", "1 round; see text", "Will partial", "Yes",
+"As sending, plus you can send suggestion.",
+"This spell functions like sending, but the message can also contain a suggestion (see the suggestion spell), which the subject does its best to carry out. A successful Will save negates the suggestion effect but not the contact itself. The demand, if received, is understood even if the subject's Intelligence score is as low as 1. If the message is impossible or meaningless according to the circumstances that exist for the subject at the time the demand is issued, the message is understood but the suggestion is ineffective.\n
+The demand's message to the creature must be twenty-five words or less, including the suggestion. The creature can also give a short reply immediately.",
+"A short piece of copper wire and some small part of the subject - a hair, a bit of nail, or the like.", null, null),
+
+(128, 1, "Desecrate", false, true, "Evocation", null, "Evil", 2, "V, S, M, DF", "1 standard action", "Close", "20-ft.-radius emanation", "2 hours/level", "None", "Yes",
+"Fills area with negative energy, making undead stronger.",
+"This spell imbues an area with negative energy. Each Charisma check made to turn undead within this area takes a -3 profane penalty, and every undead creature entering a desecrated area gains a +1 profane bonus on attack rolls, damage rolls, and saving throws. An undead creature created within or summoned into such an area gains +1 hit points per HD.\n
+If the desecrated area contains an altar, shrine, or other permanent fixture dedicated to your deity or aligned higher power, the modifiers given above are doubled (-6 profane penalty on turning checks, +2 profane bonus and +2 hit points per HD for undead in the area).\n
+Furthermore, anyone who casts animate dead within this area may create as many as double the normal amount of undead (that is, 4 HD per caster level rather than 2 HD per caster level).\n
+If the area contains an altar, shrine, or other permanent fixture of a deity, pantheon, or higher power other than your patron, the desecrate spell instead curses the area, cutting off its connection with the associated deity or power. This secondary function, if used, does not also grant the bonuses and penalties relating to undead, as given above.\n
+Desecrate counters and dispels consecrate.",
+"A vial of unholy water and 25 gp worth (5 pounds) of silver dust, all of which must be sprinkled around the area.", null, null),
+
+(129, 1, "Destruction", false, true, "Necromancy", null, "Death", 7, "V, S, F", "1 standard action", "Close", "One creature", "Instantaneous", "Fortitude partial", "Yes",
+"Kills subject and destroys remains.",
+"This spell instantly slays the subject and consumes its remains (but not its equipment and possessions) utterly. If the target's Fortitude saving throw succeeds, it instead takes 10d6 points of damage. The only way to restore life to a character who has failed to save against this spell is to use true resurrection, a carefully worded wish spell followed by resurrection, or miracle.",
+null, "A special holy (or unholy) symbol of silver marked with verses of anathema (cost 500 gp).", null),
+
+(130, 1, "Detect Animals or Plants", false, true, "Divination", null, null, 1, "V, S", "1 standard action", "Long", "Cone-shaped emanation", "Concentration, up to 10 min./level (D)", "None", "No",
+"Detects kinds of animals or plants.",
+"You can detect a particular kind of animal or plant in a cone emanating out from you in whatever direction you face. You must think of a kind of animal or plant when using the spell, but you can change the animal or plant kind each round. The amount of information revealed depends on how long you search a particular area or focus on a specific kind of animal or plant.\n
+1st Round
+Presence or absence of that kind of animal or plant in the area.\n
+2nd Round
+Number of individuals of the specified kind in the area, and the condition of the healthiest specimen.\n
+3rd Round
+The condition (see below) and location of each individual present. If an animal or plant is outside your line of sight, then you discern its direction but not its exact location.\n
+Conditions
+For purposes of this spell, the categories of condition are as follows:\n
+Normal
+Has at least 90% of full normal hit points, free of disease.\n
+Fair
+30% to 90% of full normal hit points remaining.\n
+Poor
+Less than 30% of full normal hit points remaining, afflicted with a disease, or suffering from a debilitating injury.\n
+Weak
+0 or fewer hit points remaining, afflicted with a disease in the terminal stage, or crippled.\n
+If a creature falls into more than one category, the spell indicates the weaker of the two.\n
+Each round you can turn to detect a kind of animal or plant in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.",
+null, null, null),
+
+(131, 1, "Detect Chaos", false, true, "Divination", null, null, 1, "V, S, DF", "1 standard action", "60 ft.", "Cone-shaped emanation", "Concentration, up to 10 min./level (D)", "None", "No",
+"Reveals creatures, spells, or objects of selected alignment.",
+"This spell functions like detect evil, except that it detects the auras of chaotic creaturs, clerics of chaotic deities, chaotic spells, and chaotic magic items, and you are vulnurable to an overwhelming chaotic aura if you are lawful.",
+null, null, null);
