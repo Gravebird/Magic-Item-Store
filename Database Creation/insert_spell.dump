@@ -1197,4 +1197,54 @@ null, null, null),
 (147, 1, "Discern Lies", false, true, "Divination", null, null, 3, "V, S, DF", "1 standard action", "Close", "One creature/level, no two of which can be more than 30 ft. apart", "Concentration, up to 1 round/level", "Will negates", "No",
 "Reveals deliberate falsehoods.",
 "Each round, you concentrate on one subject, who must be within range. You know if the subject deliberately and knowingly speaks a lie by discerning disturbances in its aura caused by lying. The spell does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions. Each round you may concentrate on a different subject.",
+null, null, null),
+
+(148, 1, "Discern Location", true, true, "Divination", null, null, 8, "V, S, DF", "10 minutes", "Unlimited", "One creature or object", "Instantaneous", "None", "No",
+"Reveals exact location of creature or object.",
+"A discern location spell is among the most powerful means of locating creatures or objects. Nothing short of a mind blank spell or the direct intervention of a deity keeps you from learning the exact location of a single individual or object. Discern location circumvents normal means of protection from scrying or location. The spell reveals the name of the creature or object's location (place, name, business name, building name, or the like), community, county (or similar political division), country, continent, and the plane of existence where the target lies.\n
+To find a creature with the spell, you must have seen the creature or have some item that once belonged to it. To find an object, you must have touched it at least once.",
+null, null, null),
+
+(149, 1, "Disguise Self", true, true, "Illusion", "Glamer", null, 1, "V, S", "1 standard action", "Personal", "You", "10 min./level (D)", null, null,
+"Changes your appearance.",
+"You make yourself—including clothing, armor, weapons, and equipment—look different. You can seem 1 foot shorter or taller, thin, fat, or in between. You cannot change your body type. Otherwise, the extent of the apparent change is up to you. You could add or obscure a minor feature or look like an entirely different person.\n
+The spell does not provide the abilities or mannerisms of the chosen form, nor does it alter the perceived tactile (touch) or audible (sound) properties of you or your equipment.\n
+If you use this spell to create a disguise, you get a +10 bonus on the Disguise check.\n
+A creature that interacts with the glamer gets a Will save to recognize it as an illusion.",
+null, null, null),
+
+(150, 1, "Disintegrate", true, true, "Transmutation", null, null, 6, "V, S, M/DF", "1 standard action", "Medium", "Ray", "Instantaneous", "Fortitude partial (object)", "Yes",
+"Makes one creature or object vanish.",
+"A thin, green ray springs from your pointing finger. You must make a successful ranged touch attack to hit. Any creature struck by the ray takes 2d6 points of damage per caster level (to a maximum of 40d6). Any creature reduced to 0 or fewer hit points by this spell is entirely disintegrated, leaving behind only a trace of fine dust. A disintegrated creature’s equipment is unaffected.\n
+When used against an object, the ray simply disintegrates as much as one 10-foot cube of nonliving matter. Thus, the spell disintegrates only part of any very large object or structure targeted. The ray affects even objects constructed entirely of force, such as forceful hand or a wall of force, but not magical effects such as a globe of invulnerability or an antimagic field.\n
+A creature or object that makes a successful Fortitude save is partially affected, taking only 5d6 points of damage. If this damage reduces the creature or object to 0 or fewer hit points, it is entirely disintegrated.\n
+Only the first creature or object struck can be affected; that is, the ray affects only one target per casting.",
+"(Arcane) A lodestone and a pinch of dust.", null, null),
+
+(151, 1, "Dismissal", true, true, "Abjuration", null, null, 4, "V, S, DF", "1 standard action", "Close", "One extraplanar creature", "Instantaneous", "Will negates; see text", "Yes",
+"Forces a creature to return to native plane.",
+"This spell forces an extraplanar creature back to its proper plane if it fails a special Will save (DC = spell's save DC - creature's HD + your caster level). If the spell is successful, the creature is instantly whisked away, but there is a 20% chance of actually sending the subject to a plane other than its own.",
+null, null, null),
+
+(152, 1, "Dispel Chaos", false, true, "Abjuration", null, "Lawful", 4, "V, S, DF", "1 standard action", "Touch", "You and a touched chaotic creature from another plane; or you and an enchantment or chaotic spell on a touched creature or object", "1 round/level or until discharged, whichever comes first", "See text", "See text",
+"+4 bonus against attacks.",
+"This spell functions like dispel evil, except that you are surrounded by constant, blue, lawful energy, and the spell affects chaotic creatures and spells rather than evil ones.",
+null, null, null),
+
+(153, 1, "Dispel Evil", false, true, "Abjuration", null, "Good", 4, "V, S, DF", "1 standard action", "Touch", "You and a touched evil creature from another plane; or you and an enchantment or evil spell on a touched creature or object", "1 round/level or until discharged, whichever comes first", "See text", "See text",
+"+4 bonus against attacks.",
+"Shimmering, white, holy energy surrounds you. This power has three effects.\n
+First, you gain a +4 deflection bonus to AC against attacks by evil creatures.\n
+Second, on making a successful melee touch attack against an evil creature from another plane, you can choose to drive that creature back to its home plane. The creature can negate the effects with a successful Will save (spell resistance applies). This use discharges and ends the spell.\n
+Third, with a touch you can automatically dispel any one enchantment spell cast by an evil creature or any one evil spell. Exception: Spells that can’t be dispelled by dispel magic also can’t be dispelled by dispel evil. Saving throws and spell resistance do not apply to this effect. This use discharges and ends the spell.",
+null, null, null),
+
+(154, 1, "Dispel Good", false, true, "Abjuration", null, "Evil", 4, "V, S, DF", "1 standard action", "Touch", "You and a touched good creature from another plane; or you and an enchantment or good spell on a touched creature or object", "1 round/level or until discharged, whichever comes first", "See text", "See text",
+"+4 bonus against attacks.",
+"This spell functions like dispel evil, except that you are surrounded by dark, wavering, unholy energy, and the spell affects good creatures and spells rather than evil ones.",
+null, null, null),
+
+(155, 1, "Dispel Law", false, true, "Abjuration", null, "Chaotic", 4, "V, S, DF", "1 standard action", "Touch", "You and a touched lawful creature from another plane; or you and an enchantment or lawful spell on a touched creature or object", "1 round/level or until discharged, whichever comes first", "See text", "See text",
+"+4 bonus against attacks.",
+"This spell functions like dispel evil, except that you are surrounded by flickering, yellow, chaotic energy, and the spell affects lawful creatures and spells rather than evil ones.",
 null, null, null);
