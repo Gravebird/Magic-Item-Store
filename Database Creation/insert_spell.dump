@@ -1247,4 +1247,46 @@ null, null, null),
 (155, 1, "Dispel Law", false, true, "Abjuration", null, "Chaotic", 4, "V, S, DF", "1 standard action", "Touch", "You and a touched lawful creature from another plane; or you and an enchantment or lawful spell on a touched creature or object", "1 round/level or until discharged, whichever comes first", "See text", "See text",
 "+4 bonus against attacks.",
 "This spell functions like dispel evil, except that you are surrounded by flickering, yellow, chaotic energy, and the spell affects lawful creatures and spells rather than evil ones.",
+null, null, null),
+
+(156, 1, "Dispel Magic", true, true, "Abjuration", null, null, 3, "V, S", "1 standard action", "Medium", "One spellcaster, creature, or object; or 20-ft.-radius burst", "Instantaneous", "None", "No",
+"Cancels spells and magical effects.",
+"You can use dispel magic to end ongoing spells that have been cast on a creature or object, to temporarily suppress the magical abilities of a magic item, to end ongoing spells (or at least their effects) within an area, or to counter another spellcaster’s spell. A dispelled spell ends as if its duration had expired. Some spells, as detailed in their descriptions, can’t be defeated by dispel magic. Dispel magic can dispel (but not counter) spell-like effects just as it does spells.\n
+Note: The effect of a spell with an instantaneous duration can’t be dispelled, because the magical effect is already over before the dispel magic can take effect.\n
+You choose to use dispel magic in one of three ways: a targeted dispel, an area dispel, or a counterspell:\n
+Targeted Dispel
+One object, creature, or spell is the target of the dispel magic spell. You make a dispel check (1d20 + your caster level, maximum +10) against the spell or against each ongoing spell currently in effect on the object or creature. The DC for this dispel check is 11 + the spell’s caster level. If you succeed on a particular check, that spell is dispelled; if you fail, that spell remains in effect.\n
+If you target an object or creature that is the effect of an ongoing spell (such as a monster summoned by monster summoning), you make a dispel check to end the spell that conjured the object or creature.\n
+If the object that you target is a magic item, you make a dispel check against the item’s caster level. If you succeed, all the item’s magical properties are suppressed for 1d4 rounds, after which the item recovers on its own. A suppressed item becomes nonmagical for the duration of the effect. An interdimensional interface (such as a bag of holding) is temporarily closed. A magic item’s physical properties are unchanged: A suppressed magic sword is still a sword (a masterwork sword, in fact). Artifacts and deities are unaffected by mortal magic such as this.\n
+You automatically succeed on your dispel check against any spell that you cast yourself.\n
+Area Dispel
+When dispel magic is used in this way, the spell affects everything within a 20-foot radius.\n
+For each creature within the area that is the subject of one or more spells, you make a dispel check against the spell with the highest caster level. If that check fails, you make dispel checks against progressively weaker spells until you dispel one spell (which discharges the dispel magic spell so far as that target is concerned) or until you fail all your checks. The creature’s magic items are not affected.\n
+For each object within the area that is the target of one or more spells, you make dispel checks as with creatures. Magic items are not affected by an area dispel.\n
+For each ongoing area or effect spell whose point of origin is within the area of the dispel magic spell, you can make a dispel check to dispel the spell.\n
+For each ongoing spell whose area overlaps that of the dispel magic spell, you can make a dispel check to end the effect, but only within the overlapping area.\n
+If an object or creature that is the effect of an ongoing spell (such as a monster summoned by monster summoning) is in the area, you can make a dispel check to end the spell that conjured that object or creature (returning it whence it came) in addition to attempting to dispel spells targeting the creature or object.\n
+You may choose to automatically succeed on dispel checks against any spell that you have cast.\n
+Counterspell
+When dispel magic is used in this way, the spell targets a spellcaster and is cast as a counterspell. Unlike a true counterspell, however, dispel magic may not work; you must make a dispel check to counter the other spellcaster’s spell.",
+null, null, null),
+
+(157, 1, "Dispel Magic, Greater", true, true, "Abjuration", null, null, 5, "V, S", "1 standard action", "Medium", "One spellcaster, creature, or object; or 20-ft.-radius burst", "Instantaneous", "None", "No",
+"As dispel magic, but up to +20 on check.",
+"This spell functions like dispel magic, except that the maximum caster level on your dispel check is +20 instead of +10. Additionally, greater dispel magic has a chance to dispel any effect that remove curse can remove, even if dispel magic can't dispel that effect.",
+null, null, null),
+
+(158, 1, "Displacement", true, false, "Illusion", "Glamer", null, 3, "V, M", "1 standard action", "Touch", "Creature touched", "1 round/level (D)", "Will negates (harmless)", "Yes (harmless)",
+"Attacks miss subject 50%.",
+"Emulating the ability of the displacer beast (see the Monster Manual), the subject of this spell appears to be about 2 feet away from its true location. The creature benefits from a 50% miss chance as if it had total concealment. However, unlike actual total concealment, displacement does not prevent enemies from targeting the creature normally. True seeing reveals its true location.",
+"A small strip of leather made from displacer beast hide, twisted into a loop.", null, null),
+
+(159, 1, "Disrupt Undead", true, false, "Necromancy", null, null, 0, "V, S", "1 standard action", "Close", "Ray", "Instantaneous", "None", "Yes",
+"Deals 1d6 damage to one undead.",
+"You direct a ray of positive energy. You must make a ranged touch attack to hit, and if the ray hits an undead creature, it deals 1d6 points of damage to it.",
+null, null, null),
+
+(160, 1, "Disrupting Weapon", false, true, "Transmutation", null, null, 5, "V, S", "1 standard action", "Touch", "One melee weapon", "1 round/level", "Will negates (harmless, object); see text", "Yes (harmless, object)",
+"Melee weapon destroys undead.",
+"This spell makes a melee weapon deadly to undead. Any undead creature with HD equal to or less than your caster level must succeed on a Will save or be destroyed utterly if struck in combat with this weapon. Spell resistance does not apply against the destruction effect.",
 null, null, null);
