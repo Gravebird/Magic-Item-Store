@@ -140,7 +140,7 @@ CREATE TABLE Spell (
     Spell_Divine bool NOT NULL,
     Spell_School varchar(13) NOT NULL CHECK (Spell_School IN ("Abjuration", "Conjuration", "Divination", "Enchantment", "Evocation", "Illusion", "Necromancy", "Transmutation", "Universal", "Other")),
     Spell_Subschool varchar(13) CHECK (Spell_Subschool IN ("Calling", "Creation", "Healing", "Summoning", "Teleportation", "Scrying", "Charm", "Compulsion", "Figment", "Glamer", "Pattern", "Phantasm", "Shadow")),
-    Spell_Descriptor varchar(34),
+    Spell_Descriptor varchar(41),
     Spell_Min_Level int NOT NULL CHECK (Spell_Min_Level BETWEEN 0 AND 9),
     Spell_Components varchar(18) NOT NULL,
     Spell_Casting_Time varchar(29) NOT NULL,
