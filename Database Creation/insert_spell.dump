@@ -1305,4 +1305,60 @@ null, null, null),
 (163, 1, "Divine Power", false, true, "Evocation", null, null, 4, "V, S, DF", "1 standard action", "Personal", "You", "1 round/level", null, null,
 "You gain attack bonus, +6 to Str, and 1 hp/level.",
 "Calling upon the divine power of your patron, you imbue yourself with strength and skill in combat. Your base attack bonus becomes equal to your character level (which may give you additional attacks), you gain a +6 enhancement bonus to Strength, and you gain 1 temporary hit point per caster level.",
-null, null, null);
+null, null, null),
+
+(164, 1, "Dominate Animal", false, true, "Enchantment", "Compulsion", "Mind-Affecting", 3, "V, S", "1 round", "Close", "One animal", "1 round/level", "Will negates", "Yes",
+"Subject animal obeys silent mental commands.",
+"You can enchant an animal and direct it with simple commands such as “Attack,” “Run,” and “Fetch.” Suicidal or self-destructive commands (including an order to attack a creature two or more size categories larger than the dominated animal) are simply ignored.\n
+Dominate animal establishes a mental link between you and the subject creature. The animal can be directed by silent mental command as long as it remains in range. You need not see the creature to control it. You do not receive direct sensory input from the creature, but you know what it is experiencing. Because you are directing the animal with your own intelligence, it may be able to undertake actions normally beyond its own comprehension. You need not concentrate exclusively on controlling the creature unless you are trying to direct it to do something it normally couldn’t do. Changing your instructions or giving a dominated creature a new command is the equivalent of redirecting a spell, so it is a move action.",
+null, null, null),
+
+(165, 1, "Dominate Monster", true, false, "Enchantment", "Compulsion", "Mind-Affecting", 9, "V, S", "1 round", "Close", "One humanoid", "One day/level", "Will negates", "Yes",
+"As dominate person, but any creature.",
+"This spell functions like dominate person, except that the spell is not restricted by creature type.",
+null, null, null),
+
+(166, 1, "Dominate Person", true, false, "Enchantment", "Compulsion", "Mind-Affecting", 4, "V, S", "1 round", "Close", "One humanoid", "One day/level", "Will negates", "Yes",
+"Controls humanoid telepathically.",
+"You can control the actions of any humanoid creature through a telepathic link that you establish with the subject’s mind.\n
+If you and the subject have a common language, you can generally force the subject to perform as you desire, within the limits of its abilities. If no common language exists, you can communicate only basic commands, such as “Come here,” “Go there,” “Fight,” and “Stand still.” You know what the subject is experiencing, but you do not receive direct sensory input from it, nor can it communicate with you telepathically.\n
+Once you have given a dominated creature a command, it continues to attempt to carry out that command to the exclusion of all other activities except those necessary for day-to-day survival (such as sleeping, eating, and so forth). Because of this limited range of activity, a Sense Motive check against DC 15 (rather than DC 25) can determine that the subject’s behavior is being influenced by an enchantment effect (see the Sense Motive skill description).\n
+Changing your instructions or giving a dominated creature a new command is the equivalent of redirecting a spell, so it is a move action.\n
+By concentrating fully on the spell (a standard action), you can receive full sensory input as interpreted by the mind of the subject, though it still can’t communicate with you. You can’t actually see through the subject’s eyes, so it’s not as good as being there yourself, but you still get a good idea of what’s going on.\n
+Subjects resist this control, and any subject forced to take actions against its nature receives a new saving throw with a +2 bonus. Obviously self-destructive orders are not carried out. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.\n
+If you don’t spend at least 1 round concentrating on the spell each day, the subject receives a new saving throw to throw off the domination.\n
+Protection from evil or a similar spell can prevent you from exercising control or using the telepathic link while the subject is so warded, but such an effect neither prevents the establishment of domination nor dispels it.",
+null, null, null),
+
+(167, 1, "Doom", false, true, "Necromancy", null, "Fear, Mind-Affecting", 1, "V, S, DF", "1 standard action", "Medium", "One living creature", "1 min./level", "Will negates", "Yes",
+"One subject takes -2 on attack rolls, damage rolls, saves, and checks.",
+"This spell fills a single subject with a feeling of horrible dread that causes it to become shaken.",
+null, null, null),
+
+(168, 1, "Drawmij's Instant Summons", true, false, "Conjuration", "Summoning", null, 7, "V, S, M", "1 standard action", "See text", "One object weighing 10 lb or less whose longest dimension is 6 ft. or less", "Permanent until discharged", "None", "No",
+"Prepared object appears in your hand.",
+"You call some nonliving item from virtually any location directly to your hand.\n
+First, you must place your arcane mark on the item. Then you cast this spell, which magically and invisibly inscribes the name of the item on a sapphire worth at least 1,000 gp. Thereafter, you can summon the item by speaking a special word (set by you when the spell is cast) and crushing the gem. The item appears instantly in your hand. Only you can use the gem in this way.\n
+If the item is in the possession of another creature, the spell does not work, but you know who the possessor is and roughly where that creature is located when the summons occurs.\n
+The inscription on the gem is invisible. It is also unreadable, except by means of a read magic spell, to anyone but you.\n
+The item can be summoned from another plane, but only if no other creature has claimed ownership of it.",
+"A saphire worth at least 1,000 gp.", null, null),
+
+(169, 1, "Dream", true, false, "Illusion", "Phantasm", "Mind-Affecting", 5, "V, S", "1 minute", "Unlimited", "One living creature touched", "See text", "None", "Yes",
+"Sends message to anyone sleeping.",
+"You, or a messenger touched by you, sends a phantasmal message to others in the form of a dream. At the beginning of the spell, you must name the recipient or identify him or her by some title that leaves no doubt as to identity. The messenger then enters a trance, appears in the intended recipient’s dream, and delivers the message. The message can be of any length, and the recipient remembers it perfectly upon waking. The communication is one-way. The recipient cannot ask questions or offer information, nor can the messenger gain any information by observing the dreams of the recipient.\n
+Once the message is delivered, the messenger’s mind returns instantly to its body. The duration of the spell is the time required for the messenger to enter the recipient’s dream and deliver the message.\n
+If the recipient is awake when the spell begins, the messenger can choose to wake up (ending the spell) or remain in the trance. The messenger can remain in the trance until the recipient goes to sleep, then enter the recipient’s dream and deliver the message as normal. A messenger that is disturbed during the trance comes awake, ending the spell.\n
+Creatures who don’t sleep (such as elves, but not half-elves) or don’t dream cannot be contacted by this spell.\n
+The messenger is unaware of its own surroundings or of the activities around it while in the trance. It is defenseless both physically and mentally (always fails any saving throw) while in the trance.",
+null, null, null),
+
+(170, 1, "Eagle's Splendor", true, true, "Transmutation", null, null, 2, "V, S, M/DF", "1 standard action", "Touch", "Creature touched", "1 min./level", "Will negates (harmless)", "Yes",
+"Subject gains +4 to Cha for 1 min./level.",
+"The transmuted creature becomes more poised, articulate, and personally forceful. The spell grants a +4 enhancement bonus to Charisma, adding the usual benefits to Charisma-based skill checks and other uses of the Charisma modifier. Sorcerors and bards (and other spellcasters who rely on Charisma) affected by this spell do not gain any additional bonus spells for the increased Charisma, but the save DCs for spells they cast while under this spell's effect do increase.",
+"(Arcane) A few feathers or a pinch of droppings from an eagle.", null, null),
+
+(171, 1, "Easgle's Splendor, Mass", true, true, "Transmutation", null, null, 6, "V, S, M/DF", "1 standard action", "Close", "One creature/level, no two of which can be more than 30 ft. apart", "1 min./level", "Will negates (harmless)", "Yes",
+"As easgle's splendor, affects one subject/level.",
+"This spell functions like eagle's splendor, except that it affects multiple creatures.",
+"(Arcane) A few feathers or a pinch of droppings from an eagle.", null, null);
