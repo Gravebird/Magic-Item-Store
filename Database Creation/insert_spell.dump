@@ -1502,4 +1502,47 @@ The subject becomes panicked for 1d4 rounds. Even after the panic ends, the crea
 Comatose
 The subject falls into a catatonic coma for 10 minutes per caster level. During this time, it cannot be awakened by any means short of dispelling the effect. This is not a sleep effect, and thus elves are not immune to it.\n
 The spell lasts for 1 round per three caster levels. You must spend a move action each round after the first to target a foe.",
-null, null, null);
+null, null, null),
+
+(189, 1, "Fabricate", true, false, "Transmutation", null, null, 5, "V, S, M", "See text", "Close", "Up to 10 cu. ft./level; see text", "Instantaneous", "None", "No",
+"Transforms raw materials into finished items.",
+"You convert material of one sort into a product that is of the same material. Creatures or magic items cannot be created or transmuted by the fabricate spell. The quality of items made by this spell is commensurate with the quality of material used as the basis for the new fabrication. If you work with a mineral, the target is reduced to 1 cubic foot per level instead of 10 cubic feet.\n
+You must make an appropriate Craft check to fabricate articles requiring a high degree of craftsmanship.\n
+Casting requires 1 round per 10 cubic feet (or 1 cubic foot) of material to be affected by the spell.",
+"The original material, which costs the same amount as the raw materials required to craft the item to be created.", null, null),
+
+(190, 1, "Faerie Fire", false, true, "Evocation", null, "Light", 1, "V, S, DF", "1 standard action", "Long", "Creatures and objects within a 5-ft.-radius burst", "1 min./level (D)", "None", "Yes",
+"Outlines subjects with light, canceling blur, concealment, and the like.",
+"A pale glow surrounds and outlines the subjects. Outlined subjects shed light as candles. Outlined creatures do not benefit from the concealment normally provided by darkness (though a 2nd-level or higher magical darkness effect functions normally), blur, displacement, invisibility, or similar effects. The light is too dim to have any special effect on undead or dark-dwelling creatures vulnerable to light. The faerie fire can be blue, green, or violet, according to your choice at the time of casting. The faerie fire does not cause any harm to the objects or creatures thus outlined.",
+null, null, null),
+
+(191, 1, "False Life", true, false, "Necromancy", null, null, 2, "V, S, M", "1 standard action", "Personal", "You", "1 hour/level or until discharged; see text", null, null,
+"Gain 1d10 temporary hp +1/level (max +10).",
+"You harness the power of unlife to grant yourself a limited ability to avoid death. While this spell is in effect, you gain temporary hit points equal to 1d10 + 1 per caster level (maximum +10).",
+"A small amount of alcohol or distilled spirits, which you use to trace certain sigils on your body during casting. These sigils cannot be seen once the alcohol or spirits evaporate.",
+null, null),
+
+(192, 1, "False Vision", true, true, "Illusion", "Glamer", null, 5, "V, S, M", "1 standard action", "Touch", "40-ft.-radius emanation", "1 hour/level (D)", "None", "No",
+"Fools scrying with an illusion.",
+"Any divination (scrying) spell used to view anything within the area of this spell instead receives a false image (as the major image spell), as defined by you at the time of casting. As long as the duration lasts, you can concentrate to change the image as desired. While you aren't concentrating, the image remains static.",
+"(Arcane) The ground dust of a piece of jade worth at least 250 gp, which is sprinkled into the air when the spell is cast.",
+null, null),
+
+(193, 1, "Fear", true, false, "Necromancy", null, "Fear, Mind-Affecting", 3, "V, S, M", "1 standard action", "30 ft.", "Cone-shaped burst", "1 round/level or 1 round; see text", "Will partial", "Yes",
+"Subjects within cone flee for 1 round/level.",
+"An invisible cone of terror causes each living creature in the area to become panicked unless it succeeds on a Will save. If cornered, a panicked creature begins cowering. (See the Dungeon Master's Guide for more information on fear-panicked creatures.) If the Will save succeeds, the creature is shaken for 1 round.",
+"Either the heart of a hen or a white feather.", null, null),
+
+(194, 1, "Feather Fall", true, false, "Transmutation", null, null, 1, "V", "1 free action", "Close", "One Medium or smaller free-falling object or creature/level, no two of which may be more than 20 ft. apart", "Until landing or 1 round/level", "Will negates (harmless) or Will negates (object)", "Yes (object)",
+"Objects or creatures fall slowly.",
+"The affected creatures or objects fall slowly. Feather fall instantly changes the rate at which the targets fall to a mere 60 feet per round (equivalent to the end of a fall from a few feet), and the subjects take no damage upon landing while the spell is in effect. However, when the spell duration expires, a normal rate of falling resumes.\n
+The spell affects one or more Medium or smaller creatures (including gear and carried objects up to each creature’s maximum load) or objects, or the equivalent in larger creatures: A Large creature or object counts as two Medium creatures or objects, a Huge creature or object counts as two Large creatures or objects, and so forth.\n
+You can cast this spell with an instant utterance, quickly enough to save yourself if you unexpectedly fall. Casting the spell is a immediate action, allowing you to cast this spell even when it isn’t your turn.\n
+This spell has no special effect on ranged weapons unless they are falling quite a distance. If the spell is cast on a falling item the object does half normal damage based on its weight, with no bonus for the height of the drop.\n
+Feather fall works only upon free-falling objects. It does not affect a sword blow or a charging or flying creature.",
+null, null, null),
+
+(195, 1, "Feeblemind", true, false, "Enchantment", "Compulsion", "Mind-Affecting", 5, "V, S, M", "1 standard action", "Medium", "One creature", "Instantaneous", "Will negates; see text", "Yes",
+"Subject's Int and Cha drop to 1.",
+"If the target creature fails a Will saving throw, its Intelligence and Charisma scores each drop to 1. The affected creature is unable to use Intelligence- or Charisma-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a heal, limited wish, miracle, or wish spell is used to cancel the effect of the feeblemind. A creature that can cast arcane spells, such as a sorcerer or a wizard, takes a -4 penalty on its saving throw.",
+"A handful of clay, crystal, glass, or mineral spheres.", null, null);
