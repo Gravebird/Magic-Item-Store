@@ -144,7 +144,7 @@ CREATE TABLE Spell (
     Spell_Min_Level int NOT NULL CHECK (Spell_Min_Level BETWEEN 0 AND 9),
     Spell_Components varchar(18) NOT NULL,
     Spell_Casting_Time varchar(29) NOT NULL,
-    Spell_Range varchar(15) NOT NULL,
+    Spell_Range varchar(17) NOT NULL,
     Spell_Effect_or_Target varchar(183),
     Spell_Duration varchar(56) NOT NULL,
     Spell_Saving_Throw varchar(48),
