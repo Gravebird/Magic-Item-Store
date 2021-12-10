@@ -1995,4 +1995,119 @@ null, null, null),
 (252, 1, "Hide from Animals", false, true, "Abjuration", null, null, 1, "S, DF", "1 standard action", "Touch", "One creature touched/level", "10 min./level (D)", "Will negates (harmless)", "Yes",
 "Animals can't perceive one subject/level.",
 "Animals cannot see, hear, or smell the warded creatures. Even extraordinary or supernatural sensory capabilities, such as blindsense, blindsight, scent, and tremorsense, cannot detect or locate warded creatures. Animals simply act as though the warded creatures are not there. If a warded character touches an animal or attacks any creature, even with a spell, the spell ends for all recipients.",
-null, null, null);
+null, null, null),
+
+(253, 1, "Hide from Undead", false, true, "Abjuration", null, null, 1, "V, S, DF", "1 standard action", "Touch", "One touched creature/level", "10 min./level (D)", "Will negates (harmless); see text", "Yes",
+"Undead can't perceive one subject/level.",
+"Undead cannot see, hear, or smell the warded creatures. Even extraordinary or supernatural sensory capabilities, such as blindsense, blindsight, scent, and tremorsense, cannot detect or locate warded creatures. Nonintelligent undead creatures are automatically affected and act as though the warded creatures are not there. An intelligent undead creature gets a single Will saving throw. If it fails, the subject can’t see any of the warded creatures. However, if it has reason to believe unseen opponents are present, it can attempt to find or strike them. If a warded creature attempts to turn or command undead, touches an undead creature, or attacks any creature (even with a spell), the spell ends for all recipients.",
+null, null, null),
+
+(254, 1, "Hold Animal", false, true, "Enchantment", "Compulsion", "Mind-Affecting", 2, "V, S", "1 standard action", "Medium", "One animal", "1 round/level (D); see text", "Will negates; see text", "Yes",
+"Paralyzes one animal for 1 round/levle.",
+"This spell functions like hold person, except that it affects an animal instead of a humanoid.",
+null, null, null),
+
+(255, 1, "Hold Monster", true, true, "Enchantment", "Compulsion", "Mind-Affecting", 4, "V, S, M/DF", "1 standard action", "Medium", "One living creature", "1 round/level (D); see text", "Will negates; see text", "Yes",
+"As hold person, but any creature.",
+"This spell functions like hold person, except that it affects any living creature that fails its Will save.",
+"(Arcane) One hard metal bar or rod, which can be as small as a three-penny nail.",
+null, null),
+
+(256, 1, "Hold Monster, Mass", true, false, "Enchantment", "Compulsion", "Mind-Affecting", 9, "V, S, F/DF", "1 standard action", "Medium", "One or more creatures, no two of which can be more than 30 ft. apart", "1 round/level (D); see text", "Will negates; see text", "Yes",
+"As hold monster, but all within 30 ft.",
+"This spell functions like hold person, except that it affects multiple creatures and holds any living creature that fails its Will save.",
+null, "(Arcane) A small, straight piece of iron.", null),
+
+(257, 1, "Hold Person", true, true, "Enchantment", "Compulsion", "Mind-Affecting", 2, "V, S, F/DF", "1 standard action", "Medium", "One humanoid creature", "1 round/level (D); see text", "Will negates; see text", "Yes",
+"Paralyzes one humanoid for 1 round/level.",
+"The subject becomes paralyzed and freezes in place. It is aware and breathes normally but cannot take any actions, even speech. Each round on its turn, the subject may attempt a new saving throw to end the effect. (This is a full-round action that does not provoke attacks of opportunity.)\n
+A winged creature who is paralyzed cannot flap its wings and falls. A swimmer can’t swim and may drown.",
+null, "(Arcane) A small, straight piece of iron.", null),
+
+(258, 1, "Hold Person, Mass", true, false, "Enchantment", "Compulsion", "Mind-Affecting", 7, "V, S, F/DF", "1 standard action", "Medium", "One or more humanoid creatures, no two of which can be more than 30 ft. apart", "1 round/level (D); see text", "Will negates; see text", "Yes",
+"As hold person, but all within 30 ft.",
+"This spell functions like hold person, except as noted above.",
+null, "(Arcane) A small, straight piece of iron.", null),
+
+(259, 1, "Hold Portal", true, false, "Abjuration", null, null, 1, "V", "1 standard action", "Medium", "One portal, up to 20 sq. ft./level", "1 min./level (D)", "None", "No",
+"Holds door shut.",
+"This spell magically holds shut a door, gate, window, or shutter of wood, metal, or stone. The magic affects the portal just as if it were securely closed and normally locked. A knock spell or a successful dispel magic spell can negate a hold portal spell. For a portal affected by this spell, add 5 to the normal DC for forcing open the portal.",
+null, null, null),
+
+(260, 1, "Holy Aura", false, true, "Abjuration", null, "Good", 8, "V, S, F", "1 standard action", "20 ft.", "One creature/level in a 20-ft.-radius burst centered on you", "1 round/level (D)", "See text", "Yes (harmless)",
+"+4 to AC, +4 resistance, and SR 25 against evil spells.",
+"A brilliant divine radiance surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by evil creatures, and causing evil creatures to become blinded when they strike the subjects. This abjuration has four effects.\n
+First, each warded creature gains a +4 deflection bonus to AC and a +4 resistance bonus on saves. Unlike protection from evil, this benefit applies against all attacks, not just against attacks by evil creatures.\n
+Second, each warded creature gains spell resistance 25 against evil spells and spells cast by evil creatures.\n
+Third, the abjuration blocks possession and mental influence, just as protection from evil does.\n
+Finally, if an evil creature succeeds on a melee attack against a warded creature, the offending attacker is blinded (Fortitude save negates, as blindness/deafness, but against holy aura’s save DC).",
+null, "A tiny reliquary containing some sacred relic, such as a scrap of cloth from a saint's robe or a piece of parchment from a holy text. The reliquary costs at least 500 gp.",
+null),
+
+(261, 1, "Holy Smite", false, true, "Evocation", null, "Good", 4, "V, S", "1 standard action", "Medium", "20-ft.-radius burst", "Instantaneous (1 round); see text", "Will partial; see text", "Yes",
+"Damages and blinds evil creatures.",
+"You draw down holy power to smite your enemies. Only evil and neutral creatures are harmed by the spell; good creatures are unaffected.\n
+The spell deals 1d8 points of damage per two caster levels (maximum 5d8) to each evil creature in the area (or 1d6 points of damage per caster level, maximum 10d6, to an evil outsider) and causes it to become blinded for 1 round. A successful Will saving throw reduces damage to half and negates the blinded effect.\n
+The spell deals only half damage to creatures who are neither good nor evil, and they are not blinded. Such a creature can reduce that damage by half (down to one-quarter of the roll) with a successful Will save.",
+null, null, null),
+
+(262, 1, "Holy Sword", false, true, "Evocation", null, "Good", 4, "V, S", "1 standard action", "Touch", "Melee weapon touched", "1 round/level", "None", "No",
+"Weapon becomes +5, deals +2d6 damage against evil.",
+"This spell allows you to channel holy power into your sword, or any other melee weapon you choose. The weapon acts as a +5 holy weapon (+5 enhancement bonus on attack and damage rolls, extra 2d6 damage against evil opponents). It also emits a magic circle against evil effect (as the spell). If the magic circle ends, the sword creates a new one on your turn as a free action. The spell is automatically canceled 1 round after the weapon leaves your hand. You cannot have more than one holy sword at a time.\n
+If this spell is cast on a magic weapon, the powers of the spell supersede any that the weapon normally has, rendering the normal enhancement bonus and powers of the weapon inoperative for the duration of the spell. This spell is not cumulative with bless weapon or any other spell that might modify the weapon in any way.\n
+This spell does not work on artifacts.\n
+Note: A masterwork weapon’s bonus to attack does not stack with an enhancement bonus to attack.",
+null, null, null),
+
+(263, 1, "Holy Word", false, true, "Evocation", null, "Good, Sonic", 7, "V", "1 standard action", "40 ft.", "Nongood creatures in a 40-ft.-radius spread centered on you", "Instantaneous", "None or Will negates; see text", "Yes",
+"Kills, paralyzes, slows, or deafens nongood subjects.",
+"Any nongood creature within the area that hears the holy word suffers the following ill effects.\n
+HD                      Effect
+Equal to caster level   Deafened
+Up to caster level -1   Blinded, deafened
+Up to caster level -5   Paralyzed, blinded, deafened
+Up to caster level -10  Killed, paralyzed, blinded, deafened\n
+The effects are cumulative and concurrent. No saving throw is allowed against these effects.\n
+Deafened
+The creature is deafened for 1d4 rounds.\n
+Blinded
+The creature is blinded for 2d4 rounds.\n
+Paralyzed
+The creature is paralyzed and helpless for 1d10 minutes.\n
+Killed
+Living creatures die. Undead creatures are destroyed.\n
+Furthermore, if you are on your home plane when you cast this spell, nongood extraplanar creatures within the area are instantly banished back to their home planes. Creatures so banished cannot return for at least 24 hours. This effect takes place regardless of whether the creatures hear the holy word. The banishment effect allows a Will save (at a -4 penalty) to negate.\n
+Creatures whose HD exceed your caster level are unaffected by holy word.",
+null, null, null),
+
+(264, 1, "Horrid Wilting", true, true, "Necromancy", null, null, 8, "V, S, M/DF", "1 standard action", "Long", "Living creatures, no two of which can be more than 60 ft. apart", "Instantaneous", "Fortitude half", "Yes",
+"Deals 1d6/level damage within 30 ft.",
+"This spell evaporates moisture from the body of each subject living creature, dealing 1d6 points of damage per caster level (maximum 20d6). This spell is especially devastating to water elementals and plant creatures, which instead take 1d8 points of damage per caster level (maximum 20d8).",
+"(Arcane) A bit of sponge.", null, null),
+
+(265, 1, "Hypnotic Pattern", true, false, "Illusion", "Pattern", "Mind-Affecting", 2, "V (Brd only), S, M; see text", "1 standard action", "Medium", "Colorful lights in a 10-ft.-radius spread", "Concentration + 2 rounds", "Will negates", "Yes",
+"Fascinates (2d4 + level) HD of creatures.",
+"A twisting pattern of subtle, shifting colors weaves through the air, fascinating creatures within it. Roll 2d4 and add your caster level (maximum 10) to determine the total number of Hit Dice of creatures affected. Creatures with the fewest HD are affected first; and, among creatures with equal HD, those who are closest to the spell’s point of origin are affected first. Hit Dice that are not sufficient to affect a creature are wasted. Affected creatures become fascinated by the pattern of colors. Sightless creatures are not affected.\n
+A wizard or sorcerer need not utter a sound to cast this spell, but a bard must sing, play music, or recite a rhyme as a verbal component.",
+"A glowing stick of incense or a crystal rod filled with phosphorescent material.",
+null, null),
+
+(266, 1, "Hypnotism", true, false, "Enchantment", "Compulsion", "Mind-Affecting", 1, "V, S", "1 round", "Close", "Several living creatures, no two of which may be more than 30 ft. apart", "2d4 rounds (D)", "Will negates", "Yes",
+"Fascinates 2d4 HD of creatures.",
+"Your gestures and droning incantation fascinate nearby creatures, causing them to stop and stare blankly at you. In addition, you can use their rapt attention to make your suggestions and requests seem more plausible. Roll 2d4 to see how many total Hit Dice of creatures you affect. Creatures with fewer HD are affected before creatures with more HD. Only creatures that can see or hear you are affected, but they do not need to understand you to be fascinated.\n
+If you use this spell in combat, each target gains a +2 bonus on its saving throw. If the spell affects only a single creature not in combat at the time, the saving throw has a penalty of -2.\n
+While the subject is fascinated by this spell, it reacts as though it were two steps more friendly in attitude. This allows you to make a single request of the affected creature (provided you can communicate with it). The request must be brief and reasonable. Even after the spell ends, the creature retains its new attitude toward you, but only with respect to that particular request.\n
+A creature that fails its saving throw does not remember that you enspelled it.",
+null, null, null),
+
+(267, 1, "Ice Storm", true, true, "Evocation", null, "Cold", 4, "V, S, M/DF", "1 standard action", "Long", "Cylinder (20-ft. radius, 40-ft. high)", "1 full round", "None", "Yes",
+"Hail deals 5d6 damage in cylinder 40 ft. across.",
+"Great magical hailstones pound down for 1 full round, dealing 3d6 points of bludgeoning damage and 2d6 points of cold damage to every creature in the area. A -4 penalty applies to each Listen check made within the ice storm’s effect, and all land movement within its area is at half speed. At the end of the duration, the hail disappears, leaving no aftereffects (other than the damage dealt).",
+"(Arcane) A pinch of dust and a few drops of water.", null, null),
+
+(268, 1, "Identify", true, true, "Divination", null, null, 1, "V, S, M/DF", "1 hour", "Touch", "One touched object", "Instantaneous", "None", "No",
+"Determines properties of magic item.",
+"The spell determines all magic properties of a single magic item, including how to activate those functions (if appropriate), and how many charges are left (if any).\n
+Identify does not function when used on an artifact.",
+"(Arcane) A pearl of at least 100 gp value, crushed and stirred into wine with an owl feather; the infusion must be drunk prior to spellcasting.",
+null, null);

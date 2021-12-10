@@ -142,7 +142,7 @@ CREATE TABLE Spell (
     Spell_Subschool varchar(19) CHECK (Spell_Subschool IN ("Calling", "Creation", "Healing", "Summoning", "Teleportation", "Scrying", "Charm", "Compulsion", "Figment", "Glamer", "Pattern", "Phantasm", "Shadow", "Creation or Calling")),
     Spell_Descriptor varchar(55),
     Spell_Min_Level int NOT NULL CHECK (Spell_Min_Level BETWEEN 0 AND 9),
-    Spell_Components varchar(18) NOT NULL,
+    Spell_Components varchar(28) NOT NULL,
     Spell_Casting_Time varchar(29) NOT NULL,
     Spell_Range varchar(37) NOT NULL,
     Spell_Effect_or_Target varchar(183),
