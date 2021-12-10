@@ -135,7 +135,7 @@ CREATE TABLE Wonderous_Item (
 CREATE TABLE Spell (
 	Spell_ID int NOT NULL UNIQUE,
     Book_ID int NOT NULL,
-    Spell_Name varchar(30) NOT NULL,
+    Spell_Name varchar(32) NOT NULL,
     Spell_Arcane bool NOT NULL,
     Spell_Divine bool NOT NULL,
     Spell_School varchar(13) NOT NULL CHECK (Spell_School IN ("Abjuration", "Conjuration", "Divination", "Enchantment", "Evocation", "Illusion", "Necromancy", "Transmutation", "Universal", "Other")),
@@ -144,7 +144,7 @@ CREATE TABLE Spell (
     Spell_Min_Level int NOT NULL CHECK (Spell_Min_Level BETWEEN 0 AND 9),
     Spell_Components varchar(18) NOT NULL,
     Spell_Casting_Time varchar(29) NOT NULL,
-    Spell_Range varchar(17) NOT NULL,
+    Spell_Range varchar(37) NOT NULL,
     Spell_Effect_or_Target varchar(183),
     Spell_Duration varchar(62) NOT NULL,
     Spell_Saving_Throw varchar(48),
