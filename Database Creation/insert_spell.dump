@@ -1608,4 +1608,178 @@ Note: Magic traps such as fire trap are hard to detect and disable. A rogue (onl
 "A fireball spell is an explosion of flame that detonates with a low roar and deals 1d6 points of fire damage per caster level (maximum 10d6) to every creature within the area. Unattended objects also take this damage. The explosion creates almost no pressure.\n
 You point your finger and determine the range (distance and height) at which the fireball is to burst. A glowing, pea-sized bead streaks from the pointing digit and, unless it impacts upon a material body or solid barrier prior to attaining the prescribed range, blossoms into the fireball at that point. (An early impact results in an early detonation.) If you attempt to send the bead through a narrow passage, such as through an arrow slit, you must “hit” the opening with a ranged touch attack, or else the bead strikes the barrier and detonates prematurely.\n
 The fireball sets fire to combustibles and damages objects in the area. It can melt metals with low melting points, such as lead, gold, copper, silver, and bronze. If the damage caused to an interposing barrier shatters or breaks through it, the fireball may continue beyond the barrier if the area permits; otherwise it stops at the barrier just as any other spell effect does.",
-"A tiny ball of bat guano and sulfur", null, null);
+"A tiny ball of bat guano and sulfur", null, null),
+
+(204, 1, "Flame Arrow", true, false, "Transmutation", null, "Fire", 3, "V, S, M", "1 standard action", "Close", "Fifty projectiles, all of which must be in contact with each other at the time of casting", "10 min./level", "None", "No",
+"Arrows deal +1d6 fire damage.",
+"You turn ammunition (such as arrows, bolts, shuriken, and stones) into fiery projectiles. Each piece of ammunition deals an extra 1d6 points of fire damage to any target it hits. A flaming projectile can easily ignite a flammable object or structure, but it won't ignite a creature it strikes.",
+"A drop of oil and a small piece of flint.", null, null),
+
+(205, 1, "Flame Blade", false, true, "Evocation", null, "Fire", 2, "V, S, DF", "1 standard action", "0 ft.", "Sword-like beam", "1 min./level (D)", "None", "Yes",
+"Touch attack deals 1d8 +1/two levels damage.",
+"A 3-foot-long, blazing beam of red-hot fire springs forth from your hand. You wield this bladelike beam as if it were a scimitar. Attacks with the flame blade are melee touch attacks. The blade deals 1d8 points of fire damage +1 point per two caster levels (maximum +10). Since the blade is immaterial, your Strength modifier does not apply to the damage. A flame blade can ignite combustible materials such as parchment, straw, dry sticks, and cloth.\n
+The spell does not function underwater.",
+null, null, null),
+
+(206, 1, "Flame Strike", false, true, "Evocation", null, "Fire", 4, "V, S, DF", "1 standard action", "Medium", "Cylinder (10-ft. radius, 40 ft. high)", "Instantaneous", "Reflex half", "Yes",
+"Smite foes with divine fire (1d6/level damage).",
+"A flame strike produces a vertical column of divine fire roaring downward. The spell deals 1d6 points of damage per caster level (maximum 15d6). Half the damage is fire damage, but the other half results directly from divine power and is therefore not subject to being reduced by resistance to fire-based attacks, such as that granted by protection from energy (fire), fire sheidl (chill shield), and similar magic.",
+null, null, null),
+
+(207, 1, "Flaming Sphere", true, true, "Evocation", null, "Fire", 2, "V, S, M/DF", "1 standard action", "Medium", "5-ft.-diameter sphere", "1 round/level", "Reflex negates", "Yes",
+"Creates rolling  ball of fire, 2d6 damage, lasts 1 round/level.",
+"A burning globe of fire rolls in whichever direction you point and burns those it strikes. It moves 30 feet per round. As part of this movement, it can ascend or jump up to 30 feet to strike a target. If it enters a space with a creature, it stops moving for the round and deals 2d6 points of fire damage to that creature, though a successful Reflex save negates that damage. A flaming sphere rolls over barriers less than 4 feet tall. It ignites flammable substances it touches and illuminates the same area as a torch would.\n
+The sphere moves as long as you actively direct it (a move action for you); otherwise, it merely stays at rest and burns. It can be extinguished by any means that would put out a normal fire of its size. The surface of the sphere has a spongy, yielding consistency and so does not cause damage except by its flame. It cannot push aside unwilling creatures or batter down large obstacles. A flaming sphere winks out if it exceeds the spell’s range.",
+"(Arcane) A bit of tallow, a pinch of brimstone, and a dusting of powdered iron.", null, null),
+
+(208, 1, "Flare", true, true, "Evocation", null, "Light", 0, "V", "1 standard action", "Close", "Burst of light", "Instantaneous", "Fortitude negates", "Yes",
+"Dazzles one creature (-1 penalty on attack rolls).",
+"This cantrip creates a burst of light. If you cause the light to burst directly in front of a single creature, that creature is dazzled for 1 minute unless it makes a successful Fortitude save. Sightless creatures, as well as creatures already dazzled, are not affected by flare.",
+null, null, null),
+
+(209, 1, "Flesh to Stone", true, false, "Transmutation", null, null, 6, "V, S, M", "1 standard action", "Medium", "One creature", "Instantaneous", "Fortitude negates", "Yes",
+"Turns subject creature into statue.",
+"The subject, along with all its carried gear, turns into a mindless, inert statue. If the statue resulting from this spell is broken or damaged, the subject (if ever returned to its original state) has similar damage or deformities. The creature is not dead, but it does not seem to be alive either when viewed with spells such as deathwatch. Only creatures made of flesh are affected by this spell.",
+"Lime, water, and earth.", null, null),
+
+(210, 1, "Fly", true, true, "Transmutation", null, null, 3, "V, S, F/DF", "1 standard action", "Touch", "Creature touched", "1 min./level", "Will negates (harmless)", "Yes (harmless)",
+"Subject flies at speed of 60 ft.",
+"The subject can fly at a speed of 60 feet (or 40 feet if it wears medium or heavy armor, or if it carries a medium or heavy load). It can ascend at half speed and descend at double speed, and its maneuverability is good. Using a fly spell requires only as much concentration as walking, so the subject can attack or cast spells normally. The subject of a fly spell can charge but not run, and it cannot carry aloft more weight than its maximum load, plus any armor it wears.\n
+Should the spell duration expire while the subject is still aloft, the magic fails slowly. The subject floats downward 60 feet per round for 1d6 rounds. If it reaches the ground in that amount of time, it lands safely. If not, it falls the rest of the distance, taking 1d6 points of damage per 10 feet of fall. Since dispelling a spell effectively ends it, the subject also descends in this way if the fly spell is dispelled, but not if it is negated by an antimagic field.",
+null, "(Arcane) A wing feather from any bird.", null),
+
+(211, 1, "Fog Cloud", true, true, "Conjuration", "Creation", null, 2, "V, S", "1 standard action", "Medium", "Fog spreads in 20-ft. radius, 20 ft. high", "10 min./level", "None", "No",
+"Fog obscures vision.",
+"A bank of fog billows out from the point you designate. The fog obscures all sight, including darkvision, beyond 5 feet. A creature within 5 feet has concealment (attacks have a 20% miss chance). Creatures farther away have total concealment (50% miss chance, and the attacker can’t use sight to locate the target).\n
+A moderate wind (11+ mph) disperses the fog in 4 rounds; a strong wind (21+ mph) disperses the fog in 1 round.\n
+The spell does not function underwater.",
+null, null, null),
+
+(212, 1, "Forbiddance", false, true, "Abjuration", null, null, 6, "V, S, M, DF", "6 rounds", "Medium", "60-ft.-cube/level (S)", "Permanent", "See text", "Yes",
+"Blocks planar travel, damages creatures of different alignment.",
+"Forbiddance seals an area against all planar travel into or within it. This includes all teleportation spells (such as dimension door and teleport), plane shifting, astral travel, ethereal travel, and all summoning spells. Such effects simply fail automatically.\n
+In addition, it damages entering creatures whose alignments are different from yours. The effect on those attempting to enter the warded area is based on their alignment relative to yours (see below). A creature inside the area when the spell is cast takes no damage unless it exits the area and attempts to reenter, at which time it is affected as normal.\n
+Alignments identical
+No effect. The creature may enter the area freely (although not by planar travel).\n
+Alignments different with respect to either law/chaos or good/evil
+The creature takes 6d6 points of damage. A successful Will save halves the damage, and spell resistance applies.\n
+Alignments different with respect to both law/chaos and good/evil
+The creature takes 12d6 points of damage. A successful Will save halves the damage, and spell resistance applies.\n
+At your option, the abjuration can include a password, in which case creatures of alignments different from yours can avoid the damage by speaking the password as they enter the area. You must select this option (and the password) at the time of casting.\n
+Dispel magic does not dispel a forbiddance effect unless the dispeller’s level is at least as high as your caster level.\n
+You can’t have multiple overlapping forbiddance effects. In such a case, the more recent effect stops at the boundary of the older effect.",
+"A sprinkling of holy water and rare incenses worth at least 1,500 gp plus 1,500 gp per 60-foot cube. If a password is desired, this requires the burning of additional rare incenses worth at least 1,000 gp plus 1,000 gp per 60-foot cube.",
+null, null),
+
+(213, 1, "Forcecage", true, false, "Evocation", null, "Force", 7, "V, S, M", "1 standard action", "Close", "Barred cage (20-ft. cube) or windowless cell (10-ft. cube)", "2 hours/level (D)", "None", "No",
+"Cube or cage of force imprisons all inside.",
+"This powerful spell brings into being an immobile, invisible cubical prison composed of either bars of force or solid walls of force (your choice).\n
+Creatures within the area are caught and contained unless they are too big to fit inside, in which case the spell automatically fails. Teleportation and other forms of astral travel provide a means of escape, but the force walls or bars extend into the Ethereal Plane, blocking ethereal travel.\n
+Like a wall of force spell, a forcecage resists dispel magic, but it is vulnerable to a disintegrate spell, and it can be destroyed by a sphere of annihilation or a rod of cancellation.\n
+Barred Cage
+This version of the spell produces a 20-foot cube made of bands of force (similar to a wall of force spell) for bars. The bands are a half-inch wide, with half-inch gaps between them. Any creature capable of passing through such a small space can escape; others are confined. You can’t attack a creature in a barred cage with a weapon unless the weapon can fit between the gaps. Even against such weapons (including arrows and similar ranged attacks), a creature in the barred cage has cover. All spells and breath weapons can pass through the gaps in the bars.\n
+Windowless Cell
+This version of the spell produces a 10-foot cube with no way in and no way out. Solid walls of force form its six sides.",
+"Ruby dust worth 1,500 gp, which is tossed into the air and disappears when you cast the spell.",
+null, null),
+
+(214, 1, "Foresight", true, true, "Divination", null, null, 9, "V, S, M/DF", "1 standard action", "Personal or touch", "See text", "10 min./level", "None or Will negates (harmless)", "No or Yes (harmless)",
+"'Sixth sense' warns of impending danger.",
+"This spell grants you a powerful sixth sense in relation to yourself or another. Once foresight is cast, you receive instantaneous warnings of impending danger or harm to the subject of the spell. You are never surprised or flat-footed. In addition, the spell gives you a general idea of what action you might take to best protect yourself and gives you a +2 insight bonus to AC and Reflex saves. This insight bonus is lost whenever you would lose a Dexterity bonus to AC.\n
+When another creature is the subject of the spell, you receive warnings about that creature. You must communicate what you learn to the other creature for the warning to be useful, and the creature can be caught unprepared in the absence of such a warning. Shouting a warning, yanking a person back, and even telepathically communicating (via an appropriate spell) can all be accomplished before some danger befalls the subject, provided you act on the warning without delay. The subject, however, does not gain the insight bonus to AC and Reflex saves.",
+"(Arcane) A hummingbird's feather.", null, null),
+
+(215, 1, "Fox's Cunning", true, false, "Transmutation", null, null, 2, "V, S, M/DF", "1 standard action", "Touch", "Creature touched", "1 min./level", "Will negates (harmless)", "Yes",
+"Subject gains +4 Int for 1 min./level.",
+"The transmuted creature becomes smarter. The spell grants a +4 enhancement bonus to Intelligence, adding the usual benefits to Intelligence-based skill checks and other uses of the Intelligence modifier. Wizards (and other spellcasters who rely on Intelligence) affected by this spell do not gain any additional bonus spells for the increased Intelligence, but the save DCs for spells they cast while under this spell’s effect do increase. This spell doesn’t grant extra skill points.",
+"(Arcane) A few hairs, or a pinch of dung, from a fox.", null, null),
+
+(216, 1, "Fox's Cunning, Mass", true, false, "Transmutation", null, null, 6, "V, S, M/DF", "1 standard action", "Close", "One creature/level, no two of which can be more than 30 ft. apart", "1 min./level", "Will negates (harmless)", "Yes",
+"As fox's cunning, affects one subject/level.",
+"This spell functions like fox's cunning, except that it affects multiple creatures.",
+"(Arcane) A few hairs, or a pinch of dung, from a fox.", null, null),
+
+(217, 1, "Freedom", true, false, "Abjuration", null, null, 9, "V, S", "1 standard action", "Close or see text", "One creature", "Instantaneous", "Will negates (harmless)", "Yes",
+"Releases creature from imprisonment.",
+"The subject is freed from spells and effects that restrict its movement, including binding, entangle, grappling, imprisonment, maze, paralysis, petrification, pinning, sleep, slow, stunning, temporal stasis, and web. To free a creature from imprisonment or maze, you must know its name and background, and you must cast this spell at the spot where it was entombed or banished into the maze.",
+null, null, null),
+
+(218, 1, "Freedom of Movement", true, true, "Abjuration", null, null, 4, "V, S, M, DF", "1 standard action", "Personal or touch", "You or creature touched", "10 min./level", "Will negates (harmless)", "Yes (harmless)",
+"Subject moves normally despite impediments.",
+"This spell enables you or a creature you touch to move and attack normally for the duration of the spell, even under the influence of magic that usually impedes movement, such as paralysis, solid fog, slow, and web. The subject automatically succeeds on any grapple check made to resist a grapple attempt, as well as on grapple checks or Escape Artist checks made to escape a grapple or a pin.\n
+The spell also allows the subject to move and attack normally while underwater, even with slashing weapons such as axes and swords or with bludgeoning weapons such as flails, hammers, and maces, provided that the weapon is wielded in the hand rather than hurled. The freedom of movement spell does not, however, allow water breathing.",
+"A leather thong, bound around the arm or a similar appendage.", null, null),
+
+(219, 1, "Gaseous Form", true, true, "Transmutation", null, null, 3, "S, M/DF", "1 standard action", "Touch", "Willing corporeal creature touched", "2 min./level (D)", "None", "No",
+"Subject becomes insubstantial and can fly slowly.",
+"The subject and all its gear become insubstantial, misty, and translucent. Its material armor (including natural armor) becomes worthless, though its size, Dexterity, deflection bonuses, and armor bonuses from force effects still apply. The subject gains damage reduction 10/magic and becomes immune to poison and critical hits. It can’t attack or cast spells with verbal, somatic, material, or focus components while in gaseous form. (This does not rule out the use of certain spells that the subject may have prepared using the feats Silent Spell, Still Spell, and Eschew Materials.) The subject also loses supernatural abilities while in gaseous form. If it has a touch spell ready to use, that spell is discharged harmlessly when the gaseous form spell takes effect.\n
+A gaseous creature can’t run, but it can fly at a speed of 10 feet (maneuverability perfect). It can pass through small holes or narrow openings, even mere cracks, with all it was wearing or holding in its hands, as long as the spell persists. The creature is subject to the effects of wind, and it can’t enter water or other liquid. It also can’t manipulate objects or activate items, even those carried along with its gaseous form. Continuously active items remain active, though in some cases their effects may be moot.",
+"(Arcane) A bit of gauze and a wisp of smoke.", null, null),
+
+(220, 1, "Gate", true, true, "Conjuration", "Creation or Calling", "Air, Chaotic, Earth, Evil, Fire, Good, Lawful, or Water", 9, "V, S, XP; see text", "1 standard action", "Medium", "See text", "Instantaneous or concentration (up to 1 round/level); see text", "None", "No",
+"Connects two planes for travel or summoning.",
+"Casting a gate spell has two effects. First, it creates an interdimensional connection between your plane of existence and a plane you specify, allowing travel between those two planes in either direction.\n
+Second, you may then call a particular individual or kind of being through the gate.\n
+The gate itself is a circular hoop or disk from 5 to 20 feet in diameter (caster’s choice), oriented in the direction you desire when it comes into existence (typically vertical and facing you). It is a two-dimensional window looking into the plane you specified when casting the spell, and anyone or anything that moves through is shunted instantly to the other side.\n
+A gate has a front and a back. Creatures moving through the gate from the front are transported to the other plane; creatures moving through it from the back are not.\n
+Planar Travel
+As a mode of planar travel, a gate spell functions much like a plane shift spell, except that the gate opens precisely at the point you desire (a creation effect). Deities and other beings who rule a planar realm can prevent a gate from opening in their presence or personal demesnes if they so desire. Travelers need not join hands with you—anyone who chooses to step through the portal is transported. A gate cannot be opened to another point on the same plane; the spell works only for interplanar travel.\n
+You may hold the gate open only for a brief time (no more than 1 round per caster level), and you must concentrate on doing so, or else the interplanar connection is severed.\n
+Calling Creatures
+The second effect of the gate spell is to call an extraplanar creature to your aid (a calling effect). By naming a particular being or kind of being as you cast the spell, you cause the gate to open in the immediate vicinity of the desired creature and pull the subject through, willing or unwilling. Deities and unique beings are under no compulsion to come through the gate, although they may choose to do so of their own accord. This use of the spell creates a gate that remains open just long enough to transport the called creatures. This use of the spell has an XP cost (see below).\n
+If you choose to call a kind of creature instead of a known individual you may call either a single creature (of any HD) or several creatures. You can call and control several creatures as long as their HD total does not exceed your caster level. In the case of a single creature, you can control it if its HD do not exceed twice your caster level. A single creature with more HD than twice your caster level can’t be controlled. Deities and unique beings cannot be controlled in any event. An uncontrolled being acts as it pleases, making the calling of such creatures rather dangerous. An uncontrolled being may return to its home plane at any time.\n
+A controlled creature can be commanded to perform a service for you. Such services fall into two categories: immediate tasks and contractual service. Fighting for you in a single battle or taking any other actions that can be accomplished within 1 round per caster level counts as an immediate task; you need not make any agreement or pay any reward for the creature’s help. The creature departs at the end of the spell.\n
+If you choose to exact a longer or more involved form of service from a called creature, you must offer some fair trade in return for that service. The service exacted must be reasonable with respect to the promised favor or reward; see the lesser planar ally spell for appropriate rewards. (Some creatures may want their payment in “livestock” rather than in coin, which could involve complications.) Immediately upon completion of the service, the being is transported to your vicinity, and you must then and there turn over the promised reward. After this is done, the creature is instantly freed to return to its own plane.\n
+Failure to fulfill the promise to the letter results in your being subjected to service by the creature or by its liege and master, at the very least. At worst, the creature or its kin may attack you.\n
+Note: When you use a calling spell such as gate to call an air, chaotic, earth, evil, fire, good, lawful, or water creature, it becomes a spell of that type.",
+null, null, "1,000 XP (only for the calling creatures function)."),
+
+(221, 1, "Geas/Quest", true, true, "Enchantment", "Compulsion", "Language-Dependent, Mind-Affecting", 6, "V", "10 minutes", "Close", "One living creature", "One day/level or until discharged (D)", "None", "Yes",
+"As lesser geas, plus it affects any creature.",
+"This spell functions similarly to lesser geas, except that it affects a creature of any HD and allows no saving throw.\n
+Instead of taking penalties to ability scores (as with lesser geas), the subject takes 3d6 points of damage each day it does not attempt to follow the geas/quest. Additionally, each day it must make a Fortitude saving throw or become sickened. These effects end 24 hours after the creature attempts to resume the geas/quest.\n
+A remove curse spell ends a geas/quest spell only if its caster level is at least two higher than your caster level. Break enchantment does not end a geas/quest, but limited wish, miracle, and wish do.\n
+Bards, sorcerers, and wizards usually refer to this spell as geas, while clerics call the same spell quest.",
+null, null, null),
+
+(222, 1, "Geas, Lesser", true, false, "Enchantment", "Compulsion", "Language-Dependent, Mind-Affecting", 3, "V", "1 round", "Close", "One living creature with 7 HD or less", "One day/level or until discharged (D)", "Will negates", "Yes",
+"Commands subject of 7 HD or less.",
+"A lesser geas places a magical command on a creature to carry out some service or to refrain from some action or course of activity, as desired by you. The creature must have 7 or fewer Hit Dice and be able to understand you. While a geas cannot compel a creature to kill itself or perform acts that would result in certain death, it can cause almost any other course of activity.\n
+The geased creature must follow the given instructions until the geas is completed, no matter how long it takes.\n
+If the instructions involve some open-ended task that the recipient cannot complete through his own actions the spell remains in effect for a maximum of one day per caster level. A clever recipient can subvert some instructions:\n
+If the subject is prevented from obeying the lesser geas for 24 hours, it takes a -2 penalty to each of its ability scores. Each day, another -2 penalty accumulates, up to a total of -8. No ability score can be reduced to less than 1 by this effect. The ability score penalties are removed 24 hours after the subject resumes obeying the lesser geas.\n
+A lesser geas (and all ability score penalties) can be ended by break enchantment, limited wish, remove curse, miracle, or wish. Dispel magic does not affect a lesser geas.",
+null, null, null),
+
+(223, 1, "Gentle Repose", true, true, "Necromancy", null, null, 2, "V, S, M/DF", "1 standard action", "Touch", "Corpse touched", "One day/level", "Will negates (object)", "Yes (object)",
+"Preserves one corpse.",
+"You preserve the remains of a dead creature so that they do not decay. Doing so effectively extends the time limit on raising that creature from the dead (see raise dead). Days spent under the influence of this spell don't count against the time limit. Additionally, this spell makes transporting a fallen comrade more pleasant.\n
+The spell also works on severed body parts and the like.",
+"(Arcane) A pinch of salt, and a copper piece for each eye the corpse has (or had)", null, null),
+
+(224, 1, "Ghost Sound", true, false, "Illusion", "Figment", null, 0, "V, S, M", "1 standard action", "Close", "Illusory sounds", "1 round/level (D)", "Will disbelief (if interacted with)", "No",
+"Figment sounds.",
+"Ghost sound allows you to create a volume of sound that rises, recedes, approaches, or remains at a fixed place. You choose what type of sound ghost sound creates when casting it and cannot thereafter change the sound’s basic character.\n
+The volume of sound created depends on your level. You can produce as much noise as four normal humans per caster level (maximum twenty humans). Thus, talking, singing, shouting, walking, marching, or running sounds can be created. The noise a ghost sound spell produces can be virtually any type of sound within the volume limit. A horde of rats running and squeaking is about the same volume as eight humans running and shouting. A roaring lion is equal to the noise from sixteen humans, while a roaring dire tiger is equal to the noise from twenty humans.\n
+Ghost sound can enhance the effectiveness of a silent image spell.\n
+Ghost sound can be made permanent with a permanency spell.",
+"A bit of wool or a small lump of wax.", null, null),
+
+(225, 1, "Ghoul Touch", true, false, "Necromancy", null, null, 2, "V, S, M", "1 standard action", "Touch", "Living humanoid touched", "1d6+2 rounds", "Fortitude negates", "Yes",
+"Paralyzes one subject, which exudes stench that makes those nearby sickened.",
+"Imbuing you with negative energy, this spell allows you to paralyze a single living humanoid for the duration of the spell with a successful melee touch attack.\n
+Additionally, the paralyzed subject exudes a carrion stench that causes all living creatures (except you) in a 10-foot-radius spread to become sickened (Fortitude negates). A neutralize poison spell removes the effect from a sickened creature, and creatures immune to poison are unaffected by the stench.",
+"A small scrap of cloth taken from clothing worn by a ghoul, or a pinch of earth from a ghoul's lair.",
+null, null),
+
+(226, 1, "Giant Vermin", false, true, "Transmutation", null, null, 4, "V, S, DF", "1 standard action", "Close", "Up to three vermin, no two of which can be more than 30 ft. apart", "1 min./level", "None", "Yes",
+"Turns centipedes, scorpions, or spiders into giant vermin.",
+"You turn three normal-sized centipedes, two normal-sized spiders, or a single normal-sized scorpion into larger forms. Only one type of vermin can be transmuted (so a single casting cannot affect both a centipede and a spider), and all must be grown to the same size. The size to which the vermin can be grown depends on your level; see the table.\n
+Any giant vermin created by this spell do not attempt to harm you, but your control of such creatures is limited to simple commands (“Attack,” “Defend,” “Stop,” and so forth). Orders to attack a certain creature when it appears or guard against a particular occurrence are too complex for the vermin to understand. Unless commanded to do otherwise, the giant vermin attack whoever or whatever is near them.\n
+Caster Level        Vermin Size
+9th or lower        Medium
+10th-13th           Large
+14th-17th           Huge
+18th-19th           Gargantuan
+20th or higher      Colossal",
+null, null, null);
