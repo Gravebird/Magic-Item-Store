@@ -2110,4 +2110,11 @@ null, null, null),
 "The spell determines all magic properties of a single magic item, including how to activate those functions (if appropriate), and how many charges are left (if any).\n
 Identify does not function when used on an artifact.",
 "(Arcane) A pearl of at least 100 gp value, crushed and stirred into wine with an owl feather; the infusion must be drunk prior to spellcasting.",
-null, null);
+null, null),
+
+(269, 1, "Illusory Script", true, false, "Illusion", "Phantasm", "Mind-Affecting", 3, "V, S, M", "1 minute or longer; see text", "Touch", "One touched object weighing no more than 10 lb.", "One day/level (D)", "Will negates; see text", "Yes",
+"Only intended reader can decipher.",
+"You write instructions or other information on parchment, paper, or any suitable writing material. The illusory script appears to be some form of foreign or magical writing. Only the person (or people) designated by you at the time of the casting are able to read the writing; it’s unintelligible to any other character, although an illusionist recognizes it as illusory script.\n
+Any unauthorized creature attempting to read the script triggers a potent illusory effect and must make a saving throw. A successful saving throw means the creature can look away with only a mild sense of disorientation. Failure means the creature is subject to a suggestion implanted in the script by you at the time the illusory script spell was cast. The suggestion lasts only 30 minutes. Typical suggestions include “Close the book and leave,” “Forget the existence of the book,” and so forth. If successfully dispelled by dispel magic, the illusory script and its secret message disappear. The hidden message can be read by a combination of the true seeing spell with the read magic or comprehend languages spell.\n
+The casting time depends on how long a message you wish to write, but it is always at least 1 minute.",
+"A lead-based ink (cost of not less than 50 gp.)", null, null);
