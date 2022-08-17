@@ -2117,4 +2117,31 @@ null, null),
 "You write instructions or other information on parchment, paper, or any suitable writing material. The illusory script appears to be some form of foreign or magical writing. Only the person (or people) designated by you at the time of the casting are able to read the writing; it’s unintelligible to any other character, although an illusionist recognizes it as illusory script.\n
 Any unauthorized creature attempting to read the script triggers a potent illusory effect and must make a saving throw. A successful saving throw means the creature can look away with only a mild sense of disorientation. Failure means the creature is subject to a suggestion implanted in the script by you at the time the illusory script spell was cast. The suggestion lasts only 30 minutes. Typical suggestions include “Close the book and leave,” “Forget the existence of the book,” and so forth. If successfully dispelled by dispel magic, the illusory script and its secret message disappear. The hidden message can be read by a combination of the true seeing spell with the read magic or comprehend languages spell.\n
 The casting time depends on how long a message you wish to write, but it is always at least 1 minute.",
-"A lead-based ink (cost of not less than 50 gp.)", null, null);
+"A lead-based ink (cost of not less than 50 gp.)", null, null),
+
+(270, 1, "Illusory Wall", true, false, "Illusion", "Figment", null, 4, "V, S", "1 standard action", "Close", "Image 1 ft. by 10 ft. by 10 ft.", "Permanent", "Will disbelief (if interacted with)", "No",
+"Wall, floor, or ceiling looks real, but anything can passs through.",
+"This spell creates the illusion of a wall, floor, ceiling, or similar surface. It appears absolutely real when viewed, but physical objects can pass through it without difficulty.
+When the spell is used to hide pits, traps, or normal doors, any detection abilities that do not require sight work normally. Touch or a probing search reveals the true nature of the surface, though such measures do not cause the illusion to disappear.",
+null, null, null),
+
+(271, 1, "Imbue with Spell Ability", false, true, "Evocation", null, null, 4, "V, S, DF", "10 minutes", "Touch", "Creature touched; see text", "Permanent until discharged (D)", "Will negates (harmless)", "Yes (harmless)",
+"Transfer spells to subject.",
+"You transfer some of your currently prepared spells, and the ability to cast them, to another creature. Only a creature with an Intelligence score of at least 5 and a Wisdom score of at least 9 can receive this bestowal. Only cleric spells from the schools of abjuration, divination, and conjuration (healing) can be transferred. The number and level of spells that the subject can be granted depends on its Hit Dice; even multiple castings of imbue with spell ability can't exceed this limit.
+
+HD of Recipient         Spells Imbued
+2 or lower              One 1st-level spell
+3-4                     One or two 1st-level spells
+5 or higher             One or two 1st-level spells and one 2nd-level spell
+
+The transferred spell's variable characteristics (range, duration, area, and the like) function according to your level, not the level of the recipient.
+Once you cast imbue with spell ability, you cannot prepare a new 4th-level spell to replace it until the recipient uses the imbued spells or is slain, or until you dismiss the imbue with spell ability spell. In the meantime, you remain responsible to your deity, or your principles for the use to which the spell is put. If the number of 4th-level spells you can cast decreases, and that number drops below your current number of active imbue with spell ability spells, the more recently cast imbued spells are dispelled.
+To cast a spell with a verbal component, the subject must be able to speak. To cast a spell with a somatic component, it must have humanlike hands. To cast a spell with a material component or focus, it must have the materials to focus.",
+null, null, null),
+
+(272, 1, "Implosion", false, true, "Evocation", null, null, 9, "V, S", "1 standard action", "Close", "One corporeal creature/round", "Concentration (up to 4 rounds)", "Fortitude negates", "Yes",
+"Kills one creature/round.",
+"You create a destructive resonance in a corporeal creature's body. For each round you concentrate, you cause one creature to collapse in on itself, killing it. (This effect, being instantaneous, cannot be dispelled.)
+You can target a particular creature only once with each casting of the spell.
+Implosion has no effect on creatures in gaseous form or on incorporeal creatures.",
+null, null, null);

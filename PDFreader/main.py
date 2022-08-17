@@ -1,6 +1,5 @@
 import sys
 import os
-import PyPDF2 as pypdf
 from controllers.app_controller import run
 
 def main():

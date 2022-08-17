@@ -136,24 +136,22 @@ CREATE TABLE Spell (
 	Spell_ID int NOT NULL UNIQUE,
     Book_ID int NOT NULL,
     Spell_Name varchar(32) NOT NULL,
-    Spell_Arcane bool NOT NULL,
-    Spell_Divine bool NOT NULL,
-    Spell_School varchar(13) NOT NULL CHECK (Spell_School IN ("Abjuration", "Conjuration", "Divination", "Enchantment", "Evocation", "Illusion", "Necromancy", "Transmutation", "Universal", "Other")),
-    Spell_Subschool varchar(19) CHECK (Spell_Subschool IN ("Calling", "Creation", "Healing", "Summoning", "Teleportation", "Scrying", "Charm", "Compulsion", "Figment", "Glamer", "Pattern", "Phantasm", "Shadow", "Creation or Calling")),
+    Spell_School varchar(13) NOT NULL,
+    Spell_Subschool varchar(19),
     Spell_Descriptor varchar(55),
-    Spell_Min_Level int NOT NULL CHECK (Spell_Min_Level BETWEEN 0 AND 9),
-    Spell_Components varchar(28) NOT NULL,
+    Spell_Components varchar(456) NOT NULL,
     Spell_Casting_Time varchar(29) NOT NULL,
-    Spell_Range varchar(37) NOT NULL,
-    Spell_Effect_or_Target varchar(183),
-    Spell_Duration varchar(62) NOT NULL,
-    Spell_Saving_Throw varchar(48),
-    Spell_Resistance varchar(31),
-    Spell_Short_Description varchar(100),
+    Spell_Range varchar(51) NOT NULL,
+    Spell_Effect varchar(183),
+    Spell_Target varchar(186),
+    Spell_Duration varchar(85) NOT NULL,
+    Spell_Saving_Throw varchar(74),
+    Spell_Resistance varchar(42),
+    Spell_Short_Description varchar(105),
     Spell_Description TEXT,
     Spell_Material_Component varchar(696),
-    Spell_Focus varchar(300),
-    Spell_XP_Cost varchar(136),
+    Spell_Focus varchar(406),
+    Spell_XP_Cost varchar(307),
     PRIMARY KEY (Spell_ID, Book_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
@@ -205,5 +203,5 @@ source insert_magic_weapon.dump;
 source insert_material.dump;
 source insert_material_for_armor.dump;
 source insert_material_for_weapon.dump;
-source insert_spell.dump;
+source player_handbook_spells.sql;
 source insert_class_spells.dump;
