@@ -204,4 +204,4 @@ source insert_material.dump;
 source insert_material_for_armor.dump;
 source insert_material_for_weapon.dump;
 source player_handbook_spells.sql;
-source insert_class_spells.dump;
+source insert_player_handbook_class_spells.sql;
