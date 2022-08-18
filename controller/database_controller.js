@@ -29,7 +29,7 @@ function query(query) {
 let databaseController = {
 
     test: async function () {
-        return await query('SELECT * FROM Spell WHERE Spell_School = "Necromancy"');
+        return await query('SELECT * FROM Spell WHERE Spell_School = "Conjuration"');
     },
 
     getWeaponIdsUnderGoldCost: async function(maxGoldValue, rarity) {
