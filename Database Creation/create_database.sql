@@ -169,6 +169,19 @@ CREATE TABLE Potion (
     FOREIGN KEY (Spell_ID) REFERENCES Spell(Spell_ID)
 );
 
+CREATE TABLE Ring (
+    Ring_ID int NOT NULL UNIQUE,
+    Book_ID int NOT NULL,
+    Ring_Name varchar(30) NOT NULL,
+    Ring_Description TEXT,
+    Ring_Caster_Level int NOT NULL,
+    Ring_Cost decimal(9,2) NOT NULL,
+    Ring_Aura varchar(20),
+    Ring_Creation_Reqs varchar(119),
+    PRIMARY KEY (Ring_ID),
+    FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
+);
+
 CREATE TABLE Class (
     Class_ID int NOT NULL UNIQUE,
     Book_ID int NOT NULL,
@@ -206,4 +219,5 @@ source insert_material_for_armor.dump;
 source insert_material_for_weapon.dump;
 source player_handbook_spells.sql;
 source insert_player_handbook_class_spells.sql;
-source insert_potion.sql
+source insert_potion.sql;
+source insert_rings.sql;
