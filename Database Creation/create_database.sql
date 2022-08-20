@@ -156,14 +156,15 @@ CREATE TABLE Spell (
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
 
-CREATE TABLE Spell_Item (
-	Spell_Item_ID int NOT NULL UNIQUE,
+CREATE TABLE Potion (
+    Potion_ID int NOT NULL UNIQUE,
     Book_ID int NOT NULL,
-    Spell_Item_Name varchar(30) NOT NULL,
-    Spell_Item_Cost decimal(9,2) NOT NULL,
-    Spell_Item_Type varchar(10) NOT NULL,
-    Spell_ID int,
-    PRIMARY KEY (Spell_Item_ID, Book_ID),
+    Spell_ID int NOT NULL,
+    Potion_name varchar(36) NOT NULL,
+    Potion_type varchar(6) NOT NULL CHECK (Potion_type IN ('potion','oil')),
+    Potion_cost decimal(9,2) NOT NULL,
+    Potion_level int NOT NULL,
+    PRIMARY KEY (Potion_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID),
     FOREIGN KEY (Spell_ID) REFERENCES Spell(Spell_ID)
 );
@@ -205,3 +206,4 @@ source insert_material_for_armor.dump;
 source insert_material_for_weapon.dump;
 source player_handbook_spells.sql;
 source insert_player_handbook_class_spells.sql;
+source insert_potion.sql
