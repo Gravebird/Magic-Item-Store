@@ -176,7 +176,7 @@ CREATE TABLE Ring (
     Ring_Description TEXT,
     Ring_Caster_Level int NOT NULL,
     Ring_Cost decimal(9,2) NOT NULL,
-    Ring_Aura varchar(20),
+    Ring_Aura varchar(22),
     Ring_Creation_Reqs varchar(119),
     PRIMARY KEY (Ring_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
