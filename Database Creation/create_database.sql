@@ -172,11 +172,11 @@ CREATE TABLE Potion (
 CREATE TABLE Ring (
     Ring_ID int NOT NULL UNIQUE,
     Book_ID int NOT NULL,
-    Ring_Name varchar(30) NOT NULL,
+    Ring_Name varchar(31) NOT NULL,
     Ring_Description TEXT,
     Ring_Caster_Level int NOT NULL,
     Ring_Cost decimal(9,2) NOT NULL,
-    Ring_Aura varchar(22),
+    Ring_Aura varchar(37),
     Ring_Creation_Reqs varchar(119),
     PRIMARY KEY (Ring_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
