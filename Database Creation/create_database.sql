@@ -189,8 +189,8 @@ CREATE TABLE Rod (
     Rod_Description TEXT,
     Rod_Caster_Level int NOT NULL,
     Rod_Cost decimal(9,2) NOT NULL,
-    Rod_Aura varchar(37),
-    Rod_Creation_Reqs varchar(119),
+    Rod_Aura varchar(60),
+    Rod_Creation_Reqs varchar(155),
     PRIMARY KEY (Rod_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
