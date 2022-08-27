@@ -182,6 +182,19 @@ CREATE TABLE Ring (
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
 
+CREATE TABLE Rod (
+    Rod_ID int NOT NULL UNIQUE,
+    Book_ID int NOT NULL,
+    Rod_Name varchar(30) NOT NULL,
+    Rod_Description TEXT,
+    Rod_Caster_Level int NOT NULL,
+    Rod_Cost decimal(9,2) NOT NULL,
+    Rod_Aura varchar(37),
+    Rod_Creation_Reqs varchar(119),
+    PRIMARY KEY (Rod_ID),
+    FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
+);
+
 CREATE TABLE Class (
     Class_ID int NOT NULL UNIQUE,
     Book_ID int NOT NULL,
@@ -221,3 +234,4 @@ source player_handbook_spells.sql;
 source insert_player_handbook_class_spells.sql;
 source insert_potion.sql;
 source insert_rings.sql;
+source insert_rods.sql;
