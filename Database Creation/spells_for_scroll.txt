@@ -1,0 +1,77 @@
+Note: For spells with variable material components or variable XP costs:
+These spells will need to be handled manually by the magic item store program.
+The spells that need to be handled manually are as follows:
+
+Animate Dead	You must place a black onyx gem worth at least 25 gp per Hit Die of the undead into the mouth or eye socket of each corpse you intend to animate. The magic of the spell turns these gems into worthless, burned-out shells.	
+Astral Projection	A jacinth worth at least 1,000 gp, plus a silver bar worth 5 gp for each person to be affected.	
+Create Greater Undead	A clay pot filled with grave dirt and another filled with brackish water. The spell must be cast on a dead body. You must place a black onyx gem worth at least 50 gp per HD of the undead to be created into the mouth or eye socket of each corpse. The magi...	
+Create Undead	A clay pot filled with grave dirt and another filled with brackish water. The spell must be cast on a dead body. You must place a black onyx gem worth at least 50 gp per HD of the undead to be created into the mouth or eye socket of each corpse. The magi...	
+Forbiddance	A sprinkling of holy water and rare incenses worth at least 1,500 gp, plus 1,500 gp per 60-foot cube. If a password is desired, this requires the burning of additional rare incenses worth at least 1,000 gp, plus 1,000 gp per 60-foot cube.	
+Gate		1,000 XP (only for the calling creatures function).
+Hallow	Herbs, oils, and incense worth at least 1,000 gp, plus 1,000 gp per level of the spell to be included in the hallowed area.	
+Limited Wish		300 XP or more (see above).
+Miracle		5,000 XP (for some uses of the miracle spell; see above).
+Permanency		See tables above.
+Simulacrum	The spell is cast over the rough snow or ice form, and some piece of the creature to be duplicated (hair, nail, or the like) must be placed inside the snow or ice. Additionally, the spell requires powdered ruby worth 100 gp per HD of the simulacrum to be...	100 XP per HD of the simulacrum to be created (minimum 1,000 XP).
+Trap the Soul	Before the actual casting of trap the soul, you must procure a gem of at least 1,000 gp value for every Hit Die possessed by the creature to be trapped. If the gem is not valuable enough, it shatters when the entrapment is attempted. (While creatures hav...	
+Unhallow	Herbs, oils, and incense worth at least 1,000 gp, plus 1,000 gp per level of the spell to be tied to the unhallowed area.	
+Wish	When a Wish duplicates a spell with a material component that costs more than 10,000 gp, you must provide that component.	The minimum XP cost for casting Wish is 5,000 XP. When a Wish duplicates a spell that has an XP cost, you must pay 5,000 XP or that cost, whichever is more. When a Wish creates or improves a magic item, you must pay twice the normal XP cost for crafting ...
+
+
+The remaining spells have static costs:
+
+Arcane Lock	Gold dust worth 25 gp.	
+Atonement	Burning incense.	When cast for the benefit of a creature whose guilt was the result of deliberate acts, the cost to you is 500 XP per casting (see above).
+Augury	Incense worth at least 25 gp.	
+Awaken		250 XP.
+Bless Water	5 pounds of powdered silver (worth 25 gp).	
+Circle of Death	The powder of a crushed black pearl with a minimum value of 500 gp.	
+Clone	The piece of flesh and various laboratory supplies (cost 1,000 gp).	
+Commune	Holy (or unholy) water and incense.	100 XP.
+Consecrate	A vial of holy water and 25 gp worth (5 pounds) of silver dust, all of which must be sprinkled around the area.	
+Continual Flame	You sprinkle ruby dust (worth 50 gp) on the item that is to carry the flame.	
+Curse Water	5 pounds of powdered silver (worth 25 gp).	
+Desecrate	A vial of unholy water and 25 gp worth (5 pounds) of silver dust, all of which must be sprinkled around the area.	
+Divination	Incense and a sacrificial offering appropriate to your religion, together worth at least 25 gp.	
+Fire Trap	A half-pound of gold dust (cost 25 gp) sprinkled on the warded object.	
+Forcecage	Ruby dust worth 1,500 gp, which is tossed into the air and disappears when you cast the spell.	
+Glyph of Warding	You trace the glyph with incense, which must first be sprinkled with powdered diamond worth at least 200 gp.	
+Glyph of Warding, Greater	You trace the glyph with incense, which must first be sprinkled with powdered diamond worth at least 400 gp.	
+Illusory Script	A lead-based ink (cost of not less than 50 gp).	
+Instant Summons	A sapphire worth at least 1,000 gp.	
+Legend Lore	Incense worth at least 250 gp.	
+Magic Mouth	A small bit of honeycomb and jade dust worth 10 gp.	
+Nondetection	A pinch of diamond dust worth 50 gp.	
+Permanent Image	A bit of fleece plus powdered jade worth 100 gp.	
+Phantom Trap	A piece of iron pyrite touched to the object to be trapped while the object is sprinkled with a special dust requiring 50 gp to prepare.	
+Planar Ally		250 XP.
+Planar Ally, Greater		500 XP.
+Planar Ally, Lesser		100 XP.
+Programmed Image	A bit of fleece and jade dust worth 25 gp.	
+Project Image	A small replica of you (a doll), which costs 5 gp to create.	
+Protection from Spells	A diamond of at least 500 gp value, which must be crushed and sprinkled over the targets.	
+Raise Dead	Diamonds worth a total of least 5,000 gp.	
+Refuge	The specially prepared object, whose construction requires gems worth 1,500 gp.	
+Reincarnate	Rare oils and unguents worth a total of least 1,000 gp, spread over the remains.	
+Restoration	Diamond dust worth 100 gp that is sprinkled over the target.	
+Restoration, Greater		500 XP.
+Resurrection	A sprinkle of holy water and diamonds worth a total of at least 10,000 gp.	
+Sepia Snake Sigil	500 gp worth of powdered amber, a scale from any snake, and a pinch of mushroom spores.	
+Stoneskin	Granite and 250 gp worth of diamond dust sprinkled on the target's skin.	
+Symbol of Death	Mercury and phosphorus, plus powdered diamond and opal with a total value of at least 5,000 gp each.	
+Symbol of Fear	Mercury and phosphorus, plus powdered diamond and opal with a total value of at least 1,000 gp.	
+Symbol of Insanity	Mercury and phosphorus, plus powdered diamond and opal with a total value of at least 5,000 gp.	
+Symbol of Pain	Mercury and phosphorus, plus powdered diamond and opal with a total value of at least 1,000 gp.	
+Symbol of Persuasion	Mercury and phosphorus, plus powdered diamond and opal with a total value of at least 5,000 gp.	
+Symbol of Sleep	Mercury and phosphorus, plus powdered diamond and opal with a total value of at least 1,000 gp.	
+Symbol of Stunning	Mercury and phosphorus, plus powdered diamond and opal with a total value of at least 5,000 gp.	
+Symbol of Weakness	Mercury and phosphorus, plus powdered diamond and opal with a total value of at least 5,000 gp.	
+Sympathy	1,500 gp worth of crushed pearls and a drop of honey.	
+Teleportation Circle	Amber dust to cover the area of the circle (cost 1,000 gp).	
+Temporal Stasis	A powder composed of diamond, emerald, ruby, and sapphire dust with a total value of at least 5,000 gp.	
+Transformation	A potion of bull's strength, which you drink (and whose effects are subsumed by the spell effects).	
+True Resurrection	A sprinkle of holy water and diamonds worth a total of at least 25,000 gp.	
+True Seeing	An ointment for the eyes that costs 250 gp and is made from mushroom powder, saffron, and fat.	
+Undeath to Death	The powder of a crushed diamond worth at least 500 gp.	
+Vision	Incense worth at least 250 gp.	100 XP.
+Wall of Iron	A small piece of sheet iron plus gold dust worth 50 gp (1 pound of gold dust).	
