@@ -1,11 +1,11 @@
-Note: For spells with variable material components or variable XP costs:
-These spells will need to be handled manually by the magic item store program.
-The spells that need to be handled manually are as follows:
+We assume minimum caster level for scrolls, so its safe to assume that material components
+and XP costs are at minimum for scrolls as well.
 
-Animate Dead	You must place a black onyx gem worth at least 25 gp per Hit Die of the undead into the mouth or eye socket of each corpse you intend to animate. The magic of the spell turns these gems into worthless, burned-out shells.	
+For every scroll price added to the magic item store, we will use the minimum cost
+
+The following scrolls have variable costs in material and XP components - so we assume minimum
+
 Astral Projection	A jacinth worth at least 1,000 gp, plus a silver bar worth 5 gp for each person to be affected.	
-Create Greater Undead	A clay pot filled with grave dirt and another filled with brackish water. The spell must be cast on a dead body. You must place a black onyx gem worth at least 50 gp per HD of the undead to be created into the mouth or eye socket of each corpse. The magi...	
-Create Undead	A clay pot filled with grave dirt and another filled with brackish water. The spell must be cast on a dead body. You must place a black onyx gem worth at least 50 gp per HD of the undead to be created into the mouth or eye socket of each corpse. The magi...	
 Forbiddance	A sprinkling of holy water and rare incenses worth at least 1,500 gp, plus 1,500 gp per 60-foot cube. If a password is desired, this requires the burning of additional rare incenses worth at least 1,000 gp, plus 1,000 gp per 60-foot cube.	
 Gate		1,000 XP (only for the calling creatures function).
 Hallow	Herbs, oils, and incense worth at least 1,000 gp, plus 1,000 gp per level of the spell to be included in the hallowed area.	
@@ -16,6 +16,9 @@ Simulacrum	The spell is cast over the rough snow or ice form, and some piece of 
 Trap the Soul	Before the actual casting of trap the soul, you must procure a gem of at least 1,000 gp value for every Hit Die possessed by the creature to be trapped. If the gem is not valuable enough, it shatters when the entrapment is attempted. (While creatures hav...	
 Unhallow	Herbs, oils, and incense worth at least 1,000 gp, plus 1,000 gp per level of the spell to be tied to the unhallowed area.	
 Wish	When a Wish duplicates a spell with a material component that costs more than 10,000 gp, you must provide that component.	The minimum XP cost for casting Wish is 5,000 XP. When a Wish duplicates a spell that has an XP cost, you must pay 5,000 XP or that cost, whichever is more. When a Wish creates or improves a magic item, you must pay twice the normal XP cost for crafting ...
+Animate Dead	You must place a black onyx gem worth at least 25 gp per Hit Die of the undead into the mouth or eye socket of each corpse you intend to animate. The magic of the spell turns these gems into worthless, burned-out shells.	
+Create Greater Undead	A clay pot filled with grave dirt and another filled with brackish water. The spell must be cast on a dead body. You must place a black onyx gem worth at least 50 gp per HD of the undead to be created into the mouth or eye socket of each corpse. The magi...	
+Create Undead	A clay pot filled with grave dirt and another filled with brackish water. The spell must be cast on a dead body. You must place a black onyx gem worth at least 50 gp per HD of the undead to be created into the mouth or eye socket of each corpse. The magi...	
 
 
 The remaining spells have static costs:

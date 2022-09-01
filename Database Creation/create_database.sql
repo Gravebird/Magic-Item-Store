@@ -215,6 +215,8 @@ CREATE TABLE Class_Spells (
     Spell_ID int NOT NULL,
     Class_ID int NOT NULL,
     Spell_Level int NOT NULL CHECK (Spell_Level BETWEEN 0 AND 9),
+    Spell_Base_Cost_For_Scroll decimal(9,2) DEFAULT NULL,
+    Spell_Added_Cost_For_Scroll decimal(9,2) DEFAULT NULL,
     PRIMARY KEY (Spell_ID, Class_ID),
     FOREIGN KEY (Class_ID) REFERENCES Class(Class_ID),
     FOREIGN KEY (Spell_ID) REFERENCES Spell(Spell_ID)
@@ -232,6 +234,7 @@ source insert_material_for_armor.dump;
 source insert_material_for_weapon.dump;
 source player_handbook_spells.sql;
 source insert_player_handbook_class_spells.sql;
+source update_spell_costs_for_scrolls.sql;
 source insert_potion.sql;
 source insert_rings.sql;
 source insert_rods.sql;

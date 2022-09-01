@@ -1,4 +1,4 @@
-INSERT INTO Class_Spells VALUES
+INSERT INTO Class_Spells (Spell_ID,Class_ID,Spell_Level) VALUES
 	(1, 10, 2), (1, 11, 2),
     (2, 10, 6), (2, 11, 6), (2, 33, 7),
     (3, 10, 0), (3, 11, 0),
