@@ -1,5 +1,7 @@
 -- Create dnd database and populate it with database
 
+
+SELECT "Dropping database...";
 -- Drop database - start from scratch
 DROP DATABASE IF EXISTS dnd;
 CREATE DATABASE dnd;
@@ -21,6 +23,8 @@ DROP TABLE IF EXISTS Material;
 DROP TABLE IF EXISTS Book;
 
 -- Create all tables
+
+SELECT "Creating database...";
 
 CREATE TABLE Book (
 	Book_ID int NOT NULL UNIQUE,
@@ -217,24 +221,51 @@ CREATE TABLE Class_Spells (
     Spell_Level int NOT NULL CHECK (Spell_Level BETWEEN 0 AND 9),
     Spell_Base_Cost_For_Scroll decimal(9,2) DEFAULT NULL,
     Spell_Added_Cost_For_Scroll decimal(9,2) DEFAULT NULL,
+    Scroll_Total_Cost decimal(9,2) DEFAULT NULL,
     PRIMARY KEY (Spell_ID, Class_ID),
     FOREIGN KEY (Class_ID) REFERENCES Class(Class_ID),
     FOREIGN KEY (Spell_ID) REFERENCES Spell(Spell_ID)
 );
 
 -- Insert data
-source insert_book.dump;
-source insert_weapon.dump;
-source insert_armor.dump;
-source insert_class.dump;
-source insert_magic_armor.dump;
-source insert_magic_weapon.dump;
-source insert_material.dump;
-source insert_material_for_armor.dump;
-source insert_material_for_weapon.dump;
-source player_handbook_spells.sql;
-source insert_player_handbook_class_spells.sql;
-source update_spell_costs_for_scrolls.sql;
-source insert_potion.sql;
-source insert_rings.sql;
-source insert_rods.sql;
+SELECT "Inserting Books...";
+source data_insertion/core/insert_book.dump;
+
+SELECT "Inserting Weapons...";
+source data_insertion/core/insert_weapon.dump;
+
+SELECT "Inserting Armor...";
+source data_insertion/core/insert_armor.dump;
+
+SELECT "Inserting Classes...";
+source data_insertion/core/insert_class.dump;
+
+SELECT "Inserting Magic Armor...";
+source data_insertion/core/insert_magic_armor.dump;
+
+SELECT "Inserting Magic Weapons...";
+source data_insertion/core/insert_magic_weapon.dump;
+
+SELECT "Inserting Special Materials...";
+source data_insertion/core/insert_material.dump;
+source data_insertion/core/insert_material_for_armor.dump;
+source data_insertion/core/insert_material_for_weapon.dump;
+
+SELECT "Inserting PH Spells...";
+source data_insertion/core/player_handbook_spells.sql;
+
+SELECT "Creating Links between classes and spells...";
+source data_insertion/core/insert_player_handbook_class_spells.sql;
+
+SELECT "Updating spell costs for scrolls...";
+source update_spell_base_costs_for_scrolls.sql;
+source update_spell_added_costs_for_scrolls.sql;
+
+SELECT "Inserting Potions...";
+source data_insertion/core/insert_potion.sql;
+
+SELECT "Inserting Rings...";
+source data_insertion/core/insert_rings.sql;
+
+SELECT "Inserting Rods...";
+source data_insertion/core/insert_rods.sql;
