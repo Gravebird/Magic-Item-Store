@@ -59,4 +59,34 @@ INSERT INTO Staff VALUES
     (12,2,"Evocation",
         "<p>Usually very smooth and carved from hickory, willow, or yew, this staff allows use of the following spells:</p><ul><li><em>Magic missile</em> (1 charge)</li><li><em>Shatter</em> (1 charge)</li><li><em>Fireball</em> (1 charge)</li><li><em>Ice storm</em> (2 charges)</li><li><em>Wall of force</em> (2 charges)</li><li><em>Chain lightning</em> (3 charges)</li></ul>",
         13,65000.00,"Strong evocation",
-        "CL 13th, Craft Staff, chain lightning, fireball, ice storm, magic missile, shatter, wall of force");
+        "CL 13th, Craft Staff, chain lightning, fireball, ice storm, magic missile, shatter, wall of force"),
+        
+    (13,2,"Illusion",
+        "<p>This staff is made from ebony or other dark wood and carved into an intricately twisted, fluted, or spiral shape. It allows use of the following spells:</p><ul><li><em>Disguise self</em> (1 charge)</li><li><em>Mirror image</em> (1 charge)</li><li><em>Major image</em> (1 charge)</li><li><em>Rainbow pattern</em> (2 charges)</li><li><em>Persistent image</em> (2 charges)</li><li><em>Mislead</em> (3 charges)</li></ul>",
+        13,65000.00,"Strong illusion",
+        "CL 13th, Craft Staff, disguise self, major image, mirror image, persistent image, project image, rainbow pattern"),
+        
+    (14,2,"Necromancy",
+        "<p>This staff is made from ebony or other dark wood and carved with the images of bones and skulls. It allows use of the following spells:</p><ul><li><em>Cause fear</em> (1 charge)</li><li><em>Ghoul touch</em> (1 charge)</li><li><em>Halt undead</em> (1 charge)</li><li><em>Enervation</em> (2 charges)</li><li><em>Waves of fatigue</em> (2 charges)</li><li><em>Circle of death</em> (3 charges)</li></ul>",
+        13,65000.00,"Strong necromancy",
+        "CL 13th, Craft Staff, cause fear, circle of death, enervation, ghoul touch, halt undead, waves of fatigue"),
+        
+    (15,2,"Transmutation",
+        "<p>This staff is generally carved from or decorated with petrified wood and allows use of the following spells:</p><ul><li><em>Expeditious retreat</em> (1 charge)</li><li><em>Alter self</em> (1 charge)</li><li><em>Blink</em> (1 charge)</li><li><em>Polymorph</em> (2 charges)</li><li><em>Baleful polymorph</em> (2 charges)</li><li><em>Disintigrate</em> (3 charges)</li></ul>",
+        13,65000.00,"Strong transmutation",
+        "CL 13th, Craft Staff, alter self, baleful polymorph, blink, disintigrate, expeditious retreat, polymorph"),
+        
+    (16,2,"Divination",
+        "<p>Made from a supple length of willow, often with a forked tip, this staff allows use of the following spells:</p><ul><li><em>Detect secret doors</em> (1 charge)</li><li><em>Locate object</em> (1 charge)</li><li><em>Tongues</em> (1 charge)</li><li><em>Locate creature</em> (2 charges)</li><li><em>Prying eyes</em> (2 charges)</li><li><em>True seeing</em> (3 charges)</li></ul>",
+        13,73500.00,"Strong divination",
+        "CL 13th, Craft Staff, detect secret doors, locate creature, locate object, prying eyes, tongues, true seeing"),
+        
+    (17,2,"Earth and Stone",
+        "<p>This staff is topped with a fist-sized emerald that gleams with smoldering power. It allows use of the following spells:</p><ul><li><em>Passwall</em> (1 charge)</li><li><em>Move earth</em> (1 charge)</li></ul>",
+        11,80500.00,"Moderate transmutation",
+        "CL 11th, Craft Staff, move earth, passwall"),
+        
+    (18,2,"Woodlands",
+        "<p>Appearing to have grown naturally into its shape, this oak, ash, or yew staff allows use of the following spells:</p><ul><li><em>Charm animal</em> (1 charge)</li><li><em>Speak with animals</em> (1 charge)</li><li><em>Barkskin</em> (2 charges)</li><li><em>Wall of thorns</em> (3 charges)</li><li><em>Summon nature's Ally VI</em> (3 charges)</li><li><em>Animate plants</em> (4 charges)</li></ul>",
+        13,101250.00,"Moderate varied",
+        "CL 13th, Craft Staff, Craft Magic Arms and Armor, animate plants, barkskin, charm animal, pass without trace, speak with animals, summon nature's ally CI, wall of thorns");
