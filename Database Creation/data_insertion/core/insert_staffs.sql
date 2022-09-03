@@ -49,4 +49,14 @@ INSERT INTO Staff VALUES
     (10,2,"Conjuration",
         "<p>This staff is usually made of ash or walnut and bears ornate carvings of many different kinds of creatures. It allows use of the following spells:</p><ul><li><em>Unseen servant</em> (1 charge)</li><li><em>Summon swarm</em> (1 charge)</li><li><em>Stinking cloud</em> (1 charge)</li><li><em>Minor creation</em> (2 charges)</li><li><em>Cloudkill</em> (2 charges)</li><li><em>Summon monster VI</em> (3 charges)</li></ul>",
         13,65000.00,"Strong conjuration",
-        "CL 13th, Craft Staff, cloudkill, stinking cloud, summon monster VI, summon swarm, unseen servant");
+        "CL 13th, Craft Staff, cloudkill, stinking cloud, summon monster VI, summon swarm, unseen servant"),
+        
+    (11,2,"Enchantment",
+        "<p>Often made from applewood and topped with a clear crystal, this staff allows use of the following spells:</p><ul><li><em>Sleep</em> (1 charge)</li><li><em>Hideous laughter</em> (1 charge)</li><li><em>Suggestion</em> (1 charge)</li><li><em>Crushing despair</em> (2 charges)</li><li><em>Mind fog</em> (2 charges)</li><li><em>Suggestion, mass</em> (3 charges)</li></ul>",
+        13,65000.00,"Strong enchantment",
+        "CL 13th, Craft Staff, crushing despair, mass suggestion, mind fog, sleep, suggestion, hideous laughter"),
+        
+    (12,2,"Evocation",
+        "<p>Usually very smooth and carved from hickory, willow, or yew, this staff allows use of the following spells:</p><ul><li><em>Magic missile</em> (1 charge)</li><li><em>Shatter</em> (1 charge)</li><li><em>Fireball</em> (1 charge)</li><li><em>Ice storm</em> (2 charges)</li><li><em>Wall of force</em> (2 charges)</li><li><em>Chain lightning</em> (3 charges)</li></ul>",
+        13,65000.00,"Strong evocation",
+        "CL 13th, Craft Staff, chain lightning, fireball, ice storm, magic missile, shatter, wall of force");
