@@ -418,4 +418,5 @@ WHERE Spell_Added_Cost_For_Scroll IS NULL;
 -- Calculate total cost after everything else
 
 UPDATE Class_Spells
-SET Scroll_Total_Cost = Spell_Base_Cost_For_Scroll + Spell_Added_Cost_For_Scroll;
+SET Scroll_Total_Cost = Spell_Base_Cost_For_Scroll + Spell_Added_Cost_For_Scroll
+WHERE Spell_Base_Cost_For_Scroll IS NOT NULL;
