@@ -199,6 +199,19 @@ CREATE TABLE Rod (
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
 
+CREATE TABLE Staff (
+    Staff_ID int NOT NULL UNIQUE,
+    Book_ID int NOT NULL,
+    Staff_Name varchar(16) NOT NULL,
+    Staff_Description TEXT,
+    Staff_Caster_Level int NOT NULL,
+    Staff_Cost decimal(9,2) NOT NULL,
+    Staff_Aura varchar(60),
+    Staff_Creation_Reqs varchar(155),
+    PRIMARY KEY (Staff_ID),
+    FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
+);
+
 CREATE TABLE Class (
     Class_ID int NOT NULL UNIQUE,
     Book_ID int NOT NULL,
@@ -226,6 +239,16 @@ CREATE TABLE Class_Spells (
     FOREIGN KEY (Class_ID) REFERENCES Class(Class_ID),
     FOREIGN KEY (Spell_ID) REFERENCES Spell(Spell_ID)
 );
+
+
+-- Create indexes
+
+SELECT "Creating indexes...";
+
+CREATE INDEX Spell_Spell_Name_I02
+ON Spell (Spell_Name);
+
+
 
 -- Insert data
 SELECT "Inserting Books...";
@@ -269,3 +292,6 @@ source data_insertion/core/insert_rings.sql;
 
 SELECT "Inserting Rods...";
 source data_insertion/core/insert_rods.sql;
+
+SELECT "Inserting Staffs...";
+source data_insertion/core/insert_staffs.sql;
