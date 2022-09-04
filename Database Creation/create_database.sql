@@ -211,7 +211,7 @@ CREATE TABLE Staff (
     Staff_Caster_Level int NOT NULL,
     Staff_Cost decimal(9,2) NOT NULL,
     Staff_Aura varchar(60),
-    Staff_Creation_Reqs varchar(155),
+    Staff_Creation_Reqs varchar(239),
     PRIMARY KEY (Staff_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
