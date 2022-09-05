@@ -160,6 +160,8 @@ CREATE TABLE Spell (
     Spell_Material_Component varchar(696),
     Spell_Focus varchar(406),
     Spell_XP_Cost varchar(307),
+    Spell_Minimum_Material_Cost decimal(9,2) DEFAULT 0.00,
+    Spell_Minimum_XP_Cost int DEFAULT 0,
     PRIMARY KEY (Spell_ID, Book_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
@@ -236,9 +238,9 @@ CREATE TABLE Class_Spells (
     Spell_ID int NOT NULL,
     Class_ID int NOT NULL,
     Spell_Level int NOT NULL CHECK (Spell_Level BETWEEN 0 AND 9),
-    Spell_Base_Cost_For_Scroll decimal(9,2) DEFAULT NULL,
-    Spell_Added_Cost_For_Scroll decimal(9,2) DEFAULT NULL,
+    Spell_Minimum_Caster_Level int DEFAULT NULL,
     Scroll_Total_Cost decimal(9,2) DEFAULT NULL,
+    Wand_Total_Cost decimal(9,2) DEFAULT NULL,
     PRIMARY KEY (Spell_ID, Class_ID),
     FOREIGN KEY (Class_ID) REFERENCES Class(Class_ID),
     FOREIGN KEY (Spell_ID) REFERENCES Spell(Spell_ID)
@@ -284,9 +286,9 @@ source data_insertion/core/player_handbook_spells.sql;
 SELECT "Creating Links between classes and spells...";
 source data_insertion/core/insert_player_handbook_class_spells.sql;
 
-SELECT "Updating spell costs for scrolls...";
-source update_spell_base_costs_for_scrolls.sql;
-source update_spell_added_costs_for_scrolls.sql;
+SELECT "Updating spell costs...";
+source update_spell_min_caster_level.sql;
+source update_spell_costs.sql;
 
 SELECT "Inserting Potions...";
 source data_insertion/core/insert_potion.sql;

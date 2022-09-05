@@ -29,6 +29,7 @@ Augury	Incense worth at least 25 gp.
 Awaken		250 XP.
 Bless Water	5 pounds of powdered silver (worth 25 gp).	
 Circle of Death	The powder of a crushed black pearl with a minimum value of 500 gp.	
+
 Clone	The piece of flesh and various laboratory supplies (cost 1,000 gp).	
 Commune	Holy (or unholy) water and incense.	100 XP.
 Consecrate	A vial of holy water and 25 gp worth (5 pounds) of silver dust, all of which must be sprinkled around the area.	
