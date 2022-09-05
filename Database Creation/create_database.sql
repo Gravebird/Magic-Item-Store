@@ -16,7 +16,7 @@ DROP TABLE IF EXISTS Ring;
 DROP TABLE IF EXISTS Rod;
 DROP TABLE IF EXISTS Staff;
 DROP TABLE IF EXISTS Potion;
-DROP TABLE IF EXISTS Wonderous_Item;
+DROP TABLE IF EXISTS Wondrous_Item;
 DROP TABLE IF EXISTS Magic_Weapon;
 DROP TABLE IF EXISTS Magic_Armor;
 DROP TABLE IF EXISTS Material_For_Weapon;
@@ -130,12 +130,15 @@ CREATE TABLE Magic_Weapon (
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
 
-CREATE TABLE Wonderous_Item (
+CREATE TABLE Wondrous_Item (
 	Magic_Item_ID int NOT NULL UNIQUE,
     Book_ID int NOT NULL,
-    Magic_Item_Name varchar(40) NOT NULL,
-    Magic_Item_Cost decimal(9,2) NOT NULL,
+    Magic_Item_Name varchar(46) NOT NULL,
     Magic_Item_Description TEXT,
+    Magic_Item_Caster_Level int NOT NULL,
+    Magic_Item_Cost decimal(9,2) NOT NULL,
+    Magic_Item_Aura varchar(60),
+    Magic_Item_Creation_Reqs varchar(239),
     PRIMARY KEY (Magic_Item_ID, Book_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
@@ -301,3 +304,6 @@ source data_insertion/core/insert_rods.sql;
 
 SELECT "Inserting Staffs...";
 source data_insertion/core/insert_staffs.sql;
+
+SELECT "Inserting Wondrous Items...";
+source data_insertion/core/insert_wondrous_item.sql;
