@@ -254,9 +254,23 @@ CREATE TABLE Class_Spells (
 
 SELECT "Creating indexes...";
 
-CREATE INDEX Spell_Spell_Name_I02
+CREATE INDEX Spell_Name_I02
 ON Spell (Spell_Name);
 
+CREATE INDEX Class_Spells_Scroll_Cost_I02
+ON Class_Spells (Scroll_Total_Cost);
+
+CREATE INDEX Class_Spells_Wand_Cost_I03
+ON Class_Spells (Wand_Total_Cost);
+
+CREATE INDEX Class_Name_I02
+ON Class (Class_Name);
+
+CREATE INDEX Wondrous_Item_Name_I02
+ON Wondrous_Item (Magic_Item_Name);
+
+CREATE INDEX Wondrous_Item_Cost_I03
+ON Wondrous_Item (Magic_Item_Cost);
 
 
 -- Insert data
