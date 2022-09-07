@@ -263,4 +263,144 @@ INSERT INTO Wondrous_Item VALUES
     (53,2,"Broom of Flying",
         "<p>This broom is able to fly through the air as if affected by an <em>overland flight</em> spell (average maneuverability) for up to 9 hours per day (split up as its owner desires). The broom can carry 200 pounds and fly at a speed of 40 feet, or up to 400 pounds at a speed of 30 feet. In addition, the broom can travel alone to any destination named by the owner as long as she has a good idea of the location and layout of that destination. It comes to its owner from as far away as 300 yards when she speaks the command word. The <em>broom of flying</em> has a speed of 40 feet when it has no rider.</p>",
         9,17000.00,"Moderate transmutation",
-        "CL 9th, Craft Wondrous Item, overland flight, permanency");
+        "CL 9th, Craft Wondrous Item, overland flight, permanency"),
+        
+    (54,2,"Candle of Invocation",
+        "<p>Each of these special tapers is dedicated to one of the nine alignments. Simply burning the candle generates a favorable aura for the individual so doing if the candle's alignment matches that of the character. Characters of the same alignment as the burning candle add a +2 morale bonus on attack rolls, saving throws, and skill checks while within 30 feet of the flame.</p><p>A cleric whose alignment matches the candle's operates as if two levels higher for purposes of determining spells per day if he burns the candle during or just prior to his spell preparation time. He can even cast spells normally unavailable to him, as if he were of that higher level, but only so long as the candle continues to burn. Except in special cases (see below), a candle burns for 4 hours.</p><p>In addition, burning a candle also allows the owner to cast a <em>gate</em> spell, the respondent being of the same alignment as the candle, but the taper is immediately consumed in the process. It is possible to extinguish the candle simply by blowing it out, so users often place it in a lantern to protect it from drafts and the like. Doing this doesn't interfere with its magical properties.</p>",
+        17,8400.00,"Strong conjuration",
+        "CL 17th, Craft Wondrous Item, gate, creator must be same alignment as candle created"),
+        
+    (55,2,"Candle of Truth",
+        "<p>This white tallow candle, when burned, calls into place a <em>zone of truth</em> spell (Will DC 13 negates) in a 5-foot radius centered on the candle. The zone lasts for 1 hour, as the candle burns. If the candle is snuffed before that time, the effect is cancelled and the candle ruined.</p>",
+        3,2500.00,"Faint enchantment",
+        "CL 3rd, Craft Wondrous Item, zone of truth"),
+        
+    (56,2,"Cape of the Mountebank",
+        "<p>On command, this bright red and gold cape allows the wearer to use the magic of the <em>dimension door</em> spell once per day. When he disappears, he leaves behind a cloud of smoke, appearing in a similar fashion at his destination.</p>",
+        9,10080.00,"Moderate conjuration",
+        "CL 9th, Craft Wondrous Item, dimension door"),
+        
+    (57,2,"Carpet of Flying (Small)",
+        "<p>This rug is able to fly through the air as if affected by an <em>overland flight</em> spell of unlimited duration. The size, carrying capacity, and speed of the different <em>carpets of flying</em> are shown on the table below. Beautifully and intricately made, each carpet has its own command word to activate it - if the device is within voice range, the command word activates it, whether the speaker is on the rug or not. The carpet is then controlled by spoken directions.</p><table><thead><tr><th><strong>Size</strong></th><th><strong>Capacity</strong></th><th><strong>Speed</strong></th><th><strong>Weight</strong></th></tr></thead><tbody><tr><td>Small (5 ft. by 5 ft.)</td><td>200 lb.</td><td>40 ft.</td><td>8 lb.</td></tr><tr><td>Medium (5 ft. by 10 ft.)</td><td>400 lb.</td><td>40 ft.</td><td>15 lb.</td></tr><tr><td>Large (10 ft. by 10 ft.)</td><td>800 lb.</td><td>40 ft.</td><td>10 lb.</td></tr></tbody></table><p>A <em>carpet of flying</em> can carry up to double its capacity, but doing so reduces its speed to 30 feet. It has average maneuverability, but a <em>carpet of flying</em> can still hover.</p>",
+        10,20000.00,"Moderate transmutation",
+        "CL 10th, Craft Wondrous Item, overland flight, permanency"),
+        
+    (58,2,"Carpet of Flying (Medium)",
+        "<p>This rug is able to fly through the air as if affected by an <em>overland flight</em> spell of unlimited duration. The size, carrying capacity, and speed of the different <em>carpets of flying</em> are shown on the table below. Beautifully and intricately made, each carpet has its own command word to activate it - if the device is within voice range, the command word activates it, whether the speaker is on the rug or not. The carpet is then controlled by spoken directions.</p><table><thead><tr><th><strong>Size</strong></th><th><strong>Capacity</strong></th><th><strong>Speed</strong></th><th><strong>Weight</strong></th></tr></thead><tbody><tr><td>Small (5 ft. by 5 ft.)</td><td>200 lb.</td><td>40 ft.</td><td>8 lb.</td></tr><tr><td>Medium (5 ft. by 10 ft.)</td><td>400 lb.</td><td>40 ft.</td><td>15 lb.</td></tr><tr><td>Large (10 ft. by 10 ft.)</td><td>800 lb.</td><td>40 ft.</td><td>10 lb.</td></tr></tbody></table><p>A <em>carpet of flying</em> can carry up to double its capacity, but doing so reduces its speed to 30 feet. It has average maneuverability, but a <em>carpet of flying</em> can still hover.</p>",
+        10,35000.00,"Moderate transmutation",
+        "CL 10th, Craft Wondrous Item, overland flight, permanency"),
+        
+    (59,2,"Carpet of Flying (Large)",
+        "<p>This rug is able to fly through the air as if affected by an <em>overland flight</em> spell of unlimited duration. The size, carrying capacity, and speed of the different <em>carpets of flying</em> are shown on the table below. Beautifully and intricately made, each carpet has its own command word to activate it - if the device is within voice range, the command word activates it, whether the speaker is on the rug or not. The carpet is then controlled by spoken directions.</p><table><thead><tr><th><strong>Size</strong></th><th><strong>Capacity</strong></th><th><strong>Speed</strong></th><th><strong>Weight</strong></th></tr></thead><tbody><tr><td>Small (5 ft. by 5 ft.)</td><td>200 lb.</td><td>40 ft.</td><td>8 lb.</td></tr><tr><td>Medium (5 ft. by 10 ft.)</td><td>400 lb.</td><td>40 ft.</td><td>15 lb.</td></tr><tr><td>Large (10 ft. by 10 ft.)</td><td>800 lb.</td><td>40 ft.</td><td>10 lb.</td></tr></tbody></table><p>A <em>carpet of flying</em> can carry up to double its capacity, but doing so reduces its speed to 30 feet. It has average maneuverability, but a <em>carpet of flying</em> can still hover.</p>",
+        10,20000.00,"Moderate transmutation",
+        "CL 10th, Craft Wondrous Item, overland flight, permanency"),
+        
+    (60,2,"Censer of Controlling Air Elementals",
+        "<p>This 6-inch-wide, 1-inch-high perforated golden vessel resembles a thurible found in a place of worship. If it is filled with incense and lit, summoning words spoken over it summon forth a Large air elemental. The summoning words require 1 full round to speak. In all ways, the censer functions as the <em>summon monster VI</em> spell. If <em>incense of meditation</em> is burned within the censer, the air elemental is an elder air elemental instead (as if <em>summon monster IX</em> had just been cast). Only one elemental can be summoned at a time. A new elemental requires a new piece of incense, which cannot be lit until after the first elemental disappears (is dispelled, dismissed, or slain). See page 95 of the <em>Monster Manual</em> for details on air elementals.</p>",
+        17,100000.00,"Strong conjuration",
+        "CL 17th, Craft Wondrous Item, summon monster VI, summon monster IX"),
+        
+    (61,2,"Chaos Diamond",
+        "<p>This lustrous gemstone is uncut and about the size of a human fist. The gem grants its possessor the following powers:</p><ul><li><em>Confusion, lesser</em></li><li><em>Magic circle against law</em></li><li><em>Word of chaos</em></li><li><em>Cloak of chaos</em></li></ul><p>Each power is usable 1d4 times per day. (The DM rolls secretly each day for each power separately.)</p><p>A nonchaotic character who possessed a <em>chaos diamond</em> gains one negative level. Although this level never results in actual level loss, it remains as long as the diamond is in the chracter's possession and cannot be overcome in any way (including <em>restoration</em> spells).</p>",
+        19,160000.00,"Strong varied",
+        "CL 19th, Craft Wondrous Item, cloak of chaos, magic circle against law, random action, word of chaos, creator must be chaotic"),
+        
+    (62,2,"Chime of Interruption",
+        "<p>This instrument can be struck once every 10 minutes, and its resonant tone lasts for 3 full minutes. While the chime is resonating, no spell requiring a verbal component can be cast within a 30-foot radius of it unless the caster can make a Concentration check (DC 15 + the spell's level)</p>",
+        7,16800.00,"Moderate evocation",
+        "CL 7th, Craft Wondrous Item, shout"),
+        
+    (63,2,"Chime of Opening",
+        "<p>A <em>chime of opening</em> is a hollow mithral tube about 1 foot long. When struck, it sends forth magical vibrations that cause locks, lids, doors, valves, and portals to open. The device functions against normal bars, shackles, chains, bolts, and so on. A <em>chime of opening</em> also automatically dispels a <em>hold portal</em> spell or even an <em>arcane lock</em> cast by a wizard of lower than 15th level.</p><p>The chime must be pointed at the item or gate to be loosed or opened (which must be visible and known to the user). The chime is then struck, a clear tone rings forth, and in 1 round the target lock is unlocked, the shackle is loosed, the secret door is opened, or the lid of the chest is lifted. Each sounding only opens one form of locking, so if a chest is chained, padlocked, locked, and <em>arcane locked</em>, it takes four uses of a <em>chime of opening</em> to get it open. A <em>silence</em> spell negates the power of the device. A brand-new chime can be used a total of ten times before it cracks and becomes useless.</p>",
+        11,3000.00,"Moderate transmutation",
+        "CL 11th, Craft Wondrous Item, knock"),
+        
+    (64,2,"Circlet of Blasting, Minor",
+        "<p>On command, this simple golden headband projects a blast of <em>searing light</em> (3d8 points of damage) once per day.</p>",
+        6,6480.00,"Faint evocation",
+        "CL 6th, Craft Wondrous Item, searing light"),
+        
+    (65,2,"Circlet of Blasting, Major",
+        "<p>On command, this elaborate golden headband projects a blast of <em>searing light</em> (5d8 maximized for 40 points of damage) once per day.</p>",
+        17,23760.00,"Strong evocation",
+        "CL 17th, Craft Wondrous Item, Maximize Spell, searing light"),
+        
+    (66,2,"Circlet of Persuasion",
+        "<p>This silver headband grants a +3 competence bonus on the wearer's Charisma-based checks.</p>",
+        5,4500.00,"Faint transmutation",
+        "CL 5th, Craft Wondrous Item, eagle's splendor"),
+        
+    (67,2,"Cloak of Arachnida",
+        "<p>This black garment, embroidered with a weblike pattern in silk, gives the wearer the ability to climb as if a <em>spider climb</em> spell had been placed upon her. In addition, the cloak grants her immunity to entrapment by <em>web</em> spells or webs of any sort - she can actually move in webs at half her normal speed.</p><p>Once per day, the wearer of this cloak can cast <em>web</em>. She also gains a +2 luck bonus on all Fortitude saves against poison from spiders.</p>",
+        6,14000.00,"Faint conjuration and transmutation",
+        "CL 6th, Craft Wondrous Item, spider climb, web"),
+        
+    (68,2,"Cloak of the Bat",
+        "<p>Fashioned of dark brown or black cloth, this cloak bestows a +5 competence bonus on Hide checks. The wearer is also able to hang upside down from the ceiling, like a bat.</p><p>By holding the edges of the garment, the wearer is able to <em>fly</em> as per the spell. If he desires, the wearer can actually polymorph himself into an ordinary bat and fly accordingly. (All possessions worn or carried are part of the transformation.) Flying, either with the cloak or in bat form, can be accomplished only in darkness (either under the night sky or in a lightless or near-lightless environment underground). Either of the flying powers is usable for up to 7 minutes at a time, but after a flight of any duration the cloak cannot bestow any flying power for a like period of time.</p>",
+        7,26000.00,"Moderate transmutation",
+        "CL 7th, Craft Wondrous Item, fly, polymorph"),
+        
+    (69,2,"Cloak of Charisma +2",
+        "<p>This lightweight and fashionable cloak has a highly decorated silver trim. When in a character's possession, it adds a +2, +4, or +6 enhancement bonus to her Charisma score.</p>",
+        8,4000.00,"Moderate transmutation",
+        "CL 8th, Craft Wondrous Item, eagle's splendor"),
+        
+    (70,2,"Cloak of Charisma +4",
+        "<p>This lightweight and fashionable cloak has a highly decorated silver trim. When in a character's possession, it adds a +2, +4, or +6 enhancement bonus to her Charisma score.</p>",
+        8,16000.00,"Moderate transmutation",
+        "CL 8th, Craft Wondrous Item, eagle's splendor"),
+        
+    (71,2,"Cloak of Charisma +6",
+        "<p>This lightweight and fashionable cloak has a highly decorated silver trim. When in a character's possession, it adds a +2, +4, or +6 enhancement bonus to her Charisma score.</p>",
+        8,36000.00,"Moderate transmutation",
+        "CL 8th, Craft Wondrous Item, eagle's splendor"),
+        
+    (72,2,"Cloak of Displacement, Minor",
+        "<p>This item appears to be a normal cloak, but when worn by a character its magical properties distory and warp light waves. This displacement works similar to the <em>displacement</em> spell except that it only grants a 20% miss chance on attacks against the wearer. It functions continually.</p>",
+        3,24000.00,"Faint illusion",
+        "CL 3rd, Craft Wondrous Item, displacement"),
+        
+    (73,2,"Cloak of Displacement, Major",
+        "<p>This item appears to be a normal cloak, but on command its magical properties distort and warp light waves. This displacement works just like the <em>displacement</em> spell and lasts for a total of 15 rounds per day, which the wearer can divice up as she sees fit.</p>",
+        7,50000.00,"Moderate illusion",
+        "CL 7th, Craft Wondrous Item, Extend Spell, displacement"),
+        
+    (74,2,"Cloak of Elvenkind",
+        "<p>This cloak of neutral gray cloth is indistinguishable from an ordinary cloak of the same color. However, when worn with the hood drawn up around the head, it gives the wearer a +5 competence bonus on Hide checks.</p>",
+        3,2500.00,"Faint illusion",
+        "CL 3rd, Craft Wondrous Item, invisibility, creator must be an elf"),
+        
+    (75,2,"Cloak of Etherealness",
+        "<p>This silvery-gray cloak seems to absorb light rather than be illuminated by it. On command, the cloak makes its wearer ethereal (as the <em>ethereal jaunt</em> spell). The effect is dismissible. The cloak works for a total of up to 10 minutes per day. This duration need not be continuous.</p>",
+        15,55000.00,"Strong transmutation",
+        "CL 15th, Craft Wondrous Item, ethereal jaunt"),
+        
+    (76,2,"Cloak of the Manta Ray",
+        "<p>This cloak appears to be made of leather until the wearer enters salt water. At that time the <em>cloak of the manta ray</em> adheres to the individual, and he appears nearly identical to a manta ray (as the <em>polymorph</em> spell, except that it allows only manta ray form). He gains a +3 natural armor bonus, the ability to breathe underwater, and a swim speed of 60 feet, like a real manta ray.</p><p>Although the cloak does not enable to wearer to bite opponents as a manta ray does, it does have a tail spine that can be used to strike at opponents behind the wearer, dealing 1d6 points of damage. This attack can be used in addition to any other attack the character has, using his highest melee attack bonus. The wearer can release his arms from the cloak without sacrificing underwater movement if so desired.</p>",
+        9,7200.00,"Moderate transmutation",
+        "CL 9th, Craft Wondrous Item, polymorph, water breathing"),
+        
+    (77,2,"Cloak of Resistance +1",
+        "<p>These garments offer magic protection in the form of a +1 to +5 resistance bonus on all saving throws (Fortitude, Reflex, and Will).</p>",
+        5,1000.00,"Faint abjuration",
+        "CL 5th, Craft Wondrous Item, resistance, creator's caster level must be at least three times the cloak's bonus"),
+        
+    (78,2,"Cloak of Resistance +2",
+        "<p>These garments offer magic protection in the form of a +1 to +5 resistance bonus on all saving throws (Fortitude, Reflex, and Will).</p>",
+        5,4000.00,"Faint abjuration",
+        "CL 5th, Craft Wondrous Item, resistance, creator's caster level must be at least three times the cloak's bonus"),
+        
+    (79,2,"Cloak of Resistance +3",
+        "<p>These garments offer magic protection in the form of a +1 to +5 resistance bonus on all saving throws (Fortitude, Reflex, and Will).</p>",
+        5,9000.00,"Faint abjuration",
+        "CL 5th, Craft Wondrous Item, resistance, creator's caster level must be at least three times the cloak's bonus"),
+        
+    (80,2,"Cloak of Resistance +4",
+        "<p>These garments offer magic protection in the form of a +1 to +5 resistance bonus on all saving throws (Fortitude, Reflex, and Will).</p>",
+        5,16000.00,"Faint abjuration",
+        "CL 5th, Craft Wondrous Item, resistance, creator's caster level must be at least three times the cloak's bonus"),
+        
+    (81,2,"Cloak of Resistance +5",
+        "<p>These garments offer magic protection in the form of a +1 to +5 resistance bonus on all saving throws (Fortitude, Reflex, and Will).</p>",
+        5,25000.00,"Faint abjuration",
+        "CL 5th, Craft Wondrous Item, resistance, creator's caster level must be at least three times the cloak's bonus");
