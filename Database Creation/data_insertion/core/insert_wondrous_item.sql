@@ -498,4 +498,144 @@ INSERT INTO Wondrous_Item VALUES
     (100,2,"Dust of Tracelessness",
         "<p>This normal-seeming dust is actually a magic powder that can conceal the passage of its possessor and his companions. Tossing a handful of this dust into the air causes a chamber of up to 100 square feet of floor space to become as dusty, dirty, and cobweb-laden as if it had been abandoned and disused for a decade.</p><p>A handful of dust sprinkled along a trail causes evidence of the passage of as many as a dozen men and horses to be obliterated for 250 feet back into the distance. The results of the dust are instantaneous, and no magical aura lingers afterward from this use of the dust. Survival checks made to track a quarry across an area affected by this dust have a DC 20 higher than normal.</p>",
         3,250.00,"Faint transmutation",
-        "CL 3rd, Craft Wondrous Item, pass without trace");
+        "CL 3rd, Craft Wondrous Item, pass without trace"),
+        
+    (101,2,"Efreeti Bottle",
+        "<p>This item is typically fashioned of brass or bronze, with a lead stopper bearing special seals. A thin stream of smoke is often seen issuing from it. The bottle can be opened once per day. When opened, the efreeti imprisoned within issues from the bottle instantly. There is a 10% chance (01-10 on d%) that the efreeti is insane and attacks immediately upon being released. There is also a 10% chance (91-100) that the efreeti of that bottle grants three <em>wishes</em>. In either case, the efreeti afterward disappears forever. The other 80% of the time (11-90), the inhabitant of the bottle loyally serves the character for up to 10 minutes per day (or until the efreeti's death), doing as she commands. (See page 115 of the <em>Monster Manual</em> for efreeti statistics.) Roll each day the bottle is opened for that day's effect.</p>",
+        14,145000.00,"Strong conjuration",
+        "CL 14th, Craft Wondrous Item, summon monster VII"),
+        
+    (102,2,"Elemental Gem",
+        "<p>This gem contains a conjuration spell attuned to a specific elemental Plane (Air, Earth, Fire, or Water). When the gem is crushed, smashed, or broken (a standard action), a Large elemental appears as if summoned by a <em>summon nature's ally</em> spell. The elemental is under the control of the creature that broke the gem.</p><p>The coloration of the gem varies with the type of elemental it summons. <em>Air elemental gems</em> are transparent, <em>earth elemental gems</em> are light brown, <em>fire elemental gems</em> are reddish orange, and <em>water elemental gems</em> are blue-green.</p>",
+        11,2250.00,"Moderate conjuration",
+        "CL 11th, Craft Wondrous Item, summon nature's ally V"),
+        
+    (103,2,"Elixir of Fire Breath",
+        "<p>This strange elixir bestows upon the drinker the ability to spit gouts of flame. He can breathe fire up to three times, each dealing 4d6 points of fire damage to a single target up to 25 feet away. The victim can attempt a DC 13 Reflex save for half damage. Unused blasts dissipate 1 hour after the liquid is consumed.</p>",
+        11,1100.00,"Moderate evocation",
+        "CL 11th, Craft Wondrous Item, scorching ray"),
+        
+    (104,2,"Elixir of Hiding",
+        "<p>A character drinking this liquid gains an intuitive ability to hide (+10 competence bonus on Hide checks for 1 hour).</p>",
+        5,250.00,"Faint illusion",
+        "CL 5th, Craft Wondrous Item, invisibility"),
+        
+    (105,2,"Elixir of Love",
+        "<p>This sweet-tasting liquid causes the character drinking it to become <em>charmed</em> with the first creature she sees after consuming the draft (as <em>charm person</em> - the drinker must be a humanoid of Medium or smaller size, Will DC 14 negates). The <em>charm</em> effect wears off in 1d3 hours.</p>",
+        4,150.00,"Faint transmutation",
+        "CL 4th, Craft Wondrous Item, charm person"),
+        
+    (106,2,"Elixir of Sneaking",
+        "<p>This draught of liquid grants the drinker the ability to walk softly and dampens sound around her slightly, granting a +10 competence bonus on Move Silently checks for 1 hour.</p>",
+        5,250.00,"Faint illusion",
+        "CL 5th, Craft Wondrous Item, silence"),
+        
+    (107,2,"Elixir of Swimming",
+        "<p>This elixir bestows swimming ability. An almost imperceptible magic sheath surrounds the drinker, allowing him to glide through the water easily (+10 competence bonus on Swim checks for 1 hour).</p>",
+        2,250.00,"Faint illusion",
+        "CL 2nd, Craft Wondrous Item, creator must have 5 ranks in the Swim skill"),
+        
+    (108,2,"Elixir of Truth",
+        "<p>This elixir forces the individual drinking it to say nothing but the truth for 10 minutes (Will DC 13 negates). She is compelled to answer any questions put to her in that time, but with each question she is free to make a separate DC 13 Will save. If one of these secondary saves is successful, she doesn't break free of the truth-compelling enchantment but also doesn't have to answer that particular question. No more than one question can be asked each round. This is a mind-affecting compulsion enchantment.</p>",
+        5,500.00,"Faint enchantment",
+        "CL 5th, Craft Wondrous Item, zone of truth"),
+        
+    (109,2,"Elixir of Vision",
+        "<p>Drinking this elixir grants the imbiber the ability to notice acute details with great accuracy (+10 competence bonus on Search checks for 1 hour).</p>",
+        2,250.00,"Faint divination",
+        "CL 2nd, Craft Wondrous Item, true seeing"),
+        
+    (110,2,"Eversmoking bottle",
+        "<p>This metal urn is identical in appearance to an <em>efreeti bottle</em>, except that it does nothing but smoke. The amount of smoke is great if the stopper is pulled out, pouring from the bottle and totally obscuring vision across a 50-foot spread in 1 round. If the bottle is left unstopped, the smoke billows out another 10 feet per round until it has covered a 100-foot radius. This area remains smoke-filled until the <em>eversmoking bottle</em> is stoppered. The bottle must be resealed by a command word, after which the smoke dissipates normally. A moderate wind (11+ mph) disperses the smoke in 4 rouns; a strong wind (21+ mph) disperses the smoke in 1 round.</p>",
+        3,5400.00,"Faint transmutation",
+        "CL 3rd, Craft Wondrous Item, pyrotechnics"),
+        
+    (111,2,"Eyes of Charming",
+        "<p>These two crystal lenses fit over the user's eyes. The wearer is able to use <em>charm person</em> (one target per round) merely by meeting a target's gaze. Those failing a DC 16 Will save are <em>charmed</em> as per the spell. If the wearer only has one lens, the DC of the saving throw is reduced to 10.</p>",
+        7,56000.00,"Moderate enchantment",
+        "CL 7th, Craft Wondrous Item, Heightened Spell, charm person"),
+        
+    (112,2,"Eyes of Doom",
+        "<p>These crystal lenses fit over the user's eyes, enabling him to cast <em>doom</em> upon those around him (one target per round) as a gaze attack, except that the wearer must take a standard action, and those merely looking at the wearer are not affected. Those failing a DC 11 Will save are affected as by the <em>doom</em> spell. If the wearer has only one lens, the DC of the saving throw is reduced to 10. However, if the wearer has both lenses, he gains the additional power of a continual <em>deathwatch</em> effect and can use <em>fear</em> (Will DC 16 partial) as a normal gaze attack once per week.</p>",
+        11,25000.00,"Moderate necromancy",
+        "CL 11th, Craft Wondrous Item, doom, deathwatch, fear"),
+        
+    (113,2,"Eyes of the Eagle",
+        "<p>These items are made of special crystal and fit over the eyes of the wearer. These lenses grant a +5 competence bonus on Spot checks. Wearing only one of the pair causes a character to become dizzy and, in effect, stunned for 1 round. Thereafter, the wearer can use the single lens without being stunned so long as she covers her other eye. Of course, she can remove the single lens and see normally at any time, or wear both lenses to end or avoid the dizziness.</p>",
+        3,2500.00,"Faint divination",
+        "CL 3rd, Craft Wondrous Item, clairaudience/clairvoyance"),
+        
+    (114,2,"Eyes of Petrification",
+        "<p>These items are made of special crystal and fit over the eyes of the wearer. They allow her to use a petrification gaze attack (Fortitude DC 19 negates), such as that of a basilisk, for 10 rounds per day (see page 24 of the <em>Monster Manual</em> for details on the basilisk's gaze attack). Both lenses must be worn for the magic to be effective.</p>",
+        11,98000.00,"Moderate transmutation",
+        "CL 11th, Craft Wondrous Item, flesh to stone"),
+        
+    (115,2,"Figurine of Wondrous Power: Bronze Griffin",
+        "<p>Each of the several kinds of <em>figurines of wondrous power</em> appears to be a miniature statuette of a creature an inch or so high (with one exception). When the figurine is tossed down and the correct command word spoken, it becomes a living creature of normal size (except when noted otherwise below). The creature obeys and serves its owner. Unless stated otherwise, the creature understands Common, but does not speak.</p><p>If a <em>figurine of wondrous power</em> is broken or destroyed in its statuette form, it is forever ruined. All magic is lost, its power departed. If slain in animal form, the figurine simply reverts to a statuette that can be used again at a later time.</p><p><em>Bronze Griffin</em>: When animated, a <em>bronze griffin</em> acts in all ways like a normal griffin under the command of its possessor. The item can be used twice per week for up to 6 hours per use. When 6 hours have passed or when the command word is spoken, the <em>bronze griffin</em> once again becomes a tiny statuette.</p>",
+        11,10000.00,"Moderate transmutation",
+        "CL 11th, Craft Wondrous Item, animate objects"),
+        
+    (116,2,"Figurine of Wondrous Power: Ebony Fly",
+        "<p>Each of the several kinds of <em>figurines of wondrous power</em> appears to be a miniature statuette of a creature an inch or so high (with one exception). When the figurine is tossed down and the correct command word spoken, it becomes a living creature of normal size (except when noted otherwise below). The creature obeys and serves its owner. Unless stated otherwise, the creature understands Common, but does not speak.</p><p>If a <em>figurine of wondrous power</em> is broken or destroyed in its statuette form, it is forever ruined. All magic is lost, its power departed. If slain in animal form, the figurine simply reverts to a statuette that can be used again at a later time.</p><p><em>Ebony Fly</em>: When animated, an <em>ebony fly</em> is the size of a pony and has all the statistics of a hippogriff (Hit Dice, AC, carrying capacity, speef, and so on; see page 152 of the <em>Monster Manual</em>) but can make no attacks. The item can be used three times per week for up to 12 hours per use. When 12 hours have passed or when the command word is spoken, the <em>ebony fly</em> again becomes a tiny statuette.</p>",
+        11,10000.00,"Moderate transmutation",
+        "CL 11th, Craft Wondrous Item, animate objects"),
+        
+    (117,2,"Figurine of Wondrous Power: Golden Lions",
+        "<p>Each of the several kinds of <em>figurines of wondrous power</em> appears to be a miniature statuette of a creature an inch or so high (with one exception). When the figurine is tossed down and the correct command word spoken, it becomes a living creature of normal size (except when noted otherwise below). The creature obeys and serves its owner. Unless stated otherwise, the creature understands Common, but does not speak.</p><p>If a <em>figurine of wondrous power</em> is broken or destroyed in its statuette form, it is forever ruined. All magic is lost, its power departed. If slain in animal form, the figurine simply reverts to a statuette that can be used again at a later time.</p><p><em>Golden Lions</em>: These figurines come in pairs. They become normal adult male lions (see page 274 of the <em>Monster Manual</em>). If slain in combat, the lions cannot be brought back from statuette form for one full week. Otherwise, they can be used once per day for up to 1 hour. They enlarge and shrink upon speaking the command word.</p>",
+        11,16500.00,"Moderate transmutation",
+        "CL 11th, Craft Wondrous Item, animate objects"),
+        
+    (118,2,"Figurine of Wondrous Power: Ivory Goats",
+        "<p>Each of the several kinds of <em>figurines of wondrous power</em> appears to be a miniature statuette of a creature an inch or so high (with one exception). When the figurine is tossed down and the correct command word spoken, it becomes a living creature of normal size (except when noted otherwise below). The creature obeys and serves its owner. Unless stated otherwise, the creature understands Common, but does not speak.</p><p>If a <em>figurine of wondrous power</em> is broken or destroyed in its statuette form, it is forever ruined. All magic is lost, its power departed. If slain in animal form, the figurine simply reverts to a statuette that can be used again at a later time.</p><p><em>Ivory Goats</em>: These figurines come in threes. Each goat of this trio looks slightly different from the others, and each has a different function:</p><ul><li><em>The Goat of Traveling</em>: This statuette provides a speedy and during mount equal to that of a heavy horse (see page 273 of the <em>Monster Manual</em>) in every way except appearance. The goat can travel for a maximum of one day each week - continuously or in any combination of periods totaling 24 hours. At this point, or when the command word is uttered, it returns to its statuette form for not less than one day before it can again be used.</li><li><em>The Goat of Travail</em>: This statuette becomes an enormous creature, larger than a bull, with the statistics of a nightmare (see page 194 of the <em>Monster Manual</em>) except for the addition of a pair of wicked horns of exceptional size (damage 1d8+4 for each horn). If it is charging to attack, it may only use its horns (but add 6 points of damage to each successful attack that round). It can be called to life just once per month for up to 12 hours at a time.</li><li><em>The Goat of Terror</em>: When called upon with the proper command word, this statuette becomes a destrierlike mount, with the statistics of a light warhorse (see page 274 of the <em>Monster Manual</em>). However, its rider can employ the goat's horns as weapons (one horn as a +3 heavy lance, the other as a +5 longsword). When ridden in an attack against an opponent, the <em>goat of terror</em> radiates <em>fear</em> as the spell in a 30-foot radius (Will DC 16 partial). It can be used once every two weeks for up to 3 hours per use.</li></ul>",
+        11,21000.00,"Moderate transmutation",
+        "CL 11th, Craft Wondrous Item, animate objects"),
+        
+    (119,2,"Figurine of Wondrous Power: Marble Elephant",
+        "<p>Each of the several kinds of <em>figurines of wondrous power</em> appears to be a miniature statuette of a creature an inch or so high (with one exception). When the figurine is tossed down and the correct command word spoken, it becomes a living creature of normal size (except when noted otherwise below). The creature obeys and serves its owner. Unless stated otherwise, the creature understands Common, but does not speak.</p><p>If a <em>figurine of wondrous power</em> is broken or destroyed in its statuette form, it is forever ruined. All magic is lost, its power departed. If slain in animal form, the figurine simply reverts to a statuette that can be used again at a later time.</p><p><em>Marble Elephant</em>: This is the largest of the figurines, the statuette being about the size of a human hand. Upon utterance of the command word, a <em>marble elephant</em> grows to the size and specifications of a true elephant (see page 272 of the <em>Monster Manual</em>). The animal created from the statuette is fully obedient to the figurine's owner, serving as a beast of burden, a mount, or a combatant.</p><p>The statuette can be used four times per month for up to 24 hours at a time.</p>",
+        11,17000.00,"Moderate transmutation",
+        "CL 11th, Craft Wondrous Item, animate objects"),
+        
+    (120,2,"Figurine of Wondrous Power: Obsidian Steed",
+        "<p>Each of the several kinds of <em>figurines of wondrous power</em> appears to be a miniature statuette of a creature an inch or so high (with one exception). When the figurine is tossed down and the correct command word spoken, it becomes a living creature of normal size (except when noted otherwise below). The creature obeys and serves its owner. Unless stated otherwise, the creature understands Common, but does not speak.</p><p>If a <em>figurine of wondrous power</em> is broken or destroyed in its statuette form, it is forever ruined. All magic is lost, its power departed. If slain in animal form, the figurine simply reverts to a statuette that can be used again at a later time.</p><p><em>Obsidian Steed</em>: This figurine appears to be a small, shapeless lump of black stone. Only careful inspection reveals that it vaguely resembles some form of quadruped. On command, the near-formless piece of obsidian becomes a fantastic mount. Treat it as a heavy warhorse (see page 273 of the <em>Monster Manual</em>) with the following additional powers usable once per round at will: <em>overland flight</em>, <em>plane shift</em>, and <em>ethereal jaunt</em>. The steed allows itself to be ridden, but if the rider is of good alignment, the steed is 10% likely per use to carry him to the lower planes and then return to its statuette form. The statuette can be used once per week for one continuous period of up to 24 hours. Note that when an <em>obsidian steed</em> becomes ethereal or <em>plane shifts</em>, its rider and his gear follow suit. Thus, the user can travel to other planes via this means.</p>",
+        15,28500.00,"Strong conjuration and transmutation",
+        "CL 15th, Craft Wondrous Item, animate objects, etherealness, fly, plane shift"),
+        
+    (121,2,"Figurine of Wondrous Power: Onyx Dog",
+        "<p>Each of the several kinds of <em>figurines of wondrous power</em> appears to be a miniature statuette of a creature an inch or so high (with one exception). When the figurine is tossed down and the correct command word spoken, it becomes a living creature of normal size (except when noted otherwise below). The creature obeys and serves its owner. Unless stated otherwise, the creature understands Common, but does not speak.</p><p>If a <em>figurine of wondrous power</em> is broken or destroyed in its statuette form, it is forever ruined. All magic is lost, its power departed. If slain in animal form, the figurine simply reverts to a statuette that can be used again at a later time.</p><p><em>Onyx Dog</em>: When commanded, this statuette changes into a creature with the same properties as a riding dog (see page 272 of the <em>Monster Manual</em>), except that it is endowed with an Intelligence of 8, can communicate in Common, and has exceptional olfactory and visual abilities. (It has the scent ability and adds +4 to its Spot and Search checks.) It has 60-foot darkvision, and it can <em>see invisibility</em>. An <em>onyx dog</em> can be used once per week for up to 6 hours. It obeys only its owner.</p>",
+        11,15500.00,"Moderate transmutation",
+        "CL 11th, Craft Wondrous Item, animate objects"),
+        
+    (122,2,"Figurine of Wondrous Power: Serpentine Owl",
+        "<p>Each of the several kinds of <em>figurines of wondrous power</em> appears to be a miniature statuette of a creature an inch or so high (with one exception). When the figurine is tossed down and the correct command word spoken, it becomes a living creature of normal size (except when noted otherwise below). The creature obeys and serves its owner. Unless stated otherwise, the creature understands Common, but does not speak.</p><p>If a <em>figurine of wondrous power</em> is broken or destroyed in its statuette form, it is forever ruined. All magic is lost, its power departed. If slain in animal form, the figurine simply reverts to a statuette that can be used again at a later time.</p><p><em>Serpentine Owl</em>: This figurine becomes either a normal-sized horned owl or a giant owl (see page 277 or 205 of the <em>Monster Manual</em>, respectively), according to the command word used. The transformation can take place once per day, with a maximum duration of 8 continuous hours. However, after three transformations into giant owl form, the statuette loses all its magical properties. The owl communicates with its owner by telepathic means, informing her of all it sees and hears. (Remember the limitations of its Intelligence.)</p>",
+        11,9100.00,"Moderate transmutation",
+        "CL 11th, Craft Wondrous Item, animate objects"),
+        
+    (123,2,"Figurine of Wondrous Power: Silver Raven",
+        "<p>Each of the several kinds of <em>figurines of wondrous power</em> appears to be a miniature statuette of a creature an inch or so high (with one exception). When the figurine is tossed down and the correct command word spoken, it becomes a living creature of normal size (except when noted otherwise below). The creature obeys and serves its owner. Unless stated otherwise, the creature understands Common, but does not speak.</p><p>If a <em>figurine of wondrous power</em> is broken or destroyed in its statuette form, it is forever ruined. All magic is lost, its power departed. If slain in animal form, the figurine simply reverts to a statuette that can be used again at a later time.</p><p><em>Silver Raven</em>: This silver figurine turns into a raven on command (but retains its metallic consistency, which gives it hardness 10). Another command sends it off into the air, bearing a message just like a creature affected by an <em>animal messenger</em> spell. If not commanded to carry a message, the raven obeys the commands of its owner, although it has no special powers or telepathic abilities. It can maintain its nonfigurine status for only 24 hours per week, but the duration need not be continuous.</p>",
+        6,3800.00,"Faint enchantment and transmutation",
+        "CL 6th, Craft Wondrous Item, animal messenger, animate objects"),
+        
+    (124,2,"Gauntlets of Ogre Power",
+        "<p>These gauntlets are made of tough leather with iron studs running across the back of the hands and fingers. They grant the wearer great strength, adding a +2 enhancement bonus to his Strength score. Both gauntlets must be worn for the magic to be effective.</p>",
+        6,4000.00,"Faint transmutation",
+        "CL 6th, Craft Wondrous Item, bull's strength"),
+        
+    (125,2,"Gauntlet of Rust",
+        "<p>This single metal gauntlet looks rusted and pitted but is actually quite powerful. Once per day, it can affectan object as with the <em>rusting grasp</em> spell. It also completely protects the wearer and her gear from rust (magical or otherwise), including the attack of a rust monster.</p>",
+        7,11500.00,"Moderate transmutation",
+        "CL 7th, Craft Wondrous Item, rusting grasp"),
+        
+    (126,2,"Gem of Brightness",
+        "<p>This crystal appears to be a long, rough prism. Upon utterance of a command word, the crystal emits bright light of one of three sorts.</p><ul><li>One command word causes the gem to shed light as a hooden lantern. This use of the gem does not expend any charges.</li><li>Another command word causes the <em>gem of brightness</em> to send out a bright ray 1 foot in diameter and 50 feet long. This strikes as a ranged touch attack, and any creature struck by this beam is blinded for 1d4 rounds unless it makes a DC 14 Fortitude save. This use of the gem expends 1 charge.</li><li>The third command word causes the gem to flare in a blinding flash of light that fills a 30-foot cone. Although this glare lasts but a moment, any creature within the cone must make a DC 14 Fortitude save or be blinded for 1d4 rounds. This use expends 5 charges.</li></ul><p>A newly created <em>gem of brightness</em> has 50 charges. When all its charges are expended, the gem becomes nonmagical.</p>",
+        6,13000.00,"Faint evocation",
+        "CL 6th, Craft Wondrous Item, daylight"),
+        
+    (127,2,"Gem of Seeing",
+        "<p>This finely cut and polished stone is indistinguishable from an ordinary jewel in appearance. When it is gazed through, a <em>gem of seeing</em> enables the user to see as though she were affected by a <em>true seeing</em> spell. A <em>gem of seeing</em> can be used for as much as 30 minutes a day, divided up into period of minutes or rounds as the user sees fit.</p>",
+        10,75000.00,"Moderate divination",
+        "CL 10th, Craft Wondrous Item, true seeing"),
+        
+    (128,2,"Gloves of Arrow Snaring",
+        "<p>Once snugly worn, these gloves seem to meld with the hands, becoming almost invisible. Twice per day, the wearer can act as if he had the Snatch Arrows feat, even if he does not meet the prerequisites for it. Both gloves must be worn for the magic to be effective. At least one hand must be free to take advantage of the magic.</p>",
+        3,4000.00,"Faint abjuration",
+        "CL 3rd, Craft Wondrous Item, shield");
