@@ -137,7 +137,7 @@ CREATE TABLE Wondrous_Item (
     Magic_Item_Description TEXT,
     Magic_Item_Caster_Level int NOT NULL,
     Magic_Item_Cost decimal(9,2) NOT NULL,
-    Magic_Item_Aura varchar(60),
+    Magic_Item_Aura varchar(64),
     Magic_Item_Creation_Reqs varchar(239),
     PRIMARY KEY (Magic_Item_ID, Book_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)

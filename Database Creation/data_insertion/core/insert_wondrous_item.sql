@@ -653,4 +653,84 @@ INSERT INTO Wondrous_Item VALUES
     (131,2,"Gloves of Dexterity +6",
         "<p>These thin leather gloves are very flexible and allow for delicate manipulation. They add to the wearer's Dexterity score in the form of an enhancement bonus of +2, +4, or +6. Both gloves must be worn for the magic to be effective.</p>",
         8,36000.00,"Moderate transmutation",
-        "CL 8th, Craft Wondrous Item, cat's grace");
+        "CL 8th, Craft Wondrous Item, cat's grace"),
+        
+    (132,2,"Glove of Storing",
+        "<p>This device is a simple leather glove. On command, one item held in the hand wearing the glove disappears. The item can weigh no more than 20 pounds and must be able to be held in one hand. While stored, the item has negligible weight. With a snap of the fingers wearing the glove, the item reappears. A glove can only store one item at a time. Storing or retrieving the item is a free action. The item is held in stasis and shrunk down so small within the palm of the glove that it cannot be seen. Many owners of a <em>glove of storing</em> find it to be a useful and dramatic way to store weapons, wands, and - because the item is stored in stasis - even lit torches. Spell durations are not supressed, but continue to expire. If an effect is supressed or dispelled, the stored item appears instantly.</p>",
+        6,10000.00,"Faint transmutation",
+        "CL 6th, Craft Wondrous Item, shink item"),
+        
+    (133,2,"Gloves of Swimming and Climbing",
+        "<p>These apparently normal lightweight gloves grant a +5 competence bonus on Swim checks and Climb checks. Both gloves must be worn for the magic to be effective.</p>",
+        5,6250.00,"Faint transmutation",
+        "CL 5th, Craft Wondrous Item, bull's strength, cat's grace"),
+        
+    (134,2,"Goggles of Minute Seeing",
+        "<p>The lenses of this item are made of special crystal. When placed over the eyes of the wearer, the lenses enable her to see much better than normal at distances of 1 foot or less, granting her a +5 competence bonus on Search checks to find secret doors, traps, and similar concealed objects. Both lenses must be worn for the magic to be effective.</p>",
+        3,1250.00,"Faint divination",
+        "CL 3rd, Craft Wondrous Item, true seeing"),
+        
+    (135,2,"Goggles of Night",
+        "<p>The lenses of this item are made of dark crystal. Even though the lenses are opaque, when placed over the eyes of the wearer they enable him to see normally and also grant him 60-foot darkvision. Both lenses must be worn for the magic to be effective.</p>",
+        3,12000.00,"Faint transmutation",
+        "CL 3rd, Craft Wondrous Item, darkvision"),
+        
+    (136,2,"Clay Golem Manual",
+        "<p>A <em>golem manual</em> contains information, incantations, and magical power that help a character craft a golem (see page 134 of the <em>Monster Manual</em>). The instructions therein grant a +5 competence bonus on skill checks made to craft  the golem's body. Each manual also holds the prerequisite spells needed for a specific golem, effectively granting the builder the use of the Craft Construct feat (see page 303 of the <em>Monster Manual</em>) during the construction of the golem, and grants the character an increase to her caster level for the purpose of crafting a golem. Any golem built using a <em>golem manual</em> does not cost the creator any XP, since the requisite XP are 'contained' in the book and 'expended' by the book during the creation process.</p><p>The spells included in a <em>golem manual</em> require a spell trigger activation and can be activated only to assist in the construction of a golem. The cost of the book does not include the cost of constructing the golem's body. Once the golem is finished, the writing in the manual fades and the book is consumed in flames. When the book's ashes are sprinkled upon the golem, it becomes fully animated.</p><p><em>Clay Golem Manual</em>: The book contains <em>animate objects</em>, <em>bless</em>, <em>commune</em>, <em>prayer</em>, and <em>resurrection</em>. The reader may treat her caster level as two levels higher than normal for the purpose of crafting a clay golem. The book supplies 1,540 XP for the creation of a clay golem.</p>",
+        11,12000.00,"Moderate conjuration, divination, enchantment, and transmutation",
+        "CL 11th, Craft Construct, creator must be caster level 11th, animate objects, commune, prayer, resurrection"),
+        
+    (137,2,"Flesh Golem Manual",
+        "<p>A <em>golem manual</em> contains information, incantations, and magical power that help a character craft a golem (see page 134 of the <em>Monster Manual</em>). The instructions therein grant a +5 competence bonus on skill checks made to craft  the golem's body. Each manual also holds the prerequisite spells needed for a specific golem, effectively granting the builder the use of the Craft Construct feat (see page 303 of the <em>Monster Manual</em>) during the construction of the golem, and grants the character an increase to her caster level for the purpose of crafting a golem. Any golem built using a <em>golem manual</em> does not cost the creator any XP, since the requisite XP are 'contained' in the book and 'expended' by the book during the creation process.</p><p>The spells included in a <em>golem manual</em> require a spell trigger activation and can be activated only to assist in the construction of a golem. The cost of the book does not include the cost of constructing the golem's body. Once the golem is finished, the writing in the manual fades and the book is consumed in flames. When the book's ashes are sprinkled upon the golem, it becomes fully animated.</p><p><em>Flesh Golem Manual</em>: The book contains <em>animate dead</em>, <em>bull's strength</em>, <em>geas/quest</em>, and <em>limited wish</em>. The reader may treat her caster level as one level higher than normal for the purpose of crafting a flesh golem. The book supplies 780 XP for the creation of a flesh golem.</p>",
+        8,8000.00,"Moderate enchantment, necromancy [evil], and transmutation",
+        "CL 8th, Craft Construct, creator must be caster level 8th, animate dead, bull's strength, geas/quest, limited wish"),
+        
+    (138,2,"Iron Golem Manual",
+        "<p>A <em>golem manual</em> contains information, incantations, and magical power that help a character craft a golem (see page 134 of the <em>Monster Manual</em>). The instructions therein grant a +5 competence bonus on skill checks made to craft  the golem's body. Each manual also holds the prerequisite spells needed for a specific golem, effectively granting the builder the use of the Craft Construct feat (see page 303 of the <em>Monster Manual</em>) during the construction of the golem, and grants the character an increase to her caster level for the purpose of crafting a golem. Any golem built using a <em>golem manual</em> does not cost the creator any XP, since the requisite XP are 'contained' in the book and 'expended' by the book during the creation process.</p><p>The spells included in a <em>golem manual</em> require a spell trigger activation and can be activated only to assist in the construction of a golem. The cost of the book does not include the cost of constructing the golem's body. Once the golem is finished, the writing in the manual fades and the book is consumed in flames. When the book's ashes are sprinkled upon the golem, it becomes fully animated.</p><p><em>Iron Golem Manual</em>: The book contains <em>cloudkill</em>, <em>geas/quest</em>, <em>limited wish</em>, and <em>polymorph any object</em>. The reader may treat her caster level as four levels higher for the purpose of crafting an iron golem. The book supplies 5,600 XP for the creation of an iron golem.</p>",
+        16,35000.00,"Strong conjuration, enchantment, and transmutation",
+        "CL 16th, Craft Construct, creator must be caster level 16th, cloudkill, geas/quest, limited wish, polymorph any object"),
+        
+    (139,2,"Stone Golem Manual",
+        "<p>A <em>golem manual</em> contains information, incantations, and magical power that help a character craft a golem (see page 134 of the <em>Monster Manual</em>). The instructions therein grant a +5 competence bonus on skill checks made to craft  the golem's body. Each manual also holds the prerequisite spells needed for a specific golem, effectively granting the builder the use of the Craft Construct feat (see page 303 of the <em>Monster Manual</em>) during the construction of the golem, and grants the character an increase to her caster level for the purpose of crafting a golem. Any golem built using a <em>golem manual</em> does not cost the creator any XP, since the requisite XP are 'contained' in the book and 'expended' by the book during the creation process.</p><p>The spells included in a <em>golem manual</em> require a spell trigger activation and can be activated only to assist in the construction of a golem. The cost of the book does not include the cost of constructing the golem's body. Once the golem is finished, the writing in the manual fades and the book is consumed in flames. When the book's ashes are sprinkled upon the golem, it becomes fully animated.</p><p><em>Stone Golem Manual</em>: The book contains <em>geast/quest</em>, <em>limited wish</em>, <em>polymorph any object</em>, and <em>slow</em>. The reader may treat her caster level as three levels higher for the purpose of crafting a stone golem. The book supplies 3,400 XP for the creation of a stone golem.</p>",
+        14,22000.00,"Strong abjuration and enchantment",
+        "CL 14th, Craft Construct, creator must be caster level 14th, antimagic field, geas/quest, symbol of stunning"),
+        
+    (140,2,"Stone Golem Manual, Greater",
+        "<p>A <em>golem manual</em> contains information, incantations, and magical power that help a character craft a golem (see page 134 of the <em>Monster Manual</em>). The instructions therein grant a +5 competence bonus on skill checks made to craft  the golem's body. Each manual also holds the prerequisite spells needed for a specific golem, effectively granting the builder the use of the Craft Construct feat (see page 303 of the <em>Monster Manual</em>) during the construction of the golem, and grants the character an increase to her caster level for the purpose of crafting a golem. Any golem built using a <em>golem manual</em> does not cost the creator any XP, since the requisite XP are 'contained' in the book and 'expended' by the book during the creation process.</p><p>The spells included in a <em>golem manual</em> require a spell trigger activation and can be activated only to assist in the construction of a golem. The cost of the book does not include the cost of constructing the golem's body. Once the golem is finished, the writing in the manual fades and the book is consumed in flames. When the book's ashes are sprinkled upon the golem, it becomes fully animated.</p><p><em>Stone Golem Manual, Greater</em>: The book contains <em>geas/quest</em>, <em>limited wish</em>, <em>polymorph any object</em>, and <em>slow</em>. The reader may treat her caster level as three levels higher than normal for the purpose of crafting a stone golem. The book supplies 7,640 XP for the creation of a greater stone golem.</p>",
+        16,44000.00,"Strong abjuration and enchantment",
+        "CL 16th, Craft Construct, creator must be caster level 16th, antimagic field, geas/quest, symbol of stunning"),
+        
+    (141,2,"Hand of Glory",
+        "<p>This mummified human hand hangs by a leather cord around a character's neck (taking up space as a magic necklace would). If a magic ring is placed on one of the fingers of the hand, the wearer benefits from the ring as if wearing it herself, and it does not count against her two-ring limit. The hand can wear only one ring at a time.</p><p>Even without a ring, the hand itself allows its wearer to use <em>daylight</em> and <em>see invisibility</em> each once per day.</p>",
+        5,8000.00,"Faint varied",
+        "CL 5th, Craft Wondrous Item, animate dead, daylight, detect invisibility"),
+        
+    (142,2,"Hand of the Mage",
+        "<p>This mummified elf hand hands by a golden chain around a character's neck (taking up space as a magic necklace would). It allows the wearer to utilize the spell <em>mage hand</em> at will.</p>",
+        2,900.00,"Faint transmutation",
+        "CL 2nd, Craft Wondrous Item, mage hand"),
+        
+    (143,2,"Harp of Charming",
+        "<p>This instrument is a golden, intricately carved harp. When played, it enables the performer to work one <em>suggestion</em> (as the spell, Will DC 14 negates) into the music for each 10 minutes of playing if he can succeed on a DC 14 Perform (string instruments) check. If the check fails, the audience cannot be affected by any further performances from the harpist for 24 hours.</p>",
+        5,7500.00,"Faint enchantment",
+        "CL 5th, Craft Wondrous Item, suggestion"),
+        
+    (144,2,"Hat of Disguise",
+        "<p>This apparently normal hat allows its wearer to alter her appearance as with a <em>disguise self</em> spell. As part of the disguise, the hat can be changed to appear as a comb, ribbon, headband, cap, coif, hood, helmet, and so on.</p>",
+        1,1800.00,"Faint illusion",
+        "CL 1st, Craft Wondrous Item, disguise self"),
+        
+    (145,2,"Headband of Intellect +2",
+        "<p>This device is a light cord with a small gem set so that it rests upon the forehead of the wearer. The headband adds to the wearer's Intelligence score in the form of an enhancement bonus of +2, +4, or +6. This enhancement bonus does not earn the wearer extra skill points when a new level is attained; use the unenhanced Intelligence bonus to determine skill points.</p>",
+        8,4000.00,"Moderate transmutation",
+        "CL 8th, Craft Wondrous Item, fox's cunning"),
+        
+    (146,2,"Headband of Intellect +4",
+        "<p>This device is a light cord with a small gem set so that it rests upon the forehead of the wearer. The headband adds to the wearer's Intelligence score in the form of an enhancement bonus of +2, +4, or +6. This enhancement bonus does not earn the wearer extra skill points when a new level is attained; use the unenhanced Intelligence bonus to determine skill points.</p>",
+        8,16000.00,"Moderate transmutation",
+        "CL 8th, Craft Wondrous Item, fox's cunning"),
+        
+    (147,2,"Headband of Intellect +6",
+        "<p>This device is a light cord with a small gem set so that it rests upon the forehead of the wearer. The headband adds to the wearer's Intelligence score in the form of an enhancement bonus of +2, +4, or +6. This enhancement bonus does not earn the wearer extra skill points when a new level is attained; use the unenhanced Intelligence bonus to determine skill points.</p>",
+        8,36000.00,"Moderate transmutation",
+        "CL 8th, Craft Wondrous Item, fox's cunning");
