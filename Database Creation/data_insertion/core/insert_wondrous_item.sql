@@ -733,4 +733,29 @@ INSERT INTO Wondrous_Item VALUES
     (147,2,"Headband of Intellect +6",
         "<p>This device is a light cord with a small gem set so that it rests upon the forehead of the wearer. The headband adds to the wearer's Intelligence score in the form of an enhancement bonus of +2, +4, or +6. This enhancement bonus does not earn the wearer extra skill points when a new level is attained; use the unenhanced Intelligence bonus to determine skill points.</p>",
         8,36000.00,"Moderate transmutation",
-        "CL 8th, Craft Wondrous Item, fox's cunning");
+        "CL 8th, Craft Wondrous Item, fox's cunning"),
+        
+    (148,2,"Helm of Brilliance",
+        "<p>This normal-looking helm takes its true form and manifests its powers when the user dons it and speaks the command word. Made of brilliant silver and polished steel, a newly created helm is set with large magic gems: ten diamonds, twenty rubies, thirty fire opals, and forty opals. When struck by bright light, the helm scintillates and sends forth reflective rays in all directions from the crownlike, gem-tipped spikes. The jewels functions are as follows:</p><ul><li>Diamond: <em>Prismatic spray</em> (save DC 20)</li><li>Ruby: <em>Wall of fire</em></li><li>Fire opal: <em>Fireball</em> (10d6, Reflex DC 20 half)</li><li>Opal: <em>Daylight</em></li></ul><p>The helm may be used once per round, but each gem can perform its spell-like power just once. Until all its jewels are depleted, a <em>helm of brilliance</em> also has the following magical properties when activated.</p><ul><li>It emanates a bluish light when undead are within 30 feet. This light causes 1d6 points of damage per round to all such creatures within that range.</li><li>The wearer may command any weapon he wields to become a flaming weapon (see page 224 of DMG). This is in addition to whatever abilities the weapon may already have (unless the weapon already is a flaming weapon). The command takes 1 round to take effect.</li><li>The helm provides resistance to fire 30. This protection does not stack with similar protection from other sources, such as <em>resist energy</em>.</li></ul><p>Once all its jewels have lost their magic, the helm loses its powers and the gems turn to worthless powder. Removing a jewel destroys it.</p><p>If a creature wearing the gem is damaged by magical fire (after the fire protection is taken into account) and fails an additional DC 15 Will save, the remaining gems on the helm overload and detonate. Remaining diamonds become <em>prismatic sprays</em> that each randomly target a creature within range (possibly the wearer), rubies become straight-line <em>walls of fire</em> extending outward in a random direction from the helm wearer, and fire opals become <em>fireballs</em> centered on the helm wearer. The opals and the helm itself are destroyed.</p>",
+        13,125000.00,"Strong varied",
+        "CL 13th, Craft Wondrous Item, detect undead, fireball, flame blade, light, prismatic spray, protection from energy, wall of fire"),
+        
+    (149,2,"Helm of Comprehend Languages and Read Magic",
+        "<p>Appearing as a normal helmet, a <em>helm of comprehend languages and read magic</em> grants its wearer the ability to understand the spoken words of any creature and to read text in any language and any magical writing. The wearer gains a +5 competence bonus on Decipher Script checks to understand messages written in incomplete, archaic, or exotic forms. Note that understanding a magical text does not necessarily imply spell use.</p>",
+        4,5200.00,"Faint divination",
+        "CL 4th, Craft Wondrous Item, comprehend languages, read magic"),
+        
+    (150,2,"Helm of Telepathy",
+        "<p>The wearer can use <em>detect thoughts</em> at will. Furthermore, he can send a telepathic message to anyone whose surface thoughts he is reading (allowing two-way communication). Once per day, the wearer of the helm can implant a <em>suggestion</em> (as the spell, Will DC 14 negates) along with his telepathic message.</p>",
+        5,27000.00,"Faint divination and enchantment",
+        "CL 5th, Craft Wondrous Item, detect thoughts, suggestion"),
+        
+    (151,2,"Helm of Teleportation",
+        "<p>A character wearing this device may <em>teleport</em> three times per day, exactly as if he had cast the spell of the same name.</p>",
+        9,73500.00,"Moderate conjuration",
+        "CL 9th, Craft Wondrous Item, teleport"),
+        
+    (152,2,"Helm of Underwater Action",
+        "<p>The wearer of this helmet can see underwater. Drawing the small lenses in compartments on either side into position before the wearer's eyes activates the visual properties of the helm, allowing her to see five times farther than water and light conditions would allow for normal human vision. (Weeds, obstructions, and the like block vision in the usual manner.) If the command word is spoken, the <em>helm of underwater action</em> creates a globe of air around the wearer's head and maintains it until the command word is spoken again, enabling her to breathe freely.</p>",
+        5,57000.00,"Faint transmutation",
+        "CL 5th, Craft Wondrous Item, water breathing");
