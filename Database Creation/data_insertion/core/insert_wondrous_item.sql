@@ -638,4 +638,19 @@ INSERT INTO Wondrous_Item VALUES
     (128,2,"Gloves of Arrow Snaring",
         "<p>Once snugly worn, these gloves seem to meld with the hands, becoming almost invisible. Twice per day, the wearer can act as if he had the Snatch Arrows feat, even if he does not meet the prerequisites for it. Both gloves must be worn for the magic to be effective. At least one hand must be free to take advantage of the magic.</p>",
         3,4000.00,"Faint abjuration",
-        "CL 3rd, Craft Wondrous Item, shield");
+        "CL 3rd, Craft Wondrous Item, shield"),
+        
+    (129,2,"Gloves of Dexterity +2",
+        "<p>These thin leather gloves are very flexible and allow for delicate manipulation. They add to the wearer's Dexterity score in the form of an enhancement bonus of +2, +4, or +6. Both gloves must be worn for the magic to be effective.</p>",
+        8,4000.00,"Moderate transmutation",
+        "CL 8th, Craft Wondrous Item, cat's grace"),
+        
+    (130,2,"Gloves of Dexterity +4",
+        "<p>These thin leather gloves are very flexible and allow for delicate manipulation. They add to the wearer's Dexterity score in the form of an enhancement bonus of +2, +4, or +6. Both gloves must be worn for the magic to be effective.</p>",
+        8,16000.00,"Moderate transmutation",
+        "CL 8th, Craft Wondrous Item, cat's grace"),
+        
+    (131,2,"Gloves of Dexterity +6",
+        "<p>These thin leather gloves are very flexible and allow for delicate manipulation. They add to the wearer's Dexterity score in the form of an enhancement bonus of +2, +4, or +6. Both gloves must be worn for the magic to be effective.</p>",
+        8,36000.00,"Moderate transmutation",
+        "CL 8th, Craft Wondrous Item, cat's grace");
