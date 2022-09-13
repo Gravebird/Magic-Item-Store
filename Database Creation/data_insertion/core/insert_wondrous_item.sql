@@ -758,4 +758,9 @@ INSERT INTO Wondrous_Item VALUES
     (152,2,"Helm of Underwater Action",
         "<p>The wearer of this helmet can see underwater. Drawing the small lenses in compartments on either side into position before the wearer's eyes activates the visual properties of the helm, allowing her to see five times farther than water and light conditions would allow for normal human vision. (Weeds, obstructions, and the like block vision in the usual manner.) If the command word is spoken, the <em>helm of underwater action</em> creates a globe of air around the wearer's head and maintains it until the command word is spoken again, enabling her to breathe freely.</p>",
         5,57000.00,"Faint transmutation",
-        "CL 5th, Craft Wondrous Item, water breathing");
+        "CL 5th, Craft Wondrous Item, water breathing"),
+        
+    (153,2,"Handy Haversack",
+        "<p>A backpack of this sort appears to be well made, well used, and quite ordinary. It is constructed of finely tanned leather, and the straps have brass hardware and buckles. It has two side pouches, each of which appears large enough to hold about a quart of material. In fact, each is like a <em>bag of holding</em> and can actually hold material of as much as 2 cubic feet in volume or 20 pounds in weight. The large central portion of the pack can contain up to 8 cubic feet or 80 pounds of material. Even when so filled, the backpack always weighs only 5 pounds.</p><p>While such storage is useful enough, the pack has an even greater power in addition. When the wearer reaches into it for a specific item, that item is always on top. Thus, no digging around and fumbling is ever necessary to find what a haversack contains. Retrieving any specific item from a haversack is a move action, but it does not provoke the attacks of opportunity that retrieving a stored item usually does.</p>",
+        9,2000.00,"Moderate conjuration",
+        "CL 9th, Craft Wondrous Item, secret chest");
