@@ -763,4 +763,29 @@ INSERT INTO Wondrous_Item VALUES
     (153,2,"Handy Haversack",
         "<p>A backpack of this sort appears to be well made, well used, and quite ordinary. It is constructed of finely tanned leather, and the straps have brass hardware and buckles. It has two side pouches, each of which appears large enough to hold about a quart of material. In fact, each is like a <em>bag of holding</em> and can actually hold material of as much as 2 cubic feet in volume or 20 pounds in weight. The large central portion of the pack can contain up to 8 cubic feet or 80 pounds of material. Even when so filled, the backpack always weighs only 5 pounds.</p><p>While such storage is useful enough, the pack has an even greater power in addition. When the wearer reaches into it for a specific item, that item is always on top. Thus, no digging around and fumbling is ever necessary to find what a haversack contains. Retrieving any specific item from a haversack is a move action, but it does not provoke the attacks of opportunity that retrieving a stored item usually does.</p>",
         9,2000.00,"Moderate conjuration",
-        "CL 9th, Craft Wondrous Item, secret chest");
+        "CL 9th, Craft Wondrous Item, secret chest"),
+        
+    (154,2,"Horn of Blasting",
+        "<p>This horn appears to be a normal trumpet. It can be sounded as a normal horn, but if the command word is spoken and the instrument is then played, it deals 5d6 points of sonic damage to creatures within a 40-foot cone and causes them to be deafened for 2d6 rounds (a DC 16 Fortitude save reduces the damage by half and negaes the deafening). Crystalline objects and creatures take 7d6 points of sonic damage, with no save unless they're held, worn, or carried by creatures (Will DC 16 negates).</p><p>If a <em>horn of blasting</em> is used magically more than once in a given day, there is a 20% cumulative chance with each extra use that it explodes and deals 10d6 points of damage to the person sounding it.</p>",
+        7,20000.00,"Moderate evocation",
+        "CL 7th, Craft Wondrous Item, shout"),
+        
+    (155,2,"Horn of Blasting, Greater",
+        "<p>This horn functions like a <em>horn of blasting</em>, except that it deals 10d6 points of sonic damage, stuns creatures for 1 round, and deafens them for 4d6 rounds (a DC 19 Fortitude save reduces the damage by half and negates the stunning and deafening). Crystalline objects take 16d6 points of sonic damage as described for the <em>horn of blasting</em>. A <em>greater horn of blasting</em> has a 20% cumulative chance of exploding.",
+        16,70000.00,"Strong evocation",
+        "CL 16th, Craft Wondrous Item, greater shout"),
+        
+    (156,2,"Horn of Fog",
+        "<p>This small bugle allows its possessor to blow forth a thick cloud of heavy fog similar to that of an <em>obscuring mist</em> spell. The fog covers a 10-foot square next to the horn blower each round that the user continues to blow the horn; fog clouds travel 10 feet each round in a straight line from the emanation point unless blocked by something substantial such as a wall. The device makes a deep, foghornlike noise, with the note dropping abruptly to a lower register at the end of each blast. The fog dissipates after 3 minutes. A moderate wind (11+ mph) disperses the fog in 4 rounds; a strong wind (21+ mph) disperses the fog in 1 round.</p>",
+        3,2000.00,"Faint conjuration",
+        "CL 3rd, Craft Wondrous Item, obscuring mist"),
+        
+    (157,2,"Horn of Goodness/Evil",
+        "<p>This trumpet adapts itself to its owner, so it produces either a good or an evil effect depending on the owner's alignment. If the owner is neither good nor evil, the horn has no power whatsoever. If he is good, then blowing the horn has the effect of a <em>magic circle against evil</em>. If he is evil, then blowing the horn has the effect of a <em>magic circle against good</em>. In either case, this ward lasts for 1 hour. The horn can be blown once per day.</p>",
+        6,6500.00,"Faint abjuration",
+        "CL 6th, Craft Wondrous Item, magic circle against good, magic circle against evil"),
+        
+    (158,2,"Horn of the Tritons",
+        "<p>This device is a conch shell that can be blown once per day except by a triton (see page 245 of the <em>Monster Manual</em>), which can sound it three times per day. A <em>horn of the tritons</em> can perform any one of the following functions when blown.</p><ul><li>Calm rough waters in a 1-mile radius. This effect dispels a summoned water elemental if it fails a DC 16 Will save.</li><li>Attract 5d4 Large sharks (01-30 on d%), 5d6 Medium sharks (31-80), or 1d10 sea lions (81-100) if the character is in a body of water in which such creatures dwell. The creatures are friendly and obey to the best of their ability, the one who sounded the horn.</li><li>Causes aquatic creatures with Intelligence scores of 1 or 2 within 500 feet to become panicked as if they had been targeted by a <em>fear</em> spell (Will DC 16 partial). Those who successfuly save are shaken for 3d6 rounds.</li></ul><p>Any sounding of a <em>horn of the tritons</em> can be heard by all tritons within a 3-mile radius.</p>",
+        8,15100.00,"Moderate conjuration and transmutation",
+        "CL 8th, Craft Wondrous Item, fear, summon monster V, control water, creator must be a triton or get construction aid from a triton");
