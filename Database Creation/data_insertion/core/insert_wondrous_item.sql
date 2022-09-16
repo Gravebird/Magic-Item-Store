@@ -908,4 +908,119 @@ INSERT INTO Wondrous_Item VALUES
     (182,2,"Lantern of Revealing",
         "<p>This lantern operates as a normal hooden lantern. While it is lit, it also reveals all invisible creatures and objects within 25 feet of it, just like the spell <em>invisibility purge</em>.</p>",
         5,30000.00,"Faint evocation",
-        "CL 5th, Craft Wondrous Item, invisibility purge");
+        "CL 5th, Craft Wondrous Item, invisibility purge"),
+        
+    (183,2,"Lens of Detection",
+        "<p>This circular prism enables its user to detect minute details, granting a +5 bonus on Search checks. It also aids in following tracks, adding a +5 bonus on Survival checks when tracking. The lens is about 6 inches in diameter and set in a frame with a handle.</p>",
+        9,3500.00,"Moderate divination",
+        "CL 9th, Craft Wondrous Item, true seeing"),
+        
+    (184,2,"Lyre of Building",
+        "<p>If the proper chords are struck, a single use of this lyre negates any attacks made against all inanimate construction (walls, roof, floor, and so on) within 300 feet. This includes the effects of a <em>horn of blasting</em>, a <em>distintigrate</em> spell, or an attack from a ram or similar siege weapon. The lyre can be used in this way once per day, with the protection lasting for 30 minutes.</p><p>The lyre is also useful with respect to building. Once a week its strings can be strummed so as to produce chords that magically construct buildings, mines, tunnels, ditches, or whatever. The effect produces in but 30 minutes of playing is equal to the work of 100 humans laboring for three days. Each hour after the first, a character playing the lyre must make a DC 18 Perform (string instruments) check. If it fails, she must stop and cannot play the lyre again for this purpose until a week has passed.</p>",
+        6,13000.00,"Faint transmutation",
+        "CL 6th, Craft Wondrous Item, fabricate"),
+        
+    (185,2,"Mantle of Faith",
+        "<p>This holy garment, worn over normal clothing, grants damage reduction 5/evil to the character wearing it.</p>",
+        20,76000.00,"Strong abjuration [good]",
+        "CL 20th, Craft Wondrous Item, stoneskin"),
+        
+    (186,2,"Mantle of Spell Resistance",
+        "<p>This garment, worn over normal clothing or armor, grants the wearer spell resistance 21.</p>",
+        9,90000.00,"Moderate abjuration",
+        "CL 9th, Craft Wondrous Item, spell resistance"),
+        
+    (187,2,"Manual of Bodily Health +1",
+        "<p>This thick tome contains tips on health and fitness, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, he gains an inherent bonus of from +1 to +5 (depending on the type of manual) to his Constitution score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,27500.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, wish or miracle"),
+        
+    (188,2,"Manual of Bodily Health +2",
+        "<p>This thick tome contains tips on health and fitness, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, he gains an inherent bonus of from +1 to +5 (depending on the type of manual) to his Constitution score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,55000.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, wish or miracle"),
+        
+    (189,2,"Manual of Bodily Health +3",
+        "<p>This thick tome contains tips on health and fitness, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, he gains an inherent bonus of from +1 to +5 (depending on the type of manual) to his Constitution score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,82500.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, wish or miracle"),
+        
+    (190,2,"Manual of Bodily Health +4",
+        "<p>This thick tome contains tips on health and fitness, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, he gains an inherent bonus of from +1 to +5 (depending on the type of manual) to his Constitution score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,110000.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, wish or miracle"),
+        
+    (191,2,"Manual of Bodily Health +5",
+        "<p>This thick tome contains tips on health and fitness, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, he gains an inherent bonus of from +1 to +5 (depending on the type of manual) to his Constitution score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,137500.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, wish or miracle"),
+        
+    (192,2,"Manual of Gainful Exercise +1",
+        "<p>This thick tome contains exercise descriptions and diet suggestions, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, she gains an inherent bonus from +1 to +5 (depending on the type of manual) to her Strength score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,27500.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, wish or miracle"),
+        
+    (193,2,"Manual of Gainful Exercise +2",
+        "<p>This thick tome contains exercise descriptions and diet suggestions, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, she gains an inherent bonus from +1 to +5 (depending on the type of manual) to her Strength score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,55000.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, wish or miracle"),
+        
+    (194,2,"Manual of Gainful Exercise +3",
+        "<p>This thick tome contains exercise descriptions and diet suggestions, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, she gains an inherent bonus from +1 to +5 (depending on the type of manual) to her Strength score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,82500.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, wish or miracle"),
+        
+    (195,2,"Manual of Gainful Exercise +4",
+        "<p>This thick tome contains exercise descriptions and diet suggestions, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, she gains an inherent bonus from +1 to +5 (depending on the type of manual) to her Strength score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,110000.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, wish or miracle"),
+        
+    (196,2,"Manual of Gainful Exercise +5",
+        "<p>This thick tome contains exercise descriptions and diet suggestions, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, she gains an inherent bonus from +1 to +5 (depending on the type of manual) to her Strength score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,137500.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, wish or miracle"),
+        
+    (197,2,"Manual of Quickness of Action +1",
+        "<p>This thick tome contains tips on coordination exercises and balance, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, he gains an inherent bonus of from +1 to +5 (depending on the type of manual) to his Dexterity score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,27500.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, wish or miracle"),
+        
+    (198,2,"Manual of Quickness of Action +2",
+        "<p>This thick tome contains tips on coordination exercises and balance, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, he gains an inherent bonus of from +1 to +5 (depending on the type of manual) to his Dexterity score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,55000.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, wish or miracle"),
+        
+    (199,2,"Manual of Quickness of Action +3",
+        "<p>This thick tome contains tips on coordination exercises and balance, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, he gains an inherent bonus of from +1 to +5 (depending on the type of manual) to his Dexterity score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,82500.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, wish or miracle"),
+        
+    (200,2,"Manual of Quickness of Action +4",
+        "<p>This thick tome contains tips on coordination exercises and balance, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, he gains an inherent bonus of from +1 to +5 (depending on the type of manual) to his Dexterity score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,110000.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, wish or miracle"),
+        
+    (201,2,"Manual of Quickness of Action +5",
+        "<p>This thick tome contains tips on coordination exercises and balance, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, he gains an inherent bonus of from +1 to +5 (depending on the type of manual) to his Dexterity score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,137500.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, wish or miracle"),
+        
+    (202,2,"Mask of the Skull",
+        "<p>This ivory mask has been fashioned into the likeness of a human skull. Once per day, after it has been worn for at least 1 hour, the mask can be loosed to fly from the wearer's face. It travels up to 50 feet away from the wearer and attacks a target assigned to it. The grinning skull mask makes a touch attack against the target based on the wearer's base attack bonus. If the attack succeeds, the target must make a DC 20 Fortitude save or be struck dead, as if affected by a <em>finger of death</em> spell. If the target succeeds on his saving throw, he nevertheless takes 3d6+13 points of damage. After attacking (whether successful or not), the mask flies back to its user. The mask has AC 16, 10 hit points, and hardness 6.</p>",
+        13,22000.00,"Strong necromancy and transmutation",
+        "CL 13th, Craft Wondrous Item, animate objects, finger of death, fly"),
+        
+    (203,2,"Mattock of the Titans",
+        "<p>This digging tool is 10 feet long. Any creature of at least Huge size can use it to loosen or tumble earth or earthen ramparts (a 10-foot cube every 10 minutes). It also smashes rock (a 10-foot cube per hour). If used as a weapon, it is the equivalent of a Gargantuan <em>+3 adamantine warhammer</em>, dealing 4d6 points of base damage.</p>",
+        16,23348.00,"Strong transmutation",
+        "CL 16th, Craft Wondrous Item, Craft Magic Arms and Armor, move earth"),
+        
+    (204,2,"Maul of the Titans",
+        "<p>This mallet is 8 feet long. If used as a weapon, it is the equivalent of a <em>+3 greatclub</em> and deals triple damage against inanimate objects. However, the wielder must have a Strength of at least 18 to wield it properly. Otherwise, she takes a -4 penalty on attack rolls.</p>",
+        15,25305.00,"Strong evocation",
+        "CL 15th, Craft Wondrous Item, Craft Magic Arms and Armor, clenched fist"),
+        
+    (205,2,"Medallion of Thoughts",
+        "<p>This appears to be a normal pendant disk hung from a neck chain. Usually fashioned from bronze, copper, or nickel-silver, the medallion allows the wearer to read the thoughts of others, as with the spell <em>detect thoughts</em>.</p>",
+        5,12000.00,"Faint divination",
+        "CL 5th, Craft Wondrous Item, detect thoughts");
