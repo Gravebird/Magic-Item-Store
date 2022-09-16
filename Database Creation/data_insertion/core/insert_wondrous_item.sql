@@ -803,4 +803,109 @@ INSERT INTO Wondrous_Item VALUES
     (161,2,"Horseshoes of a Zephyr",
         "<p>These four iron shoes are affixed like normal horseshoes. They allow a horse to travel without actually touching the ground. The horse must still run above (always around 4 inches above) a roughly horizontal surface. This means that non-solid or unstable surfaces, such as water or lava, can be crossed, and that movement is possible without leaving tracks of any sort of ground. The horse moves at its normal base land speed. All four shoes must be worn by the same animal for the magic to be effective.</p>",
         3,6000.00,"Faint transmutation",
-        "CL 3rd, Craft Wondrous Item, levitate");
+        "CL 3rd, Craft Wondrous Item, levitate"),
+        
+    (162,2,"Incense of Meditation",
+        "<p>This small rectangular block of sweet-smelling incense is visually indistinguishable from nonmagical incense until lit. When it is burning, the special fragrance and pearly-hued smoke of this special incense are recognizable by anyone making a DC 15 Spellcraft check.</p><p>When a divine spellcaster lights a block of <em>incense of meditation</em> and then spends 8 hours praying and meditating nearby, the incense enables him to prepare all his spells as though affected by the Maximize Spell feat. However, all the spells prepared in this way are at their normal level, not at three levels higher (as with the regular metamagic feat).</p><p>Each block of incense burns for 8 hours, and the effects persist for 24 hours.</p>",
+        7,4900.00,"Moderate enchantment",
+        "CL 7th, Craft Wondrous Item, Maximize Spell, bless"),
+        
+    (163,2,"Ioun Stone - Clear",
+        "<p>These crystalline stones always float in the air and must be within 3 feet of their owner to be of any use. When a character first aquires a stone, she must hold it then release it, whereupon it takes up a circling orbit 1d3 feet from her head. Thereafter, a stone must be grasped or netted to separate it from its owner. The owner may voluntarily seize and stow a stone (to keep it safe while she is sleeping, for example), but she loses the benefits of the stone during that time. <em<Ioun stones</em> have AC 24, 10 hit points, and hardness 5.</p><p><em>Clear</em> - Shape: Spindle; Sustains creature without food or water.</p>",
+        12,4000.00,"Moderate varied",
+        "CL 12th, Craft Wondrous Item, creator must be 12th level"),
+        
+    (164,2,"Ioun Stone - Dusty Rose",
+        "<p>These crystalline stones always float in the air and must be within 3 feet of their owner to be of any use. When a character first aquires a stone, she must hold it then release it, whereupon it takes up a circling orbit 1d3 feet from her head. Thereafter, a stone must be grasped or netted to separate it from its owner. The owner may voluntarily seize and stow a stone (to keep it safe while she is sleeping, for example), but she loses the benefits of the stone during that time. <em<Ioun stones</em> have AC 24, 10 hit points, and hardness 5.</p><p><em>Dusty rose</em> - Shape: Prism; +1 insight bonus to AC.</p>",
+        12,5000.00,"Moderate varied",
+        "CL 12th, Craft Wondrous Item, creator must be 12th level"),
+        
+    (165,2,"Ioun Stone - Deep Red",
+        "<p>These crystalline stones always float in the air and must be within 3 feet of their owner to be of any use. When a character first aquires a stone, she must hold it then release it, whereupon it takes up a circling orbit 1d3 feet from her head. Thereafter, a stone must be grasped or netted to separate it from its owner. The owner may voluntarily seize and stow a stone (to keep it safe while she is sleeping, for example), but she loses the benefits of the stone during that time. <em<Ioun stones</em> have AC 24, 10 hit points, and hardness 5.</p><p><em>Deep red</em> - Shape: Sphere; +2 enhancement bonus to Dexterity.</p>",
+        12,8000.00,"Moderate varied",
+        "CL 12th, Craft Wondrous Item, creator must be 12th level"),
+        
+    (166,2,"Ioun Stone - Incandescent Blue",
+        "<p>These crystalline stones always float in the air and must be within 3 feet of their owner to be of any use. When a character first aquires a stone, she must hold it then release it, whereupon it takes up a circling orbit 1d3 feet from her head. Thereafter, a stone must be grasped or netted to separate it from its owner. The owner may voluntarily seize and stow a stone (to keep it safe while she is sleeping, for example), but she loses the benefits of the stone during that time. <em<Ioun stones</em> have AC 24, 10 hit points, and hardness 5.</p><p><em>Incandescent blue</em> - Shape: Sphere; +2 enhancement bonus to Wisdom.</p>",
+        12,8000.00,"Moderate varied",
+        "CL 12th, Craft Wondrous Item, creator must be 12th level"),
+        
+    (167,2,"Ioun Stone - Pale Blue",
+        "<p>These crystalline stones always float in the air and must be within 3 feet of their owner to be of any use. When a character first aquires a stone, she must hold it then release it, whereupon it takes up a circling orbit 1d3 feet from her head. Thereafter, a stone must be grasped or netted to separate it from its owner. The owner may voluntarily seize and stow a stone (to keep it safe while she is sleeping, for example), but she loses the benefits of the stone during that time. <em<Ioun stones</em> have AC 24, 10 hit points, and hardness 5.</p><p><em>Pale blue</em> - Shape: Rhomboid; +2 enhancement bonus to Strength.</p>",
+        12,8000.00,"Moderate varied",
+        "CL 12th, Craft Wondrous Item, creator must be 12th level"),
+        
+    (168,2,"Ioun Stone - Pink",
+        "<p>These crystalline stones always float in the air and must be within 3 feet of their owner to be of any use. When a character first aquires a stone, she must hold it then release it, whereupon it takes up a circling orbit 1d3 feet from her head. Thereafter, a stone must be grasped or netted to separate it from its owner. The owner may voluntarily seize and stow a stone (to keep it safe while she is sleeping, for example), but she loses the benefits of the stone during that time. <em<Ioun stones</em> have AC 24, 10 hit points, and hardness 5.</p><p><em>Pink</em> - Shape: Rhomboid; +2 enhancement bonus to Constitution.</p>",
+        12,8000.00,"Moderate varied",
+        "CL 12th, Craft Wondrous Item, creator must be 12th level"),
+        
+    (169,2,"Ioun Stone - Pink and Green",
+        "<p>These crystalline stones always float in the air and must be within 3 feet of their owner to be of any use. When a character first aquires a stone, she must hold it then release it, whereupon it takes up a circling orbit 1d3 feet from her head. Thereafter, a stone must be grasped or netted to separate it from its owner. The owner may voluntarily seize and stow a stone (to keep it safe while she is sleeping, for example), but she loses the benefits of the stone during that time. <em<Ioun stones</em> have AC 24, 10 hit points, and hardness 5.</p><p><em>Pink and green</em> - Shape: Sphere; +2 enhancement bonus to Charisma.</p>",
+        12,8000.00,"Moderate varied",
+        "CL 12th, Craft Wondrous Item, creator must be 12th level"),
+        
+    (170,2,"Ioun Stone - Scarlet and Blue",
+        "<p>These crystalline stones always float in the air and must be within 3 feet of their owner to be of any use. When a character first aquires a stone, she must hold it then release it, whereupon it takes up a circling orbit 1d3 feet from her head. Thereafter, a stone must be grasped or netted to separate it from its owner. The owner may voluntarily seize and stow a stone (to keep it safe while she is sleeping, for example), but she loses the benefits of the stone during that time. <em<Ioun stones</em> have AC 24, 10 hit points, and hardness 5.</p><p><em>Scarlet and blue</em> - Shape: Sphere; +2 enhancement bonus to Intelligence.</p>",
+        12,8000.00,"Moderate varied",
+        "CL 12th, Craft Wondrous Item, creator must be 12th level"),
+        
+    (171,2,"Ioun Stone - Dark Blue",
+        "<p>These crystalline stones always float in the air and must be within 3 feet of their owner to be of any use. When a character first aquires a stone, she must hold it then release it, whereupon it takes up a circling orbit 1d3 feet from her head. Thereafter, a stone must be grasped or netted to separate it from its owner. The owner may voluntarily seize and stow a stone (to keep it safe while she is sleeping, for example), but she loses the benefits of the stone during that time. <em<Ioun stones</em> have AC 24, 10 hit points, and hardness 5.</p><p><em>Dark blue</em> - Shape: Rhomboid; Alertness (as the feat).</p>",
+        12,10000.00,"Moderate varied",
+        "CL 12th, Craft Wondrous Item, creator must be 12th level"),
+        
+    (172,2,"Ioun Stone - Vibrant Purple",
+        "<p>These crystalline stones always float in the air and must be within 3 feet of their owner to be of any use. When a character first aquires a stone, she must hold it then release it, whereupon it takes up a circling orbit 1d3 feet from her head. Thereafter, a stone must be grasped or netted to separate it from its owner. The owner may voluntarily seize and stow a stone (to keep it safe while she is sleeping, for example), but she loses the benefits of the stone during that time. <em<Ioun stones</em> have AC 24, 10 hit points, and hardness 5.</p><p><em>Vibrant purple</em> - Shape: Prism; Stores three levels of spells, as a <em>ring of spell storing</em>. Stored spells must be placed by a spellcaster but can be used by anyone.</p>",
+        12,36000.00,"Moderate varied",
+        "CL 12th, Craft Wondrous Item, creator must be 12th level"),
+        
+    (173,2,"Ioun Stone - Iridescent",
+        "<p>These crystalline stones always float in the air and must be within 3 feet of their owner to be of any use. When a character first aquires a stone, she must hold it then release it, whereupon it takes up a circling orbit 1d3 feet from her head. Thereafter, a stone must be grasped or netted to separate it from its owner. The owner may voluntarily seize and stow a stone (to keep it safe while she is sleeping, for example), but she loses the benefits of the stone during that time. <em<Ioun stones</em> have AC 24, 10 hit points, and hardness 5.</p><p><em>Iridescent</em> - Shape: Spindle; Sustains creature without air.</p>",
+        12,18000.00,"Moderate varied",
+        "CL 12th, Craft Wondrous Item, creator must be 12th level"),
+        
+    (174,2,"Ioun Stone - Pale Lavender",
+        "<p>These crystalline stones always float in the air and must be within 3 feet of their owner to be of any use. When a character first aquires a stone, she must hold it then release it, whereupon it takes up a circling orbit 1d3 feet from her head. Thereafter, a stone must be grasped or netted to separate it from its owner. The owner may voluntarily seize and stow a stone (to keep it safe while she is sleeping, for example), but she loses the benefits of the stone during that time. <em<Ioun stones</em> have AC 24, 10 hit points, and hardness 5.</p><p><em>Pale lavender</em> - Shape: Ellipsoid; Absorbs spells of 4th level or lower. Works like a <em>rod of absorption</em>, but absorbing a spell requires a readied action, and these stones cannot be used to empower spells.</p>",
+        12,20000.00,"Moderate varied",
+        "CL 12th, Craft Wondrous Item, creator must be 12th level"),
+        
+    (175,2,"Ioun Stone - Pearly White",
+        "<p>These crystalline stones always float in the air and must be within 3 feet of their owner to be of any use. When a character first aquires a stone, she must hold it then release it, whereupon it takes up a circling orbit 1d3 feet from her head. Thereafter, a stone must be grasped or netted to separate it from its owner. The owner may voluntarily seize and stow a stone (to keep it safe while she is sleeping, for example), but she loses the benefits of the stone during that time. <em<Ioun stones</em> have AC 24, 10 hit points, and hardness 5.</p><p><em>Pearly white</em> - Shape: Spindle; Regenerates 1 point of damage per hour. This regeneration works like a <em>ring of regeneration</em> (It only cures damage taken while the character is using the stone.)</p>",
+        12,20000.00,"Moderate varied",
+        "CL 12th, Craft Wondrous Item, creator must be 12th level"),
+        
+    (176,2,"Ioun Stone - Pale Green",
+        "<p>These crystalline stones always float in the air and must be within 3 feet of their owner to be of any use. When a character first aquires a stone, she must hold it then release it, whereupon it takes up a circling orbit 1d3 feet from her head. Thereafter, a stone must be grasped or netted to separate it from its owner. The owner may voluntarily seize and stow a stone (to keep it safe while she is sleeping, for example), but she loses the benefits of the stone during that time. <em<Ioun stones</em> have AC 24, 10 hit points, and hardness 5.</p><p><em>Pale green</em> - Shape: Prism; +1 competence bonus on attack rolls, saves, skill checks, and ability checks.</p>",
+        12,30000.00,"Moderate varied",
+        "CL 12th, Craft Wondrous Item, creator must be 12th level"),
+        
+    (177,2,"Ioun Stone - Orange",
+        "<p>These crystalline stones always float in the air and must be within 3 feet of their owner to be of any use. When a character first aquires a stone, she must hold it then release it, whereupon it takes up a circling orbit 1d3 feet from her head. Thereafter, a stone must be grasped or netted to separate it from its owner. The owner may voluntarily seize and stow a stone (to keep it safe while she is sleeping, for example), but she loses the benefits of the stone during that time. <em<Ioun stones</em> have AC 24, 10 hit points, and hardness 5.</p><p><em>Orange</em> - Shape: Prism; +1 caster level.</p>",
+        12,30000.00,"Moderate varied",
+        "CL 12th, Craft Wondrous Item, creator must be 12th level"),
+        
+    (178,2,"Ioun Stone - Lavender and Green",
+        "<p>These crystalline stones always float in the air and must be within 3 feet of their owner to be of any use. When a character first aquires a stone, she must hold it then release it, whereupon it takes up a circling orbit 1d3 feet from her head. Thereafter, a stone must be grasped or netted to separate it from its owner. The owner may voluntarily seize and stow a stone (to keep it safe while she is sleeping, for example), but she loses the benefits of the stone during that time. <em<Ioun stones</em> have AC 24, 10 hit points, and hardness 5.</p><p><em>Lavender and green</em> - Shape: Ellipsoid; Absorbs spells of 8th level or lower. Works like a <em>rod of absorption</em>, but absorbing a spell requires a readied action, and these stones cannot be used to empower spells.</p>",
+        12,40000.00,"Moderate varied",
+        "CL 12th, Craft Wondrous Item, creator must be 12th level"),
+        
+    (179,2,"Iron Bands of Binding",
+        "<p>When initially discovered, this very potent item appears to be a 3-inch-diameter rusty iron sphere with bandings on the globe.</p><p>When the proper command word is spoken and the spherical iron device is hurled at the opponent, the bands expand and then contract to bind the target creature on a successful ranged touch attack. A single Large or smaller creature can be captured thus and held immobile until the command word is spoken to bring the bands into spherical form again. The creature can break (and ruin) the bands with a DC 30 Strength check or escape from them with a DC 30 Escape Artist check. <em>Iron Bands of Binding</em> are usable once per day.</p>",
+        13,26000.00,"Strong evocation",
+        "CL 13th, Craft Wondrous Item, grasping hand"),
+        
+    (180,2,"Iron Flask",
+        "<p>These special containers are typically inlaid with runes of silver and stoppered by a brass plug bearing a seal engraved with sigils, glyphs, and special symbols. When the user speaks the command word, he can force any creature from another plane into the container, provided that creature fails a DC 19 Will save. The range of this effect is 60 feet. Only one creature at a time can be so contained. Loosing the stopper frees the captured creature.</p><p>The command word can be given only once per day.</p><p>If the individual freeing the captured creature speaks the command word, the creature can be forced to serve for 1 hour. If freed without the command word, the creature acts according to its natural inclinations. (It usually attacks the user, unless it perceives a good reason not to.) Any attempt to force the same creature into the flask a second time provides it a +2 bonus on its saving throw and makes it hostile. A newly discovered bottle might contain any of the following:</p><table><thead><tr><th><strong>d%</strong></th><th><strong>Contents</strong></th></tr></thead><tbody><tr><td>01-50</td><td>Empty</td></tr><tr><td>51-54</td><td>Large air elemental</td></tr><tr><td>55-58</td><td>Arrowhawk</td></tr><tr><td>59-62</td><td>Large earth elemental</td></tr><tr><td>63-66</td><td>Xorn</td></tr><tr><td>67-70</td><td>Large fire elemental</td></tr><tr><td>71-74</td><td>Salamander</td></tr><tr><td>75-78</td><td>Large water elemental</td></tr><tr><td>79-82</td><td>Adult tojanida</td></tr><tr><td>83-84</td><td>Red slaad</td></tr><tr><td>85-86</td><td>Formian taskmaster</td></tr><tr><td>87</td><td>Demon (vrock)</td></tr><tr><td>88</td><td>Demon (hezrou)</td></tr><tr><td>89</td><td>Demon (glabrezu)</td></tr><tr><td>90</td><td>Demon (succubus)</td></tr><tr><td>91</td><td>Devil (osyluth)</td></tr><tr><td>92</td><td>Devil (barbazu)</td></tr><tr><td>93</td><td>Devil (erinyes)</td></tr><tr><td>94</td><td>Devil (cornugon)</td></tr><tr><td>95</td><td>Celestial (avoral)</td></tr><tr><td>96</td><td>Celestial (ghaele)</td></tr><tr><td>97</td><td>Formian myrmarch</td></tr><tr><td>98</td><td>Blue slaad</td></tr><tr><td>99</td><td>Rakshasa</td></tr><tr><td>100</td><td>Demon (balor) or devil (pit fiend) - equal chance for either</td></tr></tbody></table><p>The cost given is assuming the flask is empty.</p>",
+        20,170000.00,"Strong conjuration",
+        "CL 20th, Craft Wondrous Item, trap the soul"),
+        
+    (181,2,"Restorative Ointment",
+        "<p>A jar of this unguent is 3 inches in diameter and 1 inch deep and contains 5 applications. Placed upon a poisoned wound or swallowed, the ointment detoxifies any poison (as <em>neutralize poison</em>). Applied to a diseased area, it removed disease (as <em>remove disease</em>). Rubbed on a wound, the ointment cures 1d8+5 points of damage (as <em>cure light wounds</em>).</p>",
+        5,4000.00,"Faint conjuration",
+        "CL 5th, Craft Wondrous Item, cure light wounds, neutralize poison, remove disease"),
+        
+    (182,2,"Lantern of Revealing",
+        "<p>This lantern operates as a normal hooden lantern. While it is lit, it also reveals all invisible creatures and objects within 25 feet of it, just like the spell <em>invisibility purge</em>.</p>",
+        5,30000.00,"Faint evocation",
+        "CL 5th, Craft Wondrous Item, invisibility purge");
