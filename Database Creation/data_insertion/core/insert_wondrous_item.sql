@@ -1083,4 +1083,169 @@ INSERT INTO Wondrous_Item VALUES
     (217,2,"Necklace of Fireballs - Type VII",
         "<p>This device appears to be nothing but beads on a string, sometimes with the ends tied together to form a necklace. (It does not count as an item worn around the neck for the purpose of determining which of a character's worn magic items is effective.) If a character holds it, however, all can see the strand as it really is - a golden chain from which hang a number of golden spheres. The spheres are detachable by the wearer (and only by the wearer), who can easily hurl one of them up to 70 feet. When a sphere arrives at the end of its trajectory, it detonates as a <em>fireball</em> spell (Reflex DC 14 half).</p><p>Spheres come in different strengths, ranging from those that deal 2d6 points of fire damage to those that deal 10d6. The amrket price of a sphere is 150 gp for each die of damage it deals (ranging from 300 gp for a 2d6 sphere to 1,500 gp for a 10d6 sphere).</p><p>Each <em>necklace of fireballs</em> contains a combination of spheres of various strengths. Some traditional combinations, designated types I through VII, are detailed below.</p><table><thead><tr><th><strong>Necklace</strong></th><th><strong>10d6</strong></th><th><strong>9d6</strong></th><th><strong>8d6</strong></th><th><strong>7d6</strong></th><th><strong>6d6</strong></th><th><strong>5d6</strong></th><th><strong>4d6</strong></th><th><strong>3d6</strong></th><th><strong>2d6</strong></th></tr></thead><tbody><tr><td>Type I</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>1</td><td>-</td><td>2</td><td>-</td></tr><tr><td>Type II</td><td>-</td><td>-</td><td>-</td><td>-</td><td>1</td><td>-</td><td>2</td><td>-</td><td>2</td></tr><tr><td>Type III</td><td>-</td><td>-</td><td>-</td><td>1</td><td>-</td><td>2</td><td>-</td><td>4</td><td>-</td></tr><tr><td>Type IV</td><td>-</td><td>-</td><td>1</td><td>-</td><td>2</td><td>-</td><td>2</td><td>-</td><td>4</td></tr><tr><td>Type V</td><td>-</td><td>1</td><td>-</td><td>2</td><td>-</td><td>2</td><td>-</td><td>2</td><td>-</td></tr><tr><td>Type VI</td><td>1</td><td>-</td><td>2</td><td>-</td><td>2</td><td>-</td><td>4</td><td>-</td><td>-</td></tr><tr><td>Type VII</td><td>1</td><td>2</td><td>-</td><td>2</td><td>-</td><td>2</td><td>-</td><td>2</td><td>-</td></tr></tbody></table><p>For example, a type III necklace has seven spheres - one 7-dice, two 5-dice, and four 3-dice <em>fireballs</em>.</p><p>If the necklace is being worn or carried by a character who fails her saving throw against a magical fire attack, the item must make a saving throw as well (with a save bonus of +7). If the necklace fails to save, all its remaining spheres detonate simultaneously, often with regrettable consequences for the wearer.</p>",
         10,8700.00,"Moderate evocation",
-        "CL 10th, Craft Wondrous Item, fireball");
+        "CL 10th, Craft Wondrous Item, fireball"),
+        
+    (218,2,"Marvelous Pigments",
+        "<p>These magic emulsions enable their possessor to create actual, permanent objects simply by depicting their form in two dimensions. The pigments are applied by a stick tipped with bristles, hair, or fur. The emulsion flows from the application to form the desired object as the artist concentrates on the desired image. One pot of <em>marvelous pigments</em> is sufficient to create a 1,000-cubic-foot object by depicting it two-dimensionally over a 100-square-foot surface. Thus, a 10-foot-by-10-foot rendition of a pit would result in an actual 10-foot-by-10-foot-by-10-foot pit; a 10-foot-by-10-foot depiction of a room would result in a 10-foot-by-10-foot-by-10-foot room; and so on.</p><p>Only normal, inanimate objects can be created - doors, pits, flowers, trees, cells, and so on. Creatures can't be created. The pigments must be applied to a surface (a floor, wall, ceiling, door, or the like). It takes 10 minutes and a DC 15 Craft (painting) check to depict an object with the pigments. <em>Marvelous pigments</em> cannot create magic items. Objects of value depicted by the pigments - precious metals, gems, jewelry, ivory, and so on - appear to be valuable but are really made of tin, lead, paste, brass, bone, and other such inexpensive materials. The user can create normal weapons, armor, and any other mundane item (including foodstuffs) whose value does not exceed 2,000 gp.</p><p>Items created are not magical; the effect is instantaneous.</p>",
+        15,4000.00,"Strong conjuration",
+        "CL 15th, Craft Wondrous Item, major creation"),
+        
+    (219,2,"Orb of Storms",
+        "<p>This glass sphere is 8 inches in diameter. The possessor can call forth all manner of weather, even supernaturally destructive storms. Once per day she can call upon the orb to use a <em>control weather</em> spell, Once per month, she can conjure a <em>storm of vengeance</em>. The possessor of the orb is continually protected by an <em>endure elements</em> effect.</p>",
+        18,48000.00,"Strong varied",
+        "CL 18th, Craft Wondrous Item, control weather, endure elements, storm of vengeance"),
+        
+    (220,2,"Pearl of Power (1st)",
+        "<p>This seemingly normal pearl of average size and luster is a potent aid to all spellcasters who prepare spells (clerics, druids, rangers, paladins, and wizards). Once per day on command, a <em>pearl of power</em> enables the possessor to recall any one spell that she had prepared and then cast. The spell is then prepared again, just as if it had not been cast. The spell must be of a particular level, depending on the pearl. Different pearls exist for recalling once spell per day of each level from 1st through 9th and or the recall of two spells per day (each of a different level, 6th or lower).</p>",
+        17,1000.00,"Strong transmutation",
+        "CL 17th, Craft Wondrous Item, creator must be able to cast spells of the spell level to be recalled"),
+        
+    (221,2,"Pearl of Power (2nd)",
+        "<p>This seemingly normal pearl of average size and luster is a potent aid to all spellcasters who prepare spells (clerics, druids, rangers, paladins, and wizards). Once per day on command, a <em>pearl of power</em> enables the possessor to recall any one spell that she had prepared and then cast. The spell is then prepared again, just as if it had not been cast. The spell must be of a particular level, depending on the pearl. Different pearls exist for recalling once spell per day of each level from 1st through 9th and or the recall of two spells per day (each of a different level, 6th or lower).</p>",
+        17,4000.00,"Strong transmutation",
+        "CL 17th, Craft Wondrous Item, creator must be able to cast spells of the spell level to be recalled"),
+        
+    (222,2,"Pearl of Power (3rd)",
+        "<p>This seemingly normal pearl of average size and luster is a potent aid to all spellcasters who prepare spells (clerics, druids, rangers, paladins, and wizards). Once per day on command, a <em>pearl of power</em> enables the possessor to recall any one spell that she had prepared and then cast. The spell is then prepared again, just as if it had not been cast. The spell must be of a particular level, depending on the pearl. Different pearls exist for recalling once spell per day of each level from 1st through 9th and or the recall of two spells per day (each of a different level, 6th or lower).</p>",
+        17,9000.00,"Strong transmutation",
+        "CL 17th, Craft Wondrous Item, creator must be able to cast spells of the spell level to be recalled"),
+        
+    (223,2,"Pearl of Power (4th)",
+        "<p>This seemingly normal pearl of average size and luster is a potent aid to all spellcasters who prepare spells (clerics, druids, rangers, paladins, and wizards). Once per day on command, a <em>pearl of power</em> enables the possessor to recall any one spell that she had prepared and then cast. The spell is then prepared again, just as if it had not been cast. The spell must be of a particular level, depending on the pearl. Different pearls exist for recalling once spell per day of each level from 1st through 9th and or the recall of two spells per day (each of a different level, 6th or lower).</p>",
+        17,16000.00,"Strong transmutation",
+        "CL 17th, Craft Wondrous Item, creator must be able to cast spells of the spell level to be recalled"),
+        
+    (224,2,"Pearl of Power (5th)",
+        "<p>This seemingly normal pearl of average size and luster is a potent aid to all spellcasters who prepare spells (clerics, druids, rangers, paladins, and wizards). Once per day on command, a <em>pearl of power</em> enables the possessor to recall any one spell that she had prepared and then cast. The spell is then prepared again, just as if it had not been cast. The spell must be of a particular level, depending on the pearl. Different pearls exist for recalling once spell per day of each level from 1st through 9th and or the recall of two spells per day (each of a different level, 6th or lower).</p>",
+        17,25000.00,"Strong transmutation",
+        "CL 17th, Craft Wondrous Item, creator must be able to cast spells of the spell level to be recalled"),
+        
+    (225,2,"Pearl of Power (6th)",
+        "<p>This seemingly normal pearl of average size and luster is a potent aid to all spellcasters who prepare spells (clerics, druids, rangers, paladins, and wizards). Once per day on command, a <em>pearl of power</em> enables the possessor to recall any one spell that she had prepared and then cast. The spell is then prepared again, just as if it had not been cast. The spell must be of a particular level, depending on the pearl. Different pearls exist for recalling once spell per day of each level from 1st through 9th and or the recall of two spells per day (each of a different level, 6th or lower).</p>",
+        17,36000.00,"Strong transmutation",
+        "CL 17th, Craft Wondrous Item, creator must be able to cast spells of the spell level to be recalled"),
+        
+    (226,2,"Pearl of Power (7th)",
+        "<p>This seemingly normal pearl of average size and luster is a potent aid to all spellcasters who prepare spells (clerics, druids, rangers, paladins, and wizards). Once per day on command, a <em>pearl of power</em> enables the possessor to recall any one spell that she had prepared and then cast. The spell is then prepared again, just as if it had not been cast. The spell must be of a particular level, depending on the pearl. Different pearls exist for recalling once spell per day of each level from 1st through 9th and or the recall of two spells per day (each of a different level, 6th or lower).</p>",
+        17,49000.00,"Strong transmutation",
+        "CL 17th, Craft Wondrous Item, creator must be able to cast spells of the spell level to be recalled"),
+        
+    (227,2,"Pearl of Power (8th)",
+        "<p>This seemingly normal pearl of average size and luster is a potent aid to all spellcasters who prepare spells (clerics, druids, rangers, paladins, and wizards). Once per day on command, a <em>pearl of power</em> enables the possessor to recall any one spell that she had prepared and then cast. The spell is then prepared again, just as if it had not been cast. The spell must be of a particular level, depending on the pearl. Different pearls exist for recalling once spell per day of each level from 1st through 9th and or the recall of two spells per day (each of a different level, 6th or lower).</p>",
+        17,64000.00,"Strong transmutation",
+        "CL 17th, Craft Wondrous Item, creator must be able to cast spells of the spell level to be recalled"),
+        
+    (228,2,"Pearl of Power (9th)",
+        "<p>This seemingly normal pearl of average size and luster is a potent aid to all spellcasters who prepare spells (clerics, druids, rangers, paladins, and wizards). Once per day on command, a <em>pearl of power</em> enables the possessor to recall any one spell that she had prepared and then cast. The spell is then prepared again, just as if it had not been cast. The spell must be of a particular level, depending on the pearl. Different pearls exist for recalling once spell per day of each level from 1st through 9th and or the recall of two spells per day (each of a different level, 6th or lower).</p>",
+        17,81000.00,"Strong transmutation",
+        "CL 17th, Craft Wondrous Item, creator must be able to cast spells of the spell level to be recalled"),
+        
+    (229,2,"Pearl of Power (two spells)",
+        "<p>This seemingly normal pearl of average size and luster is a potent aid to all spellcasters who prepare spells (clerics, druids, rangers, paladins, and wizards). Once per day on command, a <em>pearl of power</em> enables the possessor to recall any one spell that she had prepared and then cast. The spell is then prepared again, just as if it had not been cast. The spell must be of a particular level, depending on the pearl. Different pearls exist for recalling once spell per day of each level from 1st through 9th and or the recall of two spells per day (each of a different level, 6th or lower).</p>",
+        17,70000.00,"Strong transmutation",
+        "CL 17th, Craft Wondrous Item, creator must be able to cast spells of the spell level to be recalled"),
+        
+    (230,2,"Periapt of Health",
+        "<p>The wearer of this blue gem on a silver chain is immune to disease, including supernatural diseases (see Table 8-2 Diseases on page 292 of the DMG).</p>",
+        5,7500.00,"Faint conjuration",
+        "CL 5th, Craft Wondrous Item, remove disease"),
+        
+    (231,2,"Periapt of Proof against Poison",
+        "<p>This item is a brilliant-cut black gem on a delicate silver chain. The wearer is immune to poison, although poisons still active when the periapt is first donned still run their course.</p>",
+        5,27000.00,"Faint conjuration",
+        "CL 5th, Craft Wondrous Item, neutralize poison"),
+        
+    (232,2,"Periapt of Wisdom +2",
+        "<p>Although it appears to be a normal pearl on a light chain, a <em>periapt of wisdom</em> actually increases the possessor's Wisdom score in the form of an enhancement bonus of +2, +4, or +6 (depending on the individual item).</p>",
+        8,4000.00,"Moderate transmutation",
+        "CL 8th, Craft Wondrous Item, owl's wisdom"),
+        
+    (233,2,"Periapt of Wisdom +4",
+        "<p>Although it appears to be a normal pearl on a light chain, a <em>periapt of wisdom</em> actually increases the possessor's Wisdom score in the form of an enhancement bonus of +2, +4, or +6 (depending on the individual item).</p>",
+        8,16000.00,"Moderate transmutation",
+        "CL 8th, Craft Wondrous Item, owl's wisdom"),
+        
+    (234,2,"Periapt of Wisdom +6",
+        "<p>Although it appears to be a normal pearl on a light chain, a <em>periapt of wisdom</em> actually increases the possessor's Wisdom score in the form of an enhancement bonus of +2, +4, or +6 (depending on the individual item).</p>",
+        8,36000.00,"Moderate transmutation",
+        "CL 8th, Craft Wondrous Item, owl's wisdom"),
+        
+    (235,2,"Periapt of Wound Closure",
+        "<p>This stone is bright red and dangles on a gold chain. The wearer of this periapt automatically becomes stable if his hit points drop to between -1 and -9 inclusive. The periapt doubles the wearer's normal rate of healing or allows normal healing of wounds that would not do so normally. Hit point damage that involves bleeding (such as damage caused by the horned devil's infernal wound ability; see page 55 of the <em>Monster Manual</em>), is negates for the wearer of the periapt, but he is still susceptible to damage from bleeding that causes Constitution loss, such as that deal by a wounding weapon.</p>",
+        10,15000.00,"Moderate conjuration",
+        "CL 10th, Craft Wondrous Item, heal"),
+        
+    (236,2,"Phylactery of Faithfulness",
+        "<p>This item is a small box containing religious scripture affixed to a leather cord and tied around the forehead. There is no mundane way to determine what function this religious item performs until it is worn. The wearer of a <em>phylactery of faithfulness</em> is aware of any action or item that could adversely affect his alignment and his standing with his deity, including magical effects. He acquires this information prior to performing such an action or becoming associated with such an item if he takes a moment to contemplate the act.</p>",
+        1,1000.00,"Faint divination",
+        "CL 1st, Craft Wondrous Item, detect chaos, detect evil, detect good, detect law"),
+        
+    (237,2,"Phylactery of Undead Turning",
+        "<p>This item is a boon to any character able to turn undead, allowing him to do so as if his class level were four levels higher than it actually is.</p>",
+        10,11000.00,"Moderate necromancy [good]",
+        "CL 10th, Craft Wondrous Item, 10th-level cleric"),
+        
+    (238,2,"Pipes of Haunting",
+        "<p>This magic item appears to be a small set of pan pipes. When played by a person who succeeds on a DC 15 Perform (wind instruments) check, the pipes create an eerie, spellbinding tune. Those within 30 feet who hear the music must succeed on a DC 13 Will save or become frightened for 4 rounds. Creatures with 6 or more Hit Dice are unaffected. <em>Pipes of haunting</em> can be sounded twice a day.</p>",
+        4,6000.00,"Faint necromancy",
+        "CL 4th, Craft Wondrous Item, scare"),
+        
+    (239,2,"Pipes of Pain",
+        "<p>These appear to be like any other standard set of pipes with nothing to reveal their true nature. When played by someone who succeeds on a DC 15 Perform (wind instruments) check, the pipes create a wondrous melody. All within 30 feet must make a DC 14 Will save or be fascinated by the sound. (This is a mind-affecting sonic compulsion.)</p><p>As soon as the piping stops, all those affected are stricken by intense pain at even the slightest noise. Unless a character is in a totally silent area, she takes 1d4 points of sonic damage per round for 2d4 rounds. During this time, damage from sonic attacks, such as <em>sound burst</em>, is doubled. Thereafter, the least noise causes an affected character to become shaken (except when she is in a totally silent area). This hypersensitivity is a curse and therefore hare to remove (see the <em>bestow curse</em> spell).</p>",
+        6,12000.00,"Faint enchantment and evocation",
+        "CL 6th, Craft Wondrous Item, creator must have the bardic music class feature, sound burst"),
+        
+    (240,2,"Pipes of the Sewers",
+        "<p>These wooden pipes appear ordinary, but if the possessor learns the proper tune, he can attract 1d3 rat swarms (see page 239 of the <em>Monster Manual</em>) if rats are within 400 feet. For each 50-foot distance the rats have to travel, there is a 1-round delay. The piper must continue playing until the rats appear, and when they do so, the piper must make a DC 10 Perform (wind instruments) check. Success means that they obey the piper's telepathic commands so long as he continues to play. Failure indicates that they turn on the piper. If for any reason the piper ceases playing, the rats leave immediately. If they are called again within a day, the Perform check DC is 15.</p><p>If the rats are under the control of another creature, add the HD of the controller to the Perform check DC. Once control is assumed, another check is required each round to maintain it if the other creature is actively seeking to reassert its control.</p>",
+        2,1150.00,"Faint conjuration",
+        "CL 2nd, Craft Wondrous Item, charm animal, summon nature's ally I, wild empathy ability"),
+        
+    (241,2,"Pipes of Sounding",
+        "<p>When played by a character who has the Perform (wind instruments) skill, these pipes create a variety of sounds. The figment sounds are the equivalent of <em>ghost sound</em> (caster level 2nd).</p>",
+        2,1800.00,"Faint illusion",
+        "CL 2nd, Craft Wondrous Item, ghost sound"),
+        
+    (242,2,"Portable Hole",
+        "<p>A portable hole is a circle of cloth spun from the webs of a phase spider interwoven with strands of ether and beams of starlight. When opened fully, a portable hold is 6 feet in diameter, but it can be folded up to be as small as a pocket handkerchief. When spread upon any surface, it causes an extradimensional space 10 feet deep to come into being. This hole can be picked up from inside or out by simply taking hold of the edges of the cloth and folding it up. Either way, the entrance disappears but anything inside the hole remains.</p><p>The only air in the hole is that which enters when the hole is opened. It contains enough air to supply one Medium creature or two Small creatures for 10 minutes. (See Suffocation, page 304 of the DMG.) The cloth does not accumulate weight even if its hole is filled (with gold, for example). Each <em>portable hold</em> opens on its own particular nondimensional space. If a <em>bag of holding</em> (see page 248 of the DMG) is placed within a <em>portable hole</em>, a rift to the Astral Plane is torn in that place. Both the bag and the cloth are sucked into the void and forever lost. If a <em>portable hole</em> is placed within a <em>bag of holding</em>, it opens a gate to the Astral Plane. The hole, the bag, and any creatures within a 10-foot radius are drawn there, the <em>portable hole</em> and <em>bag of holding</em> being destroyed in the process.</p>",
+        12,20000.00,"Moderate conjuration",
+        "CL 12th, Craft Wondrous Item, place shift"),
+        
+    (243,2,"Feather Token - Anchor",
+        "<p>Each of these items is a small feather that has a power to suit a special need. Each token is usable once.</p><p><em>Anchor</em>: A token useful to moor a craft in water so as to render it immobile for up to one day.</p>",
+        12,50.00,"Moderate conjuration",
+        "CL 12th, Craft Wondrous Item, major creation"),
+        
+    (244,2,"Feather Token - Bird",
+        "<p>Each of these items is a small feather that has a power to suit a special need. Each token is usable once.</p><p><em>Bird</em>: A token that can be used to deliver a small written message unerringly to a designated target as would a carrier pidgeon. The token lasts as long as it takes to carry the message.</p>",
+        12,300.00,"Moderate conjuration",
+        "CL 12th, Craft Wondrous Item, major creation"),
+        
+    (245,2,"Feather Token - Fan",
+        "<p>Each of these items is a small feather that has a power to suit a special need. Each token is usable once.</p><p><em>Fan</em>: A token that forms a huge flapping fan, causing a breeze of sufficient strength to properl one ship (about 25 mph). This wind is not cumulative withn existing wind speed - if a sever wind already blowing, for example, this wind cannot be added to it to create a windstorm. The token can, however, be used to lessen existing winds, creating an area of relative calm or lighter winds (but wave size in a storm is not affected). The fan can be used for up to 8 hours. It does not function on land.</p>",
+        12,200.00,"Moderate conjuration",
+        "CL 12th, Craft Wondrous Item, major creation"),
+        
+    (246,2,"Feather Token - Swan Boat",
+        "<p>Each of these items is a small feather that has a power to suit a special need. Each token is usable once.</p><p><em>Swan Boat</em>: A token that forms a swanlike boat capable of moving on water at a speed of 60 feet. It can carry eight horses and gear or thirty-two Medium characters or any equivalent combination. The boat lasts for one day.</p>",
+        12,450.00,"Moderate conjuration",
+        "CL 12th, Craft Wondrous Item, major creation"),
+        
+    (247,2,"Feather Token - Tree",
+        "<p>Each of these items is a small feather that has a power to suit a special need. Each token is usable once.</p><p><em>Tree</em>: A token that causes a great oak to spring into being (5-foot-diameter trunk, 60-foot height, 40-foot top diameter). This is an instantaneous effect.</p>",
+        12,400.00,"Moderate conjuration",
+        "CL 12th, Craft Wondrous Item, major creation"),
+        
+    (248,2,"Feather Token - Whip",
+        "<p>Each of these items is a small feather that has a power to suit a special need. Each token is usable once.</p><p><em>Whip</em>: A token that forms into a huge leather whip and wields itself against any opponent desired just like a dancing weapon (see page 224 of the DMG). The weapon has a +10 base attack bonus, does 1d6+1 points of damage, has a +1 enhancement bonus on attack and damage rolls, and makes a free grapple attack (with a +15 attack bonus) if it hits. The whip lasts no longer than 1 hour.</p>",
+        12,500.00,"Moderate conjuration",
+        "CL 12th, Craft Wondrous Item, major creation"),
+        
+    (249,2,"Efficient Quiver",
+        "<p>This appears to be a typical arrow container capable of holding about twenty arrows. It has three distinct portions, each with a nondimensional space allowing it to store far more than would normally be possible. The first and smallest one can contains up to sixty objects of the same general size and shape as a javelin. The third and longest portion of the case contains as many as six objects of the same general size and shape as a bow (spears, staffs, or the like). Once the owner has filled it, the quiver can produce any item she wishes, as if from a regular quiver or scabbard. The <em>efficient quiver</em> weighs the same no matter what's placed inside it.</p>",
+        9,1800.00,"Moderate conjuration",
+        "CL 9th, Craft Wondrous Item, secret chest"),
+        
+    (250,2,"Ring Gates",
+        "<p>These always come in pairs - two iron rings, each about 18 inches in diameter. The rings must be on the same place of existence and within 100 miles of each other to function. Whatever is put through one ring comes out the other, and up to 100 pounds of material can be transferred each day. (Objects only partially pushed through and then retracted do not count.) This useful device allows for instantaneous transport of items or messages, and even attacks. A character can reach through to grab things near the other ring, or even stab a weapon through if so desired. Alternatively, a character could stick his head through to look around. A spellcaster could even cast a spell through a <em>ring gate</em>. A small character can make a DC 13 Escape Artist check to slip through. Creatures of Tiny, Diminutive, or Fine size can pass through easily. Each ring has an 'entry side' and an 'exit side', both marked with appropriate symbols.</p>",
+        17,40000.00,"Strong conjuration",
+        "CL 17th, Craft Wondrous Item, gate");
