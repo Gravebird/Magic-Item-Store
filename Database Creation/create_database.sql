@@ -131,7 +131,7 @@ CREATE TABLE Magic_Weapon (
 );
 
 CREATE TABLE Wondrous_Item (
-	Magic_Item_ID int NOT NULL UNIQUE,
+	Magic_Item_ID int NOT NULL UNIQUE AUTO_INCREMENT,
     Book_ID int NOT NULL,
     Magic_Item_Name varchar(46) NOT NULL,
     Magic_Item_Description TEXT,
