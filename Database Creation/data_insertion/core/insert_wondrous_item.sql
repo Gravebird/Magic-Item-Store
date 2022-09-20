@@ -1342,4 +1342,154 @@ INSERT INTO Wondrous_Item
     (2,"Stone of Alarm",
         "<p>This stone cube, when given the command word, affixes itself to any object. If that object is touched thereafter by anyone who does not first speak that same command word, the stone emits a piercing screech for 1 hour that can be heard up to a quarter-mile away (assuming no intervening barriers).</p>",
         3,2700.00,"Faint abjuration",
-        "CL 3rd, Craft Wondrous Item, alarm");
+        "CL 3rd, Craft Wondrous Item, alarm"),
+        
+    (2,"Stone of Controlling Earth Elementals",
+        "<p>A stone of this nature is typically an oddly shaped bit of roughly polished rock. The possessor of such a stone need but utter a few words of summoning, and a Huge earth elemental comes to the summoner. the summoning words require 1 full round to speak, and in all ways the stone functions as the <em>summon monster VII</em> spell. (If sand or rough, unhewn stone is the summoning medium, the elemental that comes is Large instead, and the stone functions as the <em>summon monster VI</em> spell.) The elemental appears in 1d4 rounds. For detailed information about elementals, see page 95 of the <em>Monster Manual</em>. Only one elemental can be summoned at a time. A new elemental requires a new patch of earth or stone, which cannot be accessed until after the first elemental disappears (is dispelled, dismissed, or slain).</p>",
+        13,100000.00,"Strong conjuration",
+        "CL 13th, Craft Wondrous Item, summon monster VI, summon monster VII"),
+        
+    (2,"Stone of Good Luck (Luckstone)",
+        "<p>This stone is typically a bit of rough polished agate or some similar mineral. Its possessor gains a +1 luck bonus on saving throws, ability checks, and skill checks.</p>",
+        5,20000.00,"Faint evocation",
+        "CL 5th, Craft Wondrous Item, divine favor"),
+        
+    (2,"Stone Horse (Courser)",
+        "<p>Each item of this nature appears to be a fully sized, roughly hewn statue of a horse, carved from some type of hard stone. A command word brings the steed to life, enabling it to carry a burden and even to attack as if it were a real horse of the appropriate kind.</p><p>A <em>stone horse</em> can carry 1,000 pounds tirelessly and never needs to rest or feed. Damage dealt to it can be repaired by first using a <em>stone to flesh</em> spell, thus causing the <em>stone horse</em> to become a normal horse that can be healed normally. When fully healed, it automatically reverts to its stone form. While in its stone form, it can be fed gems, healing 1 point of damage for each 50 gp worth of mineral it is given.</p><p>There are two sorts of <em>stone horses</em>.</p><p><em>Courser</em>: This item has the statistics of a heavy horse (see page 273 of the <em>Monster Manual</em>, as well as having hardness 10.</p>",
+        14,10000.00,"Strong transmutation",
+        "CL 14th, Craft Wondrous Item, flesh to stone, animate objects"),
+        
+    (2,"Stone Horse (Destrier)",
+        "<p>Each item of this nature appears to be a fully sized, roughly hewn statue of a horse, carved from some type of hard stone. A command word brings the steed to life, enabling it to carry a burden and even to attack as if it were a real horse of the appropriate kind.</p><p>A <em>stone horse</em> can carry 1,000 pounds tirelessly and never needs to rest or feed. Damage dealt to it can be repaired by first using a <em>stone to flesh</em> spell, thus causing the <em>stone horse</em> to become a normal horse that can be healed normally. When fully healed, it automatically reverts to its stone form. While in its stone form, it can be fed gems, healing 1 point of damage for each 50 gp worth of mineral it is given.</p><p>There are two sorts of <em>stone horses</em>.</p><p><em>Destrier</em>: This item has the statistics of a heavy warhorse (see page 273 of the <em>Monster Manual</em>), as well as having hardness 10.</p>",
+        14,14800.00,"Strong transmutation",
+        "CL 14th, Craft Wondrous Item, flesh to stone, animate objects"),
+        
+    (2,"Stone Salve",
+        "<p>This ointment has two uses. If an ounce is applied to the flesh of a petrified creature, it returns the creature to flesh as the <em>stone to flesh</em> spell. If an ounce of it is applied to the flesh of a nonpetrified creature, it protects the creature as a <em>stoneskin</em> spell.</p><p>Price is per ounce.</p>",
+        13,4000.00,"Strong abjuration and transmutation",
+        "CL 13th, Craft Wondrous Item, flesh to stone, stoneskin"),
+        
+    (2,"Strand of Prayer Beads, Lesser",
+        "<p>This item appears to be a normal string of prayer beads until the owner casts a divine spell. Once that occurs, the owner instantly knows the powers of the prayer beads and how to activate them.</p><p>Each strand includes two or more special beads, each with a different magic power.</p><table><thead><tr><th><strong>Special Bead Type</strong></th><th><strong>Special Bead Ability</strong></th></tr></thead><tbody><tr><td>Bead of Blessing</td><td>Wearer can cast <em>bless</em></td></tr><tr><td>Bead of healing</td><td>Wearer can cast his choice of <em>cure serious wounds</em>, <em>remove blindess/deafness</em>, or <em>remove disease</em>.</td></tr><tr><td>Bead of karma</td><td>Wearer casts his spells at +4 caster level. Effect lasts 10 minutes.</td></tr><tr><td>Bead of smiting</td><td>Wearer can cast <em>chaos hammer</em>, <em>holy smite</em>, <em>order's wrath</em>, or <em>unholy blight</em> (Will DC 17 partial).</td></tr><tr><td>Bead of summons</td><td>Summons a powerful creature of appropriate alignment from the Outer Planes (an angel, devil, etc.) to aid the wearer for one day. (If the wearer uses the <em>bead of summons</em> to summon a deity's emissary frivolously, the deity takes that character's items and places a <em>geas</em> upon him as punishment in the very least.)</td></tr><tr><td>Bead of wind walking</td><td>Wearer can cast <em>wind walk</em>.</td></tr></tbody></table><p>A <em>lesser strand of prayer beads</em> has a <em>bead of blessing</em> and a <em>bead of healing</em>. A <em>strand of prayer beads</em> has a <em>bead of healing</em>, a <em>bead of karma</em>, and a <em>bead of smiting</em>. A <em>greater strand of prayer beads</em> has a <em>bead of healing</em>, a <em>bead of karma</em>, a <em>bead of summons</em>, and a <em>bead of wind walking.</em></p><p>Each special bead can be used once per day, except for the <em>bead of summons</em>, which works only once and then becomes nonmagical. The <em>beads of blessing</em>, <em>smiting</em>, and <em>wind walking</em> function as spell trigger items; the <em>beads of karma</em> and <em>summons</em> can be activated by any character capable of casting divine spells. The owner need not hold or wear the <em>strand of prayer beads</em> in any specific location, as long as he carries it somewhere on his person.</p><p>The power of a special bead is lost if it is removed from the strand. Reduce the price of a strand of prayer beads that is missing one or more beads by the following amounts: <em>bead of blessing</em> -600 gp, <em>bead of healing</em> -9,000 gp, <em>bead of karma</em> -20000 gp, <em>bead of smiting</em> -16800 gp, <em>bead of summons</em> -20000 gp, <em>bead of wind walking</em> -46,800 gp.</p>",
+        5,9600.00,"Faint (many schools)",
+        "CL 5th, Craft Wondrous Item, bless; cure serious wounds, remove blindess/deafness, or remove disease"),
+        
+    (2,"Strand of Prayer Beads",
+        "<p>This item appears to be a normal string of prayer beads until the owner casts a divine spell. Once that occurs, the owner instantly knows the powers of the prayer beads and how to activate them.</p><p>Each strand includes two or more special beads, each with a different magic power.</p><table><thead><tr><th><strong>Special Bead Type</strong></th><th><strong>Special Bead Ability</strong></th></tr></thead><tbody><tr><td>Bead of Blessing</td><td>Wearer can cast <em>bless</em></td></tr><tr><td>Bead of healing</td><td>Wearer can cast his choice of <em>cure serious wounds</em>, <em>remove blindess/deafness</em>, or <em>remove disease</em>.</td></tr><tr><td>Bead of karma</td><td>Wearer casts his spells at +4 caster level. Effect lasts 10 minutes.</td></tr><tr><td>Bead of smiting</td><td>Wearer can cast <em>chaos hammer</em>, <em>holy smite</em>, <em>order's wrath</em>, or <em>unholy blight</em> (Will DC 17 partial).</td></tr><tr><td>Bead of summons</td><td>Summons a powerful creature of appropriate alignment from the Outer Planes (an angel, devil, etc.) to aid the wearer for one day. (If the wearer uses the <em>bead of summons</em> to summon a deity's emissary frivolously, the deity takes that character's items and places a <em>geas</em> upon him as punishment in the very least.)</td></tr><tr><td>Bead of wind walking</td><td>Wearer can cast <em>wind walk</em>.</td></tr></tbody></table><p>A <em>lesser strand of prayer beads</em> has a <em>bead of blessing</em> and a <em>bead of healing</em>. A <em>strand of prayer beads</em> has a <em>bead of healing</em>, a <em>bead of karma</em>, and a <em>bead of smiting</em>. A <em>greater strand of prayer beads</em> has a <em>bead of healing</em>, a <em>bead of karma</em>, a <em>bead of summons</em>, and a <em>bead of wind walking.</em></p><p>Each special bead can be used once per day, except for the <em>bead of summons</em>, which works only once and then becomes nonmagical. The <em>beads of blessing</em>, <em>smiting</em>, and <em>wind walking</em> function as spell trigger items; the <em>beads of karma</em> and <em>summons</em> can be activated by any character capable of casting divine spells. The owner need not hold or wear the <em>strand of prayer beads</em> in any specific location, as long as he carries it somewhere on his person.</p><p>The power of a special bead is lost if it is removed from the strand. Reduce the price of a strand of prayer beads that is missing one or more beads by the following amounts: <em>bead of blessing</em> -600 gp, <em>bead of healing</em> -9,000 gp, <em>bead of karma</em> -20000 gp, <em>bead of smiting</em> -16800 gp, <em>bead of summons</em> -20000 gp, <em>bead of wind walking</em> -46,800 gp.</p>",
+        9,25800.00,"Moderate (many schools)",
+        "CL 9th, Craft Wondrous Item, cure serious wounds, remove blindess/deafness, or remove disease; righteous might; chaos hammer, holy smite, order's wrath, or unholy blight"),        
+    
+    (2,"Strand of Prayer Beads, Greater",
+        "<p>This item appears to be a normal string of prayer beads until the owner casts a divine spell. Once that occurs, the owner instantly knows the powers of the prayer beads and how to activate them.</p><p>Each strand includes two or more special beads, each with a different magic power.</p><table><thead><tr><th><strong>Special Bead Type</strong></th><th><strong>Special Bead Ability</strong></th></tr></thead><tbody><tr><td>Bead of Blessing</td><td>Wearer can cast <em>bless</em></td></tr><tr><td>Bead of healing</td><td>Wearer can cast his choice of <em>cure serious wounds</em>, <em>remove blindess/deafness</em>, or <em>remove disease</em>.</td></tr><tr><td>Bead of karma</td><td>Wearer casts his spells at +4 caster level. Effect lasts 10 minutes.</td></tr><tr><td>Bead of smiting</td><td>Wearer can cast <em>chaos hammer</em>, <em>holy smite</em>, <em>order's wrath</em>, or <em>unholy blight</em> (Will DC 17 partial).</td></tr><tr><td>Bead of summons</td><td>Summons a powerful creature of appropriate alignment from the Outer Planes (an angel, devil, etc.) to aid the wearer for one day. (If the wearer uses the <em>bead of summons</em> to summon a deity's emissary frivolously, the deity takes that character's items and places a <em>geas</em> upon him as punishment in the very least.)</td></tr><tr><td>Bead of wind walking</td><td>Wearer can cast <em>wind walk</em>.</td></tr></tbody></table><p>A <em>lesser strand of prayer beads</em> has a <em>bead of blessing</em> and a <em>bead of healing</em>. A <em>strand of prayer beads</em> has a <em>bead of healing</em>, a <em>bead of karma</em>, and a <em>bead of smiting</em>. A <em>greater strand of prayer beads</em> has a <em>bead of healing</em>, a <em>bead of karma</em>, a <em>bead of summons</em>, and a <em>bead of wind walking.</em></p><p>Each special bead can be used once per day, except for the <em>bead of summons</em>, which works only once and then becomes nonmagical. The <em>beads of blessing</em>, <em>smiting</em>, and <em>wind walking</em> function as spell trigger items; the <em>beads of karma</em> and <em>summons</em> can be activated by any character capable of casting divine spells. The owner need not hold or wear the <em>strand of prayer beads</em> in any specific location, as long as he carries it somewhere on his person.</p><p>The power of a special bead is lost if it is removed from the strand. Reduce the price of a strand of prayer beads that is missing one or more beads by the following amounts: <em>bead of blessing</em> -600 gp, <em>bead of healing</em> -9,000 gp, <em>bead of karma</em> -20000 gp, <em>bead of smiting</em> -16800 gp, <em>bead of summons</em> -20000 gp, <em>bead of wind walking</em> -46,800 gp.</p>",
+        17,95800.00,"Strong (many schools)",
+        "CL 17th, Craft Wondrous Item; cure serious wounds, remove blindness/deafness, or remove disease; righteous might; gate; wind walk"),
+        
+    (2,"Tome of Clear Thought +1",
+        "<p>This heavy book contains instruction on improving memory and logic, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, she gains an inherent bonus of from +1 to +5 (dependig on the type of tome) to her Intelligence score. Once the book is read, the magic disappears from the pages and it becomes a normal book. Because the <em>tome of clear thought</em> provides an inherent bonus, the reader will earn extra skill points when she attains a new level (unlike with the benefit provided by a <em>headband of intellect</em>).</p>",
+        17,27500.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, miracle or wish"),
+        
+    (2,"Tome of Clear Thought +2",
+        "<p>This heavy book contains instruction on improving memory and logic, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, she gains an inherent bonus of from +1 to +5 (dependig on the type of tome) to her Intelligence score. Once the book is read, the magic disappears from the pages and it becomes a normal book. Because the <em>tome of clear thought</em> provides an inherent bonus, the reader will earn extra skill points when she attains a new level (unlike with the benefit provided by a <em>headband of intellect</em>).</p>",
+        17,55000.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, miracle or wish"),
+        
+    (2,"Tome of Clear Thought +3",
+        "<p>This heavy book contains instruction on improving memory and logic, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, she gains an inherent bonus of from +1 to +5 (dependig on the type of tome) to her Intelligence score. Once the book is read, the magic disappears from the pages and it becomes a normal book. Because the <em>tome of clear thought</em> provides an inherent bonus, the reader will earn extra skill points when she attains a new level (unlike with the benefit provided by a <em>headband of intellect</em>).</p>",
+        17,82500.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, miracle or wish"),
+        
+    (2,"Tome of Clear Thought +4",
+        "<p>This heavy book contains instruction on improving memory and logic, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, she gains an inherent bonus of from +1 to +5 (dependig on the type of tome) to her Intelligence score. Once the book is read, the magic disappears from the pages and it becomes a normal book. Because the <em>tome of clear thought</em> provides an inherent bonus, the reader will earn extra skill points when she attains a new level (unlike with the benefit provided by a <em>headband of intellect</em>).</p>",
+        17,110000.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, miracle or wish"),
+        
+    (2,"Tome of Clear Thought +5",
+        "<p>This heavy book contains instruction on improving memory and logic, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, she gains an inherent bonus of from +1 to +5 (dependig on the type of tome) to her Intelligence score. Once the book is read, the magic disappears from the pages and it becomes a normal book. Because the <em>tome of clear thought</em> provides an inherent bonus, the reader will earn extra skill points when she attains a new level (unlike with the benefit provided by a <em>headband of intellect</em>).</p>",
+        17,137500.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, miracle or wish"),
+        
+    (2,"Tome of Leadership and Influence +1",
+        "<p>This ponderous book details suggestions for persuading and inspiring others, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, he gains an inherent bonus of from +1 to +5 (depending on the type of tome) to his Charisma score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,27500.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, miracle or wish"),
+        
+    (2,"Tome of Leadership and Influence +2",
+        "<p>This ponderous book details suggestions for persuading and inspiring others, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, he gains an inherent bonus of from +1 to +5 (depending on the type of tome) to his Charisma score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,55000.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, miracle or wish"),
+        
+    (2,"Tome of Leadership and Influence +3",
+        "<p>This ponderous book details suggestions for persuading and inspiring others, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, he gains an inherent bonus of from +1 to +5 (depending on the type of tome) to his Charisma score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,82500.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, miracle or wish"),
+        
+    (2,"Tome of Leadership and Influence +4",
+        "<p>This ponderous book details suggestions for persuading and inspiring others, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, he gains an inherent bonus of from +1 to +5 (depending on the type of tome) to his Charisma score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,110000.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, miracle or wish"),
+        
+    (2,"Tome of Leadership and Influence +5",
+        "<p>This ponderous book details suggestions for persuading and inspiring others, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, he gains an inherent bonus of from +1 to +5 (depending on the type of tome) to his Charisma score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,137500.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, miracle or wish"),
+        
+    (2,"Tome of Understanding +1",
+        "<p>This thick book contains tips for improving instinct and perception, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, she gains an inherent bonus of from +1 to +5 (depending on the type of tome) to her Wisdom score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,27500.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, miracle or wish"),
+        
+    (2,"Tome of Understanding +2",
+        "<p>This thick book contains tips for improving instinct and perception, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, she gains an inherent bonus of from +1 to +5 (depending on the type of tome) to her Wisdom score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,55000.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, miracle or wish"),
+        
+    (2,"Tome of Understanding +3",
+        "<p>This thick book contains tips for improving instinct and perception, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, she gains an inherent bonus of from +1 to +5 (depending on the type of tome) to her Wisdom score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,82500.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, miracle or wish"),
+        
+    (2,"Tome of Understanding +4",
+        "<p>This thick book contains tips for improving instinct and perception, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, she gains an inherent bonus of from +1 to +5 (depending on the type of tome) to her Wisdom score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,110000.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, miracle or wish"),
+        
+    (2,"Tome of Understanding +5",
+        "<p>This thick book contains tips for improving instinct and perception, but entwined within the words is a powerful magical effect. If anyone reads this book, which takes a total of 48 hours over a minimum of six days, she gains an inherent bonus of from +1 to +5 (depending on the type of tome) to her Wisdom score. Once the book is read, the magic disappears from the pages and it becomes a normal book.</p>",
+        17,137500.00,"Strong evocation (if miracle is used)",
+        "CL 17th, Craft Wondrous Item, miracle or wish"),
+        
+    (2,"Unguent of Timlessness",
+        "<p>When applied to any matter that was once alive (leather, leaves, paper, wood, dead flesh, and so on), this oitment allows that substance to resist the passage of time. Each year of actual time afects the substance as if only a day had passed. The coated object gains a +1 resistance bonus on all saving throws. The unguent never wears off, although it can be magically removed (by dispelling the effect, for instance). One flask contains enough material to coat eight Medium or smaller objects. A Large object counts as two Medium objects, and a Huge object counts as two Large objects.</p>",
+        3,150.00,"Faint transmutation",
+        "CL 3rd, Craft Wondrous Item"),
+        
+    (2,"Universal Solvent",
+        "<p>This substance has the unique property of being able to dissolve <em>sovereign glue</em> (see page 266 of the DMG), tanglefoot bags (page 128 of the <em>Player's Handbook</em>), and the adhesive created by a kuo-toa (page 163 of the <em>Monster Manual</em>. Applying the solvent is a standard action.</p>",
+        20,50.00,"Strong transmutation",
+        "CL 20th, Craft Wondrous Item, disintegrate"),
+        
+    (2,"Vest of Escape",
+        "<p>Hidden within secret pockets of this simple silk vest are lockpicks that provide a +4 competence bonus on Open Lock checks. The vest also grants its wearer a +6 competence bonus on Escape Artist checks.</p>",
+        4,5200.00,"Faint conjuration and transmutation",
+        "CL 4th, Craft Wondrous Item, knock, grease"),
+        
+    (2,"Vestment, Druid's",
+        "<p>This light garment is worn over normal clothing or armor. Most such vestments are green, embroidered with plant or animal motifs. When this item is worn by a character with the wild shape ability, the character can use that ability one additional time each day.</p>",
+        10,10000.00,"Moderate transmutation",
+        "CL 10th, Craft Wondrous Item, polymorph or wild shape ability"),
+        
+    (2,"Well of Many Worlds",
+        "<p>This strange, interdimensional device looks just like a <em>portable hole</em>. Anything placed within it is immediately cast to another world - a parallel world, another planet, or a different plane, at the DM's option or by random determination. If the well is moved, the random factor again comes into play. It can be picked up, folded, or rolled, just as a <em>portable hole</em> can be. Objects from the world the well touches can come through the opening just as easily as from the initiating place. (It is a two-way portal.)</p>",
+        17,82000.00,"Strong conjuration",
+        "CL 17th, Craft Wondrous Item, gate"),
+        
+    (2,"Wind Fan",
+        "<p>A <em>wind fan</em> appears to be nothing more than a wood and papyrus or cloth instrument with which to create a cooling breeze. By uttering the command word, its possessor causes the fan to generate air movement duplicating a <em>gust of wind</em> spell. The fan can be used once per day with no risk. If it is used more frequently, there is a 20% cumulative chance per usage during that day that the device tears into useless, nonmagical tatters.</p>",
+        5,5500.00,"Faint evocation",
+        "CL 5th, Craft Wondrous Item, gust of wind"),
+        
+    (2,"Wings of Flying",
+        "<p>A pair of these wings might appear to be nothing more than a plain cloak of old, black cloth, or they could be as elegant as a long cape of blue feathers. When the wearer speaks the command word, the cloak turns into a pair of bat or bird winds that empower her to fly with a speed of 60 feet (good maneuverability).</p>",
+        10,54000.00,"Moderate transmutation",
+        "CL 10th, Craft Wondrous Item, fly");
