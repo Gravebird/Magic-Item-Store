@@ -26,6 +26,9 @@ DROP TABLE IF EXISTS Armor;
 DROP TABLE IF EXISTS Material;
 DROP TABLE IF EXISTS Book;
 
+-- Drop all users - start from scratch
+
+DROP USER IF EXISTS 'dnd_user'@'localhost';
 -- Create all tables
 
 SELECT "Creating database...";
@@ -248,6 +251,20 @@ CREATE TABLE Class_Spells (
     FOREIGN KEY (Class_ID) REFERENCES Class(Class_ID),
     FOREIGN KEY (Spell_ID) REFERENCES Spell(Spell_ID)
 );
+
+-- Create users
+
+SELECT "Creating users...";
+
+CREATE USER 'dnd_user'@'localhost' IDENTIFIED BY 'A00768125';
+
+-- Apply grants
+
+SELECT "Granting permissions...";
+
+GRANT SELECT ON * TO 'dnd_user'@'localhost';
+
+FLUSH PRIVILEGES;
 
 
 -- Create indexes
