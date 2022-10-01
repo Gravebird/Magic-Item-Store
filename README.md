@@ -18,25 +18,26 @@ This project uses a mysql database and a node.js server to populate item shops i
 - Material (if any) is selected randomly from the database
 - Enchantments are selected randomly from the database
 - Armor is also modular, there are a near-infinite number of possible combinations
-### Scrolls (In-progress)
+### Scrolls
 - Scrolls have spells on them, which are selected randomly from the database
 - Any spell could be a scroll
-### Wands (In-progress)
+### Wands
 - Wands have spells on them, which are selected randomly from the database
 - Only spells 3rd level or below can be put into a wand
-### Other features - not started yet
-- Staffs
-- Rings
-- Rods
-- Wonderous Items
-- Potions
+### Potions
+- Potions have spells stored in them, which can be selected randomly from the database
+- I have chosen to just include the potions that are given as purchasable in the source books. Otherwise we might find potions of poison and other harmful potions in the stores
+### Staffs / Rings / Rods / Wondrous Items
+- These items are pre-generated in the source books
+- I may add custom ones to the database in the future
+### In Progress
 - Store saved data in database instead of JSON
+- Overhaul magic item store generation process to be easier to update in the future
 
 # Installation instructions
 1. Install Node JS.
 2. Install MySQL and MySQL Server
-3. Copy and paste the text inside each text file in the Database Creation folder into the MySQL Workbench, running the query each time.
-4. Inside of the database_controller.js (in the controller folder), update the user and password keys in the MySQL pool object with the user and password you chose for MySQL.
+3. Run the script "Database Creation/create databases.sql" in your mysql as root
 5. Run "npm install" in the Magic Item Store folder
 6. Run "npm start" in the Magic Item Store folder
 7. Navigate to localhost: 3001 in your browser to access the program.
