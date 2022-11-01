@@ -1,9 +1,7 @@
 const userModel = require("../models/userModel").userModel;
-const user_data_controller = require("./user_data_controller");
 
 const getUserByUsernameAndPassword = (username, password) => {
     let user = userModel.findOne(username);
-    user_data_controller.authenticate_user(username, password);
     if (user) {
         if (isUserValid(user, password)) {
             return user;

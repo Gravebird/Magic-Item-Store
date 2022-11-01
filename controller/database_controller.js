@@ -1,18 +1,21 @@
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 
 const pool = mysql.createPool({
     connectionLimit: 100,
-    host: 'localhost',
-    user: 'root',
-    password: 'A00768125',
-    database: 'DnD'
+    host: process.env.MYSQL_HOST,
+    user: process.env.DND_MYSQL_USER,
+    password: process.env.DND_MYSQL_PASSWORD,
+    database: process.env.DND_DATABASE
 });
 
 function query(query) {
     return new Promise((resolve, reject) => {
         pool.getConnection(function (err, connection) {
-            if (err) reject(err); // Not connected!
+            if (err) {
+                reject(err); // Not connected!
+                console.log(err);
+            }
 
             connection.query(query, function (error, results, fields) {
                 connection.release();

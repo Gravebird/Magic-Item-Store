@@ -256,13 +256,13 @@ CREATE TABLE Class_Spells (
 
 SELECT "Creating users...";
 
-CREATE USER 'dnd_user'@'localhost' IDENTIFIED BY 'A00768125';
+CREATE USER 'dnd_user'@'%' IDENTIFIED BY 'A00768125';
 
 -- Apply grants
 
 SELECT "Granting permissions...";
 
-GRANT SELECT ON * TO 'dnd_user'@'localhost';
+GRANT SELECT ON * TO 'dnd_user'@'%';
 
 FLUSH PRIVILEGES;
 
