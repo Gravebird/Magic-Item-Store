@@ -1,3 +1,4 @@
 INSERT INTO Book VALUES
 	(1, "Player's Handbook", "3.5", '2003-07-01'),
-    (2, "Dungeon Master's Guide", "3.5", '2003-07-01');
+    (2, "Dungeon Master's Guide", "3.5", '2003-07-01'),
+    (3, "Stormwrack", "3.5", '2005-08-01');

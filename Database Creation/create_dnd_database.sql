@@ -28,7 +28,7 @@ DROP TABLE IF EXISTS Book;
 
 -- Drop all users - start from scratch
 
-DROP USER IF EXISTS 'dnd_user'@'localhost';
+DROP USER IF EXISTS 'dnd_user'@'%';
 -- Create all tables
 
 SELECT "Creating database...";
@@ -51,7 +51,7 @@ CREATE TABLE Material (
 );
 
 CREATE TABLE Armor (
-	Armor_ID int NOT NULL UNIQUE,
+	Armor_ID int NOT NULL UNIQUE AUTO_INCREMENT,
     Book_ID int NOT NULL,
     Armor_Name varchar(20) NOT NULL,
     Armor_Category varchar(6) NOT NULL CHECK (Armor_Category IN ("Light", "Medium", "Heavy", "Shield")),
@@ -70,7 +70,7 @@ CREATE TABLE Armor (
 );
 
 CREATE TABLE Weapon (
-	Weapon_ID int NOT NULL UNIQUE,
+	Weapon_ID int NOT NULL UNIQUE AUTO_INCREMENT,
     Book_ID int NOT NULL,
     Weapon_Name varchar(25) NOT NULL,
     Weapon_Category varchar(7) NOT NULL CHECK (Weapon_Category IN ("Simple", "Martial", "Exotic")),
@@ -296,9 +296,11 @@ source data_insertion/core/insert_book.dump;
 
 SELECT "Inserting Weapons...";
 source data_insertion/core/insert_weapon.dump;
+source data_insertion/Stormwrack/insert_weapons.sql;
 
 SELECT "Inserting Armor...";
 source data_insertion/core/insert_armor.dump;
+source data_insertion/Stormwrack/insert_armor.sql;
 
 SELECT "Inserting Classes...";
 source data_insertion/core/insert_class.dump;
