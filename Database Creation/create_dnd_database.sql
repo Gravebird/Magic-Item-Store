@@ -105,7 +105,7 @@ CREATE TABLE Material_For_Weapon (
 );
 
 CREATE TABLE Magic_Armor (
-	Magic_Armor_ID int NOT NULL UNIQUE,
+	Magic_Armor_ID int NOT NULL UNIQUE AUTO_INCREMENT,
     Book_ID int NOT NULL,
     Magic_Armor_Name varchar(32) NOT NULL,
     Magic_Armor_Modifier int,
@@ -118,7 +118,7 @@ CREATE TABLE Magic_Armor (
 );
 
 CREATE TABLE Magic_Weapon (
-	Magic_Weapon_ID int NOT NULL UNIQUE,
+	Magic_Weapon_ID int NOT NULL UNIQUE AUTO_INCREMENT,
     Book_ID int NOT NULL,
     Magic_Weapon_Name varchar(20) NOT NULL,
     Magic_Weapon_Modifier int NOT NULL,
@@ -173,7 +173,7 @@ CREATE TABLE Spell (
 );
 
 CREATE TABLE Potion (
-    Potion_ID int NOT NULL UNIQUE,
+    Potion_ID int NOT NULL UNIQUE AUTO_INCREMENT,
     Book_ID int NOT NULL,
     Spell_ID int NOT NULL,
     Potion_name varchar(36) NOT NULL,
@@ -186,7 +186,7 @@ CREATE TABLE Potion (
 );
 
 CREATE TABLE Ring (
-    Ring_ID int NOT NULL UNIQUE,
+    Ring_ID int NOT NULL UNIQUE AUTO_INCREMENT,
     Book_ID int NOT NULL,
     Ring_Name varchar(31) NOT NULL,
     Ring_Description TEXT,
@@ -199,7 +199,7 @@ CREATE TABLE Ring (
 );
 
 CREATE TABLE Rod (
-    Rod_ID int NOT NULL UNIQUE,
+    Rod_ID int NOT NULL UNIQUE AUTO_INCREMENT,
     Book_ID int NOT NULL,
     Rod_Name varchar(30) NOT NULL,
     Rod_Description TEXT,
@@ -212,7 +212,7 @@ CREATE TABLE Rod (
 );
 
 CREATE TABLE Staff (
-    Staff_ID int NOT NULL UNIQUE,
+    Staff_ID int NOT NULL UNIQUE AUTO_INCREMENT,
     Book_ID int NOT NULL,
     Staff_Name varchar(16) NOT NULL,
     Staff_Description TEXT,
@@ -236,6 +236,7 @@ CREATE TABLE Class (
     Class_Fort_Save varchar(4) CHECK (Class_Fort_Save IN ("Poor", "Good")),
     Class_Ref_Save varchar(4) CHECK (Class_Ref_Save IN ("Poor", "Good")),
     Class_Will_Save varchar(4) CHECK (Class_Will_Save IN ("Poor", "Good")),
+    Class_is_Caster bool NOT NULL,
     PRIMARY KEY (Class_ID, Book_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
@@ -296,11 +297,9 @@ source data_insertion/core/insert_book.dump;
 
 SELECT "Inserting Weapons...";
 source data_insertion/core/insert_weapon.dump;
-source data_insertion/Stormwrack/insert_weapons.sql;
 
 SELECT "Inserting Armor...";
 source data_insertion/core/insert_armor.dump;
-source data_insertion/Stormwrack/insert_armor.sql;
 
 SELECT "Inserting Classes...";
 source data_insertion/core/insert_class.dump;
@@ -340,3 +339,6 @@ source data_insertion/core/insert_staffs.sql;
 
 SELECT "Inserting Wondrous Items...";
 source data_insertion/core/insert_wondrous_item.sql;
+
+SELECT "STORMWRACK";
+source data_insertion/Stormwrack/insert_all.sql;
