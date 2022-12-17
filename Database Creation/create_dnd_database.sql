@@ -321,10 +321,6 @@ source data_insertion/core/player_handbook_spells.sql;
 SELECT "Creating Links between classes and spells...";
 source data_insertion/core/insert_player_handbook_class_spells.sql;
 
-SELECT "Updating spell costs...";
-source update_spell_min_caster_level.sql;
-source update_spell_costs.sql;
-
 SELECT "Inserting Potions...";
 source data_insertion/core/insert_potion.sql;
 
@@ -342,3 +338,11 @@ source data_insertion/core/insert_wondrous_item.sql;
 
 SELECT "STORMWRACK";
 source data_insertion/Stormwrack/insert_all.sql;
+
+
+-- Spell costs must be updated last! This is so all spells from every book are
+-- updated at once instead of needing to be done for each subset of spells
+
+SELECT "Updating spell costs...";
+source update_spell_min_caster_level.sql;
+source update_spell_costs.sql;
