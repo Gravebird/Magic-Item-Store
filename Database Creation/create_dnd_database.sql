@@ -89,16 +89,18 @@ CREATE TABLE Weapon (
 );
 
 CREATE TABLE Material_For_Armor (
-    Armor_ID int NOT NULL,
     Material_ID int NOT NULL,
+    Armor_ID int NOT NULL,
+    Base_Added_Cost decimal(9,2) DEFAULT 0.00,
     PRIMARY KEY (Armor_ID, Material_ID),
     FOREIGN KEY (Armor_ID) REFERENCES Armor(Armor_ID),
     FOREIGN KEY (Material_ID) REFERENCES Material(Material_ID)
 );
 
 CREATE TABLE Material_For_Weapon (
-    Weapon_ID int NOT NULL,
     Material_ID int NOT NULL,
+    Weapon_ID int NOT NULL,
+    Base_Added_Cost decimal(9,2) DEFAULT 0.00,
     PRIMARY KEY (Weapon_ID, Material_ID),
     FOREIGN KEY (Weapon_ID) REFERENCES Weapon(Weapon_ID),
     FOREIGN KEY (Material_ID) REFERENCES Material(Material_ID)
@@ -291,58 +293,20 @@ CREATE INDEX Wondrous_Item_Cost_I03
 ON Wondrous_Item (Magic_Item_Cost);
 
 
--- Insert data
-SELECT "Inserting Books...";
-source data_insertion/core/insert_book.dump;
-
-SELECT "Inserting Weapons...";
-source data_insertion/core/insert_weapon.dump;
-
-SELECT "Inserting Armor...";
-source data_insertion/core/insert_armor.dump;
-
-SELECT "Inserting Classes...";
-source data_insertion/core/insert_class.dump;
-
-SELECT "Inserting Magic Armor...";
-source data_insertion/core/insert_magic_armor.dump;
-
-SELECT "Inserting Magic Weapons...";
-source data_insertion/core/insert_magic_weapon.dump;
-
-SELECT "Inserting Special Materials...";
-source data_insertion/core/insert_material.dump;
-source data_insertion/core/insert_material_for_armor.dump;
-source data_insertion/core/insert_material_for_weapon.dump;
-
-SELECT "Inserting PH Spells...";
-source data_insertion/core/player_handbook_spells.sql;
-
-SELECT "Creating Links between classes and spells...";
-source data_insertion/core/insert_player_handbook_class_spells.sql;
-
-SELECT "Inserting Potions...";
-source data_insertion/core/insert_potion.sql;
-
-SELECT "Inserting Rings...";
-source data_insertion/core/insert_rings.sql;
-
-SELECT "Inserting Rods...";
-source data_insertion/core/insert_rods.sql;
-
-SELECT "Inserting Staffs...";
-source data_insertion/core/insert_staffs.sql;
-
-SELECT "Inserting Wondrous Items...";
-source data_insertion/core/insert_wondrous_item.sql;
+SELECT "CORE";
+source data_insertion/core/insert_all.sql
 
 SELECT "STORMWRACK";
 source data_insertion/Stormwrack/insert_all.sql;
 
 
--- Spell costs must be updated last! This is so all spells from every book are
--- updated at once instead of needing to be done for each subset of spells
+-- Global insertions must be handled last
+
+SELECT "Updating special material links...";
+
+source data_insertion/global/insert_material_for_armor.dump;
+source data_insertion/global/insert_material_for_weapon.dump;
 
 SELECT "Updating spell costs...";
-source update_spell_min_caster_level.sql;
-source update_spell_costs.sql;
+source data_insertion/global/update_spell_min_caster_level.sql;
+source data_insertion/global/update_spell_costs.sql;
