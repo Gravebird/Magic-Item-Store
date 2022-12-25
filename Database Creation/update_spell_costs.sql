@@ -101,6 +101,12 @@ UPDATE Spell
 SET Spell.Spell_Minimum_Material_Cost = 25000.00
 WHERE Spell.Spell_Name = "True Resurrection";
 
+-- STORMWRACK SPELLS
+
+UPDATE Spell
+SET Spell.Spell_Minimum_Material_Cost = 750.00
+WHERE Spell.Spell_Name = "Megalodon Empowerment";
+
 
 -- Update cost of scrolls and wands
 -- The following two queries must be run at the end of this file. Any additional
