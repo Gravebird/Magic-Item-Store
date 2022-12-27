@@ -8,6 +8,9 @@ source data_insertion/Stormwrack/insert_armor.sql;
 SELECT "Inserting Stormwrack Weapons...";
 source data_insertion/Stormwrack/insert_weapons.sql;
 
+SELECT "Inserting Stormwrack Materials...";
+source data_insertion/Stormwrack/insert_material.sql;
+
 SELECT "Inserting Stormwrack Spells...";
 source data_insertion/Stormwrack/insert_spells.sql;
 
