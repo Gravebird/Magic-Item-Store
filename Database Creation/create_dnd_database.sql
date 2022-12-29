@@ -304,8 +304,8 @@ source data_insertion/Stormwrack/insert_all.sql;
 
 SELECT "Updating special material links...";
 
-source data_insertion/global/insert_material_for_armor.dump;
-source data_insertion/global/insert_material_for_weapon.dump;
+source data_insertion/global/insert_material_for_armor.sql;
+source data_insertion/global/insert_material_for_weapon.sql;
 
 SELECT "Updating spell costs...";
 source data_insertion/global/update_spell_min_caster_level.sql;
