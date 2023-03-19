@@ -194,7 +194,7 @@ CREATE TABLE Ring (
     Ring_Description TEXT,
     Ring_Caster_Level int NOT NULL,
     Ring_Cost decimal(9,2) NOT NULL,
-    Ring_Aura varchar(37),
+    Ring_Aura varchar(51),
     Ring_Creation_Reqs varchar(119),
     PRIMARY KEY (Ring_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
@@ -216,7 +216,7 @@ CREATE TABLE Rod (
 CREATE TABLE Staff (
     Staff_ID int NOT NULL UNIQUE AUTO_INCREMENT,
     Book_ID int NOT NULL,
-    Staff_Name varchar(16) NOT NULL,
+    Staff_Name varchar(25) NOT NULL,
     Staff_Description TEXT,
     Staff_Caster_Level int NOT NULL,
     Staff_Cost decimal(9,2) NOT NULL,

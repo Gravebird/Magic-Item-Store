@@ -14,5 +14,20 @@ source data_insertion/Stormwrack/insert_material.sql;
 SELECT "Inserting Stormwrack Spells...";
 source data_insertion/Stormwrack/insert_spells.sql;
 
-SELECT "Inserting Stormwrack Class Spells";
+SELECT "Inserting Stormwrack Class Spells...";
 source data_insertion/Stormwrack/insert_class_spells.sql;
+
+SELECT "Inserting Stormwrack Magic Armor...";
+source data_insertion/Stormwrack/insert_magic_armor.sql;
+
+SELECT "Inserting Stormwrack Magic Weapons...";
+source data_insertion/Stormwrack/insert_magic_weapon.sql;
+
+SELECT "Inserting Stormwrack Rings...";
+source data_insertion/Stormwrack/insert_rings.sql;
+
+SELECT "Inserting Stormwrack Rods and Staffs...";
+source data_insertion/Stormwrack/insert_rods_and_staffs.sql;
+
+SELECT "Inserting Wondrous Items...";
+source data_insertion/Stormwrack/insert_wondrous_items.sql;
