@@ -29,5 +29,5 @@ source data_insertion/Stormwrack/insert_rings.sql;
 SELECT "Inserting Stormwrack Rods and Staffs...";
 source data_insertion/Stormwrack/insert_rods_and_staffs.sql;
 
-SELECT "Inserting Wondrous Items...";
+SELECT "Inserting Stormwrack Wondrous Items...";
 source data_insertion/Stormwrack/insert_wondrous_items.sql;
