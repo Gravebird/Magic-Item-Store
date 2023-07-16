@@ -1,5 +1,5 @@
 
-INSERT INTO Ring VALUES
+INSERT INTO Ring (Ring_ID, Book_ID, Ring_Name, Ring_Description, Ring_Caster_Level, Ring_Cost, Ring_Aura, Ring_Creation_Reqs) VALUES
     (59,3,"Four Winds",
         "<p>The <em>ring of the four winds</em> is favored and coveted by mariners and sea-going adventurers for its ability to harness the four winds to do the ring-bearer's will.</p><p>The ring creates small gusts of wind when the wearer is attacked, granting a +2 deflection bonus to the wearer's AC. Additionally, the character can use <em>feather fall</em> upon herself as an immediate action at any time, even when it isn't her turn. Finally, with a command word the wearer can use the ring to bring about a <em>stormrunner's ward</em> effect three times per day.</p>",
         3,20000.00,"Moderate abjuration, evocation [air], transmutation",

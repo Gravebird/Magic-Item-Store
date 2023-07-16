@@ -1,6 +1,6 @@
 
 
-INSERT INTO Rod VALUES
+INSERT INTO Rod (Rod_ID, Book_ID, Rod_Name, Rod_Description, Rod_Caster_Level, Rod_Cost, Rod_Aura, Rod_Creation_Reqs) VALUES
     (1,2,"Metamagic, Enlarge, lesser",
         "<p>Metamagic rods hold the essence of a metamagic feat but do not change the spell slot of the altered spell. All the rods described here are use-activated (but casting the spell in a threatened area still draws an attack of opportunity). A caster may only use one metamagic rod on any given spell, but it is permissible to combine a rod with metamagic feats possessed by the wielder. In this case, only the feats possessed by the wielder adjust the spell slot of the spell being cast.</p><p>Possession of a metamagic rod does not confer the associated feat on the owner, only the ability to use the given feat a specified number of times per day. A sorceror still must take a full-round action when using a metamagic rod, just as if using a metamagic feat he possesses.</p><p><em>Lesser and Greater Metamagic Rods:</em> Normal metamagic rods can be used with spells of 6th level or lower. Lesser rods can be used with spells of 3rd level or lower, while greater rods can be used with spells of 9th level or lower.</p><p><b>Metamagic, Enlarge:</b> The wielder can cast up to three spells per day that are enlarged, as though using the Enlarge Spell feat.</p>",
         17,3000.00,"Strong (no school)",

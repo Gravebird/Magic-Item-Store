@@ -1,5 +1,5 @@
 
-INSERT INTO Ring VALUES
+INSERT INTO Ring (Ring_ID, Book_ID, Ring_Name, Ring_Description, Ring_Caster_Level, Ring_Cost, Ring_Aura, Ring_Creation_Reqs) VALUES
     (1,2,"Protection +1",
         "<p>This ring offers continual magical protection in the form of a deflection bonus of +1 to AC.</p>",
         5,2000.00,"Faint abjuration",

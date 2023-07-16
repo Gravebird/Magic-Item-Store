@@ -1,5 +1,5 @@
 
-INSERT INTO Potion VALUES
+INSERT INTO Potion (Potion_ID, Book_ID, Spell_ID, Potion_name, Potion_type, Potion_cost, Potion_Level) VALUES
     (1,2,106,'Cure light wounds','potion',50.00,1),
     (2,2,173,'Endure elements','potion',50.00,1),
     (3,2,254,'Hide from animals','potion',50.00,1),

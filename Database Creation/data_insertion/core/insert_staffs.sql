@@ -1,6 +1,6 @@
 
 
-INSERT INTO Staff VALUES
+INSERT INTO Staff (Staff_ID, Book_ID, Staff_Name, Staff_Description, Staff_Caster_Level, Staff_Cost, Staff_Aura, Staff_Creation_Reqs) VALUES
     (1,2,"Staff of Charming",
         "<p>Made of twisting wood ornately shaped and carved, this staff allows use of the following spells:</p><ul><li><em>Charm person</em> (1 charge)</li><li><em>Charm monster</em> (2 charges)</li></ul>",
         8,16500.00,"Moderate enchantment",

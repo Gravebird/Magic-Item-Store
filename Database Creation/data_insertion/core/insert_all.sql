@@ -17,6 +17,9 @@ source data_insertion/core/insert_magic_armor.dump;
 SELECT "Inserting Magic Weapons...";
 source data_insertion/core/insert_magic_weapon.dump;
 
+SELECT "Inserting Generic Weapons and Armor...";
+source data_insertion/core/insert_generic_weapon_and_armor.sql;
+
 SELECT "Inserting Special Materials...";
 source data_insertion/core/insert_material.dump;
 
