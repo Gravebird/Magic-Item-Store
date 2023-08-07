@@ -144,7 +144,7 @@ CREATE TABLE Wondrous_Item (
     Magic_Item_Cost decimal(9,2) NOT NULL,
     Magic_Item_Aura varchar(64),
     Magic_Item_Creation_Reqs varchar(239),
-    MIC_Item_Level INT DEFAULT NULL,
+    MIC_Item_Level decimal(3,1) DEFAULT NULL,
     PRIMARY KEY (Magic_Item_ID, Book_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
@@ -183,7 +183,7 @@ CREATE TABLE Potion (
     Potion_type varchar(6) NOT NULL CHECK (Potion_type IN ('potion','oil')),
     Potion_cost decimal(9,2) NOT NULL,
     Potion_level int NOT NULL,
-    MIC_Item_Level INT DEFAULT NULL,
+    MIC_Item_Level decimal(3,1) DEFAULT NULL,
     PRIMARY KEY (Potion_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID),
     FOREIGN KEY (Spell_ID) REFERENCES Spell(Spell_ID)
@@ -198,7 +198,7 @@ CREATE TABLE Ring (
     Ring_Cost decimal(9,2) NOT NULL,
     Ring_Aura varchar(51),
     Ring_Creation_Reqs varchar(119),
-    MIC_Item_Level INT DEFAULT NULL,
+    MIC_Item_Level decimal(3,1) DEFAULT NULL,
     PRIMARY KEY (Ring_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
@@ -212,7 +212,7 @@ CREATE TABLE Rod (
     Rod_Cost decimal(9,2) NOT NULL,
     Rod_Aura varchar(60),
     Rod_Creation_Reqs varchar(155),
-    MIC_Item_Level INT DEFAULT NULL,
+    MIC_Item_Level decimal(3,1) DEFAULT NULL,
     PRIMARY KEY (Rod_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
@@ -226,7 +226,7 @@ CREATE TABLE Staff (
     Staff_Cost decimal(9,2) NOT NULL,
     Staff_Aura varchar(60),
     Staff_Creation_Reqs varchar(239),
-    MIC_Item_Level INT DEFAULT NULL,
+    MIC_Item_Level decimal(3,1) DEFAULT NULL,
     PRIMARY KEY (Staff_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
@@ -255,8 +255,8 @@ CREATE TABLE Class_Spells (
     Spell_Minimum_Caster_Level int DEFAULT NULL,
     Scroll_Total_Cost decimal(9,2) DEFAULT NULL,
     Wand_Total_Cost decimal(9,2) DEFAULT NULL,
-    MIC_Scroll_Item_Level INT DEFAULT NULL,
-    MIC_Wand_Item_Level INT DEFAULT NULL,
+    MIC_Scroll_Item_Level decimal(3,1) DEFAULT NULL,
+    MIC_Wand_Item_Level decimal(3,1) DEFAULT NULL,
     PRIMARY KEY (Spell_ID, Class_ID),
     FOREIGN KEY (Class_ID) REFERENCES Class(Class_ID),
     FOREIGN KEY (Spell_ID) REFERENCES Spell(Spell_ID)
@@ -266,7 +266,7 @@ CREATE TABLE Generic_Weapon (
     Generic_Weapon_ID INT NOT NULL,
     Generic_Weapon_Enhancement INT NOT NULL,
     Generic_Weapon_Cost decimal(9,2) NOT NULL,
-    MIC_Item_Level INT DEFAULT NULL,
+    MIC_Item_Level decimal(3,1) DEFAULT NULL,
     PRIMARY KEY (Generic_Weapon_ID)
 );
 
@@ -274,7 +274,7 @@ CREATE TABLE Generic_Armor (
     Generic_Armor_ID INT NOT NULL,
     Generic_Armor_Enhancement INT NOT NULL,
     Generic_Armor_Cost decimal(9,2) NOT NULL,
-    MIC_Item_Level INT DEFAULT NULL,
+    MIC_Item_Level decimal(3,1) DEFAULT NULL,
     PRIMARY KEY (Generic_Armor_ID)
 );
 
@@ -333,3 +333,6 @@ source data_insertion/global/insert_material_for_weapon.sql;
 SELECT "Updating spell costs...";
 source data_insertion/global/update_spell_min_caster_level.sql;
 source data_insertion/global/update_spell_costs.sql;
+
+SELECT "Updating Item Levels from Magic Item Compendium...";
+source data_insertion/global/add_item_level_from_MIC.sql;
