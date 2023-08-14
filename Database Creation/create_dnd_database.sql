@@ -54,7 +54,7 @@ CREATE TABLE Armor (
 	Armor_ID int NOT NULL UNIQUE AUTO_INCREMENT,
     Book_ID int NOT NULL,
     Armor_Name varchar(20) NOT NULL,
-    Armor_Category varchar(6) NOT NULL CHECK (Armor_Category IN ("Light", "Medium", "Heavy", "Shield")),
+    Armor_Category varchar(6) NOT NULL CHECK (Armor_Category IN ("Light", "Medium", "Heavy", "Shield", "Extra")),
     Armor_Cost decimal(9,2) NOT NULL,
     Armor_AC_Bonus int NOT NULL,
     Armor_Max_Dex int,
@@ -321,6 +321,9 @@ source data_insertion/core/insert_all.sql
 
 SELECT "STORMWRACK";
 source data_insertion/Stormwrack/insert_all.sql;
+
+SELECT "SANDSTORM";
+source data_insertion/Sandstorm/insert_all.sql;
 
 
 -- Global insertions must be handled last
