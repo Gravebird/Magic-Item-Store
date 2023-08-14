@@ -336,3 +336,6 @@ source data_insertion/global/update_spell_costs.sql;
 
 SELECT "Updating Item Levels from Magic Item Compendium...";
 source data_insertion/global/add_item_level_from_MIC.sql;
+
+SELECT "Creating views...";
+source data_insertion/global/create_views.sql;
