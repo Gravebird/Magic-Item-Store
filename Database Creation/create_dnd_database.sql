@@ -26,6 +26,9 @@ DROP TABLE IF EXISTS Armor;
 DROP TABLE IF EXISTS Material;
 DROP TABLE IF EXISTS Book;
 
+-- Drop all users - start from scratch
+
+DROP USER IF EXISTS 'dnd_user'@'%';
 -- Create all tables
 
 SELECT "Creating database...";
@@ -48,10 +51,10 @@ CREATE TABLE Material (
 );
 
 CREATE TABLE Armor (
-	Armor_ID int NOT NULL UNIQUE,
+	Armor_ID int NOT NULL UNIQUE AUTO_INCREMENT,
     Book_ID int NOT NULL,
     Armor_Name varchar(20) NOT NULL,
-    Armor_Category varchar(6) NOT NULL CHECK (Armor_Category IN ("Light", "Medium", "Heavy", "Shield")),
+    Armor_Category varchar(6) NOT NULL CHECK (Armor_Category IN ("Light", "Medium", "Heavy", "Shield", "Extra")),
     Armor_Cost decimal(9,2) NOT NULL,
     Armor_AC_Bonus int NOT NULL,
     Armor_Max_Dex int,
@@ -67,7 +70,7 @@ CREATE TABLE Armor (
 );
 
 CREATE TABLE Weapon (
-	Weapon_ID int NOT NULL UNIQUE,
+	Weapon_ID int NOT NULL UNIQUE AUTO_INCREMENT,
     Book_ID int NOT NULL,
     Weapon_Name varchar(25) NOT NULL,
     Weapon_Category varchar(7) NOT NULL CHECK (Weapon_Category IN ("Simple", "Martial", "Exotic")),
@@ -86,23 +89,25 @@ CREATE TABLE Weapon (
 );
 
 CREATE TABLE Material_For_Armor (
-    Armor_ID int NOT NULL,
     Material_ID int NOT NULL,
+    Armor_ID int NOT NULL,
+    Base_Added_Cost decimal(9,2) DEFAULT 0.00,
     PRIMARY KEY (Armor_ID, Material_ID),
     FOREIGN KEY (Armor_ID) REFERENCES Armor(Armor_ID),
     FOREIGN KEY (Material_ID) REFERENCES Material(Material_ID)
 );
 
 CREATE TABLE Material_For_Weapon (
-    Weapon_ID int NOT NULL,
     Material_ID int NOT NULL,
+    Weapon_ID int NOT NULL,
+    Base_Added_Cost decimal(9,2) DEFAULT 0.00,
     PRIMARY KEY (Weapon_ID, Material_ID),
     FOREIGN KEY (Weapon_ID) REFERENCES Weapon(Weapon_ID),
     FOREIGN KEY (Material_ID) REFERENCES Material(Material_ID)
 );
 
 CREATE TABLE Magic_Armor (
-	Magic_Armor_ID int NOT NULL UNIQUE,
+	Magic_Armor_ID int NOT NULL UNIQUE AUTO_INCREMENT,
     Book_ID int NOT NULL,
     Magic_Armor_Name varchar(32) NOT NULL,
     Magic_Armor_Modifier int,
@@ -115,7 +120,7 @@ CREATE TABLE Magic_Armor (
 );
 
 CREATE TABLE Magic_Weapon (
-	Magic_Weapon_ID int NOT NULL UNIQUE,
+	Magic_Weapon_ID int NOT NULL UNIQUE AUTO_INCREMENT,
     Book_ID int NOT NULL,
     Magic_Weapon_Name varchar(20) NOT NULL,
     Magic_Weapon_Modifier int NOT NULL,
@@ -139,6 +144,7 @@ CREATE TABLE Wondrous_Item (
     Magic_Item_Cost decimal(9,2) NOT NULL,
     Magic_Item_Aura varchar(64),
     Magic_Item_Creation_Reqs varchar(239),
+    MIC_Item_Level decimal(3,1) DEFAULT NULL,
     PRIMARY KEY (Magic_Item_ID, Book_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
@@ -170,33 +176,35 @@ CREATE TABLE Spell (
 );
 
 CREATE TABLE Potion (
-    Potion_ID int NOT NULL UNIQUE,
+    Potion_ID int NOT NULL UNIQUE AUTO_INCREMENT,
     Book_ID int NOT NULL,
     Spell_ID int NOT NULL,
     Potion_name varchar(36) NOT NULL,
     Potion_type varchar(6) NOT NULL CHECK (Potion_type IN ('potion','oil')),
     Potion_cost decimal(9,2) NOT NULL,
     Potion_level int NOT NULL,
+    MIC_Item_Level decimal(3,1) DEFAULT NULL,
     PRIMARY KEY (Potion_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID),
     FOREIGN KEY (Spell_ID) REFERENCES Spell(Spell_ID)
 );
 
 CREATE TABLE Ring (
-    Ring_ID int NOT NULL UNIQUE,
+    Ring_ID int NOT NULL UNIQUE AUTO_INCREMENT,
     Book_ID int NOT NULL,
     Ring_Name varchar(31) NOT NULL,
     Ring_Description TEXT,
     Ring_Caster_Level int NOT NULL,
     Ring_Cost decimal(9,2) NOT NULL,
-    Ring_Aura varchar(37),
+    Ring_Aura varchar(51),
     Ring_Creation_Reqs varchar(119),
+    MIC_Item_Level decimal(3,1) DEFAULT NULL,
     PRIMARY KEY (Ring_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
 
 CREATE TABLE Rod (
-    Rod_ID int NOT NULL UNIQUE,
+    Rod_ID int NOT NULL UNIQUE AUTO_INCREMENT,
     Book_ID int NOT NULL,
     Rod_Name varchar(30) NOT NULL,
     Rod_Description TEXT,
@@ -204,19 +212,21 @@ CREATE TABLE Rod (
     Rod_Cost decimal(9,2) NOT NULL,
     Rod_Aura varchar(60),
     Rod_Creation_Reqs varchar(155),
+    MIC_Item_Level decimal(3,1) DEFAULT NULL,
     PRIMARY KEY (Rod_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
 
 CREATE TABLE Staff (
-    Staff_ID int NOT NULL UNIQUE,
+    Staff_ID int NOT NULL UNIQUE AUTO_INCREMENT,
     Book_ID int NOT NULL,
-    Staff_Name varchar(16) NOT NULL,
+    Staff_Name varchar(25) NOT NULL,
     Staff_Description TEXT,
     Staff_Caster_Level int NOT NULL,
     Staff_Cost decimal(9,2) NOT NULL,
     Staff_Aura varchar(60),
     Staff_Creation_Reqs varchar(239),
+    MIC_Item_Level decimal(3,1) DEFAULT NULL,
     PRIMARY KEY (Staff_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
@@ -233,6 +243,7 @@ CREATE TABLE Class (
     Class_Fort_Save varchar(4) CHECK (Class_Fort_Save IN ("Poor", "Good")),
     Class_Ref_Save varchar(4) CHECK (Class_Ref_Save IN ("Poor", "Good")),
     Class_Will_Save varchar(4) CHECK (Class_Will_Save IN ("Poor", "Good")),
+    Class_is_Caster bool NOT NULL,
     PRIMARY KEY (Class_ID, Book_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
@@ -244,10 +255,42 @@ CREATE TABLE Class_Spells (
     Spell_Minimum_Caster_Level int DEFAULT NULL,
     Scroll_Total_Cost decimal(9,2) DEFAULT NULL,
     Wand_Total_Cost decimal(9,2) DEFAULT NULL,
+    MIC_Scroll_Item_Level decimal(3,1) DEFAULT NULL,
+    MIC_Wand_Item_Level decimal(3,1) DEFAULT NULL,
     PRIMARY KEY (Spell_ID, Class_ID),
     FOREIGN KEY (Class_ID) REFERENCES Class(Class_ID),
     FOREIGN KEY (Spell_ID) REFERENCES Spell(Spell_ID)
 );
+
+CREATE TABLE Generic_Weapon (
+    Generic_Weapon_ID INT NOT NULL,
+    Generic_Weapon_Enhancement INT NOT NULL,
+    Generic_Weapon_Cost decimal(9,2) NOT NULL,
+    MIC_Item_Level decimal(3,1) DEFAULT NULL,
+    PRIMARY KEY (Generic_Weapon_ID)
+);
+
+CREATE TABLE Generic_Armor (
+    Generic_Armor_ID INT NOT NULL,
+    Generic_Armor_Enhancement INT NOT NULL,
+    Generic_Armor_Cost decimal(9,2) NOT NULL,
+    MIC_Item_Level decimal(3,1) DEFAULT NULL,
+    PRIMARY KEY (Generic_Armor_ID)
+);
+
+-- Create users
+
+SELECT "Creating users...";
+
+CREATE USER 'dnd_user'@'%' IDENTIFIED BY 'A00768125';
+
+-- Apply grants
+
+SELECT "Granting permissions...";
+
+GRANT SELECT ON * TO 'dnd_user'@'%';
+
+FLUSH PRIVILEGES;
 
 
 -- Create indexes
@@ -273,51 +316,29 @@ CREATE INDEX Wondrous_Item_Cost_I03
 ON Wondrous_Item (Magic_Item_Cost);
 
 
--- Insert data
-SELECT "Inserting Books...";
-source data_insertion/core/insert_book.dump;
+SELECT "CORE";
+source data_insertion/core/insert_all.sql
 
-SELECT "Inserting Weapons...";
-source data_insertion/core/insert_weapon.dump;
+SELECT "STORMWRACK";
+source data_insertion/Stormwrack/insert_all.sql;
 
-SELECT "Inserting Armor...";
-source data_insertion/core/insert_armor.dump;
+SELECT "SANDSTORM";
+source data_insertion/Sandstorm/insert_all.sql;
 
-SELECT "Inserting Classes...";
-source data_insertion/core/insert_class.dump;
 
-SELECT "Inserting Magic Armor...";
-source data_insertion/core/insert_magic_armor.dump;
+-- Global insertions must be handled last
 
-SELECT "Inserting Magic Weapons...";
-source data_insertion/core/insert_magic_weapon.dump;
+SELECT "Updating special material links...";
 
-SELECT "Inserting Special Materials...";
-source data_insertion/core/insert_material.dump;
-source data_insertion/core/insert_material_for_armor.dump;
-source data_insertion/core/insert_material_for_weapon.dump;
-
-SELECT "Inserting PH Spells...";
-source data_insertion/core/player_handbook_spells.sql;
-
-SELECT "Creating Links between classes and spells...";
-source data_insertion/core/insert_player_handbook_class_spells.sql;
+source data_insertion/global/insert_material_for_armor.sql;
+source data_insertion/global/insert_material_for_weapon.sql;
 
 SELECT "Updating spell costs...";
-source update_spell_min_caster_level.sql;
-source update_spell_costs.sql;
+source data_insertion/global/update_spell_min_caster_level.sql;
+source data_insertion/global/update_spell_costs.sql;
 
-SELECT "Inserting Potions...";
-source data_insertion/core/insert_potion.sql;
+SELECT "Updating Item Levels from Magic Item Compendium...";
+source data_insertion/global/add_item_level_from_MIC.sql;
 
-SELECT "Inserting Rings...";
-source data_insertion/core/insert_rings.sql;
-
-SELECT "Inserting Rods...";
-source data_insertion/core/insert_rods.sql;
-
-SELECT "Inserting Staffs...";
-source data_insertion/core/insert_staffs.sql;
-
-SELECT "Inserting Wondrous Items...";
-source data_insertion/core/insert_wondrous_item.sql;
+SELECT "Creating views...";
+source data_insertion/global/create_views.sql;
