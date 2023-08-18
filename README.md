@@ -40,13 +40,15 @@ This project uses a mysql database and a node.js server to populate item shops i
 3. Run the script "Database Creation/create databases.sql" in your mysql as root
 5. Run "npm install" in the Magic Item Store folder
 6. Create a ".env" file in the root folder and specify the following environment variables:
-- MYSQL_HOST
-- MYSQL_PORT
-- MAGIC_ITEM_STORE_MYSQL_USER
-- MAGIC_ITEM_STORE_MYSQL_PASSWORD
-- DND_MYSQL_USER
-- DND_MYSQL_PASSWORD
-- DND_DATABASE
+- COOKIE_DB_HOST
+- COOKIE_DB_PORT
+- COOKIE_DB_USER
+- COOKIE_DB_NAME
+- COOKIE_DB_PASSWORD
+- USER_DATA_DB_HOST
+- USER_DATA_DB_USER
+- USER_DATA_DB_NAME
+- USER_DATA_DB_PASSWORD
 7. Run "npm start" in the Magic Item Store folder
 8. Navigate to localhost: 3001 in your browser to access the program.
 
