@@ -31,3 +31,6 @@ source data_insertion/Stormwrack/insert_rods_and_staffs.sql;
 
 SELECT "Inserting Stormwrack Wondrous Items...";
 source data_insertion/Stormwrack/insert_wondrous_items.sql;
+
+SELECT "Inserting Stormwrack Potions...";
+source data_insertion/Stormwrack/insert_potion.sql;

@@ -78,7 +78,7 @@ CREATE TABLE Weapon (
     Weapon_Cost decimal(9,2) NOT NULL,
     Weapon_Small_Damage varchar(9),
     Weapon_Medium_Damage varchar(9),
-    Weapon_Critical varchar(8),
+    Weapon_Critical varchar(16),
     Weapon_Range_Increment int,
     Weapon_Damage_Type varchar(11),
     Weapon_Weight decimal(4,2) NOT NULL,
