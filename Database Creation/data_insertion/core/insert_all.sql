@@ -43,3 +43,6 @@ source data_insertion/core/insert_staffs.sql;
 
 SELECT "Inserting Wondrous Items...";
 source data_insertion/core/insert_wondrous_item.sql;
+
+SELECT "Inserting Misc Items...";
+source data_insertion/core/insert_misc_item.sql;
