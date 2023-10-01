@@ -1,0 +1,1 @@
+source data_insertion/global/SPROCS/up_random_item.sql;

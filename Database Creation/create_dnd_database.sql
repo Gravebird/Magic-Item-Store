@@ -284,7 +284,7 @@ CREATE TABLE Misc_Item (
     Misc_Item_Name VARCHAR(30) NOT NULL,
     Misc_Item_Type VARCHAR(28) NOT NULL CHECK (Misc_Item_Type IN ('Trade Goods','Adventuring Gear','Special Substances and Items','Tools and Skill Kits','Clothing','Food, Drink, and Lodging','Mounts and Related Gear','Transport','Spellcasting and Services')),
     Misc_Item_Cost decimal(9,2) NOT NULL,
-    Misc_Item_Weight decimal(4,2),
+    Misc_Item_Weight decimal(5,2),
     Misc_Item_Description TEXT,
     PRIMARY KEY (Misc_Item_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
@@ -354,3 +354,6 @@ source data_insertion/global/add_item_level_from_MIC.sql;
 
 SELECT "Creating views...";
 source data_insertion/global/create_views.sql;
+
+SELECT "Creating SPROCS...";
+source data_insertion/global/SPROCS/create_sprocs.sql;
