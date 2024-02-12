@@ -1,0 +1,4 @@
+
+INSERT INTO Misc_Item VALUES
+    (135,4,"Distillation Kit","Adventuring Gear",50.00,20.00,
+    "<p>Water is precious in the waste. This simple kit uses the sun and ambient heat to evaporate pure water from body or cooking waste, salt lakes, poisonous plant saps, and so on. This 'solar still' consists of a sheet of glass fastened at an angle into a frame, with a lip and a small spout (the components are packed separately and assembled when needed). The bottom and sides of the frame are covered with black oilcloth, the edges sealed with grease or tar to make it watertight. To use the still, pour the dirty water on the into the bottom of the container, then place the glass lid on top. The water evaporates and condenses on the underside of the glass surface, where it runs down and collects in the lip, dripping through the spout and producing about 1 gallon of water er day (if the container is filled to capacity).</p>");
