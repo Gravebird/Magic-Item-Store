@@ -12,7 +12,8 @@
 
     function validateNumberInput() {
         let numItemInput = document.getElementById("numItemsInShop");
-        let averageGoldInput = document.getElementById("averageGoldValue");
+        let minGoldInput = document.getElementById("minGoldValue");
+        let maxGoldInput = document.getElementById("maxGoldValue");
 
         if (parseInt(numItemInput.value) < 1 || parseInt(numItemInput.value) > 1000) {
             numItemInput.classList.add("badInput");
@@ -20,10 +21,16 @@
             numItemInput.classList.remove("badInput");
         }
 
-        if (parseInt(averageGoldInput.value) < 0 || parseInt(averageGoldInput.value) > 9999999) {
-            averageGoldInput.classList.add("badInput");
+        if (parseInt(minGoldInput.value) < 0 || parseInt(minGoldInput.value) > 9999999 || parseInt(minGoldInput.value) > parseInt(maxGoldInput.value)) {
+            minGoldInput.classList.add("badInput");
         } else {
-            averageGoldInput.classList.remove("badInput");
+            minGoldInput.classList.remove("badInput");
+        }
+
+        if (parseInt(maxGoldInput.value) < 0 || parseInt(maxGoldInput.value) > 9999999 || parseInt(maxGoldInput.value) < parseInt(minGoldInput.value)) {
+            maxGoldInput.classList.add("badInput");
+        } else {
+            maxGoldInput.classList.remove("badInput");
         }
 
         validateInputForButton();
@@ -111,10 +118,17 @@
             </div>
 
             <div class="shopInputContainer">
-                <p>What is the average gold value per item? (0 - 9999999)</p>
-                <input type="number" class="numberInput" id="averageGoldValue" 
-                name="averageGoldValue" min="0" max="9999999" onkeyup="validateNumberInput();"
-                value="5">
+                <p>What is the minimum gold value per item? (0 - 9999999)</p>
+                <input type="number" class="numberInput" id="minGoldValue"
+                name="minGoldValue" min="0" max="9999999" onkeyup="validateNumberInput();"
+                value="0">
+            </div>
+
+            <div class="shopInputContainer">
+                <p>What is the maximum gold value per item? (0 - 9999999)</p>
+                <input type="number" class="numberInput" id="maxGoldValue" 
+                name="maxGoldValue" min="0" max="9999999" onkeyup="validateNumberInput();"
+                value="1000">
             </div>
 
         </div>
