@@ -49,10 +49,10 @@ This project uses a mysql database and a node.js server to populate item shops i
 - USER_DATA_DB_USER
 - USER_DATA_DB_NAME
 - USER_DATA_DB_PASSWORD
-- D&D_DATA_DB_HOST
-- D&D_DATA_DB_USER
-- D&D_DATA_DB_NAME
-- D&D_DATA_DB_PASSWORD
+- DND_DATA_DB_HOST
+- DND_DATA_DB_USER
+- DND_DATA_DB_NAME
+- DND_DATA_DB_PASSWORD
 7. Run "npm start" in the Magic Item Store folder
 8. Navigate to localhost: 3001 in your browser to access the program.
 

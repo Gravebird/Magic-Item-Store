@@ -1,0 +1,213 @@
+<script type="text/javascript">
+    function validateShopName() {
+        let shopNameInput = document.getElementById("shopNameInput");
+
+        if (shopNameInput.value.length < 3) {
+            shopNameInput.classList.add("badInput");
+        } else {
+            shopNameInput.classList.remove("badInput");
+        }
+        validateInputForButton();
+    }
+
+    function validateNumberInput() {
+        let numItemInput = document.getElementById("numItemsInShop");
+        let averageGoldInput = document.getElementById("averageGoldValue");
+
+        if (parseInt(numItemInput.value) < 1 || parseInt(numItemInput.value) > 1000) {
+            numItemInput.classList.add("badInput");
+        } else {
+            numItemInput.classList.remove("badInput");
+        }
+
+        if (parseInt(averageGoldInput.value) < 0 || parseInt(averageGoldInput.value) > 9999999) {
+            averageGoldInput.classList.add("badInput");
+        } else {
+            averageGoldInput.classList.remove("badInput");
+        }
+
+        validateInputForButton();
+    }
+
+    function validateInputForButton() {
+        let theButton = document.getElementById("submitButton");
+
+        let badInputs = document.getElementsByClassName("badInput");
+
+        if (badInputs.length > 0) {
+            theButton.classList.add("disabledButton");
+        } else {
+            theButton.classList.remove("disabledButton");
+        }
+    }
+
+    function updatePercentages() {
+        let weaponPercentage = parseInt(document.getElementById("weaponPercentage").value);
+        let armourPercentage = parseInt(document.getElementById("armourPercentage").value);
+        let potionPercentage = parseInt(document.getElementById("potionPercentage").value);
+        let scrollPercentage = parseInt(document.getElementById("scrollPercentage").value);
+        let wandPercentage = parseInt(document.getElementById("wandPercentage").value);
+        let ringPercentage = parseInt(document.getElementById("ringPercentage").value);
+        let rodPercentage = parseInt(document.getElementById("rodPercentage").value);
+        let staffPercentage = parseInt(document.getElementById("staffPercentage").value);
+        let wondrousItemPercentage = parseInt(document.getElementById("wondrousItemPercentage").value);
+        let miscItemPercentage = parseInt(document.getElementById("miscItemPercentage").value);
+
+        let totalPercentage = weaponPercentage + armourPercentage + potionPercentage
+            + scrollPercentage + wandPercentage + ringPercentage + rodPercentage
+            + staffPercentage + wondrousItemPercentage + miscItemPercentage;
+
+        document.getElementById("weaponPercentageDisplay").innerText = weaponPercentage + "%";
+        document.getElementById("armourPercentageDisplay").innerText = armourPercentage + "%";
+        document.getElementById("potionPercentageDisplay").innerText = potionPercentage + "%";
+        document.getElementById("scrollPercentageDisplay").innerText = scrollPercentage + "%";
+        document.getElementById("wandPercentageDisplay").innerText = wandPercentage + "%";
+        document.getElementById("ringPercentageDisplay").innerText = ringPercentage + "%";
+        document.getElementById("rodPercentageDisplay").innerText = rodPercentage + "%";
+        document.getElementById("staffPercentageDisplay").innerText = staffPercentage + "%";
+        document.getElementById("wondrousItemPercentageDisplay").innerText = wondrousItemPercentage + "%";
+        document.getElementById("miscItemPercentageDisplay").innerText = miscItemPercentage + "%";
+
+        totalPercentageField = document.getElementById("totalPercentage");
+        totalPercentageField.innerText = "Total Percentage: " + totalPercentage + "%";
+
+        if (totalPercentage == 100) {
+            totalPercentageField.classList.remove("badInput");
+            totalPercentageField.classList.add("goodInput");
+        } else {
+            totalPercentageField.classList.remove("goodInput");
+            totalPercentageField.classList.add("badInput");
+        }
+
+        validateInputForButton();
+    }
+</script>
+
+<div>
+    <form action="/shop_generator" method="POST" onkeydown="return event.key != 'Enter';">
+
+        <div>
+        
+            <div class="shopNameContainer">
+                <p>Enter the name of the shop (Filename)</p>
+                <input type="text" class="shopNameInput badInput" id="shopNameInput" 
+                name="shopNameInput" onkeyup="validateShopName();">
+            </div>
+
+            <div class="shopInputContainer">
+                <p>Choose which books to include in the shop (Core books are in automatically)</p>
+                <select name="booksInput" id="booksInput" multiple>
+                    <% for (let i=0; i < books.length; i++) { %>
+                        <option value="<%= books[i]['Book_Name'] %>"><%= books[i]["Book_Name"] %></option>
+                    <% } %>
+                </select>
+            </div>
+
+            <div class="shopInputContainer">
+                <p>How many items should be generated? (1 - 1000)</p>
+                <input type="number" class="numberInput" id="numItemsInShop" 
+                name="numItemsInShop" min="1" max="1000" onkeyup="validateNumberInput();" 
+                value="100">
+            </div>
+
+            <div class="shopInputContainer">
+                <p>What is the average gold value per item? (0 - 9999999)</p>
+                <input type="number" class="numberInput" id="averageGoldValue" 
+                name="averageGoldValue" min="0" max="9999999" onkeyup="validateNumberInput();"
+                value="5">
+            </div>
+
+        </div>
+        <div>
+
+            <div class="shopInputContainer">
+                <p>What percentage of the items should be <strong>Weapons?</strong></p>
+                <input type="range" class="percentageInput" id="weaponPercentage"
+                name="weaponPercentage" min="0" max="100" step="5" oninput="updatePercentages();"
+                value="10">
+                <p id="weaponPercentageDisplay">10%</p>
+            </div>
+
+            <div class="shopInputContainer">
+                <p>What percentage of the items should be <strong>Armour?</strong></p>
+                <input type="range" class="percentageInput" id="armourPercentage"
+                name="armourPercentage" min="0" max="100" step="5" oninput="updatePercentages();"
+                value="10">
+                <p id="armourPercentageDisplay">10%</p>
+            </div>
+
+            <div class="shopInputContainer">
+                <p>What percentage of the items should be <strong>Potions?</strong></p>
+                <input type="range" class="percentageInput" id="potionPercentage"
+                name="potionPercentage" min="0" max="100" step="5" oninput="updatePercentages();"
+                value="10">
+                <p id="potionPercentageDisplay">10%</p>
+            </div>
+
+            <div class="shopInputContainer">
+                <p>What percentage of the items should be <strong>Scrolls?</strong></p>
+                <input type="range" class="percentageInput" id="scrollPercentage"
+                name="scrollPercentage" min="0" max="100" step="5" oninput="updatePercentages();"
+                value="10">
+                <p id="scrollPercentageDisplay">10%</p>
+            </div>
+
+            <div class="shopInputContainer">
+                <p>What percentage of the items should be <strong>Wands?</strong></p>
+                <input type="range" class="percentageInput" id="wandPercentage"
+                name="wandPercentage" min="0" max="100" step="5" oninput="updatePercentages();"
+                value="10">
+                <p id="wandPercentageDisplay">10%</p>
+            </div>
+
+            <div class="shopInputContainer">
+                <p>What percentage of the items should be <strong>Rings?</strong></p>
+                <input type="range" class="percentageInput" id="ringPercentage"
+                name="ringPercentage" min="0" max="100" step="5" oninput="updatePercentages();"
+                value="10">
+                <p id="ringPercentageDisplay">10%</p>
+            </div>
+
+            <div class="shopInputContainer">
+                <p>What percentage of the items should be <strong>Rods?</strong></p>
+                <input type="range" class="percentageInput" id="rodPercentage"
+                name="rodPercentage" min="0" max="100" step="5" oninput="updatePercentages();"
+                value="10">
+                <p id="rodPercentageDisplay">10%</p>
+            </div>
+
+            <div class="shopInputContainer">
+                <p>What percentage of the items should be <strong>Staffs?</strong></p>
+                <input type="range" class="percentageInput" id="staffPercentage"
+                name="staffPercentage" min="0" max="100" step="5" oninput="updatePercentages();"
+                value="10">
+                <p id="staffPercentageDisplay">10%</p>
+            </div>
+
+            <div class="shopInputContainer">
+                <p>What percentage of the items should be <strong>Wondrous Items?</strong></p>
+                <input type="range" class="percentageInput" id="wondrousItemPercentage"
+                name="wondrousItemPercentage" min="0" max="100" step="5" oninput="updatePercentages();"
+                value="10">
+                <p id="wondrousItemPercentageDisplay">10%</p>
+            </div>
+
+            <div class="shopInputContainer">
+                <p>What percentage of the items should be <strong>Miscellaneous Items?</strong></p>
+                <input type="range" class="percentageInput" id="miscItemPercentage"
+                name="miscItemPercentage" min="0" max="100" step="5" oninput="updatePercentages();"
+                value="10">
+                <p id="miscItemPercentageDisplay">10%</p>
+            </div>
+
+            <div class="shopTotalPercentageContainer">
+                <h3 id="totalPercentage" class="goodInput">Total Percentage: 100%</h3>
+            </div>
+
+        </div>
+
+        <div class="submitContainer">
+            <button id="submitButton" class="submitButton disabledButton" type="submit">Generate</button>
+        </div>
+    </form>
+</div>

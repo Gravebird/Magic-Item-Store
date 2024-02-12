@@ -56,6 +56,10 @@ app.get("/", routeController.welcome);
 
 app.get("/welcome", routeController.welcome);
 
+app.get("/shop_generator", routeController.shop_generator_form);
+
+app.get("/test", routeController.test);
+
 
 
 
