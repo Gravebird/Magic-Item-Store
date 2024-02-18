@@ -78,4 +78,10 @@ UNION
        MIC_Item_Level AS "Item_Level",
        "Armor" AS "Type"
 FROM Generic_Armor)
+UNION
+(SELECT Misc_Item_ID AS ID,
+Book_ID, Misc_Item_Name AS "Item_Name", Misc_Item_Cost AS "Cost",
+MIC_Item_Level AS "Item_Level",
+"Misc_Item" AS "Type"
+FROM Misc_Item)
 ORDER BY Cost, Item_Name;

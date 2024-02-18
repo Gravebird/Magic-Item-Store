@@ -1,5 +1,6 @@
 
-INSERT INTO Misc_Item VALUES
+INSERT INTO Misc_Item (Misc_Item_ID,Book_ID,Misc_Item_Name,Misc_Item_Type,Misc_Item_Cost,Misc_Item_Weight,Misc_Item_Description)
+VALUES
     (127,3,"Float Bladder","Adventuring Gear",10.00,3.00,
     "<p>This is an emergency flotation device for those who find themselves cast overboard. It can also be used to support a nonswimmer being assisted through water. A float bladder is a sack of oiled hide that can be filled with air. It has a long neck that is knotted shut after filling and ropes or straps to fasten to the wearer. A float bladder can keep afloat one Medium creature. Treat this as a leather object (hardness 2); if it takes 5 or more points of damage, the skin is punctured. The round after puncturing, the user must begin making Swim checks to remain afloat. A punctured or deflated float bladder is a burden to a swimmer, imposing a -2 penalty on Swim checks if it is not removed.</p>"),
     

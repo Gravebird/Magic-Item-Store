@@ -1,4 +1,5 @@
-INSERT INTO Misc_Item VALUES
+INSERT INTO Misc_Item(Misc_Item_ID,Book_ID,Misc_Item_Name,Misc_Item_Type,Misc_Item_Cost,Misc_Item_Weight,Misc_Item_Description)
+VALUES
     (1,1,"Pound of Wheat","Trade Goods",0.01,1.00,null),
     (2,1,"Pound of Flour","Trade Goods",0.02,1.00,null),
     (3,1,"Live Chicken","Trade Goods",0.02,null,null),

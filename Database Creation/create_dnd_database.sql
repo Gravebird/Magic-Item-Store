@@ -286,6 +286,7 @@ CREATE TABLE Misc_Item (
     Misc_Item_Cost decimal(9,2) NOT NULL,
     Misc_Item_Weight decimal(5,2),
     Misc_Item_Description TEXT,
+    MIC_Item_Level decimal(3,1) DEFAULT NULL,
     PRIMARY KEY (Misc_Item_ID),
     FOREIGN KEY (Book_ID) REFERENCES Book(Book_ID)
 );
