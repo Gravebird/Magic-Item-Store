@@ -135,8 +135,8 @@ function organizeWeaponPropertyData(data, baseWeapon) {
  * @param {*} maxGold the max gold value set by the user
  * @returns the special material that this item is made of, or null if not applicable
  */
-async function getSpecialMaterial(baseWeapon, maxGold) {
-    materials = await dnd_data_controller.getMaterialIDsForWeapon(baseWeapon.Weapon_Name);
+async function getSpecialMaterial(baseWeapon, maxGold, sourceBooks) {
+    materials = await dnd_data_controller.getMaterialIDsForWeapon(baseWeapon.Weapon_Name, sourceBooks);
 
     if (materials == undefined || materials.length < 1) {
         // No materials can apply to this weapon
@@ -377,7 +377,7 @@ function getBaneTargetForMagicWeapon() {
 }
 
 
-async function getEnchantmentsForWeapon(baseWeapon, totalModifiers) {
+async function getEnchantmentsForWeapon(baseWeapon, totalModifiers, sourceBooks) {
     if (totalModifiers > 10) {
         totalModifiers = 10;
     }
@@ -419,9 +419,9 @@ async function getEnchantmentsForWeapon(baseWeapon, totalModifiers) {
         let targetModifier = Math.floor(Math.random() * totalModifiers) + 1;
         let propertyList;
         if (baseWeapon.Weapon_Type == "Ranged") {
-            propertyList = await dnd_data_controller.getEnchantmentIDsForRangedWeapon(targetModifier, is_weapon_ammunition(baseWeapon.Weapon_Name));
+            propertyList = await dnd_data_controller.getEnchantmentIDsForRangedWeapon(targetModifier, is_weapon_ammunition(baseWeapon.Weapon_Name), sourceBooks);
         } else {
-            propertyList = await dnd_data_controller.getEnchantmentIDsForMeleeWeapon(targetModifier, throwing_weapon);
+            propertyList = await dnd_data_controller.getEnchantmentIDsForMeleeWeapon(targetModifier, throwing_weapon, sourceBooks);
         }
         // This gets us an array of objects from the DB, but we need only one
 
@@ -452,6 +452,39 @@ async function getEnchantmentsForWeapon(baseWeapon, totalModifiers) {
 
 
 let weaponModel = {
+    generateWeaponItem: async function(minGold, maxGold, shopItemID, sourceBooks) {
+        let rng = Math.floor(Math.random() * 100);
+
+        let baseWeaponIDs;
+
+        if (rng < 80) {
+            // Common Weapon
+            baseWeaponIDs = await dnd_data_controller.getWeaponIDsUnderGoldCost(maxGold, "Common", sourceBooks);
+        } else {
+            // Uncommon Weapon
+            baseWeaponIDs = await dnd_data_controller.getWeaponIDsUnderGoldCost(maxGold, "Uncommon", sourceBooks);
+        }
+
+        if (baseWeaponIDs.length > 0) {
+            // We can reuse rng since all checks have been done
+            rng = Math.floor(Math.random() * baseWeaponIDs.length);
+            weaponData = await dnd_data_controller.getWeaponDetailsById(baseWeapons[rng].Weapon_ID);
+            let theWeapon = this.organizeWeaponData(weaponData, shopItemID);
+            let properties = await this.getWeaponBonuses(theWeapon, minGold, maxGold, sourceBooks);
+            if (properties != null) {
+                properties.forEach(prop => {
+                    theWeapon["Weapon_Properties"].push(prop);
+                });
+            }
+            let totalCost = this.calculateCost(theWeapon);
+            theWeapon["Weapon_Cost_With_Properties"] = totalCost;
+
+            return theWeapon;
+        }
+        // No valid weapons!
+        console.log("4. No valid weapons found in weaponModel.js - generateWeaponItem");
+        return null;
+    },
 
     /**
      * This function will organize the data that the database query returned about a weapon
@@ -489,7 +522,7 @@ let weaponModel = {
         return theWeapon;
     },
 
-    getWeaponBonuses: async function (baseWeapon, minGold, maxGold) {
+    getWeaponBonuses: async function (baseWeapon, minGold, maxGold, sourceBooks) {
         let properties = [];
 
         let mwkChance = 0;
@@ -515,7 +548,7 @@ let weaponModel = {
 
             if (rng < 10) {
                 // There is a special material!
-                material = await getSpecialMaterial(baseWeapon, maxGold);
+                material = await getSpecialMaterial(baseWeapon, maxGold, sourceBooks);
                 if (material != null) {
                     baseWeapon["Weapon_Material"] = material;
 
@@ -576,12 +609,12 @@ let weaponModel = {
                 // We can have enchantments, and we know how many!
                 // First we determine how many of the enchantments are simply enhancement bonuses (most should be)
                 // We can reuse rng again since we are done with its current use
-                let mainProperties = await getEnchantmentsForWeapon(baseWeapon, totalModifiers);
+                let mainProperties = await getEnchantmentsForWeapon(baseWeapon, totalModifiers, sourceBooks);
                 mainProperties.forEach(prop => {
                     baseWeapon.Weapon_Properties.push(organizeWeaponPropertyData(prop));
                 })
                 if (isDoubleWeapon(baseWeapon) && doubleModifiers > 0) {
-                    let secondaryProperties = await getEnchantmentsForWeapon(baseWeapon, doubleModifiers);
+                    let secondaryProperties = await getEnchantmentsForWeapon(baseWeapon, doubleModifiers, sourceBooks);
                     secondaryProperties.forEach(prop => {
                         baseWeapon.Double_Weapon_Properties.push(organizeWeaponPropertyData(prop));
                     })
@@ -679,8 +712,8 @@ let weaponModel = {
         return cost;
     },
 
-    getBaseWeapon() {
-        let baseWeapon = dnd_data_controller.get_random_base_weapon();
+    getBaseWeapon(sourceBooks) {
+        let baseWeapon = dnd_data_controller.get_random_base_weapon(sourceBooks);
 
         return baseWeapon;
     }

@@ -1,5 +1,5 @@
 const dnd_data_controller = require("./dnd_data_controller");
-const weaponModel = require("../models/weaponModel");
+const armorModel = require('../models/armorModel');
 
 
 
@@ -18,10 +18,8 @@ let routeController = {
     },
 
     test: async function (req, res) {
-        let [baseWeapon] = await dnd_data_controller.getRandomBaseWeapon();
-        console.log(baseWeapon);
-        let weaponProps = await weaponModel.getWeaponBonuses(baseWeapon, 2000, 10000)
-        console.log(weaponProps);
+        let armorItem = await armorModel.generateArmorItem(10,10000,1,"1,2,3,4");
+        console.log(armorItem);
         book_list = await dnd_data_controller.getNonCoreBooks();
         res.render("generic/test", {books: book_list});
     }
