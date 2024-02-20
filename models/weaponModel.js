@@ -115,6 +115,7 @@ function organizeWeaponPropertyData(data, baseWeapon) {
     } else {
         theData = data[0];
         theProp["Property_Name"] = theData.Magic_Weapon_Name;
+        // No enchantments on weapons with just gold costs
         theProp["Property_Gold_Cost"] = null;
         theProp["Property_Bonus_Value"] = theData.Magic_Weapon_Modifier;
         theProp["Property_Description"] = theData.Magic_Weapon_Description;
@@ -468,7 +469,7 @@ let weaponModel = {
         if (baseWeaponIDs.length > 0) {
             // We can reuse rng since all checks have been done
             rng = Math.floor(Math.random() * baseWeaponIDs.length);
-            weaponData = await dnd_data_controller.getWeaponDetailsById(baseWeapons[rng].Weapon_ID);
+            weaponData = await dnd_data_controller.getWeaponDetailsById(baseWeaponIDs[rng].Weapon_ID);
             let theWeapon = this.organizeWeaponData(weaponData, shopItemID);
             let properties = await this.getWeaponBonuses(theWeapon, minGold, maxGold, sourceBooks);
             if (properties != null) {

@@ -5,7 +5,7 @@ function organizeArmorPropertyData(data) {
     if (data == "Masterwork") {
         theProp["Property_Name"] = data;
         theProp["Property_Gold_Cost"] = parseFloat(150);
-        theProp["Property_Bonus_Value"] = 0;
+        theProp["Property_Bonus_Value"] = null;
         theProp["Property_Description"] = "Just as with weapons, you can purchase or craft masterwork versions" +
             "of armor or shields. Such a well-made item functions like the normal" +
             "version, except that its armor check penalty is lessened by 1. For" +
@@ -23,7 +23,7 @@ function organizeArmorPropertyData(data) {
     } else {
         theData = data[0];
         theProp["Property_Name"] = theData.Magic_Armor_Name;
-        theProp["Property_Gold_Cost"] = theData.Magic_Armor_Cost;
+        theProp["Property_Gold_Cost"] = parseFloat(theData.Magic_Armor_Cost);
         theProp["Property_Bonus_Value"] = theData.Magic_Armor_Modifier;
         theProp["Property_Description"] = theData.Magic_Armor_Description;
     }
@@ -32,7 +32,7 @@ function organizeArmorPropertyData(data) {
 }
 
 async function getSpecialMaterial(baseArmor, minGold, maxGold, sourceBooks) {
-    materials = await dnd_data_controller.getMaterialIDsForArmour(baseArmor.Armor_Name, sourceBooks);
+    materials = await dnd_data_controller.getMaterialIDsForArmor(baseArmor.Armor_Name, sourceBooks);
 
     if (materials == undefined || materials.length < 1) {
         // No materials can apply to this armor
@@ -423,7 +423,7 @@ let armorModel = {
             cost += armor.Armor_Material.Material_Gold_Cost;
         }
         armor.Armor_Properties.forEach(prop => {
-            if (prop.Property_Gold_Cost != null) {
+            if (prop.Property_Gold_Cost != null && !isNaN(prop.Property_Gold_Cost)) {
                 cost += prop.Property_Gold_Cost;
             } else {
                 // If the gold cost is null, its because the modifier is used instead!
