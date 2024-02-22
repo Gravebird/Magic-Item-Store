@@ -20,6 +20,14 @@ CREATE TABLE users (
     PRIMARY KEY (id)
 );
 
+CREATE TABLE Shop (
+    shop_id INT NOT NULL UNIQUE AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    shop_name varchar(50) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users (id),
+    PRIMARY KEY (shop_id)
+);
+
 -- Drop all users - start from scratch
 
 DROP USER IF EXISTS 'magic_item_store'@'localhost';

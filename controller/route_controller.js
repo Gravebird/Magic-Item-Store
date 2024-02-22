@@ -25,6 +25,9 @@ let routeController = {
         //console.log(armorItem);
         //let weaponItem = await weaponModel.generateWeaponItem(51000,51000,1,"1,2,3,4");
         //console.log(weaponItem);
+        if (req.user != undefined) {
+            console.log("User: " + req.user.username + ", id: " + req.user.id);
+        }
         book_list = await dnd_data_controller.getBooks();
         res.render("generic/test", {books: book_list});
     }
