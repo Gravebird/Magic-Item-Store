@@ -85,3 +85,12 @@ MIC_Item_Level AS "Item_Level",
 "Misc_Item" AS "Type"
 FROM Misc_Item)
 ORDER BY Cost, Item_Name;
+
+
+
+CREATE VIEW Spell_List_By_Class AS
+SELECT Spell.Spell_ID, Class.Class_Name, Class_Spells.Spell_Level, Spell.Spell_School, Spell.Spell_Name, Spell.Spell_Short_Description
+FROM Spell
+JOIN Class_Spells ON Spell.Spell_ID = Class_Spells.Spell_ID
+JOIN Class ON Class.Class_ID = Class_Spells.Class_ID
+ORDER BY Class.Class_Name, Class_Spells.Spell_Level, Spell.Spell_School, Spell.Spell_Name;
