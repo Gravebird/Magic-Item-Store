@@ -16,16 +16,16 @@ let routeController = {
     },
 
     shop_generator_form: async function (req, res) {
-        book_list = await dnd_data_controller.getNonCoreBooks();
+        book_list = await dnd_data_controller.getBooks();
         res.render("shop_generator/shop_generator", {books: book_list});
     },
 
     test: async function (req, res) {
         //let armorItem = await armorModel.generateArmorItem(10000,100000,1,"1,2,3,4");
         //console.log(armorItem);
-        let weaponItem = await weaponModel.generateWeaponItem(51000,51000,1,"1,2,3,4");
-        console.log(weaponItem);
-        book_list = await dnd_data_controller.getNonCoreBooks();
+        //let weaponItem = await weaponModel.generateWeaponItem(51000,51000,1,"1,2,3,4");
+        //console.log(weaponItem);
+        book_list = await dnd_data_controller.getBooks();
         res.render("generic/test", {books: book_list});
     }
 }

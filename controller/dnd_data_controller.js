@@ -33,8 +33,8 @@ function query(query) {
 
 let dnd_data_controller = {
 
-    getNonCoreBooks: async function() {
-        return await query('SELECT Book_Name, Book_ID FROM Book WHERE Book_ID > 2');
+    getBooks: async function() {
+        return await query('SELECT Book_Name, Book_ID FROM Book');
     },
 
     getMaterialIDsForWeapon: async function(weaponName, sourceBooks) {
