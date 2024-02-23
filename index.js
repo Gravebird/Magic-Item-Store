@@ -13,6 +13,7 @@ var MySQLStore = require('express-mysql-session')(session);
 
 const { ensureAuthenticated, forwardAuthenticated, isAdmin } = require("./middleware/checkAuth");
 const routeController = require("./controller/route_controller");
+const shopGeneratorController = require("./controller/shop_generator_controller");
 
 require("dotenv").config();
 
@@ -56,7 +57,9 @@ app.get("/", routeController.welcome);
 
 app.get("/welcome", routeController.welcome);
 
-app.get("/shop_generator", routeController.shop_generator_form);
+app.get("/shop_generator", ensureAuthenticated, routeController.shop_generator_form);
+
+app.post("/shop_generator", ensureAuthenticated, shopGeneratorController.generate);
 
 app.get("/test", routeController.test);
 

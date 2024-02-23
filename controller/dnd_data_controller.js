@@ -138,6 +138,11 @@ let dnd_data_controller = {
         'WHERE Book.Book_ID IN (' + sourceBooks + ') AND Armor_Rarity = "' + rarity +
         '" AND ROUND(Armor_Cost,0) <= ' + maxGold;
         return await query(theQuery);
+    },
+
+    getBookIDsFromNames: async function(shopNames) {
+        theQuery = 'SELECT Book_ID FROM Book WHERE Book_Name IN (' + shopNames + ')';
+        return await query(theQuery);
     }
 }
 

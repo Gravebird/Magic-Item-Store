@@ -33,9 +33,15 @@ function query(query) {
 
 let user_data_controller = {
 
-    getShopsOwnedByUser: async function(user_id) {
-        theQuery = 'SELECT shop_id FROM shop WHERE user_id = ' + user_id;
-        return query(theQuery);
+    getShopNamesOwnedByUser: async function(user_id) {
+        theQuery = 'SELECT shop_name FROM shop WHERE user_id = ' + user_id;
+        return await query(theQuery);
+    },
+
+    insertNewShop: async function(user_id, shop_name) {
+        theQuery = `INSERT INTO Shop (user_id, shop_name) VALUES (${user_id},"${shop_name}")`;
+        console.log(theQuery);
+        return await query(theQuery);
     }
 }
 
