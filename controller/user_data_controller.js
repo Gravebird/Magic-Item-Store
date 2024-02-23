@@ -40,7 +40,8 @@ let user_data_controller = {
 
     insertNewShop: async function(user_id, shop_name) {
         theQuery = `INSERT INTO Shop (user_id, shop_name) VALUES (${user_id},"${shop_name}")`;
-        console.log(theQuery);
+        await query(theQuery);
+        theQuery = `SELECT shop_id FROM Shop WHERE user_id = ${user_id} AND shop_name = "${shop_name}"`;
         return await query(theQuery);
     }
 }
