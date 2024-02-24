@@ -108,10 +108,14 @@ let shopGeneratorController = {
                 console.log(item);
             } else if (rng < potionPercentage) {
                 // Generate potion
-
+                console.log("Generating a potion...");
+                item = await dnd_data_controller.getRandomPotion(minGold, maxGold, sourceBooks);
+                console.log(item);
             } else if (rng < scrollPercentage) {
                 // Generate scroll
-
+                console.log("Generating a scroll...");
+                item = await dnd_data_controller.getRandomScroll(minGold, maxGold, sourceBooks);
+                console.log(item);
             } else if (rng < wandPercentage) {
                 // Generate wand
 

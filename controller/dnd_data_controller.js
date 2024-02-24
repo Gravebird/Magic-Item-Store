@@ -145,6 +145,23 @@ let dnd_data_controller = {
     getBookIDsFromNames: async function(shopNames) {
         theQuery = 'SELECT Book_ID FROM Book WHERE Book_Name IN (' + shopNames + ')';
         return await query(theQuery);
+    },
+
+    getRandomPotion: async function(minGold, maxGold, sourceBooks) {
+        theQuery = 'SELECT Potion.Potion_Name, Potion.Potion_Type, Potion.Potion_Cost, Spell.Spell_Short_Description, Spell.Spell_Description ' +
+        'FROM Potion JOIN Book ON Book.Book_ID = Potion.Book_ID JOIN Spell ON Spell.Spell_ID = Potion.Spell_ID ' + 
+        'WHERE Book.Book_ID IN (' + sourceBooks + ') AND Potion.Potion_Cost BETWEEN ' + minGold + ' AND ' + maxGold +
+        ' ORDER BY RAND() LIMIT 1';
+        return await query(theQuery);
+    },
+
+    getRandomScroll: async function(minGold, maxGold, sourceBooks) {
+        theQuery = 'SELECT Spell_Name, Class_Name, Spell_Level, ' +
+        'Scroll_Total_Cost, Spell_Short_Description, Spell_Description ' +
+        'FROM Scroll_And_Wand_Cost_Table WHERE Book_ID IN (' + sourceBooks + ') ' +
+        'AND Scroll_Total_Cost BETWEEN ' + minGold + ' AND ' + maxGold + ' ORDER BY RAND() LIMIT 1';
+        console.log(theQuery);
+        return await query(theQuery);
     }
 }
 

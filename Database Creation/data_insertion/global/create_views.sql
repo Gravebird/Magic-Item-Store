@@ -94,3 +94,13 @@ FROM Spell
 JOIN Class_Spells ON Spell.Spell_ID = Class_Spells.Spell_ID
 JOIN Class ON Class.Class_ID = Class_Spells.Class_ID
 ORDER BY Class.Class_Name, Class_Spells.Spell_Level, Spell.Spell_School, Spell.Spell_Name;
+
+
+
+CREATE VIEW Scroll_And_Wand_Cost_Table AS
+SELECT Book.Book_ID, Spell.Spell_Name, Class.Class_Name, Class_Spells.Spell_Level, Class_Spells.Scroll_Total_Cost, Class_Spells.Wand_Total_Cost, Spell.Spell_Short_Description, Spell.Spell_Description, MIC_Scroll_Item_Level, MIC_Wand_Item_Level
+FROM Spell
+JOIN Book ON Book.Book_ID = Spell.Book_ID
+JOIN Class_Spells ON Spell.Spell_ID = Class_Spells.Spell_ID
+JOIN Class ON Class.Class_ID = Class_Spells.Class_ID
+ORDER BY Book.Book_ID, Class.Class_Name, Class_Spells.Spell_Level, Spell.Spell_Name;
