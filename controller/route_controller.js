@@ -21,13 +21,13 @@ let routeController = {
     },
 
     test: async function (req, res) {
-        //let armorItem = await armorModel.generateArmorItem(10000,100000,1,"1,2,3,4");
-        //console.log(armorItem);
-        //let weaponItem = await weaponModel.generateWeaponItem(51000,51000,1,"1,2,3,4");
-        //console.log(weaponItem);
-        if (req.user != undefined) {
-            console.log("User: " + req.user.username + ", id: " + req.user.id);
-        }
+        let armorItem = await armorModel.generateArmorItem(0,100000,1,"1,2");
+        console.log(armorItem);
+        let weaponItem = await weaponModel.generateWeaponItem(0,100000,1,"1,2");
+        console.log(weaponItem);
+        // if (req.user != undefined) {
+        //     console.log("User: " + req.user.username + ", id: " + req.user.id);
+        // }
         book_list = await dnd_data_controller.getBooks();
         res.render("generic/test", {books: book_list});
     }

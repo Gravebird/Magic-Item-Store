@@ -130,6 +130,8 @@ let dnd_data_controller = {
         theQuery = 'SELECT Weapon_ID FROM Weapon JOIN Book ON Book.Book_ID = Weapon.Book_ID ' +
         'WHERE Book.Book_ID IN (' + sourceBooks + ') AND Weapon_Rarity = "' + rarity +
         '" AND ROUND(Weapon_Cost,0) <= ' + maxGold;
+        console.log("DEBUG: getWeaponIDsUnderGoldCost QUERY:");
+        console.log(theQuery);
         return await query(theQuery);
     },
 

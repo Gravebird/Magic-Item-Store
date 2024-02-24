@@ -59,6 +59,7 @@ let shopGeneratorController = {
                 sourceBooks += ',';
             }
         }
+        console.log(sourceBooks);
 
         // sourceBooks now contains the ids of the selected books, in a format that we can use
         // to query the database. We no longer need the book_list variable...
@@ -93,15 +94,17 @@ let shopGeneratorController = {
             let item_number = 1;
             let item;
 
+            console.log("Loop: numItem = " + numItems);
+
             if (rng < weaponPercentage) {
                 // Generate weapon
                 console.log("Generating a weapon...");
-                [item] = await weaponModel.generateWeaponItem(minGold, maxGold, item_number, sourceBooks);
+                item = await weaponModel.generateWeaponItem(minGold, maxGold, item_number, sourceBooks);
                 console.log(item);
             } else if (rng < armorPercentage) {
                 // Generate armor
                 console.log("Generating an armor...");
-                [item] = await armorModel.generateArmorItem(minGold, maxGold, item_number, sourceBooks);
+                item = await armorModel.generateArmorItem(minGold, maxGold, item_number, sourceBooks);
                 console.log(item);
             } else if (rng < potionPercentage) {
                 // Generate potion
