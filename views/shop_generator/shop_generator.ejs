@@ -102,15 +102,6 @@
             </div>
 
             <div class="shopInputContainer">
-                <p>Choose which books to include in the shop</p>
-                <select name="booksInput" id="booksInput" multiple>
-                    <% for (let i=0; i < books.length; i++) { %>
-                        <option value="<%= books[i]['Book_Name'] %>"><%= books[i]["Book_Name"] %></option>
-                    <% } %>
-                </select>
-            </div>
-
-            <div class="shopInputContainer">
                 <p>How many items should be generated? (1 - 1000)</p>
                 <input type="number" class="numberInput" id="numItemsInShop" 
                 name="numItemsInShop" min="1" max="1000" onkeyup="validateNumberInput();" 
@@ -218,6 +209,17 @@
                 <h3 id="totalPercentage" class="goodInput">Total Percentage: 100%</h3>
             </div>
 
+        </div>
+
+        <div>
+            <div class="shopInputContainer">
+                <p>Choose which books to include in the shop</p>
+                <select name="booksInput" id="booksInput" multiple>
+                    <% for (let i=0; i < books.length; i++) { %>
+                        <option value="<%= books[i]['Book_Name'] %>"><%= books[i]["Book_Name"] %></option>
+                    <% } %>
+                </select>
+            </div>
         </div>
 
         <div class="submitContainer">

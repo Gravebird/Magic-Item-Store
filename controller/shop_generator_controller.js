@@ -43,6 +43,12 @@ let shopGeneratorController = {
 
         // We need to convert the selected book names into their IDs for the database
 
+        if (sourceBooks == undefined) {
+            console.log("Error: No books selected!");
+            res.render("error/no_books_selected_error");
+            return
+        }
+
         let book_list = '';
         for (let i = 0; i < sourceBooks.length; i++) {
             book_list += '"' + sourceBooks[i] + '"';
