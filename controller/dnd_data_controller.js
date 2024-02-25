@@ -28,6 +28,7 @@ function query(query) {
         });
     }).catch(function(error) {
         console.log("DB query error: " + error);
+        console.log(query);
     });
 }
 
@@ -160,7 +161,58 @@ let dnd_data_controller = {
         'Scroll_Total_Cost, Spell_Short_Description, Spell_Description ' +
         'FROM Scroll_And_Wand_Cost_Table WHERE Book_ID IN (' + sourceBooks + ') ' +
         'AND Scroll_Total_Cost BETWEEN ' + minGold + ' AND ' + maxGold + ' ORDER BY RAND() LIMIT 1';
-        console.log(theQuery);
+        return await query(theQuery);
+    },
+
+    getRandomWand: async function(minGold, maxGold, sourceBooks) {
+        theQuery = 'SELECT Spell_Name, Class_Name, Spell_Level, Wand_Total_Cost, Spell_Short_Description, Spell_Description ' +
+        'FROM Scroll_And_Wand_Cost_Table WHERE Book_ID IN (' + sourceBooks + ') ' +
+        'AND Wand_Total_Cost BETWEEN ' + minGold + ' AND ' + maxGold + ' ORDER BY RAND() LIMIT 1';
+        return await query(theQuery);
+    },
+
+    getRandomRing: async function(minGold, maxGold, sourceBooks) {
+        theQuery = 'SELECT Ring_Name, Ring_Cost, Ring_Description FROM Ring ' +
+        'JOIN Book ON Book.Book_ID = Ring.Book_ID ' +
+        'WHERE Book.Book_ID IN (' + sourceBooks + ') ' +
+        'AND Ring_Cost BETWEEN ' + minGold + ' AND ' + maxGold + 
+        ' ORDER BY RAND() LIMIT 1';
+        return await query(theQuery);
+    },
+
+    getRandomRod: async function(minGold, maxGold, sourceBooks) {
+        theQuery = 'SELECT Rod_Name, Rod_Cost, Rod_Description FROM Rod ' +
+        'JOIN Book ON Book.Book_ID = Rod.Book_ID ' +
+        'WHERE Book.Book_ID IN (' + sourceBooks + ') ' +
+        'AND Rod_Cost BETWEEN ' + minGold + ' AND ' + maxGold +
+        ' ORDER BY RAND() LIMIT 1';
+        return await query(theQuery);
+    },
+
+    getRandomStaff: async function(minGold, maxGold, sourceBooks) {
+        theQuery = 'SELECT Staff_Name, Staff_Cost, Staff_Description FROM Staff ' + 
+        'JOIN Book ON Book.Book_ID = Staff.Book_ID ' +
+        'WHERE Book.Book_ID IN (' + sourceBooks + ') ' +
+        'AND Staff_Cost BETWEEN ' + minGold + ' AND ' + maxGold + 
+        ' ORDER BY RAND() LIMIT 1';
+        return await query(theQuery);
+    },
+
+    getRandomWondrousItem: async function(minGold, maxGold, sourceBooks) {
+        theQuery = 'SELECT Magic_Item_Name, Magic_Item_Cost, Magic_Item_Description FROM Wondrous_Item ' +
+        'JOIN Book ON Book.Book_ID = Wondrous_Item.Book_ID ' +
+        'WHERE Book.Book_ID IN (' + sourceBooks + ') ' +
+        'AND Magic_Item_Cost BETWEEN ' + minGold + ' AND ' + maxGold +
+        ' ORDER BY RAND() LIMIT 1';
+        return await query(theQuery);
+    },
+
+    getRandomMiscItem: async function(minGold, maxGold, sourceBooks) {
+        theQuery = 'SELECT Misc_Item_Name, Misc_Item_Type, Misc_Item_Cost, Misc_Item_Weight, Misc_Item_Description FROM Misc_Item ' +
+        'JOIN Book ON Book.Book_ID = Misc_Item.Book_ID ' +
+        'WHERE Book.Book_ID IN (' + sourceBooks + ') ' +
+        'AND Misc_Item_Cost BETWEEN ' + minGold + ' AND ' + maxGold +
+        ' ORDER BY RAND() LIMIT 1';
         return await query(theQuery);
     }
 }

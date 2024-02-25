@@ -100,40 +100,42 @@ let shopGeneratorController = {
                 // Generate weapon
                 console.log("Generating a weapon...");
                 item = await weaponModel.generateWeaponItem(minGold, maxGold, item_number, sourceBooks);
-                console.log(item);
             } else if (rng < armorPercentage) {
                 // Generate armor
                 console.log("Generating an armor...");
                 item = await armorModel.generateArmorItem(minGold, maxGold, item_number, sourceBooks);
-                console.log(item);
             } else if (rng < potionPercentage) {
                 // Generate potion
                 console.log("Generating a potion...");
                 item = await dnd_data_controller.getRandomPotion(minGold, maxGold, sourceBooks);
-                console.log(item);
             } else if (rng < scrollPercentage) {
                 // Generate scroll
                 console.log("Generating a scroll...");
                 item = await dnd_data_controller.getRandomScroll(minGold, maxGold, sourceBooks);
-                console.log(item);
             } else if (rng < wandPercentage) {
                 // Generate wand
-
+                console.log("Generating a wand...");
+                item = await dnd_data_controller.getRandomWand(minGold, maxGold, sourceBooks);
             } else if (rng < ringPercentage) {
                 // Generate ring
-
+                console.log("Generating a ring...");
+                item = await dnd_data_controller.getRandomRing(minGold, maxGold, sourceBooks);
             } else if (rng < rodPercentage) {
                 // Generate rod
-
+                console.log("Generating a rod...");
+                item = await dnd_data_controller.getRandomRod(minGold, maxGold, sourceBooks);
             } else if (rng < staffPercentage) {
                 // Generate staff
-
+                console.log("Generating a staff...");
+                item = await dnd_data_controller.getRandomStaff(minGold, maxGold, sourceBooks);
             } else if (rng < wondrousItemPercentage) {
                 // Generate wondrous item
-
+                console.log("Generating a wondrous item...");
+                item = await dnd_data_controller.getRandomWondrousItem(minGold, maxGold, sourceBooks);
             } else if (rng < miscItemPercentage) {
                 // Generate misc item
-
+                console.log("Generating a misc item...");
+                item = await dnd_data_controller.getRandomMiscItem(minGold, maxGold, sourceBooks);
             } else {
                 // ERROR we should not be able to reach this, it means that the percentages were not set correctly.
                 console.log("ERROR: Unexpected item percentage in shop_generator_controller - generate");
@@ -142,6 +144,8 @@ let shopGeneratorController = {
             item_number += 1;
 
             numItems -= 1;
+
+            console.log(item);
         }
         
 
