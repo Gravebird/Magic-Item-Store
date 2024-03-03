@@ -28,6 +28,8 @@ function query(query) {
         });
     }).catch(function(error) {
         console.log("DB query error: " + error);
+        console.log("Query that caused the error: ");
+        console.log(query);
     });
 }
 
@@ -42,6 +44,12 @@ let user_data_controller = {
         theQuery = `INSERT INTO Shop (user_id, shop_name) VALUES (${user_id},"${shop_name}")`;
         await query(theQuery);
         theQuery = `SELECT shop_id FROM Shop WHERE user_id = ${user_id} AND shop_name = "${shop_name}"`;
+        return await query(theQuery);
+    },
+
+    insertNewItem: async function(shop_id, item_name, item_type, item_cost, item_short_description, item_json) {
+        theQuery = `INSERT INTO Item (shop_id,Item_Type,Item_Cost,Item_Name,Item_Short_Description,Item_JSON) VALUES ` +
+        `(${shop_id},"${item_type}",${item_cost},"${item_name}","${item_short_description}","${item_json}")`;
         return await query(theQuery);
     }
 }

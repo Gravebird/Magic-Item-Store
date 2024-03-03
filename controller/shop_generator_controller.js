@@ -99,6 +99,10 @@ let shopGeneratorController = {
             let rng = Math.floor(Math.random() * 100);
             let item_number = 1;
             let item;
+            let item_name;
+            let item_type;
+            let item_cost;
+            let item_short_description = null;
 
             console.log("Loop: numItem = " + numItems);
 
@@ -106,52 +110,109 @@ let shopGeneratorController = {
                 // Generate weapon
                 console.log("Generating a weapon...");
                 item = await weaponModel.generateWeaponItem(minGold, maxGold, item_number, sourceBooks);
+                item_name = item.Weapon_Name;
+                item_type = "Weapon";
+                item_cost = item.Weapon_Cost_With_Properties;
+                if (item.Weapon_Properties.length > 0) {
+                    item_short_description = "";
+                    for (let i = 0; i < item.Weapon_Properties.length; i++) {
+                        item_short_description += "[" + item.Weapon_Properties[i].Property_Name + "] ";
+                    }
+                    for (let i = 0; i < item.Double_Weapon_Properties.length; i++) {
+                        item_short_description += "[" + item.Double_Weapon_Properties[i].Property_Name + "] ";
+                    }
+                }
+                
             } else if (rng < armorPercentage) {
                 // Generate armor
                 console.log("Generating an armor...");
                 item = await armorModel.generateArmorItem(minGold, maxGold, item_number, sourceBooks);
+                item_name = item.Armor_Name;
+                item_type = "Armor";
+                item_cost = item.Armor_Cost_With_Properties;
+                if (item.Armor_Properties.length > 0) {
+                    item_short_description = "";
+                    for (let i = 0; i < item.Armor_Properties.length; i++) {
+                        item_short_description += "[" + item.Armor_Properties[i].Property_Name + "] ";
+                    }
+                }
             } else if (rng < potionPercentage) {
                 // Generate potion
                 console.log("Generating a potion...");
-                item = await dnd_data_controller.getRandomPotion(minGold, maxGold, sourceBooks);
+                [item] = await dnd_data_controller.getRandomPotion(minGold, maxGold, sourceBooks);
+                item_name = "Potion (" + item.Potion_Name + ")";
+                item_type = "Potion";
+                item_cost = item.Potion_Cost;
+                item_short_description = item.Spell_Short_Description;
             } else if (rng < scrollPercentage) {
                 // Generate scroll
                 console.log("Generating a scroll...");
-                item = await dnd_data_controller.getRandomScroll(minGold, maxGold, sourceBooks);
+                [item] = await dnd_data_controller.getRandomScroll(minGold, maxGold, sourceBooks);
+                item_name = item.Class_Name + " Scroll (" + item.Spell_Name + ")";
+                item_type = "Scroll";
+                item_cost = item.Scroll_Total_Cost;
+                item_short_description = item.Spell_Short_Description;
             } else if (rng < wandPercentage) {
                 // Generate wand
                 console.log("Generating a wand...");
-                item = await dnd_data_controller.getRandomWand(minGold, maxGold, sourceBooks);
+                [item] = await dnd_data_controller.getRandomWand(minGold, maxGold, sourceBooks);
+                item_name = item.Class_Name + " Wand (" + item.Spell_Name + ")";
+                item_type = "Wand";
+                item_cost = item.Wand_Total_Cost;
+                item_short_description = item.Spell_Short_Description;
             } else if (rng < ringPercentage) {
                 // Generate ring
                 console.log("Generating a ring...");
-                item = await dnd_data_controller.getRandomRing(minGold, maxGold, sourceBooks);
+                [item] = await dnd_data_controller.getRandomRing(minGold, maxGold, sourceBooks);
+                item_name = "Ring of " + item.Ring_Name;
+                item_type = "Ring";
+                item_cost = item.Ring_Cost;
             } else if (rng < rodPercentage) {
                 // Generate rod
                 console.log("Generating a rod...");
-                item = await dnd_data_controller.getRandomRod(minGold, maxGold, sourceBooks);
+                [item] = await dnd_data_controller.getRandomRod(minGold, maxGold, sourceBooks);
+                item_name = "Rod of " + item.Rod_Name;
+                item_type = "Rod";
+                item_cost = item.Rod_Cost;
             } else if (rng < staffPercentage) {
                 // Generate staff
                 console.log("Generating a staff...");
-                item = await dnd_data_controller.getRandomStaff(minGold, maxGold, sourceBooks);
+                [item] = await dnd_data_controller.getRandomStaff(minGold, maxGold, sourceBooks);
+                item_name = item.Staff_Name;
+                item_type = "Staff";
+                item_cost = item.Staff_Cost;
             } else if (rng < wondrousItemPercentage) {
                 // Generate wondrous item
                 console.log("Generating a wondrous item...");
-                item = await dnd_data_controller.getRandomWondrousItem(minGold, maxGold, sourceBooks);
+                [item] = await dnd_data_controller.getRandomWondrousItem(minGold, maxGold, sourceBooks);
+                item_name = item.Magic_Item_Name;
+                item_type = "Wondrous Item";
+                item_cost = item.Magic_Item_Cost;
             } else if (rng < miscItemPercentage) {
                 // Generate misc item
                 console.log("Generating a misc item...");
-                item = await dnd_data_controller.getRandomMiscItem(minGold, maxGold, sourceBooks);
+                [item] = await dnd_data_controller.getRandomMiscItem(minGold, maxGold, sourceBooks);
+                item_name = item.Misc_Item_Name;
+                item_type = item.Misc_Item_Type;
+                item_cost = item.Misc_Item_Cost;
             } else {
                 // ERROR we should not be able to reach this, it means that the percentages were not set correctly.
                 console.log("ERROR: Unexpected item percentage in shop_generator_controller - generate");
             }
-            //console.log(item);
+
+            // console.log("***********************************************");
+            // console.log(item_name);
+            // console.log(item_type);
+            // console.log(item_cost);
+            // console.log(item_short_description);
+            // console.log("***********************************************");
+
+
             item_number += 1;
 
             numItems -= 1;
-
-            console.log(item);
+            
+            await user_data_controller.insertNewItem(shop_id,item_name,item_type,item_cost,item_short_description,JSON.stringify(item));
         }
         
 

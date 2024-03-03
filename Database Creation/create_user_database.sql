@@ -28,6 +28,18 @@ CREATE TABLE Shop (
     PRIMARY KEY (shop_id)
 );
 
+CREATE TABLE Item (
+    item_id INT NOT NULL UNIQUE AUTO_INCREMENT,
+    shop_id INT NOT NULL,
+    Item_Type VARCHAR(13) NOT NULL,
+    Item_Cost DECIMAL(9,2) NOT NULL,
+    Item_Name VARCHAR(50) NOT NULL,
+    Item_Short_Description VARCHAR(200) DEFAULT NULL,
+    Item_JSON JSON NOT NULL,
+    FOREIGN KEY (shop_id) REFERENCES Shop (shop_id),
+    PRIMARY KEY (item_id)
+);
+
 -- Drop all users - start from scratch
 
 DROP USER IF EXISTS 'magic_item_store'@'localhost';
