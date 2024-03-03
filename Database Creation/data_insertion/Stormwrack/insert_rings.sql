@@ -1,9 +1,9 @@
 
 INSERT INTO Ring (Ring_ID, Book_ID, Ring_Name, Ring_Description, Ring_Caster_Level, Ring_Cost, Ring_Aura, Ring_Creation_Reqs) VALUES
     (59,3,"Four Winds",
-        "<p>The <em>ring of the four winds</em> is favored and coveted by mariners and sea-going adventurers for its ability to harness the four winds to do the ring-bearer's will.</p><p>The ring creates small gusts of wind when the wearer is attacked, granting a +2 deflection bonus to the wearer's AC. Additionally, the character can use <em>feather fall</em> upon herself as an immediate action at any time, even when it isn't her turn. Finally, with a command word the wearer can use the ring to bring about a <em>stormrunner's ward</em> effect three times per day.</p>",
+        "<p>The <em>ring of the four winds</em> is favored and coveted by mariners and sea-going adventurers for its ability to harness the four winds to do the ring-bearers will.</p><p>The ring creates small gusts of wind when the wearer is attacked, granting a +2 deflection bonus to the wearers AC. Additionally, the character can use <em>feather fall</em> upon herself as an immediate action at any time, even when it isnt her turn. Finally, with a command word the wearer can use the ring to bring about a <em>stormrunners ward</em> effect three times per day.</p>",
         3,20000.00,"Moderate abjuration, evocation [air], transmutation",
-        "CL 3rd, Forge Ring, feather fall, mage armor, stormrunner's ward"),
+        "CL 3rd, Forge Ring, feather fall, mage armor, stormrunners ward"),
 
     (60,3,"Landwalking",
         "<p>This brass ring has a pattern of fish scaled etched into it. An aquatic humanoid or monstrous who dons the ring develops legs and feet (if it does not already have them), which persist as long as the ring is worn. It loses its swim speed, but gains a land speed of 30 feet. The ring also confers <em>air breathing</em> on the wearer.</p>",

@@ -87,9 +87,9 @@ INSERT INTO Staff (Staff_ID, Book_ID, Staff_Name, Staff_Description, Staff_Caste
         "CL 11th, Craft Staff, move earth, passwall"),
         
     (18,2,"Staff of the Woodlands",
-        "<p>Appearing to have grown naturally into its shape, this oak, ash, or yew staff allows use of the following spells:</p><ul><li><em>Charm animal</em> (1 charge)</li><li><em>Speak with animals</em> (1 charge)</li><li><em>Barkskin</em> (2 charges)</li><li><em>Wall of thorns</em> (3 charges)</li><li><em>Summon nature's Ally VI</em> (3 charges)</li><li><em>Animate plants</em> (4 charges)</li></ul>",
+        "<p>Appearing to have grown naturally into its shape, this oak, ash, or yew staff allows use of the following spells:</p><ul><li><em>Charm animal</em> (1 charge)</li><li><em>Speak with animals</em> (1 charge)</li><li><em>Barkskin</em> (2 charges)</li><li><em>Wall of thorns</em> (3 charges)</li><li><em>Summon natures Ally VI</em> (3 charges)</li><li><em>Animate plants</em> (4 charges)</li></ul>",
         13,101250.00,"Moderate varied",
-        "CL 13th, Craft Staff, Craft Magic Arms and Armor, animate plants, barkskin, charm animal, pass without trace, speak with animals, summon nature's ally CI, wall of thorns"),
+        "CL 13th, Craft Staff, Craft Magic Arms and Armor, animate plants, barkskin, charm animal, pass without trace, speak with animals, summon natures ally CI, wall of thorns"),
         
     (19,2,"Staff of Life",
         "<p>Made of thick oak shod in gold, this staff allows use of the following spells:</p><ul><li><em>Heal</em> (1 charge)</li><li><em>Raise dead</em> (5 charges)</li></ul>",

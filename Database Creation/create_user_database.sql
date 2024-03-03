@@ -31,7 +31,7 @@ CREATE TABLE Shop (
 CREATE TABLE Item (
     item_id INT NOT NULL UNIQUE AUTO_INCREMENT,
     shop_id INT NOT NULL,
-    Item_Type VARCHAR(13) NOT NULL,
+    Item_Type VARCHAR(31) NOT NULL,
     Item_Cost DECIMAL(9,2) NOT NULL,
     Item_Name VARCHAR(50) NOT NULL,
     Item_Short_Description VARCHAR(200) DEFAULT NULL,

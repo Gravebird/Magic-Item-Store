@@ -1,6 +1,8 @@
 const mysql = require("mysql2");
 
 require("dotenv").config();
+const fs = require('fs');
+const logfile = process.cwd() + "\\error.log";
 
 const pool = mysql.createPool({
     connectionLimit: 100,
@@ -30,6 +32,13 @@ function query(query) {
         console.log("DB query error: " + error);
         console.log("Query that caused the error: ");
         console.log(query);
+        let error_message = "Query Error:\n" + query + "\n\n";
+        fs.appendFile(logfile,error_message,(err) => {
+            if (err) console.log(err);
+            else {
+                console.log("Error written to log.");
+            }
+        } )
     });
 }
 
@@ -49,7 +58,7 @@ let user_data_controller = {
 
     insertNewItem: async function(shop_id, item_name, item_type, item_cost, item_short_description, item_json) {
         theQuery = `INSERT INTO Item (shop_id,Item_Type,Item_Cost,Item_Name,Item_Short_Description,Item_JSON) VALUES ` +
-        `(${shop_id},"${item_type}",${item_cost},"${item_name}","${item_short_description}","${item_json}")`;
+        `(${shop_id},"${item_type}",${item_cost},"${item_name}","${item_short_description}",'${item_json}')`;
         return await query(theQuery);
     }
 }
