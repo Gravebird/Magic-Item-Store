@@ -11,13 +11,19 @@ function is_weapon_ammunition(weaponName) {
     let toCheck = 0;
     if (weaponName == "Dart") {
         return 1;
-    } else if (weaponName.includes("Shuriken")) {
+    } else if (weaponName.includes("Shuriken") ||
+               weaponName.includes("Atlatl Spear") ||
+               weaponName.includes("Skipping Blade")) {
+        // We use a smaller substring for weapons with ammunition stacks that only have 1 digit
         toCheck = weaponName.substring(weaponName.length - 3);
     } else {
         toCheck = weaponName.substring(weaponName.length - 4)
     }
 
+    console.log(`DEBUG1 - ${weaponName} substring is ${toCheck}`);
+
     if (toCheck.includes("(") && toCheck.includes(")")) {
+        console.log(`DEBUG2 - ${weaponName} ammunition count is ${parseInt(toCheck.substring(1, toCheck.length - 1))}`);
         return parseInt(toCheck.substring(1, toCheck.length - 1));
     }
     return 0;
@@ -60,10 +66,13 @@ function getMasterworkCost(baseWeapon) {
         return parseFloat(6);
     } else {
         let toCheck;
-        if (baseWeapon["Weapon_Name"].includes("Shuriken")) {
-            // Shuriken have single-digit ammunition amounts
+        if (baseWeapon["Weapon_Name"].includes("Shuriken") ||
+            baseWeapon["Weapon_Name"].includes("Atlatl Spear") ||
+            baseWeapon["Weapon_Name"].includes("Skipping Blade")) {
+            //  single-digit ammunition amounts
             toCheck = baseWeapon["Weapon_Name"].substring(baseWeapon["Weapon_Name"].length - 3);
         } else {
+            // double-digit ammunition amounts
             toCheck = baseWeapon["Weapon_Name"].substring(baseWeapon["Weapon_Name"].length - 4);
         }
         if (toCheck.includes("(") && toCheck.includes(")")) {
