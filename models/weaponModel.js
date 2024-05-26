@@ -23,7 +23,6 @@ function is_weapon_ammunition(weaponName) {
     console.log(`DEBUG1 - ${weaponName} substring is ${toCheck}`);
 
     if (toCheck.includes("(") && toCheck.includes(")")) {
-        console.log(`DEBUG2 - ${weaponName} ammunition count is ${parseInt(toCheck.substring(1, toCheck.length - 1))}`);
         return parseInt(toCheck.substring(1, toCheck.length - 1));
     }
     return 0;
