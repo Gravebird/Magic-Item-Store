@@ -107,7 +107,6 @@ let dnd_data_controller = {
             theQuery = theQuery + 'Magic_Armor_Can_Be_Armor = true';
         }
         theQuery = theQuery + ' AND (Magic_Armor_Modifier <= ' + modifiersLeft + ' OR Magic_Armor_Cost <= ' + goldLeft + ')';
-        console.log("DB DEBUG:", theQuery);
         return await query(theQuery);
     },
 
@@ -131,8 +130,6 @@ let dnd_data_controller = {
         theQuery = 'SELECT Weapon_ID FROM Weapon JOIN Book ON Book.Book_ID = Weapon.Book_ID ' +
         'WHERE Book.Book_ID IN (' + sourceBooks + ') AND Weapon_Rarity = "' + rarity +
         '" AND ROUND(Weapon_Cost,0) <= ' + maxGold;
-        console.log("DEBUG: getWeaponIDsUnderGoldCost QUERY:");
-        console.log(theQuery);
         return await query(theQuery);
     },
 

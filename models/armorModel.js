@@ -107,7 +107,6 @@ async function getSpecialMaterial(baseArmor, minGold, maxGold, sourceBooks) {
     // Check that we can afford to put this material on the armor!
     if (baseArmor.Armor_Cost + cost + 150 > maxGold) {
         // Too expensive!
-        console.log("Too expensive! 1:", cost, maxGold)
         return null;
     }
 
@@ -142,16 +141,11 @@ function duplicateEnchantment(a, b) {
 
     let i = a.indexOf("Resistance");
     if (i >= 0) {
-        console.log("\nResistance found! - " + a);
-        console.log("Comparing with " + b);
 
         let word = a.substring(0, i);
-        console.log("Word is " + word);
         if (a.includes(word) && b.includes(word)) {
-            console.log("Match!");
             return true;
         }
-        console.log("No match!");
     }
     return false;
 }
@@ -208,7 +202,6 @@ async function getEnchantmentsForArmor(baseArmor, totalModifiers, maxGold, sourc
     theProperties.push(theProperty);
 
     while (totalModifiers > 0) {
-        console.log("1", totalModifiers);
         let numMods = 0;
         let goldLeft = maxGold;
 
@@ -228,8 +221,6 @@ async function getEnchantmentsForArmor(baseArmor, totalModifiers, maxGold, sourc
         // We have used goldLeft, now we need to change its value based on the current modifiers
         goldLeft -= (numMods * numMods * 1000);
 
-        console.log("Modifiers remaining: " + totalModifiers);
-        console.log("Gold left: " + goldLeft);
 
         if (totalModifiers > 0 || goldLeft > 20000) {
             // We can still put enchantments on this armor!
@@ -240,12 +231,11 @@ async function getEnchantmentsForArmor(baseArmor, totalModifiers, maxGold, sourc
                 propertyList = await dnd_data_controller.getEnchantmentIDsForArmor(totalModifiers, goldLeft, false, sourceBooks);
             }
 
-            console.log("2", propertyList.length);
 
             if (propertyList.length > 0) {
                 rng = Math.floor(Math.random() * propertyList.length);
                 theProperty = await dnd_data_controller.getArmorEnchantmentDetailsByID(propertyList[rng].Magic_Armor_ID);
-                console.log("3", theProperty);
+                
             } else {
                 console.log("ERROR in armorModel.js - getEnchantmentsForArmor");
                 console.log("propertyList from DB is length <= 0");

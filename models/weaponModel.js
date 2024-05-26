@@ -392,7 +392,6 @@ function getBaneTargetForMagicWeapon() {
 
 
 async function getEnchantmentsForWeapon(baseWeapon, totalModifiers, sourceBooks) {
-    console.log("Inside getEnchantmentsForWeapon");
     if (totalModifiers > 10) {
         totalModifiers = 10;
     }
@@ -429,12 +428,9 @@ async function getEnchantmentsForWeapon(baseWeapon, totalModifiers, sourceBooks)
 
     let throwing_weapon = baseWeapon.Weapon_Range_Increment != null;
 
-    console.log("Before while loop");
-
     while (totalModifiers > 0) {
         // Loop and continue finding special abilities for the weapon now that enhancements are done
         let targetModifier = Math.floor(Math.random() * totalModifiers) + 1;
-        console.log("targetModifier: " + targetModifier);
         let propertyList;
         if (baseWeapon.Weapon_Type == "Ranged") {
             propertyList = await dnd_data_controller.getEnchantmentIDsForRangedWeapon(targetModifier, is_weapon_ammunition(baseWeapon.Weapon_Name), sourceBooks);
@@ -442,7 +438,6 @@ async function getEnchantmentsForWeapon(baseWeapon, totalModifiers, sourceBooks)
             propertyList = await dnd_data_controller.getEnchantmentIDsForMeleeWeapon(targetModifier, throwing_weapon, sourceBooks);
         }
         // This gets us an array of objects from the DB, but we need only one
-        console.log("propertyList: " + propertyList);
 
 
         if (propertyList.length > 0) {
@@ -455,9 +450,7 @@ async function getEnchantmentsForWeapon(baseWeapon, totalModifiers, sourceBooks)
                 theProperty[0].Magic_Weapon_Name = theProperty[0].Magic_Weapon_Name + " (" + baneTarget + ")";
             }
 
-            console.log("Checking if enchantment is valid... weapon: " + baseWeapon + "\nproperty: " + theProperty);
             if (enchantmentIsValid(theProperty, theProperties, baseWeapon)) {
-                console.log("valid enchantment!");
                 theProperties.push(theProperty);
                 totalModifiers -= theProperty[0].Magic_Weapon_Modifier;
                 if (theProperty[0].Magic_Weapon_Name == "Throwing") {
@@ -466,8 +459,6 @@ async function getEnchantmentsForWeapon(baseWeapon, totalModifiers, sourceBooks)
             }
         }
     }
-
-    console.log("After while loop");
 
     return theProperties;
 }
@@ -479,8 +470,6 @@ let weaponModel = {
 
         let baseWeaponIDs;
 
-        console.log("inside generateWeaponItem");
-
         if (rng < 80) {
             // Common Weapon
             baseWeaponIDs = await dnd_data_controller.getWeaponIDsUnderGoldCost(maxGold, "Common", sourceBooks);
@@ -489,33 +478,21 @@ let weaponModel = {
             baseWeaponIDs = await dnd_data_controller.getWeaponIDsUnderGoldCost(maxGold, "Uncommon", sourceBooks);
         }
 
-        console.log("baseWeaponIDs: " + baseWeaponIDs);
-
         if (baseWeaponIDs.length > 0) {
             // We can reuse rng since all checks have been done
             rng = Math.floor(Math.random() * baseWeaponIDs.length);
-            console.log("dnd_data_controller.getWeaponDetailsById starting...");
             weaponData = await dnd_data_controller.getWeaponDetailsById(baseWeaponIDs[rng].Weapon_ID);
-            console.log("dnd_data_controller.getWeaponDetailsById finished");
-            console.log(weaponData);
-            console.log("organizeWeaponData starting...");
             let theWeapon = this.organizeWeaponData(weaponData, item_number);
-            console.log("organizeWeaponData finished");
-            console.log(theWeapon);
-            console.log("getWeaponBonuses starting...");
             let properties = await this.getWeaponBonuses(theWeapon, minGold, maxGold, sourceBooks);
-            console.log("getWeaponBonuses finished");
-            console.log(properties);
             if (properties != null) {
                 properties.forEach(prop => {
                     theWeapon["Weapon_Properties"].push(prop);
-                    console.log("Checking for infinite loop...");
+                    console.log("weaponModel.js - Checking for infinite loop...");
                 });
             }
             let totalCost = this.calculateCost(theWeapon);
             theWeapon["Weapon_Cost_With_Properties"] = totalCost;
 
-            console.log("Returning theWeapon...");
             return theWeapon;
         }
         // No valid weapons!
@@ -564,8 +541,6 @@ let weaponModel = {
 
         let mwkChance = 0;
 
-        console.log("Inside getWeaponBonuses");
-        console.log("Deciding on mwkChance...");
 
         if (minGold < 300 && maxGold > 300) {
             // Chance for some weapons to be masterwork
@@ -578,7 +553,6 @@ let weaponModel = {
             mwkChance = 100;
         }
         //mwkChance has been decided!
-        console.log("mwkChance has been decided");
         let rng = Math.floor(Math.random() * 100);
 
         if (rng < mwkChance) {
@@ -586,11 +560,9 @@ let weaponModel = {
             // Check if it is made of a special material before adding the masterwork property (some materials count as masterwork)
             // We can reuse rng here since all checks have been finished!
             rng = Math.floor(Math.random() * 100);
-            console.log("Deciding if there is a special material...");
 
             if (rng < 10) {
                 // There is a special material!
-                console.log("There is a special material");
                 material = await getSpecialMaterial(baseWeapon, maxGold, sourceBooks);
                 if (material != null) {
                     baseWeapon["Weapon_Material"] = material;
@@ -605,12 +577,9 @@ let weaponModel = {
                 }
             } else {
                 // No special material!
-                console.log("There is no special material");
                 properties.push(organizeWeaponPropertyData("Masterwork", baseWeapon));
             }
 
-            console.log("Finished with special materials");
-            console.log("Checking for specific special materials that affect cost...");
 
             // Check if item can have magical properties!
             // *******************************************************
@@ -632,9 +601,6 @@ let weaponModel = {
                 })
             }
 
-            console.log("Finished with checking for specific special materials...");
-
-            console.log("Checking how many modifiers this weapon can have...");
             // Determine how many modifiers this weapon can have
             // The price for ammunition is based on buying 50 at a time, so the cost would be #/50 * price
             let ammo = is_weapon_ammunition(baseWeapon.Weapon_Name);
@@ -652,14 +618,12 @@ let weaponModel = {
                 totalModifiers -= doubleModifiers;
             }
 
-            console.log("Finished checking how many modifiers this weapon can have");
 
 
             if (!isNaN(totalModifiers) && totalModifiers > 0) {
                 // We can have enchantments, and we know how many!
                 // First we determine how many of the enchantments are simply enhancement bonuses (most should be)
                 // We can reuse rng again since we are done with its current use
-                console.log("Starting getEnchantmentsForWeapon function");
                 let mainProperties = await getEnchantmentsForWeapon(baseWeapon, totalModifiers, sourceBooks);
                 mainProperties.forEach(prop => {
                     baseWeapon.Weapon_Properties.push(organizeWeaponPropertyData(prop));
@@ -670,7 +634,6 @@ let weaponModel = {
                         baseWeapon.Double_Weapon_Properties.push(organizeWeaponPropertyData(prop));
                     })
                 }
-                console.log("Finished getEnchantmentsForWeapon function");
             }
         }
         else {

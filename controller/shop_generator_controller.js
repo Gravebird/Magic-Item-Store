@@ -65,7 +65,6 @@ let shopGeneratorController = {
                 sourceBooks += ',';
             }
         }
-        console.log(sourceBooks);
 
         // sourceBooks now contains the ids of the selected books, in a format that we can use
         // to query the database. We no longer need the book_list variable...
