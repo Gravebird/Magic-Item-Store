@@ -55,9 +55,9 @@ let user_data_controller = {
             return await query(theQuery);
     },
 
-    insertArmorProperty: async function(armor_id,shop_id,name,desc,base_id) {
-        theQuery = `INSERT INTO Armor_Property (Armor_ID,shop_id,Property_Name,Property_Description,Property_Base_ID) VALUES ` +
-        `(${armor_id},${shop_id},"${name}","${desc}",${base_id})`;
+    insertArmorProperty: async function(armor_id,shop_id,name,desc,base_id,is_material) {
+        theQuery = `INSERT INTO Armor_Property (Armor_ID,shop_id,Property_Name,Property_Description,Property_Base_ID,Property_is_Material) VALUES ` +
+        `(${armor_id},${shop_id},"${name}","${desc}",${base_id},${is_material})`;
 
         return await query(theQuery);
     },
@@ -69,16 +69,16 @@ let user_data_controller = {
         return await query(theQuery);
     },
 
-    insertWeaponProperty: async function(weapon_id,shop_id,name,desc,base_id) {
-        theQuery = `INSERT INTO Weapon_Property (Weapon_ID,shop_id,Property_Name,Property_Description,Property_Base_ID) VALUES ` +
-        `(${weapon_id},${shop_id},"${name}","${desc}",${base_id})`;
+    insertWeaponProperty: async function(weapon_id,shop_id,name,desc,base_id,is_material) {
+        theQuery = `INSERT INTO Weapon_Property (Weapon_ID,shop_id,Property_Name,Property_Description,Property_Base_ID,Property_is_Material) VALUES ` +
+        `(${weapon_id},${shop_id},"${name}","${desc}",${base_id},${is_material})`;
 
         return await query(theQuery);
     },
 
-    insertDoubleSideWeaponProperty: async function(weapon_id,shop_id,name,desc,base_id) {
-        theQuery = `INSERT INTO Weapon_Property (Weapon_ID,shop_id,Property_Name,Property_Description,Property_Base_ID,Property_Double_Sided) VALUES ` +
-        `(${weapon_id},${shop_id},"${name}","${desc}",${base_id},1)`;
+    insertDoubleSideWeaponProperty: async function(weapon_id,shop_id,name,desc,base_id,is_material) {
+        theQuery = `INSERT INTO Weapon_Property (Weapon_ID,shop_id,Property_Name,Property_Description,Property_Base_ID,Property_Double_Sided,Property_is_Material) VALUES ` +
+        `(${weapon_id},${shop_id},"${name}","${desc}",${base_id},1,${is_material})`;
 
         return await query(theQuery);
     }

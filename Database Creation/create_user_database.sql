@@ -55,6 +55,7 @@ CREATE TABLE Armor_Property (
     Property_Name varchar(32) NOT NULL,
     Property_Description TEXT,
     Property_Base_ID INT,
+    Property_is_Material BOOLEAN NOT NULL,
     PRIMARY KEY (Armor_Property_ID)
 );
 
@@ -86,6 +87,7 @@ CREATE TABLE Weapon_Property (
     Property_Description TEXT,
     Property_Base_ID INT,
     Property_Double_Sided BOOLEAN DEFAULT 0,
+    Property_is_Material BOOLEAN NOT NULL,
     PRIMARY KEY (Weapon_Property_ID)
 );
 

@@ -118,16 +118,16 @@ let shopGeneratorController = {
                     item_short_description = "";
                     for (let i = 0; i < item.Weapon_Properties.length; i++) {
                         item_short_description += "[" + item.Weapon_Properties[i].Property_Name + "] ";
-                        await user_data_controller.insertWeaponProperty(item_number,shop_id,item.Weapon_Properties[i].Property_Name,item.Weapon_Properties[i].Property_Description,item.Weapon_Properties[i].base_id);
+                        await user_data_controller.insertWeaponProperty(item_number,shop_id,item.Weapon_Properties[i].Property_Name,item.Weapon_Properties[i].Property_Description,item.Weapon_Properties[i].base_id,0);
                     }
                     for (let i = 0; i < item.Double_Weapon_Properties.length; i++) {
                         item_short_description += "[" + item.Double_Weapon_Properties[i].Property_Name + "] ";
-                        await user_data_controller.insertDoubleSideWeaponProperty(item_number,shop_id,item.Double_Weapon_Properties[i].Property_Name,item.Double_Weapon_Properties[i].Property_Description,item.Double_Weapon_Properties[i].base_id);
+                        await user_data_controller.insertDoubleSideWeaponProperty(item_number,shop_id,item.Double_Weapon_Properties[i].Property_Name,item.Double_Weapon_Properties[i].Property_Description,item.Double_Weapon_Properties[i].base_id,0);
                     }
                 }
 
                 if (item.Weapon_Material != null) {
-                    await user_data_controller.insertWeaponProperty(item_number,shop_id,item.Weapon_Material.Material_Name,item.Weapon_Material.Material_Description,null);
+                    await user_data_controller.insertWeaponProperty(item_number,shop_id,item.Weapon_Material.Material_Name,item.Weapon_Material.Material_Description,null,1);
                 }
 
                 await user_data_controller.insertNewWeapon(item_number,shop_id,item_name,item.Weapon_Description,item.Weapon_Category,item.Weapon_Type,item_cost,item.Weapon_Small_Damage,item.Weapon_Medium_Damage,item.Weapon_Critical,item.Weapon_Range_Increment,item.Weapon_Damage_Type,item.Weapon_Weight,item.Item_ID,item_short_description);
@@ -144,8 +144,12 @@ let shopGeneratorController = {
                     item_short_description = "";
                     for (let i = 0; i < item.Armor_Properties.length; i++) {
                         item_short_description += "[" + item.Armor_Properties[i].Property_Name + "] ";
-                        await user_data_controller.insertArmorProperty(item_number,shop_id,item.Armor_Properties[i].Property_Name,item.Armor_Properties[i].Property_Description,item.Armor_Properties[i].base_id);
+                        await user_data_controller.insertArmorProperty(item_number,shop_id,item.Armor_Properties[i].Property_Name,item.Armor_Properties[i].Property_Description,item.Armor_Properties[i].base_id,0);
                     }
+                }
+
+                if (item.Armor_Material != null) {
+                    await user_data_controller.insertArmorProperty(item_number,shop_id,item.Armor_Material.Material_Name,item.Armor_Material.Material_Description,null,1)
                 }
 
                 await user_data_controller.insertNewArmor(item_number,shop_id,item_name,item.Armor_Description,item.Armor_Category,item_cost,item.Armor_AC_Bonus,item.Armor_Max_Dex,item.Armor_Check_Penalty,item.Armor_Spell_Failure,item.Armor_20_Speed,item.Armor_30_Speed,item.Armor_Weight,item.Item_ID,item_short_description);
