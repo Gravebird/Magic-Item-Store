@@ -75,7 +75,30 @@ async function getSpecialMaterial(baseArmor, minGold, maxGold, sourceBooks) {
         } else {
             cost = 1000;
         }
-    } else {
+    } 
+    else if (material.Material_Name == "Riverine") {
+        if (armorType == "Light") {
+            cost = 9000;
+        } else if (armorType == "Medium") {
+            cost = 16000;
+        } else if (armorType == "Heavy") {
+            cost = 25000;
+        } else {
+            cost = 4000;
+        }
+    } 
+    else if (material.Material_Name == "Pearlsteel") {
+        if (armorType == "Light") {
+            cost = 500;
+        } else if (armorType == "Medium") {
+            cost = 1000;
+        } else if (armorType == "Heavy") {
+            cost = 1500;
+        } else {
+            cost = 500;
+        }
+    } 
+    else {
         // Error! We don't have code for this material!
         console.log("Error: No code for material: " + material.Material_Name + " in armorModel.js - getSpecialMaterial");
     }

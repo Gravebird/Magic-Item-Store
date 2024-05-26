@@ -59,7 +59,7 @@ CREATE TABLE Armor_Property (
 );
 
 CREATE TABLE Weapon (
-    Weapon_ID INT NOT NULL UNIQUE AUTO_INCREMENT,
+    Weapon_ID INT NOT NULL,
     shop_id INT NOT NULL,
     Weapon_Name varchar(25) NOT NULL,
     Weapon_Description TEXT,
@@ -70,21 +70,22 @@ CREATE TABLE Weapon (
     Weapon_Medium_Damage varchar(9),
     Weapon_Critical varchar(16),
     Weapon_Range_Increment int,
-    Weapon_Damage_Type varchar(11),
+    Weapon_Damage_Type varchar(30),
     Weapon_Weight decimal(4,2) NOT NULL,
     Weapon_Base_ID INT NOT NULL,
     Weapon_Property_Summary varchar(150),
     FOREIGN KEY (shop_id) REFERENCES Shop (shop_id),
-    PRIMARY KEY (Weapon_ID)
+    PRIMARY KEY (Weapon_ID,shop_id)
 );
 
 CREATE TABLE Weapon_Property (
     Weapon_Property_ID INT NOT NULL UNIQUE AUTO_INCREMENT,
     Weapon_ID INT NOT NULL,
-    Property_Name varchar(20) NOT NULL,
+    shop_id INT NOT NULL,
+    Property_Name varchar(40) NOT NULL,
     Property_Description TEXT,
-    Property_Base_ID INT NOT NULL,
-    FOREIGN KEY (Weapon_ID) REFERENCES Weapon (Weapon_ID),
+    Property_Base_ID INT,
+    Property_Double_Sided BOOLEAN DEFAULT 0,
     PRIMARY KEY (Weapon_Property_ID)
 );
 
@@ -143,6 +144,9 @@ CREATE TABLE Wand_or_Scroll (
 
 CREATE INDEX Armor_Property_I02
 ON Armor_Property (Armor_ID, shop_id);
+
+CREATE INDEX Weapon_Property_I02
+ON Weapon_Property (Weapon_ID, shop_id);
 
 -- Drop all users - start from scratch
 

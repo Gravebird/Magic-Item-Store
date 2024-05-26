@@ -60,6 +60,27 @@ let user_data_controller = {
         `(${armor_id},${shop_id},"${name}","${desc}",${base_id})`;
 
         return await query(theQuery);
+    },
+
+    insertNewWeapon: async function(item_number,shop_id,name,desc,category,type,total_cost,small_damage,medium_damage,critical,range_increment,damage_type,weight,base_id,property_summary) {
+        theQuery = `INSERT INTO Weapon (Weapon_ID,shop_id,Weapon_Name,Weapon_Description,Weapon_Category,Weapon_Type,Weapon_Total_Cost,Weapon_Small_Damage,Weapon_Medium_Damage,Weapon_Critical,Weapon_Range_Increment,Weapon_Damage_Type,Weapon_Weight,Weapon_Base_Id,Weapon_Property_Summary) VALUES ` +
+        `(${item_number},${shop_id},"${name}","${desc}","${category}","${type}",${total_cost},"${small_damage}","${medium_damage}","${critical}",${range_increment},"${damage_type}",${weight},${base_id},"${property_summary}")`;
+
+        return await query(theQuery);
+    },
+
+    insertWeaponProperty: async function(weapon_id,shop_id,name,desc,base_id) {
+        theQuery = `INSERT INTO Weapon_Property (Weapon_ID,shop_id,Property_Name,Property_Description,Property_Base_ID) VALUES ` +
+        `(${weapon_id},${shop_id},"${name}","${desc}",${base_id})`;
+
+        return await query(theQuery);
+    },
+
+    insertDoubleSideWeaponProperty: async function(weapon_id,shop_id,name,desc,base_id) {
+        theQuery = `INSERT INTO Weapon_Property (Weapon_ID,shop_id,Property_Name,Property_Description,Property_Base_ID,Property_Double_Sided) VALUES ` +
+        `(${weapon_id},${shop_id},"${name}","${desc}",${base_id},1)`;
+
+        return await query(theQuery);
     }
 }
 

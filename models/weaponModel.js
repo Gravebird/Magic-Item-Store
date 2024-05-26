@@ -112,6 +112,7 @@ function organizeWeaponPropertyData(data, baseWeapon) {
             "shields) can be used as weapons, you can’t create a masterwork version of such an item that confers an enhancement bonus on attack" +
             "rolls. Instead, masterwork armor and shields have lessened armor" +
             "check penalties (see Masterwork Armor, page 126).";
+        theProp["base_id"] = null;
     } else {
         theData = data[0];
         theProp["Property_Name"] = theData.Magic_Weapon_Name;
@@ -119,6 +120,11 @@ function organizeWeaponPropertyData(data, baseWeapon) {
         theProp["Property_Gold_Cost"] = null;
         theProp["Property_Bonus_Value"] = theData.Magic_Weapon_Modifier;
         theProp["Property_Description"] = theData.Magic_Weapon_Description;
+        if (theData.Magic_Weapon_ID == undefined) {
+            theProp["base_id"] = null;
+        } else {
+            theProp["base_id"] = theData.Magic_Weapon_ID;
+        }
     }
 
     return theProp;
@@ -176,7 +182,14 @@ async function getSpecialMaterial(baseWeapon, maxGold, sourceBooks) {
         } else {
             console.log("ERROR: baseWeapon is not light, one-handed, two-handed, or ranged. Received: " + baseWeapon.Weapon_Type);
         }
-    } else {
+    } 
+    else if (material.Material_Name == "Kheferu") {
+        cost = baseWeapon.Weapon_Cost;
+    } 
+    else if (material.Material_Name == "Pearlsteel") {
+        cost = 1500;
+    } 
+    else {
         // Error! We don't have code for this material!
         console.log("ERROR: No code for material: " + material.Material_Name + " in weaponModel.js - getSpecialMaterials");
     }
@@ -716,7 +729,9 @@ let weaponModel = {
         let additionalCostForEnchantingMaterials = 0;
         if (weapon.Weapon_Material != null) {
             cost += weapon.Weapon_Material.Material_Gold_Cost;
-            if (weapon.Weapon_Material.Material_Name == "Iron, Cold") {
+            if (weapon.Weapon_Material.Material_Name == "Iron, Cold" ||
+                weapon.Weapon_Material.Material_Name == "Kheferu") 
+            {
                 additionalCostForEnchantingMaterials = 2000;
             }
         }
@@ -738,6 +753,7 @@ let weaponModel = {
         if (modifiers > 0) {
             cost += additionalCostForEnchantingMaterials;
             let ammo = is_weapon_ammunition(weapon.Weapon_Name);
+            console.log(`${weapon.Weapon_Name} ammunition count: ${ammo}`);
             if (ammo) {
                 cost += (modifiers * modifiers * 2000) * ammo / 50;
             } else {
@@ -752,6 +768,7 @@ let weaponModel = {
     },
 
     getBaseWeapon(sourceBooks) {
+        // Below function doesn't exist. This function is deprecated.
         let baseWeapon = dnd_data_controller.get_random_base_weapon(sourceBooks);
 
         return baseWeapon;
