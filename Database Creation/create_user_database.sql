@@ -92,7 +92,7 @@ CREATE TABLE Weapon_Property (
 );
 
 CREATE TABLE Magic_Item (
-    Magic_Item_ID INT NOT NULL UNIQUE AUTO_INCREMENT,
+    Magic_Item_ID INT NOT NULL,
     shop_id INT NOT NULL,
     Magic_Item_Name varchar(46) NOT NULL,
     Magic_Item_Description TEXT,
@@ -102,7 +102,7 @@ CREATE TABLE Magic_Item (
     Magic_Item_Aura varchar(64),
     Magic_Item_Base_ID int NOT NULL,
     FOREIGN KEY (shop_id) REFERENCES Shop (shop_id),
-    PRIMARY KEY (Magic_Item_ID)
+    PRIMARY KEY (Magic_Item_ID,shop_id)
 );
 
 CREATE TABLE Misc_Item (

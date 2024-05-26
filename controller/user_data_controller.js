@@ -81,6 +81,13 @@ let user_data_controller = {
         `(${weapon_id},${shop_id},"${name}","${desc}",${base_id},1,${is_material})`;
 
         return await query(theQuery);
+    },
+
+    insertMagicItem: async function(item_number,shop_id,name,desc,type,total_cost,caster_level,aura,base_id) {
+        theQuery = `INSERT INTO Magic_Item (Magic_Item_ID,shop_id,Magic_Item_Name,Magic_Item_Description,Magic_Item_Type,Magic_Item_Cost,Magic_Item_Caster_Level,Magic_Item_Aura,Magic_Item_Base_ID) VALUES ` +
+        `(${item_number},${shop_id},"${name}","${desc}","${type}",${total_cost},${caster_level},"${aura}",${base_id})`;
+
+        return await query(theQuery);
     }
 }
 

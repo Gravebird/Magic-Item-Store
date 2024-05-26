@@ -169,7 +169,7 @@ let dnd_data_controller = {
     },
 
     getRandomRing: async function(minGold, maxGold, sourceBooks) {
-        theQuery = 'SELECT Ring_Name, Ring_Cost, Ring_Description FROM Ring ' +
+        theQuery = 'SELECT Ring_ID, Ring_Name, Ring_Cost, Ring_Description, Ring_Caster_Level, Ring_Aura FROM Ring ' +
         'JOIN Book ON Book.Book_ID = Ring.Book_ID ' +
         'WHERE Book.Book_ID IN (' + sourceBooks + ') ' +
         'AND Ring_Cost BETWEEN ' + minGold + ' AND ' + maxGold + 
@@ -178,7 +178,7 @@ let dnd_data_controller = {
     },
 
     getRandomRod: async function(minGold, maxGold, sourceBooks) {
-        theQuery = 'SELECT Rod_Name, Rod_Cost, Rod_Description FROM Rod ' +
+        theQuery = 'SELECT Rod_ID, Rod_Name, Rod_Cost, Rod_Description, Rod_Caster_Level, Rod_Aura FROM Rod ' +
         'JOIN Book ON Book.Book_ID = Rod.Book_ID ' +
         'WHERE Book.Book_ID IN (' + sourceBooks + ') ' +
         'AND Rod_Cost BETWEEN ' + minGold + ' AND ' + maxGold +
@@ -187,7 +187,7 @@ let dnd_data_controller = {
     },
 
     getRandomStaff: async function(minGold, maxGold, sourceBooks) {
-        theQuery = 'SELECT Staff_Name, Staff_Cost, Staff_Description FROM Staff ' + 
+        theQuery = 'SELECT Staff_ID, Staff_Name, Staff_Cost, Staff_Description, Staff_Caster_Level, Staff_Aura FROM Staff ' + 
         'JOIN Book ON Book.Book_ID = Staff.Book_ID ' +
         'WHERE Book.Book_ID IN (' + sourceBooks + ') ' +
         'AND Staff_Cost BETWEEN ' + minGold + ' AND ' + maxGold + 
@@ -196,7 +196,7 @@ let dnd_data_controller = {
     },
 
     getRandomWondrousItem: async function(minGold, maxGold, sourceBooks) {
-        theQuery = 'SELECT Magic_Item_Name, Magic_Item_Cost, Magic_Item_Description FROM Wondrous_Item ' +
+        theQuery = 'SELECT Magic_Item_ID, Magic_Item_Name, Magic_Item_Cost, Magic_Item_Description, Magic_Item_Caster_Level, Magic_Item_Aura FROM Wondrous_Item ' +
         'JOIN Book ON Book.Book_ID = Wondrous_Item.Book_ID ' +
         'WHERE Book.Book_ID IN (' + sourceBooks + ') ' +
         'AND Magic_Item_Cost BETWEEN ' + minGold + ' AND ' + maxGold +

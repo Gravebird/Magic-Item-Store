@@ -184,6 +184,8 @@ let shopGeneratorController = {
                 item_name = "Ring of " + item.Ring_Name;
                 item_type = "Ring";
                 item_cost = item.Ring_Cost;
+
+                await user_data_controller.insertMagicItem(item_number,shop_id,item_name,item.Ring_Description,item_type,item_cost,item.Ring_Caster_Level,item.Ring_Aura,item.Ring_ID);
             } else if (rng < rodPercentage) {
                 // Generate rod
                 console.log("Generating a rod...");
@@ -191,6 +193,8 @@ let shopGeneratorController = {
                 item_name = "Rod of " + item.Rod_Name;
                 item_type = "Rod";
                 item_cost = item.Rod_Cost;
+
+                await user_data_controller.insertMagicItem(item_number,shop_id,item_name,item.Rod_Description,item_type,item_cost,item.Rod_Caster_Level,item.Rod_Aura,item.Rod_ID);
             } else if (rng < staffPercentage) {
                 // Generate staff
                 console.log("Generating a staff...");
@@ -198,6 +202,8 @@ let shopGeneratorController = {
                 item_name = item.Staff_Name;
                 item_type = "Staff";
                 item_cost = item.Staff_Cost;
+
+                await user_data_controller.insertMagicItem(item_number,shop_id,item_name,item.Staff_Description,item_type,item_cost,item.Staff_Caster_Level,item.Staff_Aura,item.Staff_ID);
             } else if (rng < wondrousItemPercentage) {
                 // Generate wondrous item
                 console.log("Generating a wondrous item...");
@@ -205,6 +211,8 @@ let shopGeneratorController = {
                 item_name = item.Magic_Item_Name;
                 item_type = "Wondrous Item";
                 item_cost = item.Magic_Item_Cost;
+
+                await user_data_controller.insertMagicItem(item_number,shop_id,item_name,item.Magic_Item_Description,item_type,item_cost,item.Magic_Item_Caster_Level,item.Magic_Item_Aura,item.Magic_Item_ID);
             } else if (rng < miscItemPercentage) {
                 // Generate misc item
                 console.log("Generating a misc item...");
