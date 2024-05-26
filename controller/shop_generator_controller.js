@@ -91,18 +91,19 @@ let shopGeneratorController = {
         // shop_id now contains the numerical shop id of this new shop, which we will use when we add items to the database.
 
 
-
+        let item_number = 1
         // Loop for as long as we still have items to generate
         while (numItems > 0) {
 
             // Randomly determine the type of item to generate
             let rng = Math.floor(Math.random() * 100);
-            let item_number = 1;
             let item;
             let item_name;
             let item_type;
             let item_cost;
+            let armor_id;
             let item_short_description = null;
+            
 
             console.log("Loop: numItem = " + numItems);
 
@@ -130,12 +131,17 @@ let shopGeneratorController = {
                 item_name = item.Armor_Name;
                 item_type = "Armor";
                 item_cost = item.Armor_Cost_With_Properties;
+                
                 if (item.Armor_Properties.length > 0) {
                     item_short_description = "";
                     for (let i = 0; i < item.Armor_Properties.length; i++) {
                         item_short_description += "[" + item.Armor_Properties[i].Property_Name + "] ";
+                        await user_data_controller.insertArmorProperty(item_number,shop_id,item.Armor_Properties[i].Property_Name,item.Armor_Properties[i].Property_Description,item.Armor_Properties[i].base_id);
                     }
                 }
+
+                await user_data_controller.insertNewArmor(item_number,shop_id,item_name,item.Armor_Description,item.Armor_Category,item_cost,item.Armor_AC_Bonus,item.Armor_Max_Dex,item.Armor_Check_Penalty,item.Armor_Spell_Failure,item.Armor_20_Speed,item.Armor_30_Speed,item.Armor_Weight,item.Item_ID,item_short_description);
+            
             } else if (rng < potionPercentage) {
                 // Generate potion
                 console.log("Generating a potion...");
@@ -207,12 +213,12 @@ let shopGeneratorController = {
             // console.log(item_short_description);
             // console.log("***********************************************");
 
-
+            numItems -= 1;
             item_number += 1;
 
-            numItems -= 1;
             
-            await user_data_controller.insertNewItem(shop_id,item_name,item_type,item_cost,item_short_description,JSON.stringify(item));
+            
+            //await user_data_controller.insertNewItem(shop_id,item_name,item_type,item_cost,item_short_description,JSON.stringify(item));
         }
         
 

@@ -461,7 +461,7 @@ async function getEnchantmentsForWeapon(baseWeapon, totalModifiers, sourceBooks)
 
 
 let weaponModel = {
-    generateWeaponItem: async function(minGold, maxGold, shopItemID, sourceBooks) {
+    generateWeaponItem: async function(minGold, maxGold, item_number, sourceBooks) {
         let rng = Math.floor(Math.random() * 100);
 
         let baseWeaponIDs;
@@ -486,7 +486,7 @@ let weaponModel = {
             console.log("dnd_data_controller.getWeaponDetailsById finished");
             console.log(weaponData);
             console.log("organizeWeaponData starting...");
-            let theWeapon = this.organizeWeaponData(weaponData, shopItemID);
+            let theWeapon = this.organizeWeaponData(weaponData, item_number);
             console.log("organizeWeaponData finished");
             console.log(theWeapon);
             console.log("getWeaponBonuses starting...");
@@ -516,10 +516,10 @@ let weaponModel = {
      * @param {*} theData the data returned by the database query from the weapon table. There should only be one row
      * @returns A JS object containing the attributes of the weapon from the database
      */
-    organizeWeaponData: (data, id) => {
+    organizeWeaponData: (data, item_number) => {
         theData = data[0];
         let theWeapon = {};
-        theWeapon["Item_ID"] = id;
+        theWeapon["Item_ID"] = item_number;
         theWeapon["Weapon_Name"] = theData.Weapon_Name;
         theWeapon["Weapon_Category"] = theData.Weapon_Category;
         theWeapon["Weapon_Type"] = theData.Weapon_Type;

@@ -47,9 +47,18 @@ let user_data_controller = {
         return await query(theQuery);
     },
 
-    insertNewItem: async function(shop_id, item_name, item_type, item_cost, item_short_description, item_json) {
-        theQuery = `INSERT INTO Item (shop_id,Item_Type,Item_Cost,Item_Name,Item_Short_Description,Item_JSON) VALUES ` +
-        `(${shop_id},"${item_type}",${item_cost},"${item_name}","${item_short_description}","${item_json}")`;
+    insertNewArmor: async function(item_number,shop_id,name,desc,category,total_cost,AC_bonus,max_dex,check_penalty,
+        spell_failure,speed_20,speed_30,weight,base_id,property_summary) {
+            theQuery = `INSERT INTO Armor (Armor_ID,shop_id,Armor_Name,Armor_Description,Armor_Category,Armor_Total_Cost,Armor_Base_AC_Bonus,Armor_Max_Dex,Armor_Check_Penalty,Armor_Spell_Failure,Armor_30_Speed,Armor_20_Speed,Armor_Weight,Armor_Base_ID,Armor_Property_Summary) VALUES ` +
+            `(${item_number},${shop_id},"${name}","${desc}","${category}",${total_cost},${AC_bonus},${max_dex},${check_penalty},${spell_failure},${speed_30},${speed_20},${weight},${base_id},"${property_summary}")`;
+
+            return await query(theQuery);
+    },
+
+    insertArmorProperty: async function(armor_id,shop_id,name,desc,base_id) {
+        theQuery = `INSERT INTO Armor_Property (Armor_ID,shop_id,Property_Name,Property_Description,Property_Base_ID) VALUES ` +
+        `(${armor_id},${shop_id},"${name}","${desc}",${base_id})`;
+
         return await query(theQuery);
     }
 }

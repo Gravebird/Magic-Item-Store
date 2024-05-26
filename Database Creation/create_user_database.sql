@@ -29,7 +29,7 @@ CREATE TABLE Shop (
 );
 
 CREATE TABLE Armor (
-    Armor_ID INT NOT NULL UNIQUE AUTO_INCREMENT,
+    Armor_ID INT NOT NULL,
     shop_id INT NOT NULL,
     Armor_Name varchar(20) NOT NULL,
     Armor_Description TEXT,
@@ -45,16 +45,16 @@ CREATE TABLE Armor (
     Armor_Base_ID int NOT NULL,
     Armor_Property_Summary varchar(150),
     FOREIGN KEY (shop_id) REFERENCES Shop (shop_id),
-    PRIMARY KEY (Armor_ID)
+    PRIMARY KEY (Armor_ID,shop_id)
 );
 
 CREATE TABLE Armor_Property (
     Armor_Property_ID INT NOT NULL UNIQUE AUTO_INCREMENT,
     Armor_ID INT NOT NULL,
+    shop_id INT NOT NULL,
     Property_Name varchar(32) NOT NULL,
     Property_Description TEXT,
-    Property_Base_ID INT NOT NULL,
-    FOREIGN KEY (Armor_ID) REFERENCES Armor (Armor_ID),
+    Property_Base_ID INT,
     PRIMARY KEY (Armor_Property_ID)
 );
 
@@ -139,13 +139,14 @@ CREATE TABLE Wand_or_Scroll (
     PRIMARY KEY (Wand_or_Scroll_ID)
 );
 
+-- Create indexes
+
+CREATE INDEX Armor_Property_I02
+ON Armor_Property (Armor_ID, shop_id);
+
 -- Drop all users - start from scratch
 
 DROP USER IF EXISTS 'magic_item_store'@'localhost';
-
--- Create all tables
-
-
 
 -- Create DB Users
 

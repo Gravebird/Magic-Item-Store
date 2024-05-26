@@ -20,12 +20,19 @@ function organizeArmorPropertyData(data) {
             "of masterwork quality." +
             "You can’t add the masterwork quality to armor or a shield after it" +
             "is created; it must be crafted as a masterwork item.";
+        theProp["base_id"] = null;
     } else {
         theData = data[0];
         theProp["Property_Name"] = theData.Magic_Armor_Name;
         theProp["Property_Gold_Cost"] = parseFloat(theData.Magic_Armor_Cost);
         theProp["Property_Bonus_Value"] = theData.Magic_Armor_Modifier;
         theProp["Property_Description"] = theData.Magic_Armor_Description;
+        if (theData.Magic_Armor_ID == undefined) {
+            theProp["base_id"] = null;
+        }
+        else {
+            theProp["base_id"] = theData.Magic_Armor_ID;
+        }
     }
 
     return theProp;
@@ -243,7 +250,7 @@ async function getEnchantmentsForArmor(baseArmor, totalModifiers, maxGold, sourc
 
 
 let armorModel = {
-    generateArmorItem: async function(minGold, maxGold, shopItemID, sourceBooks) {
+    generateArmorItem: async function(minGold, maxGold, item_number, sourceBooks) {
         let rng = Math.floor(Math.random() * 100);
 
         let baseArmorIDs;
@@ -260,7 +267,7 @@ let armorModel = {
             // We can reuse rng since all checks have been done
             rng = Math.floor(Math.random() * baseArmorIDs.length);
             armorData = await dnd_data_controller.getArmorDetailsById(baseArmorIDs[rng].Armor_ID);
-            let theArmor = this.organizeArmorData(armorData, shopItemID);
+            let theArmor = this.organizeArmorData(armorData, item_number);
             let properties = await this.getArmorBonuses(theArmor, minGold, maxGold, sourceBooks);
             if (properties != null) {
                 properties.forEach(prop => {
@@ -277,10 +284,10 @@ let armorModel = {
         return null;
     },
 
-    organizeArmorData: (data, id) => {
+    organizeArmorData: (data, item_number) => {
         theData = data[0]
         let theArmor = {};
-        theArmor["Item_ID"] = id;
+        theArmor["Item_ID"] = item_number;
         theArmor["Armor_Name"] = theData.Armor_Name;
         theArmor["Armor_Category"] = theData.Armor_Category;
         theArmor["Armor_Cost"] = parseFloat(theData.Armor_Cost);
