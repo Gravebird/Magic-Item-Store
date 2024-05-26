@@ -220,6 +220,8 @@ let shopGeneratorController = {
                 item_name = item.Misc_Item_Name;
                 item_type = item.Misc_Item_Type;
                 item_cost = item.Misc_Item_Cost;
+
+                await user_data_controller.insertMiscItem(item_number,shop_id,item_name,item_type,item_cost,item.Misc_Item_Weight,item.Misc_Item_Description,item.Misc_Item_ID);
             } else {
                 // ERROR we should not be able to reach this, it means that the percentages were not set correctly.
                 console.log("ERROR: Unexpected item percentage in shop_generator_controller - generate");

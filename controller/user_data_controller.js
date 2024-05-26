@@ -88,6 +88,13 @@ let user_data_controller = {
         `(${item_number},${shop_id},"${name}","${desc}","${type}",${total_cost},${caster_level},"${aura}",${base_id})`;
 
         return await query(theQuery);
+    },
+
+    insertMiscItem: async function(item_number,shop_id,name,type,total_cost,weight,desc,base_id) {
+        theQuery = `INSERT INTO Misc_Item (Misc_Item_ID,shop_id,Misc_Item_Name,Misc_Item_Type,Misc_Item_Cost,Misc_Item_Weight,Misc_Item_Description,Misc_Item_Base_ID) VALUES ` +
+        `(${item_number},${shop_id},"${name}","${type}",${total_cost},${weight},"${desc}",${base_id})`;
+
+        return await query(theQuery);
     }
 }
 

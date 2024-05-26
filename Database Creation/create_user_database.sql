@@ -106,7 +106,7 @@ CREATE TABLE Magic_Item (
 );
 
 CREATE TABLE Misc_Item (
-    Misc_Item_ID INT NOT NULL UNIQUE AUTO_INCREMENT,
+    Misc_Item_ID INT NOT NULL,
     shop_id INT NOT NULL,
     Misc_Item_Name varchar(30) NOT NULL,
     Misc_Item_Type VARCHAR(28) NOT NULL CHECK (Misc_Item_Type IN ('Trade Goods','Adventuring Gear','Special Substances and Items','Tools and Skill Kits','Clothing','Food, Drink, and Lodging','Mounts and Related Gear','Transport','Spellcasting and Services')),
@@ -119,7 +119,7 @@ CREATE TABLE Misc_Item (
 );
 
 CREATE TABLE Potion (
-    Potion_ID INT NOT NULL UNIQUE AUTO_INCREMENT,
+    Potion_ID INT NOT NULL,
     shop_id INT NOT NULL,
     Spell_ID INT NOT NULL,
     Potion_Base_ID INT NOT NULL,
@@ -131,7 +131,7 @@ CREATE TABLE Potion (
 );
 
 CREATE TABLE Wand_or_Scroll (
-    Wand_or_Scroll_ID INT NOT NULL UNIQUE AUTO_INCREMENT,
+    Wand_or_Scroll_ID INT NOT NULL,
     shop_id INT NOT NULL,
     Spell_ID INT NOT NULL,
     Class_ID INT NOT NULL,

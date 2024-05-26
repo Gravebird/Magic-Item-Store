@@ -205,7 +205,7 @@ let dnd_data_controller = {
     },
 
     getRandomMiscItem: async function(minGold, maxGold, sourceBooks) {
-        theQuery = 'SELECT Misc_Item_Name, Misc_Item_Type, Misc_Item_Cost, Misc_Item_Weight, Misc_Item_Description FROM Misc_Item ' +
+        theQuery = 'SELECT Misc_Item_ID, Misc_Item_Name, Misc_Item_Type, Misc_Item_Cost, Misc_Item_Weight, Misc_Item_Description FROM Misc_Item ' +
         'JOIN Book ON Book.Book_ID = Misc_Item.Book_ID ' +
         'WHERE Book.Book_ID IN (' + sourceBooks + ') ' +
         'AND Misc_Item_Cost BETWEEN ' + minGold + ' AND ' + maxGold +
