@@ -43,6 +43,7 @@ CREATE TABLE Armor (
     Armor_20_Speed int,
     Armor_Weight decimal(4,2) NOT NULL,
     Armor_Base_ID int NOT NULL,
+    Armor_Property_Summary varchar(150),
     FOREIGN KEY (shop_id) REFERENCES Shop (shop_id),
     PRIMARY KEY (Armor_ID)
 );
@@ -72,6 +73,7 @@ CREATE TABLE Weapon (
     Weapon_Damage_Type varchar(11),
     Weapon_Weight decimal(4,2) NOT NULL,
     Weapon_Base_ID INT NOT NULL,
+    Weapon_Property_Summary varchar(150),
     FOREIGN KEY (shop_id) REFERENCES Shop (shop_id),
     PRIMARY KEY (Weapon_ID)
 );
