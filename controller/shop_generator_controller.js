@@ -170,6 +170,8 @@ let shopGeneratorController = {
                 item_type = "Scroll";
                 item_cost = item.Scroll_Total_Cost;
                 item_short_description = item.Spell_Short_Description;
+
+                await user_data_controller.insertWandOrScroll(item_number,shop_id,item.Spell_ID,item.Class_ID,item_name,item_type,item_cost);
             } else if (rng < wandPercentage) {
                 // Generate wand
                 console.log("Generating a wand...");
@@ -178,6 +180,8 @@ let shopGeneratorController = {
                 item_type = "Wand";
                 item_cost = item.Wand_Total_Cost;
                 item_short_description = item.Spell_Short_Description;
+
+                await user_data_controller.insertWandOrScroll(item_number,shop_id,item.Spell_ID,item.Class_ID,item_name,item_type,item_cost);
             } else if (rng < ringPercentage) {
                 // Generate ring
                 console.log("Generating a ring...");

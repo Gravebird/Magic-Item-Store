@@ -154,7 +154,7 @@ let dnd_data_controller = {
     },
 
     getRandomScroll: async function(minGold, maxGold, sourceBooks) {
-        theQuery = 'SELECT Spell_Name, Class_Name, Spell_Level, ' +
+        theQuery = 'SELECT Spell_Name, Class_Name, Spell_Level, Class_ID, Spell_ID, ' +
         'Scroll_Total_Cost, Spell_Short_Description, Spell_Description ' +
         'FROM Scroll_And_Wand_Cost_Table WHERE Book_ID IN (' + sourceBooks + ') ' +
         'AND Scroll_Total_Cost BETWEEN ' + minGold + ' AND ' + maxGold + ' ORDER BY RAND() LIMIT 1';
@@ -162,7 +162,7 @@ let dnd_data_controller = {
     },
 
     getRandomWand: async function(minGold, maxGold, sourceBooks) {
-        theQuery = 'SELECT Spell_Name, Class_Name, Spell_Level, Wand_Total_Cost, Spell_Short_Description, Spell_Description ' +
+        theQuery = 'SELECT Spell_Name, Class_Name, Spell_Level, Class_ID, Spell_ID, Wand_Total_Cost, Spell_Short_Description, Spell_Description ' +
         'FROM Scroll_And_Wand_Cost_Table WHERE Book_ID IN (' + sourceBooks + ') ' +
         'AND Wand_Total_Cost BETWEEN ' + minGold + ' AND ' + maxGold + ' ORDER BY RAND() LIMIT 1';
         return await query(theQuery);

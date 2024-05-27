@@ -102,6 +102,13 @@ let user_data_controller = {
         `(${item_number},${shop_id},${spell_id},${base_id},"${name}","${type}",${total_cost})`;
 
         return await query(theQuery);
+    },
+
+    insertWandOrScroll: async function(item_number,shop_id,spell_id,class_id,name,type,cost) {
+        theQuery = `INSERT INTO Wand_or_Scroll (Wand_or_Scroll_ID, shop_id, Spell_ID, Class_ID, Wand_or_Scroll_Name, Wand_or_Scroll_Type, Wand_or_Scroll_Cost) VALUES ` +
+        `(${item_number},${shop_id},${spell_id},${class_id},"${name}","${type}",${cost})`;
+
+        return await query(theQuery);
     }
 }
 
