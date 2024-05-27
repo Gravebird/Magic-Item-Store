@@ -115,7 +115,7 @@ CREATE TABLE Misc_Item (
     Misc_Item_Description TEXT,
     Misc_Item_Base_ID INT NOT NULL,
     FOREIGN KEY (shop_id) REFERENCES Shop (shop_id),
-    PRIMARY KEY (Misc_Item_ID)
+    PRIMARY KEY (Misc_Item_ID,shop_id)
 );
 
 CREATE TABLE Potion (
@@ -123,11 +123,11 @@ CREATE TABLE Potion (
     shop_id INT NOT NULL,
     Spell_ID INT NOT NULL,
     Potion_Base_ID INT NOT NULL,
-    Potion_name varchar(45) NOT NULL,
+    Potion_name varchar(50) NOT NULL,
     Potion_type varchar(6) NOT NULL CHECK (Potion_type IN ('potion','oil')),
     Potion_cost decimal(9,2) NOT NULL,
     FOREIGN KEY (shop_id) REFERENCES Shop (shop_id),
-    PRIMARY KEY (Potion_ID)
+    PRIMARY KEY (Potion_ID,shop_id)
 );
 
 CREATE TABLE Wand_or_Scroll (
@@ -139,7 +139,7 @@ CREATE TABLE Wand_or_Scroll (
     Wand_or_Scroll_Type varchar(6) NOT NULL CHECK (Wand_or_Scroll_Type IN ("Wand","Scroll")),
     Wand_or_Scroll_Cost decimal(9,2) NOT NULL,
     FOREIGN KEY (shop_id) REFERENCES Shop (shop_id),
-    PRIMARY KEY (Wand_or_Scroll_ID)
+    PRIMARY KEY (Wand_or_Scroll_ID,shop_id)
 );
 
 -- Create indexes

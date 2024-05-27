@@ -95,6 +95,13 @@ let user_data_controller = {
         `(${item_number},${shop_id},"${name}","${type}",${total_cost},${weight},"${desc}",${base_id})`;
 
         return await query(theQuery);
+    },
+
+    insertPotion: async function(item_number,shop_id,spell_id,base_id,name,type,total_cost) {
+        theQuery = `INSERT INTO Potion (Potion_ID,shop_id,Spell_ID,Potion_Base_ID,Potion_Name,Potion_type,Potion_cost) VALUES ` +
+        `(${item_number},${shop_id},${spell_id},${base_id},"${name}","${type}",${total_cost})`;
+
+        return await query(theQuery);
     }
 }
 

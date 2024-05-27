@@ -157,10 +157,11 @@ let shopGeneratorController = {
                 // Generate potion
                 console.log("Generating a potion...");
                 [item] = await dnd_data_controller.getRandomPotion(minGold, maxGold, sourceBooks);
-                item_name = "Potion (" + item.Potion_Name + ")";
-                item_type = "Potion";
+                item_name = item.Potion_Type + " (" + item.Potion_Name + ")";
                 item_cost = item.Potion_Cost;
                 item_short_description = item.Spell_Short_Description;
+
+                await user_data_controller.insertPotion(item_number,shop_id,item.Spell_ID,item.Potion_ID,item_name,item.Potion_Type,item_cost);
             } else if (rng < scrollPercentage) {
                 // Generate scroll
                 console.log("Generating a scroll...");

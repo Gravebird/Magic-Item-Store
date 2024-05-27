@@ -146,7 +146,7 @@ let dnd_data_controller = {
     },
 
     getRandomPotion: async function(minGold, maxGold, sourceBooks) {
-        theQuery = 'SELECT Potion.Potion_Name, Potion.Potion_Type, Potion.Potion_Cost, Spell.Spell_Short_Description, Spell.Spell_Description ' +
+        theQuery = 'SELECT Potion.Potion_ID, Potion.Potion_Name, Potion.Potion_Type, Potion.Potion_Cost, Spell.Spell_Short_Description, Spell.Spell_Description, Spell.Spell_ID ' +
         'FROM Potion JOIN Book ON Book.Book_ID = Potion.Book_ID JOIN Spell ON Spell.Spell_ID = Potion.Spell_ID ' + 
         'WHERE Book.Book_ID IN (' + sourceBooks + ') AND Potion.Potion_Cost BETWEEN ' + minGold + ' AND ' + maxGold +
         ' ORDER BY RAND() LIMIT 1';
