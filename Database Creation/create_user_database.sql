@@ -24,6 +24,10 @@ CREATE TABLE Shop (
     shop_id INT NOT NULL UNIQUE AUTO_INCREMENT,
     user_id INT NOT NULL,
     shop_name varchar(50) NOT NULL,
+    shop_min_gold INT NOT NULL,
+    shop_max_gold INT NOT NULL,
+    shop_created_date DATETIME NOT NULL,
+    shop_num_items INT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users (id),
     PRIMARY KEY (shop_id)
 );

@@ -81,12 +81,15 @@ let shopGeneratorController = {
             }
         }
 
+        const datetime_now = new Date();
+        const mysql_datetime = datetime_now.toISOString().split('T')[0] + ' ' + datetime_now.toTimeString().split(' ')[0];
+
 
         // We insert a record into the shop table. Then we need to query for the shop_id,
         // so all items in the shop are kept related.
         // This function will insert the shop and then do a select query to get
         // the shop id, which it will return for us
-        const [{shop_id}] = await user_data_controller.insertNewShop(req.user.id, shopName);
+        const [{shop_id}] = await user_data_controller.insertNewShop(req.user.id, shopName, minGold, maxGold, mysql_datetime, numItems);
         // shop_id now contains the numerical shop id of this new shop, which we will use when we add items to the database.
 
 

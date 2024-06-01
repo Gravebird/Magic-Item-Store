@@ -40,8 +40,8 @@ let user_data_controller = {
         return await query(theQuery);
     },
 
-    insertNewShop: async function(user_id, shop_name) {
-        theQuery = `INSERT INTO Shop (user_id, shop_name) VALUES (${user_id},"${shop_name}")`;
+    insertNewShop: async function(user_id, shop_name, min_gold, max_gold, created_date, num_items) {
+        theQuery = `INSERT INTO Shop (user_id, shop_name, shop_min_gold, shop_max_gold, shop_created_date, shop_num_items) VALUES (${user_id},"${shop_name}",${min_gold},${max_gold},"${created_date}",${num_items})`;
         await query(theQuery);
         theQuery = `SELECT shop_id FROM Shop WHERE user_id = ${user_id} AND shop_name = "${shop_name}"`;
         return await query(theQuery);
