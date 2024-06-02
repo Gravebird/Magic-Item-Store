@@ -39,6 +39,12 @@ let routeController = {
         res.render("shop_generator/view_shops", user_shops);
     },
 
+    viewOneShop: async function (req, res) {
+        let userId = req.params.userId;
+        let shopId = req.params.shopId;
+        let shopToView = null;
+    },
+
     test: async function (req, res) {
         let armorItem = await armorModel.generateArmorItem(0,100000,1,"1,2");
         console.log(armorItem);

@@ -129,8 +129,23 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     border-color: #F8DA45;
     border-width: 2px;
     height: 40px;
-    width: 200px;
+    width: 100%;
     border-radius: 4px;
+    font-size: 25px;
+    color: white;
+}
+
+.shop-container {
+    display: inline-block;
+    margin: 2%;
+    padding: 1em;
+    border: solid;
+    background-color: #111111;
+    flex: 1 1 40%;
+}
+
+.shop-description-piece {
+    background-color: #111111;
 }
 
 .weaponsContainer, .armorContainer {

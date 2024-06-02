@@ -3,8 +3,8 @@
     <% if (shops.length != 0) { %>
         <% shops.forEach(function(shop) { %>
             <div class="shop-container">
-                <a href=<%= "/view/" + userId + "/" + shop.shop_id %>>
-                    <button class="view-shop-button" type="button"><%= shop.shop_name %></button>
+                <a href=<%= "/view-shop/" + userId + "/" + shop.shop_id %>>
+                    <button class="view-shop-button" type="button"><strong><%= shop.shop_name %></strong></button>
                 </a>
                 <p class="shop-description-piece">Created on <%= shop.shop_created_date %></p>
                 <p class="shop-description-piece"><%= shop.shop_min_gold %> GP - <%= shop.shop_max_gold %> GP</p>

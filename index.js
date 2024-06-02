@@ -61,6 +61,8 @@ app.get("/shop_generator", ensureAuthenticated, routeController.shop_generator_f
 
 app.get("/view-shops", ensureAuthenticated, routeController.view_shops);
 
+app.get("/view-shop/:userId/:shopId", routeController.viewOneShop);
+
 app.post("/shop_generator", ensureAuthenticated, shopGeneratorController.generate);
 
 app.get("/test", routeController.test);
