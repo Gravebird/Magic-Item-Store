@@ -30,9 +30,12 @@ This project uses a mysql database and a node.js server to populate item shops i
 ### Staffs / Rings / Rods / Wondrous Items
 - These items are pre-generated in the source books
 - I may add custom ones to the database in the future
-### In Progress
-- Store saved data in database instead of JSON
-- Overhaul magic item store generation process to be easier to update in the future
+### Still doing for Version 1.0
+- Create EJS pages to display generated stores and items to user.
+### Plans for future upgrades
+- Add loot generation from dungeon master's guide and magic item compendium to website
+- Add ability to search through spell table by various search criteria
+
 
 # Installation instructions
 1. Install Node JS.
