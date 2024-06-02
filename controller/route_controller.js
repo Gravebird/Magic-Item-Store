@@ -7,6 +7,17 @@ const weaponModel = require('../models/weaponModel');
 
 
 
+function organizeShopData(shops_list, user_name, user_id) {
+    let shops_data = {
+        username: user_name,
+        userId: user_id,
+        shops: shops_list
+    }
+
+    return shops_data;
+}
+
+
 let routeController = {
     welcome: (req, res) => {
         let name = null;
@@ -23,12 +34,9 @@ let routeController = {
 
     view_shops: async function (req, res) {
         let user_shops = await user_data_controller.getShopDetailsByUser(req.user.id);
-        let user_name = user_data_controller.getUserName(req.user.id);
-        console.log(shops);
-        res.render("shop_generator/view_shops", {
-            username: user_name,
-            shops: user_shops
-        })
+        let [user_name] = await user_data_controller.getUserName(req.user.id);
+        user_shops = organizeShopData(user_shops, user_name.username, req.user.id);
+        res.render("shop_generator/view_shops", user_shops);
     },
 
     test: async function (req, res) {

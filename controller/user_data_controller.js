@@ -46,7 +46,7 @@ let user_data_controller = {
     },
 
     getShopDetailsByUser: async function(user_id) {
-        theQuery = 'SELECT shop_name, shop_mind_gold, shop_max_gold, shop_created_date, shop_num_items' +
+        theQuery = 'SELECT shop_id, shop_name, shop_min_gold, shop_max_gold, shop_created_date, shop_num_items' +
             ' FROM Shop WHERE user_id = ' + user_id;
         return await query(theQuery);
     },
