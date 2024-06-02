@@ -40,6 +40,17 @@ let user_data_controller = {
         return await query(theQuery);
     },
 
+    getUserName: async function(user_id) {
+        theQuery = 'SELECT username FROM users WHERE id = ' + user_id;
+        return await query(theQuery);
+    },
+
+    getShopDetailsByUser: async function(user_id) {
+        theQuery = 'SELECT shop_name, shop_mind_gold, shop_max_gold, shop_created_date, shop_num_items' +
+            ' FROM Shop WHERE user_id = ' + user_id;
+        return await query(theQuery);
+    },
+
     insertNewShop: async function(user_id, shop_name, min_gold, max_gold, created_date, num_items) {
         theQuery = `INSERT INTO Shop (user_id, shop_name, shop_min_gold, shop_max_gold, shop_created_date, shop_num_items) VALUES (${user_id},"${shop_name}",${min_gold},${max_gold},"${created_date}",${num_items})`;
         await query(theQuery);

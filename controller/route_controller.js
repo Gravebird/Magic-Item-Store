@@ -1,4 +1,5 @@
 const dnd_data_controller = require("./dnd_data_controller");
+const user_data_controller = require("./user_data_controller");
 
 // Importing weapon and armor models for testing - delete these after testing is complete
 const armorModel = require('../models/armorModel');
@@ -18,6 +19,16 @@ let routeController = {
     shop_generator_form: async function (req, res) {
         book_list = await dnd_data_controller.getBooks();
         res.render("shop_generator/shop_generator", {books: book_list});
+    },
+
+    view_shops: async function (req, res) {
+        let user_shops = await user_data_controller.getShopDetailsByUser(req.user.id);
+        let user_name = user_data_controller.getUserName(req.user.id);
+        console.log(shops);
+        res.render("shop_generator/view_shops", {
+            username: user_name,
+            shops: user_shops
+        })
     },
 
     test: async function (req, res) {

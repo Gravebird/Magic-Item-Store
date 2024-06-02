@@ -59,6 +59,8 @@ app.get("/welcome", routeController.welcome);
 
 app.get("/shop_generator", ensureAuthenticated, routeController.shop_generator_form);
 
+app.get("/view-shops", ensureAuthenticated, routeController.view_shops);
+
 app.post("/shop_generator", ensureAuthenticated, shopGeneratorController.generate);
 
 app.get("/test", routeController.test);

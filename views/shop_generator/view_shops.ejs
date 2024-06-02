@@ -1,0 +1,17 @@
+<div class="view-shops-container">
+    <h2><%= username %> Shops</h2>
+    <% if (shops.length != 0) { %>
+        <% shops.forEach(function(shop) { %>
+            <div class="shop-container">
+                <a href=<%= "/view/" + userId + "/" + shop.id %>>
+                    <button class="view-shop-button" type="button"><%= shop.shopName %></button>
+                </a>
+                <p class="shop-description-piece">Created on <%= shop.shop_created_datetime %></p>
+                <p class="shop-description-piece"><%= shop.minGold %> GP - <%= shop.maxGold %> GP</p>
+                <p class="shop-description-piece"><%= shop.numItems %> items</p>
+            </div>
+        <% }) %>
+    <% } else { %>
+        No shops yet
+    <% } %>
+</div>
