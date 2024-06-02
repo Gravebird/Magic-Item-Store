@@ -276,6 +276,10 @@ let armorModel = {
             baseArmorIDs = await dnd_data_controller.getArmorIDsUnderGoldCost(maxGold, "Uncommon", sourceBooks);
         }
 
+        if (baseArmorIDs == undefined) {
+            return undefined;
+        }
+
         if (baseArmorIDs.length > 0) {
             // We can reuse rng since all checks have been done
             rng = Math.floor(Math.random() * baseArmorIDs.length);

@@ -486,6 +486,10 @@ let weaponModel = {
             baseWeaponIDs = await dnd_data_controller.getWeaponIDsUnderGoldCost(maxGold, "Uncommon", sourceBooks);
         }
 
+        if (baseWeaponIDs == undefined) {
+            return undefined;
+        }
+
         if (baseWeaponIDs.length > 0) {
             // We can reuse rng since all checks have been done
             rng = Math.floor(Math.random() * baseWeaponIDs.length);
