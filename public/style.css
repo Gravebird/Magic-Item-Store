@@ -148,16 +148,6 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     background-color: #111111;
 }
 
-.weaponsContainer, .armorContainer {
-    display: inline-block;
-    margin: 2%;
-    padding: 1em;
-    background-color: #111111;
-    overflow-y: scroll;
-    flex: 1 1 40%;
-    max-height: 40em;
-}
-
 .weapon-property-container, .armor-property-container, .weapon-material-container, .armor-material-container{
     display: inline-block;
     margin: 2%;
@@ -169,14 +159,6 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 
 .weapon-property-container *, .armor-property-container *, .weapon-material-container *, .armor-material-container * {
     background-color: #111111;
-}
-
-.weaponsContainer *, .armorContainer * {
-    background-color: #111111;
-}
-
-.shop-category-label {
-    text-align: center;
 }
 
 .property-list {
@@ -221,4 +203,13 @@ td {
 
 .shop-header {
     text-align: center;
+}
+
+.view-single-item-button {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    color: orange;
+    font-weight: bold;
+    font-size: 16px;
 }

@@ -40,6 +40,11 @@ let user_data_controller = {
         return await query(theQuery);
     },
 
+    getShopName: async function(shop_id) {
+        theQuery = `SELECT shop_name FROM shop WHERE shop_id = ${shop_id}`;
+        return await query(theQuery);
+    },
+
     getUserName: async function(user_id) {
         theQuery = 'SELECT username FROM users WHERE id = ' + user_id;
         return await query(theQuery);
@@ -48,6 +53,66 @@ let user_data_controller = {
     getShopDetailsByUser: async function(user_id) {
         theQuery = 'SELECT shop_id, shop_name, shop_min_gold, shop_max_gold, shop_created_date, shop_num_items' +
             ' FROM Shop WHERE user_id = ' + user_id;
+        return await query(theQuery);
+    },
+
+    getArmorInShop: async function(shop_id) {
+        theQuery = `SELECT Armor_ID, Armor_Name, Armor_Total_Cost, Armor_Property_Summary ` +
+        `FROM Armor WHERE shop_id = ${shop_id}`;
+        return await query(theQuery);
+    },
+
+    getWeaponsInShop: async function(shop_id) {
+        theQuery = `SELECT Weapon_ID, Weapon_Name, Weapon_Total_Cost, Weapon_Property_Summary ` +
+        `FROM Weapon WHERE shop_id = ${shop_id}`;
+        return await query(theQuery);
+    },
+
+    getWondrousItemsInShop: async function(shop_id) {
+        theQuery = `SELECT Magic_Item_ID, Magic_Item_Name, Magic_Item_Cost ` +
+        `FROM Magic_Item WHERE shop_id = ${shop_id} AND Magic_Item_Type = "Wondrous Item"`;
+        return await query(theQuery);
+    },
+
+    getRingsInShop: async function(shop_id) {
+        theQuery = `SELECT Magic_Item_ID, Magic_Item_Name, Magic_Item_Cost ` +
+        `FROM Magic_Item WHERE shop_id = ${shop_id} AND Magic_Item_Type = "Ring"`;
+        return await query(theQuery);
+    },
+
+    getRodsInShop: async function(shop_id) {
+        theQuery = `SELECT Magic_Item_ID, Magic_Item_Name, Magic_Item_Cost ` +
+        `FROM Magic_Item WHERE shop_id = ${shop_id} AND Magic_Item_Type = "Rod"`;
+        return await query(theQuery);
+    },
+
+    getStaffsInShop: async function(shop_id) {
+        theQuery = `SELECT Magic_Item_ID, Magic_Item_Name, Magic_Item_Cost ` +
+        `FROM Magic_Item WHERE shop_id = ${shop_id} AND Magic_Item_Type = "Staff"`;
+        return await query(theQuery);
+    },
+
+    getMiscItemsInShop: async function(shop_id) {
+        theQuery = `SELECT Misc_Item_ID, Misc_Item_Name, Misc_Item_Type, Misc_Item_Cost ` +
+        `FROM Misc_Item WHERE shop_id = ${shop_id}`;
+        return await query(theQuery);
+    },
+
+    getPotionsInShop: async function(shop_id) {
+        theQuery = `SELECT Potion_ID, Potion_Name, Potion_Type, Potion_Cost ` +
+        `FROM Potion WHERE shop_id = ${shop_id}`;
+        return await query(theQuery);
+    },
+
+    getWandsInShop: async function(shop_id) {
+        theQuery = `SELECT Wand_or_Scroll_ID, Wand_or_Scroll_Name, Wand_or_Scroll_Cost ` +
+        `FROM Wand_or_Scroll WHERE shop_id = ${shop_id} AND Wand_or_Scroll_Type = "Wand"`;
+        return await query(theQuery);
+    },
+
+    getScrollsInShop: async function(shop_id) {
+        theQuery = `SELECT Wand_or_Scroll_ID, Wand_or_Scroll_Name, Wand_or_Scroll_Cost ` +
+        `FROM Wand_or_Scroll WHERE shop_id = ${shop_id} AND Wand_or_Scroll_Type = "Scroll"`;
         return await query(theQuery);
     },
 

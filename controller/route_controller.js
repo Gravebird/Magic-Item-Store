@@ -42,7 +42,33 @@ let routeController = {
     viewOneShop: async function (req, res) {
         let userId = req.params.userId;
         let shopId = req.params.shopId;
-        let shopToView = null;
+        
+        let [shop_name] = await user_data_controller.getShopName(shopId);
+        let Armor_in_shop = await user_data_controller.getArmorInShop(shopId);
+        let Weapons_in_shop = await user_data_controller.getWeaponsInShop(shopId);
+        let Wondrous_Items_in_shop = await user_data_controller.getWondrousItemsInShop(shopId);
+        let Rings_in_shop = await user_data_controller.getRingsInShop(shopId);
+        let Rods_in_shop = await user_data_controller.getRodsInShop(shopId);
+        let Staffs_in_shop = await user_data_controller.getStaffsInShop(shopId);
+        let Misc_Items_in_shop = await user_data_controller.getMiscItemsInShop(shopId);
+        let Potions_in_shop = await user_data_controller.getPotionsInShop(shopId);
+        let Wands_in_shop = await user_data_controller.getWandsInShop(shopId);
+        let Scrolls_in_shop = await user_data_controller.getScrollsInShop(shopId);
+
+        res.render("shop_generator/view_single_shop", {
+            shopId: shopId,
+            shopName: shop_name.shop_name,
+            shopArmor: Armor_in_shop,
+            shopWeapons: Weapons_in_shop,
+            shopWondrousItems: Wondrous_Items_in_shop,
+            shopRings: Rings_in_shop,
+            shopRods: Rods_in_shop,
+            shopStaffs: Staffs_in_shop,
+            shopMiscItems: Misc_Items_in_shop,
+            shopPotions: Potions_in_shop,
+            shopWands: Wands_in_shop,
+            shopScrolls: Scrolls_in_shop
+        });
     },
 
     test: async function (req, res) {
