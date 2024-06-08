@@ -133,8 +133,15 @@ let shopGeneratorController = {
                     item_name = item.Weapon_Name;
                     item_type = "Weapon";
                     item_cost = item.Weapon_Cost_With_Properties;
+                    item_short_description = ""
+
+                    if (item.Weapon_Material != null) {
+                        item_short_description += "{" + item.Weapon_Material.Material_Name + "} ";
+                        await user_data_controller.insertWeaponProperty(item_number,shop_id,item.Weapon_Material.Material_Name,item.Weapon_Material.Material_Description,null,1);
+                    }
+
+
                     if (item.Weapon_Properties.length > 0) {
-                        item_short_description = "";
                         for (let i = 0; i < item.Weapon_Properties.length; i++) {
                             item_short_description += "[" + item.Weapon_Properties[i].Property_Name + "] ";
                             await user_data_controller.insertWeaponProperty(item_number,shop_id,item.Weapon_Properties[i].Property_Name,item.Weapon_Properties[i].Property_Description,item.Weapon_Properties[i].base_id,0);
@@ -144,10 +151,7 @@ let shopGeneratorController = {
                             await user_data_controller.insertDoubleSideWeaponProperty(item_number,shop_id,item.Double_Weapon_Properties[i].Property_Name,item.Double_Weapon_Properties[i].Property_Description,item.Double_Weapon_Properties[i].base_id,0);
                         }
                     }
-
-                    if (item.Weapon_Material != null) {
-                        await user_data_controller.insertWeaponProperty(item_number,shop_id,item.Weapon_Material.Material_Name,item.Weapon_Material.Material_Description,null,1);
-                    }
+                    
 
                     await user_data_controller.insertNewWeapon(item_number,shop_id,item_name,item.Weapon_Description,item.Weapon_Category,item.Weapon_Type,item_cost,item.Weapon_Small_Damage,item.Weapon_Medium_Damage,item.Weapon_Critical,item.Weapon_Range_Increment,item.Weapon_Damage_Type,item.Weapon_Weight,item.Item_ID,item_short_description);
                     infinite_loop_detection = 0;
