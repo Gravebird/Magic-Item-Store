@@ -68,6 +68,25 @@ let user_data_controller = {
         return await query(theQuery);
     },
 
+    getSingleWeaponDetails: async function(shop_id, weapon_id) {
+        theQuery = `SELECT Weapon_Name, Weapon_Category, Weapon_Type, Weapon_Total_Cost, Weapon_Weight, Weapon_Range_Increment, Weapon_Small_Damage, Weapon_Medium_Damage, Weapon_Critical, Weapon_Damage_Type, Weapon_Description ` +
+        `FROM Weapon WHERE shop_id = ${shop_id} AND Weapon_ID = ${weapon_id}`;
+
+        return await query(theQuery);
+    },
+
+    getSingleWeaponMaterial: async function(shop_id, weapon_id) {
+        theQuery = `SELECT Property_Name, Property_Description FROM Weapon_Property ` +
+        `WHERE shop_id = ${shop_id} AND Weapon_ID = ${weapon_id} AND Property_is_Material = 1`;
+        return await query(theQuery);
+    },
+
+    getSingleWeaponProperties: async function(shop_id, weapon_id, double_sided) {
+        theQuery = `SELECT Property_Name, Property_Description FROM Weapon_Property ` +
+        `WHERE shop_id = ${shop_id} AND Weapon_ID = ${weapon_id} AND Property_is_Material = 0 AND Property_Double_Sided = ${double_sided}`;
+        return await query(theQuery);
+    },
+
     getWondrousItemsInShop: async function(shop_id) {
         theQuery = `SELECT Magic_Item_ID, Magic_Item_Name, Magic_Item_Cost ` +
         `FROM Magic_Item WHERE shop_id = ${shop_id} AND Magic_Item_Type = "Wondrous Item"`;

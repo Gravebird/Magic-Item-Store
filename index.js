@@ -63,6 +63,8 @@ app.get("/view-shops", ensureAuthenticated, routeController.view_shops);
 
 app.get("/view-shop/:userId/:shopId", routeController.viewOneShop);
 
+app.get("/view-single-weapon/:shopId/:weaponId", routeController.viewSingleWeapon);
+
 app.post("/shop_generator", ensureAuthenticated, shopGeneratorController.generate);
 
 app.get("/test", routeController.test);

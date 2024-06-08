@@ -71,6 +71,25 @@ let routeController = {
         });
     },
 
+    viewSingleWeapon: async function (req, res) {
+        let shopId = req.params.shopId;
+        let weaponId = req.params.weaponId;
+
+        let [weapon] = await user_data_controller.getSingleWeaponDetails(shopId,weaponId);
+        let [weapon_material] = await user_data_controller.getSingleWeaponMaterial(shopId, weaponId);
+        let weapon_properties = await user_data_controller.getSingleWeaponProperties(shopId,weaponId,0);
+        let double_weapon_properties = await user_data_controller.getSingleWeaponProperties(shopId, weaponId, 1);
+
+        res.render("shop_generator/view_single_item/view_single_weapon", {
+            user_ID: req.user.id,
+            shop_ID: shopId,
+            weapon: weapon,
+            weapon_material: weapon_material,
+            weapon_properties: weapon_properties,
+            weapon_double_side_properties: double_weapon_properties
+        });
+    },
+
     test: async function (req, res) {
         let armorItem = await armorModel.generateArmorItem(0,100000,1,"1,2");
         console.log(armorItem);

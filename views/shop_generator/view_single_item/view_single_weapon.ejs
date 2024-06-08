@@ -1,0 +1,66 @@
+<a href=<%= "/view-shop/" + user_ID + "/" + shop_ID %>>Back to Shop</a>
+<div class="itemContainer">
+    <h1><%= weapon.Weapon_Name %></h1>
+    <h2><%= weapon.Weapon_Category %>, <%= weapon.Weapon_Type %></h2>
+    <p>Total Cost: <%= weapon.Weapon_Total_Cost %></p>
+    <p>Weight: <%= weapon.Weapon_Weight %></p>
+    <h3>Damage:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Small</th>
+                <th>Medium</th>
+                <th>Critical</th>
+                <% if (weapon.Weapon_Range_Increment != null) { %>
+                    <th>Range Increment</th>
+                <% } %>
+                <th>Damage Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%= weapon.Weapon_Small_Damage %></td>
+                <td><%= weapon.Weapon_Medium_Damage %></td>
+                <td><%= weapon.Weapon_Critical %></td>
+                <% if (weapon.Weapon_Range_Increment != null) { %>
+                    <td><%= weapon.Weapon_Range_Increment %></td>
+                <% } %>
+                <td><%= weapon.Weapon_Damage_Type %></td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>Description:</h3>
+    <p><%- weapon.Weapon_Description %></p>
+
+    <% if (weapon_material != null) { %>
+        <h2>Special Material:</h2>
+        <div class="weapon-material-container">
+            <h3><%= weapon_material.Property_Name %></h3>
+            <p><%- weapon_material.Property_Description %></p>
+        </div>
+    <% } %>
+
+    <% if (weapon_properties.length > 0) { %>
+        <h2>Properties:</h2>
+        <div class="property-list">
+            <% weapon_properties.forEach(prop => { %>
+                <div class="weapon-property-container">
+                    <h3><%= prop.Property_Name %></h3>
+                    <p><%- prop.Property_Description %></p>
+                </div>
+            <% }) %>
+        </div>
+    <% } %>
+
+    <% if (weapon_double_side_properties.length > 0) { %>
+        <h2>Double Side Properties:</h2>
+        <div class="property-list">
+            <% weapon_double_side_properties.forEach(prop => { %>
+                <div class="weapon-property-container">
+                    <h3><%= prop.Property_Name %></h3>
+                    <p><%- prop.Property_Description %></p>
+                </div>
+            <% }) %>
+        </div>
+    <% } %>
+</div>
