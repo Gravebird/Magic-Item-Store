@@ -117,6 +117,12 @@ let user_data_controller = {
         return await query(theQuery);
     },
 
+    getSingleMagicItemDetails: async function(shop_id, magic_item_id) {
+        theQuery = `SELECT Magic_Item_Name, Magic_Item_Type, Magic_Item_Cost, Magic_Item_Caster_Level, Magic_Item_Aura, Magic_Item_Description ` +
+        `FROM Magic_Item WHERE shop_id = ${shop_id} AND Magic_Item_ID = ${magic_item_id}`;
+        return await query(theQuery);
+    },
+
     getWondrousItemsInShop: async function(shop_id) {
         theQuery = `SELECT Magic_Item_ID, Magic_Item_Name, Magic_Item_Cost ` +
         `FROM Magic_Item WHERE shop_id = ${shop_id} AND Magic_Item_Type = "Wondrous Item"`;

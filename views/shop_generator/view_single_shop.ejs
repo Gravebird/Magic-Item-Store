@@ -51,7 +51,7 @@
                 <% shopWondrousItems.forEach(function(wondrousItem) { %>
                     <tr>
                         <td>
-                            <a href=<%= "/view-single-wondrous-item/" + shopId + "/" + wondrousItem.Magic_Item_ID %>>
+                            <a href=<%= "/view-single-magic-item/" + shopId + "/" + wondrousItem.Magic_Item_ID %>>
                                 <button class="view-single-item-button" type="button"><%= wondrousItem.Magic_Item_Name %></button>
                             </a>
                         </td>
@@ -69,7 +69,7 @@
                 <% shopRings.forEach(function(ring) { %>
                     <tr>
                         <td>
-                            <a href=<%= "/view-single-ring/" + shopId + "/" + ring.Magic_Item_ID %>>
+                            <a href=<%= "/view-single-magic-item/" + shopId + "/" + ring.Magic_Item_ID %>>
                                 <button class="view-single-item-button" type="button"><%= ring.Magic_Item_Name %></button>
                             </a>
                         </td>
@@ -87,7 +87,7 @@
                 <% shopRods.forEach(function(rod) { %>
                     <tr>
                         <td>
-                            <a href=<%= "/view-single-rod/" + shopId + "/" + rod.Magic_Item_ID %>>
+                            <a href=<%= "/view-single-magic-item/" + shopId + "/" + rod.Magic_Item_ID %>>
                                 <button class="view-single-item-button" type="button"><%= rod.Magic_Item_Name %></button>
                             </a>
                         </td>
@@ -105,7 +105,7 @@
                 <% shopStaffs.forEach(function(staff) { %>
                     <tr>
                         <td>
-                            <a href=<%= "/view-single-staff/" + shopId + "/" + staff.Magic_Item_ID %>>
+                            <a href=<%= "/view-single-magic-item/" + shopId + "/" + staff.Magic_Item_ID %>>
                                 <button class="view-single-item-button" type="button"><%= staff.Magic_Item_Name %></button>
                             </a>
                         </td>

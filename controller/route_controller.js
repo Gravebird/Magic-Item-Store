@@ -137,6 +137,19 @@ let routeController = {
         });
     },
 
+    viewSingleMagicItem: async function (req, res) {
+        let shopId = req.params.shopId;
+        let magic_item_id = req.params.magicItemId;
+
+        let [item] = await user_data_controller.getSingleMagicItemDetails(shopId, magic_item_id);
+
+        res.render("shop_generator/view_single_item/view_single_magic_item", {
+            user_ID: req.user.id,
+            shop_ID: shopId,
+            item: item
+        });
+    },
+
     test: async function (req, res) {
         let armorItem = await armorModel.generateArmorItem(0,100000,1,"1,2");
         console.log(armorItem);
