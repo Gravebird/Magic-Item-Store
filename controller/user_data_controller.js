@@ -105,6 +105,12 @@ let user_data_controller = {
         return await query(theQuery);
     },
 
+    getSinglePotionDetails: async function(shop_id, potion_id) {
+        theQuery = `SELECT Potion_name, Potion_type, Potion_cost, Spell_ID FROM Potion ` +
+        `WHERE shop_id = ${shop_id} AND Potion_ID = ${potion_id}`;
+        return await query(theQuery);
+    },
+
     getWondrousItemsInShop: async function(shop_id) {
         theQuery = `SELECT Magic_Item_ID, Magic_Item_Name, Magic_Item_Cost ` +
         `FROM Magic_Item WHERE shop_id = ${shop_id} AND Magic_Item_Type = "Wondrous Item"`;

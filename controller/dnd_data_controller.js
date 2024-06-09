@@ -211,6 +211,12 @@ let dnd_data_controller = {
         'AND Misc_Item_Cost BETWEEN ' + minGold + ' AND ' + maxGold +
         ' ORDER BY RAND() LIMIT 1';
         return await query(theQuery);
+    },
+
+    getSingleSpellNameAndDesc: async function(spell_id) {
+        theQuery = `SELECT Spell_Name, Spell_Description FROM Spell ` +
+        `WHERE Spell_ID = ${spell_id}`;
+        return await query(theQuery);
     }
 }
 

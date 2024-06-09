@@ -67,6 +67,8 @@ app.get("/view-single-weapon/:shopId/:weaponId", routeController.viewSingleWeapo
 
 app.get("/view-single-armor/:shopId/:armorId", routeController.viewSingleArmor);
 
+app.get("/view-single-potion/:shopId/:potionId", routeController.viewSinglePotion);
+
 app.post("/shop_generator", ensureAuthenticated, shopGeneratorController.generate);
 
 app.get("/test", routeController.test);

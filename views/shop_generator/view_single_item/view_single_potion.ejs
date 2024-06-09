@@ -1,0 +1,9 @@
+<a href=<%= "/view-shop/" + user_ID + "/" + shop_ID %>>Back to Shop</a>
+<div class="itemContainer">
+    <h1><%= potion.Potion_name %></h1>
+    <h2>Type: <%= potion.Potion_type %></h2>
+    <p>Total Cost: <%= potion.Potion_cost %></p>
+    <h3>Description:</h3>
+    <p><%- spell.Spell_Description %></p>
+    <a href=<%= "/view-spell/" + potion.Spell_ID %>><strong>Check the spell entry for <%= spell.Spell_Name %></strong></a>
+</div>

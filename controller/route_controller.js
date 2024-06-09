@@ -107,6 +107,21 @@ let routeController = {
         });
     },
 
+    viewSinglePotion: async function (req, res) {
+        let shopId = req.params.shopId;
+        let potionId = req.params.potionId;
+
+        let [potion] = await user_data_controller.getSinglePotionDetails(shopId, potionId);
+        let [spell] = await dnd_data_controller.getSingleSpellNameAndDesc(potion.Spell_ID);
+
+        res.render("shop_generator/view_single_item/view_single_potion", {
+            user_ID: req.user.id,
+            shop_ID: shopId,
+            potion: potion,
+            spell: spell
+        });
+    },
+
     test: async function (req, res) {
         let armorItem = await armorModel.generateArmorItem(0,100000,1,"1,2");
         console.log(armorItem);
