@@ -123,6 +123,12 @@ let user_data_controller = {
         return await query(theQuery);
     },
 
+    getSingleMiscItemDetails: async function(shop_id, misc_item_id) {
+        theQuery = `SELECT Misc_Item_Name, Misc_Item_Type, Misc_Item_Cost, Misc_Item_Weight, Misc_Item_Description ` +
+        `FROM Misc_Item WHERE shop_id = ${shop_id} AND Misc_Item_ID = ${misc_item_id}`;
+        return await query(theQuery);
+    },
+
     getWondrousItemsInShop: async function(shop_id) {
         theQuery = `SELECT Magic_Item_ID, Magic_Item_Name, Magic_Item_Cost ` +
         `FROM Magic_Item WHERE shop_id = ${shop_id} AND Magic_Item_Type = "Wondrous Item"`;

@@ -75,9 +75,9 @@ app.get("/view-single-wand/:shopId/:wandOrScrollId", routeController.viewSingleW
 
 app.get("/view-single-magic-item/:shopId/:magicItemId", routeController.viewSingleMagicItem);
 
-app.post("/shop_generator", ensureAuthenticated, shopGeneratorController.generate);
+app.get("/view-single-misc-item/:shopId/:miscItemId", routeController.viewSingleMiscItem);
 
-app.get("/test", routeController.test);
+app.post("/shop_generator", ensureAuthenticated, shopGeneratorController.generate);
 
 
 

@@ -150,16 +150,17 @@ let routeController = {
         });
     },
 
-    test: async function (req, res) {
-        let armorItem = await armorModel.generateArmorItem(0,100000,1,"1,2");
-        console.log(armorItem);
-        let weaponItem = await weaponModel.generateWeaponItem(0,100000,1,"1,2");
-        console.log(weaponItem);
-        // if (req.user != undefined) {
-        //     console.log("User: " + req.user.username + ", id: " + req.user.id);
-        // }
-        book_list = await dnd_data_controller.getBooks();
-        res.render("generic/test", {books: book_list});
+    viewSingleMiscItem: async function (req, res) {
+        let shopId = req.params.shopId;
+        let miscItemId = req.params.miscItemId;
+
+        let [misc_item] = await user_data_controller.getSingleMiscItemDetails(shopId, miscItemId);
+
+        res.render("shop_generator/view_single_item/view_single_misc_item", {
+            user_ID: req.user.id,
+            shop_ID: shopId,
+            misc_item: misc_item
+        });
     }
 }
 
