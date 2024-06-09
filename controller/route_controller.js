@@ -90,6 +90,23 @@ let routeController = {
         });
     },
 
+    viewSingleArmor: async function (req, res) {
+        let shopId = req.params.shopId;
+        let armorId = req.params.armorId;
+
+        let [armor] = await user_data_controller.getSingleArmorDetails(shopId, armorId);
+        let [armor_material] = await user_data_controller.getSingleArmorMaterial(shopId, armorId);
+        let armor_properties = await user_data_controller.getSingleArmorProperties(shopId, armorId);
+
+        res.render("shop_generator/view_single_item/view_single_armor", {
+            user_ID: req.user.id,
+            shop_ID: shopId,
+            armor: armor,
+            armor_material: armor_material,
+            armor_properties: armor_properties
+        });
+    },
+
     test: async function (req, res) {
         let armorItem = await armorModel.generateArmorItem(0,100000,1,"1,2");
         console.log(armorItem);

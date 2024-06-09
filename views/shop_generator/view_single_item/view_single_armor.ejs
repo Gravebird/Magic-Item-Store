@@ -1,0 +1,65 @@
+<a href=<%= "/view-shop/" + user_ID + "/" + shop_ID %>>Back to Shop</a>
+<div class="itemContainer">
+    <h1><%= armor.Armor_Name %></h1>
+    <h2><%= armor.Armor_Category %></h2>
+    <p>Total Cost: <%= armor.Armor_Total_Cost %></p>
+    <p>Weight: <%= armor.Armor_Weight %></p>
+    <h3>Stats:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>AC Bonus</th>
+                <% if (armor.Armor_Max_Dex != null) { %>
+                    <th>Max Dex</th>
+                <% } %>
+                <th>Armor Check Penalty</th>
+                <th>Spell Failure</th>
+                <% if (armor.Armor_30_Speed != null) { %>
+                    <th>Speed (30)</th>
+                <% } %>
+                <% if (armor.Armor_20_Speed != null) { %>
+                    <th>Speed (20)</th>
+                <% } %>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%= armor.Armor_Base_AC_Bonus %></td>
+                <% if (armor.Armor_Max_Dex != null) { %>
+                    <td><%= armor.Armor_Max_Dex %></td>
+                <% } %>
+                <td><%= armor.Armor_Check_Penalty %></td>
+                <td><%= armor.Armor_Spell_Failure %></td>
+                <% if (armor.Armor_30_Speed != null) { %>
+                    <td><%= armor.Armor_30_Speed %></td>
+                <% } %>
+                <% if (armor.Armor_20_Speed != null) { %>
+                    <td><%= armor.Armor_20_Speed %></td>
+                <% } %>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Description:</h3>
+    <p><%- armor.Armor_Description %></p>
+    
+    <% if (armor_material != null) { %>
+        <h2>Special Material:</h2>
+        <div class="armor-material-container">
+            <h3><%= armor_material.Property_Name %></h3>
+            <p><%- armor_material.Property_Description %></p>
+        </div>
+    <% } %>
+
+    <% if (armor_properties.length > 0) { %>
+        <h2>Properties:</h2>
+        <div class="property-list">
+            <% armor_properties.forEach(prop => { %>
+                <div class="armor-property-container">
+                    <h3><%= prop.Property_Name %></h3>
+                    <p><%- prop.Property_Description %></p>
+                </div>
+            <% }) %>
+        </div>
+    <% } %>
+</div>

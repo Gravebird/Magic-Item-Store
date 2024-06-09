@@ -87,6 +87,24 @@ let user_data_controller = {
         return await query(theQuery);
     },
 
+    getSingleArmorDetails: async function(shop_id, armor_id) {
+        theQuery = `SELECT Armor_Name, Armor_Category, Armor_Total_Cost, Armor_Weight, Armor_Max_Dex, Armor_30_Speed, Armor_20_Speed, Armor_Base_AC_Bonus, Armor_Check_Penalty, Armor_Spell_Failure, Armor_Description ` +
+        `FROM Armor WHERE shop_id = ${shop_id} AND Armor_ID = ${armor_id}`;
+        return await query(theQuery);
+    },
+
+    getSingleArmorMaterial: async function(shop_id, armor_id) {
+        theQuery = `SELECT Property_Name, Property_Description FROM Armor_Property ` +
+        `WHERE shop_id = ${shop_id} AND Armor_ID = ${armor_id} AND Property_is_Material = 1`;
+        return await query(theQuery);
+    },
+
+    getSingleArmorProperties: async function(shop_id, armor_id) {
+        theQuery = `SELECT Property_Name, Property_Description FROM Armor_Property ` +
+        `WHERE shop_id = ${shop_id} AND Armor_ID = ${armor_id} AND Property_is_Material = 0`;
+        return await query(theQuery);
+    },
+
     getWondrousItemsInShop: async function(shop_id) {
         theQuery = `SELECT Magic_Item_ID, Magic_Item_Name, Magic_Item_Cost ` +
         `FROM Magic_Item WHERE shop_id = ${shop_id} AND Magic_Item_Type = "Wondrous Item"`;
