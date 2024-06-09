@@ -122,6 +122,21 @@ let routeController = {
         });
     },
 
+    viewSingleWandOrScroll: async function (req, res) {
+        let shopId = req.params.shopId;
+        let wand_or_scroll_id = req.params.wandOrScrollId;
+
+        let [wand_or_scroll] = await user_data_controller.getSingleWandOrScrollDetails(shopId, wand_or_scroll_id);
+        let [spell_obj] = await dnd_data_controller.getClassSpellInformationForWandOrScroll(wand_or_scroll.Spell_ID, wand_or_scroll.Class_ID);
+
+        res.render("shop_generator/view_single_item/view_single_scroll_or_wand", {
+            user_ID: req.user.id,
+            shop_ID: shopId,
+            wand_or_scroll: wand_or_scroll,
+            spell_obj: spell_obj
+        });
+    },
+
     test: async function (req, res) {
         let armorItem = await armorModel.generateArmorItem(0,100000,1,"1,2");
         console.log(armorItem);

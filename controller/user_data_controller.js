@@ -111,6 +111,12 @@ let user_data_controller = {
         return await query(theQuery);
     },
 
+    getSingleWandOrScrollDetails: async function(shop_id, wand_or_scroll_id) {
+        theQuery = `SELECT Wand_or_Scroll_Name, Wand_or_Scroll_Type, Wand_or_Scroll_Cost, Class_ID, Spell_ID ` +
+        `FROM Wand_or_Scroll WHERE shop_id = ${shop_id} AND Wand_or_Scroll_ID = ${wand_or_scroll_id}`;
+        return await query(theQuery);
+    },
+
     getWondrousItemsInShop: async function(shop_id) {
         theQuery = `SELECT Magic_Item_ID, Magic_Item_Name, Magic_Item_Cost ` +
         `FROM Magic_Item WHERE shop_id = ${shop_id} AND Magic_Item_Type = "Wondrous Item"`;

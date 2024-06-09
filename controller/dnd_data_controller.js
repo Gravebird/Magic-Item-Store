@@ -217,6 +217,13 @@ let dnd_data_controller = {
         theQuery = `SELECT Spell_Name, Spell_Description FROM Spell ` +
         `WHERE Spell_ID = ${spell_id}`;
         return await query(theQuery);
+    },
+
+    getClassSpellInformationForWandOrScroll: async function(spell_id, class_id) {
+        theQuery = `SELECT Class.Class_Name, Class_Spells.Spell_Level, Spell.Spell_Description, Spell.Spell_Name ` +
+        `FROM Spell JOIN Class_Spells ON Spell.Spell_ID = Class_Spells.Spell_ID JOIN Class ON Class.Class_ID = Class_Spells.Class_ID ` +
+        `WHERE Spell.Spell_ID = ${spell_id} AND Class.Class_ID = ${class_id}`;
+        return await query(theQuery);
     }
 }
 

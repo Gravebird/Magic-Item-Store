@@ -69,6 +69,10 @@ app.get("/view-single-armor/:shopId/:armorId", routeController.viewSingleArmor);
 
 app.get("/view-single-potion/:shopId/:potionId", routeController.viewSinglePotion);
 
+app.get("/view-single-scroll/:shopId/:wandOrScrollId", routeController.viewSingleWandOrScroll);
+
+app.get("/view-single-wand/:shopId/:wandOrScrollId", routeController.viewSingleWandOrScroll);
+
 app.post("/shop_generator", ensureAuthenticated, shopGeneratorController.generate);
 
 app.get("/test", routeController.test);

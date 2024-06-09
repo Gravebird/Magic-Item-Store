@@ -1,0 +1,10 @@
+<a href=<%= "/view-shop/" + user_ID + "/" + shop_ID %>>Back to Shop</a>
+<div class="itemContainer">
+    <h1><%= wand_or_scroll.Wand_or_Scroll_Name %></h1>
+    <h2>Type: <%= wand_or_scroll.Wand_or_Scroll_Type %></h2>
+    <p>Total Cost: <%= wand_or_scroll.Wand_or_Scroll_Cost %></p>
+    <p>Spell Level: <%= spell_obj.class_name %> <%= spell_obj.spell_level %></p>
+    <h3>Description:</h3>
+    <p><%- spell_obj.Spell_Description %></p>
+    <a href=<%= "/view-spell/" + wand_or_scroll.Spell_ID %>><strong>Check the spell entry for <%= spell_obj.Spell_Name %></strong></a>
+</div>
