@@ -1,0 +1,63 @@
+<div class="spellContainer">
+    <h1 class="spellName"><%= spell.Spell_Name %></h1>
+    <p class="spellDescriptionSubTitle">
+        <%= spell.Spell_School %>
+        <% if (spell.Spell_Subschool != null) { %>
+            <%= spell.Spell_Subschool %>
+        <% } %>
+        <% if (spell.Spell_Descriptor != null) { %>
+            <%= spell.Spell_Descriptor %>
+        <% } %>
+    </p>
+    <p class="spellDescriptionSubTitle">
+        Level: 
+        <% for (let i=0; i < class_spells.length; i++) { %>
+            <%= class_spells[i].Class_Name %> <%= class_spells[i].Spell_Level %>
+            <% if (i != class_spells.length - 1) { %>
+                ,
+            <% } %>
+        <% } %>
+    </p>
+    <p class="spellDescriptionSubTitle">
+        Components: <%= spell.Spell_Components %>
+    </p>
+    <p class="spellDescriptionSubTitle">
+        Casting Time: <%= spell.Spell_Casting_Time %>
+    </p>
+    <p class="spellDescriptionSubTitle">
+        Range: <%= spell.Spell_Range %>
+    </p>
+    <p class="spellDescriptionSubTitle">
+        Effect: <%= spell.Spell_Effect %>
+    </p>
+    <p class="spellDescriptionSubTitle">
+        Target: <%= spell.Spell_Target %>
+    </p>
+    <p class="spellDescriptionSubTitle">
+        Duration: <%= spell.Spell_Duration %>
+    </p>
+    <p class="spellDescriptionSubTitle">
+        Saving Throw: <%= spell.Spell_Saving_Throw %>
+    </p>
+    <p class="spellDescriptionSubTitle">
+        Spell Resistance: <%= spell.Spell_Resistance %>
+    </p>
+    <p class="SpellLongDescription">
+        <%- spell.Spell_Description %>
+    </p>
+    <% if (spell.Spell_Material_Component != null) { %>
+        <p class="SpellLongDescription">
+            <em>Material Component: </em><%- spell.Spell_Material_Component %>
+        </p>
+    <% } %>
+    <% if (spell.Spell_Focus != null) { %>
+        <p class="SpellLongDescription">
+            <em>Spell Focus: </em><%- spell.Spell_Focus %>
+        </p>
+    <% } %>
+    <% if (spell.Spell_XP_Cost != null) { %>
+        <p class="SpellLongDescription">
+            <em>XP Cost: </em><%- spell.Spell_XP_Cost %>
+        </p>
+    <% } %>
+</div>

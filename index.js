@@ -77,6 +77,8 @@ app.get("/view-single-magic-item/:shopId/:magicItemId", routeController.viewSing
 
 app.get("/view-single-misc-item/:shopId/:miscItemId", routeController.viewSingleMiscItem);
 
+app.get("/view-spell/:spellId", routeController.viewSingleSpell);
+
 app.post("/shop_generator", ensureAuthenticated, shopGeneratorController.generate);
 
 

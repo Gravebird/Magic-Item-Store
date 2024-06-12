@@ -224,6 +224,18 @@ let dnd_data_controller = {
         `FROM Spell JOIN Class_Spells ON Spell.Spell_ID = Class_Spells.Spell_ID JOIN Class ON Class.Class_ID = Class_Spells.Class_ID ` +
         `WHERE Spell.Spell_ID = ${spell_id} AND Class.Class_ID = ${class_id}`;
         return await query(theQuery);
+    },
+
+    getSingleSpell: async function(spell_id) {
+        theQuery = `SELECT Spell_Name, Spell_School, Spell_Subschool, Spell_Descriptor, Spell_Components, Spell_Casting_Time, Spell_Range, Spell_Effect, Spell_Target, Spell_Duration, Spell_Saving_Throw, Spell_Resistance, Spell_Description, Spell_Material_Component, Spell_Focus, Spell_XP_Cost ` +
+        `FROM Spell WHERE Spell_ID = ${spell_id}`;
+        return await query(theQuery);
+    },
+
+    getSpellCastingClasses: async function(spell_id) {
+        theQuery = `SELECT Class.Class_Name, Class_Spells.Spell_Level FROM Class_Spells ` +
+        `JOIN Class ON Class.Class_ID = Class_Spells.Class_ID WHERE Class_Spells.Spell_ID = ${spell_id}`;
+        return await query(theQuery);
     }
 }
 
