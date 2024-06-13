@@ -49,7 +49,7 @@
         if (shop_to_be_deleted == null) {
             console.log("ERROR in view_shops.ejs - shop_to_be_deleted is null");
         } else {
-            // Call user_data_controller function to delete shop using shop_to_be_deleted
+            window.location.href=`/delete-shop/${shop_to_be_deleted}`;
         }
     }
 

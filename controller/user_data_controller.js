@@ -246,6 +246,12 @@ let user_data_controller = {
         `(${item_number},${shop_id},${spell_id},${class_id},"${name}","${type}",${cost})`;
 
         return await query(theQuery);
+    },
+
+    deleteShop: async function(shopId) {
+        theQuery = `CALL up_delete_shop (${shopId});`;
+
+        return await query(theQuery);
     }
 }
 

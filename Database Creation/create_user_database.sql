@@ -164,8 +164,14 @@ SELECT "Creating users...";
 
 CREATE USER 'magic_item_store'@'localhost' IDENTIFIED BY 'A00768125';
 
+-- Create sprocs
+
+SELECT "Creatings Sprocs...";
+
+source data_insertion/global/SPROCS/user_database/up_delete_shop.sql;
+
 -- Apply grants
 
 SELECT "Granting permissions...";
 
-GRANT SELECT, INSERT, UPDATE, DELETE ON * TO 'magic_item_store'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE, EXECUTE ON * TO 'magic_item_store'@'localhost';

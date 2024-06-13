@@ -174,6 +174,14 @@ let routeController = {
             spell: spell,
             class_spells: class_spells
         });
+    },
+
+    deleteShop: async function (req, res) {
+        let shopId = req.params.shopId;
+
+        await user_data_controller.deleteShop(shopId);
+
+        res.redirect('/view-shops');
     }
 }
 

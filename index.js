@@ -79,6 +79,8 @@ app.get("/view-single-misc-item/:shopId/:miscItemId", routeController.viewSingle
 
 app.get("/view-spell/:spellId", routeController.viewSingleSpell);
 
+app.get("/delete-shop/:shopId", routeController.deleteShop);
+
 app.post("/shop_generator", ensureAuthenticated, shopGeneratorController.generate);
 
 
