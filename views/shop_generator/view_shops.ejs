@@ -3,9 +3,13 @@
     <% if (shops.length != 0) { %>
         <% shops.forEach(function(shop) { %>
             <div class="shop-container">
-                <a href=<%= "/view-shop/" + userId + "/" + shop.shop_id %>>
-                    <button class="view-shop-button" type="button"><strong><%= shop.shop_name %></strong></button>
-                </a>
+                <div class="view-shop-header">
+                    <a href=<%= "/view-shop/" + userId + "/" + shop.shop_id %>>
+                        <button class="view-shop-button" type="button"><strong><%= shop.shop_name %></strong></button>
+                    </a>
+                    <button class="rename-shop-button" type="button">&#9998;</button>
+                    <button class="delete-shop-button" type="button" onclick=<%- '"openDeletePopUp(' + shop.shop_id + ')"' %>>&#9249;</button>
+                </div>
                 <p class="shop-description-piece">Created on <%= shop.shop_created_date %></p>
                 <p class="shop-description-piece"><%= shop.shop_min_gold %> GP - <%= shop.shop_max_gold %> GP</p>
                 <p class="shop-description-piece"><%= shop.shop_num_items %> items</p>
@@ -14,4 +18,39 @@
     <% } else { %>
         No shops yet
     <% } %>
+    <div id="delete-confirm-window" class="delete-pop-up">
+        <span onclick="closeDeletePopUp()" class="close-pop-up" title="Close Popup">&times;</span>
+        <div class="delete-pop-up-content">
+            <h1>Delete Shop</h1>
+            <p>Are you sure you want to delete this shop?</p>
+            <div class="delete-shop-yes-no-button">
+                <button type="button" class="cancel-button" onclick="closeDeletePopUp()">Cancel</button>
+                <button type="button" class="delete-button" onclick="delete_shop()">Delete</button>
+            </div>
+        </div>
+    </div>>
 </div>
+
+<script>
+
+    let shop_to_be_deleted = null;
+
+    function openDeletePopUp(shop_id) {
+        shop_to_be_deleted = shop_id;
+        document.getElementById('delete-confirm-window').style.display='block';
+    }
+
+    function closeDeletePopUp() {
+        shop_to_be_deleted = null;
+        document.getElementById('delete-confirm-window').style.display='none';
+    }
+
+    function delete_shop() {
+        if (shop_to_be_deleted == null) {
+            console.log("ERROR in view_shops.ejs - shop_to_be_deleted is null");
+        } else {
+            // Call user_data_controller function to delete shop using shop_to_be_deleted
+        }
+    }
+
+</script>
