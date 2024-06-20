@@ -34,7 +34,6 @@ module.exports = {
         let user_owns_shop = false;
 
         user_shop_ids.forEach(shop => {
-            console.log(`${shop.shop_id} comparing to ${shopId}`);
             if (Number(shop.shop_id) == shopId) {
                 user_owns_shop = true;
             }

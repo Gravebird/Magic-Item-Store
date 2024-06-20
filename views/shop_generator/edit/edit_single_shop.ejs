@@ -15,9 +15,10 @@
                 <% shopArmor.forEach(function(armor) { %>
                     <tr>
                         <td>
-                            <a href=<%= "/view-single-armor/" + shopId + "/" + armor.Armor_ID %>>
+                            <a href=<%= "/edit-single-armor/" + shopId + "/" + armor.Armor_ID %>>
                                 <button class="view-single-item-button" type="button"><%= armor.Armor_Name %></button>
                             </a>
+                            <button class="delete-item-button" type="button" onclick=<%- '"deleteArmor(' + armor.Armor_ID + ')"' %>>&#128465;</button>
                         </td>
 
                         <td>Armor</td>
@@ -33,9 +34,10 @@
                 <% shopWeapons.forEach(function(weapon) { %>
                     <tr>
                         <td>
-                            <a href=<%= "/view-single-weapon/" + shopId + "/" + weapon.Weapon_ID %>>
+                            <a href=<%= "/edit-single-weapon/" + shopId + "/" + weapon.Weapon_ID %>>
                                 <button class="view-single-item-button" type="button"><%= weapon.Weapon_Name %></button>
                             </a>
+                            <button class="delete-item-button" type="button" onclick=<%- '"deleteWeapon(' + weapon.Weapon_ID + ')"' %>>&#128465;</button>
                         </td>
 
                         <td>Weapon</td>
@@ -51,9 +53,10 @@
                 <% shopWondrousItems.forEach(function(wondrousItem) { %>
                     <tr>
                         <td>
-                            <a href=<%= "/view-single-magic-item/" + shopId + "/" + wondrousItem.Magic_Item_ID %>>
+                            <a href=<%= "/edit-single-magic-item/" + shopId + "/" + wondrousItem.Magic_Item_ID %>>
                                 <button class="view-single-item-button" type="button"><%= wondrousItem.Magic_Item_Name %></button>
                             </a>
+                            <button class="delete-item-button" type="button" onclick=<%- '"deleteWondrousItem(' + wondrousItem.Magic_Item_ID + ')"' %>>&#128465;</button>
                         </td>
 
                         <td>Wondrous Item</td>
@@ -69,9 +72,10 @@
                 <% shopRings.forEach(function(ring) { %>
                     <tr>
                         <td>
-                            <a href=<%= "/view-single-magic-item/" + shopId + "/" + ring.Magic_Item_ID %>>
+                            <a href=<%= "/edit-single-magic-item/" + shopId + "/" + ring.Magic_Item_ID %>>
                                 <button class="view-single-item-button" type="button"><%= ring.Magic_Item_Name %></button>
                             </a>
+                            <button class="delete-item-button" type="button" onclick=<%- '"deleteRing(' + ring.Magic_Item_ID + ')"' %>>&#128465;</button>
                         </td>
 
                         <td>Ring</td>
@@ -87,9 +91,10 @@
                 <% shopRods.forEach(function(rod) { %>
                     <tr>
                         <td>
-                            <a href=<%= "/view-single-magic-item/" + shopId + "/" + rod.Magic_Item_ID %>>
+                            <a href=<%= "/edit-single-magic-item/" + shopId + "/" + rod.Magic_Item_ID %>>
                                 <button class="view-single-item-button" type="button"><%= rod.Magic_Item_Name %></button>
                             </a>
+                            <button class="delete-item-button" type="button" onclick=<%- '"deleteRod(' + rod.Magic_Item_ID + ')"' %>>&#128465;</button>
                         </td>
 
                         <td>Rod</td>
@@ -105,9 +110,10 @@
                 <% shopStaffs.forEach(function(staff) { %>
                     <tr>
                         <td>
-                            <a href=<%= "/view-single-magic-item/" + shopId + "/" + staff.Magic_Item_ID %>>
+                            <a href=<%= "/edit-single-magic-item/" + shopId + "/" + staff.Magic_Item_ID %>>
                                 <button class="view-single-item-button" type="button"><%= staff.Magic_Item_Name %></button>
                             </a>
+                            <button class="delete-item-button" type="button" onclick=<%- '"deleteStaff(' + staff.Magic_Item_ID + ')"' %>>&#128465;</button>
                         </td>
 
                         <td>Staff</td>
@@ -123,9 +129,10 @@
                 <% shopMiscItems.forEach(function(miscItem) { %>
                     <tr>
                         <td>
-                            <a href=<%= "/view-single-misc-item/" + shopId + "/" + miscItem.Misc_Item_ID %>>
+                            <a href=<%= "/edit-single-misc-item/" + shopId + "/" + miscItem.Misc_Item_ID %>>
                                 <button class="view-single-item-button" type="button"><%= miscItem.Misc_Item_Name %></button>
                             </a>
+                            <button class="delete-item-button" type="button" onclick=<%- '"deleteMiscItem(' + miscItem.Misc_Item_ID + ')"' %>>&#128465;</button>
                         </td>
 
                         <td><%= miscItem.Misc_Item_Type %></td>
@@ -141,9 +148,10 @@
                 <% shopPotions.forEach(function(potion) { %>
                     <tr>
                         <td>
-                            <a href=<%= "/view-single-potion/" + shopId + "/" + potion.Potion_ID %>>
+                            <a href=<%= "/edit-single-potion/" + shopId + "/" + potion.Potion_ID %>>
                                 <button class="view-single-item-button" type="button"><%= potion.Potion_Name %></button>
                             </a>
+                            <button class="delete-item-button" type="button" onclick=<%- '"deletePotion(' + potion.Potion_ID + ')"' %>>&#128465;</button>
                         </td>
 
                         <td><%= potion.Potion_Type %></td>
@@ -159,9 +167,10 @@
                 <% shopWands.forEach(function(wand) { %>
                     <tr>
                         <td>
-                            <a href=<%= "/view-single-wand/" + shopId + "/" + wand.Wand_or_Scroll_ID %>>
+                            <a href=<%= "/edit-single-wand/" + shopId + "/" + wand.Wand_or_Scroll_ID %>>
                                 <button class="view-single-item-button" type="button"><%= wand.Wand_or_Scroll_Name %></button>
                             </a>
+                            <button class="delete-item-button" type="button" onclick=<%- '"deleteWand(' + wand.Wand_or_Scroll_ID + ')"' %>>&#128465;</button>
                         </td>
 
                         <td>Wand</td>
@@ -177,9 +186,10 @@
                 <% shopScrolls.forEach(function(scroll) { %>
                     <tr>
                         <td>
-                            <a href=<%= "/view-single-scroll/" + shopId + "/" + scroll.Wand_or_Scroll_ID %>>
+                            <a href=<%= "/edit-single-scroll/" + shopId + "/" + scroll.Wand_or_Scroll_ID %>>
                                 <button class="view-single-item-button" type="button"><%= scroll.Wand_or_Scroll_Name %></button>
                             </a>
+                            <button class="delete-item-button" type="button" onclick=<%- '"deleteScroll(' + scroll.Wand_or_Scroll_ID + ')"' %>>&#128465;</button>
                         </td>
 
                         <td>Scroll</td>

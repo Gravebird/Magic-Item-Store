@@ -298,3 +298,19 @@ td {
     color: #f44336;
     cursor: pointer;
 }
+
+/* Edit shop page */
+
+.delete-item-button {
+    border-color: red;
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+    opacity: 0.9;
+    font-size: 30px;
+    width: 10%;
+    height: 40px;
+}
+
+.delete-item-button:hover {
+    opacity: 1;
+}
