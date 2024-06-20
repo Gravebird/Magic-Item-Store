@@ -181,6 +181,8 @@ td {
     cursor: pointer;
 }
 
+/* View single shop page */
+
 .shop-header {
     text-align: center;
 }
@@ -192,6 +194,11 @@ td {
     color: orange;
     font-weight: bold;
     font-size: 16px;
+}
+
+.view-single-item-button:hover {
+    color: white;
+    cursor: pointer;
 }
 
 /* View shops page */
@@ -214,7 +221,7 @@ td {
     border-color: #F8DA45;
     border-width: 2px;
     height: 40px;
-    width: 90%;
+    width: 80%;
     border-radius: 4px;
     font-size: 25px;
     color: white;
