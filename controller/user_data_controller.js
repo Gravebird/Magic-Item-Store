@@ -40,6 +40,11 @@ let user_data_controller = {
         return await query(theQuery);
     },
 
+    getShopIDsOwnedByUser: async function(user_id) {
+        theQuery = `SELECT shop_id FROM shop WHERE user_id = ${user_id}`;
+        return await query(theQuery);
+    },
+
     getShopName: async function(shop_id) {
         theQuery = `SELECT shop_name FROM shop WHERE shop_id = ${shop_id}`;
         return await query(theQuery);

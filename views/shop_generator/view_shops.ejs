@@ -7,7 +7,7 @@
                     <a href=<%= "/view-shop/" + userId + "/" + shop.shop_id %>>
                         <button class="view-shop-button" type="button"><strong><%= shop.shop_name %></strong></button>
                     </a>
-                    <button class="rename-shop-button" type="button">&#9998;</button>
+                    <button class="rename-shop-button" type="button" onclick=<%- '"editShop(' + shop.shop_id + ')"' %>>&#9998;</button>
                     <button class="delete-shop-button" type="button" onclick=<%- '"openDeletePopUp(' + shop.shop_id + ')"' %>>&#128465;</button>
                 </div>
                 <p class="shop-description-piece">Created on <%= shop.shop_created_date %></p>
@@ -51,6 +51,10 @@
         } else {
             window.location.href=`/delete-shop/${shop_to_be_deleted}`;
         }
+    }
+
+    function editShop(shop_id) {
+        window.location.href=`/edit-shop/${shop_id}`;
     }
 
 </script>

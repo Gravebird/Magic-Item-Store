@@ -11,7 +11,7 @@ var session = require('express-session');
 var MySQLStore = require('express-mysql-session')(session);
 
 
-const { ensureAuthenticated, forwardAuthenticated, isAdmin } = require("./middleware/checkAuth");
+const { ensureAuthenticated, forwardAuthenticated, ensureUserOwnsShop, isAdmin } = require("./middleware/checkAuth");
 const routeController = require("./controller/route_controller");
 const shopGeneratorController = require("./controller/shop_generator_controller");
 
@@ -81,6 +81,8 @@ app.get("/view-spell/:spellId", routeController.viewSingleSpell);
 
 app.get("/delete-shop/:shopId", routeController.deleteShop);
 
+app.get("/edit-shop/:shopId", ensureUserOwnsShop, routeController.editShop);
+
 app.post("/shop_generator", ensureAuthenticated, shopGeneratorController.generate);
 
 
@@ -129,6 +131,10 @@ app.get('/userAlreadyExists', (req,res,next) => {
     console.log("Inside get /userAlreadyExists");
     res.send('<h1>Sorry this username is taken </h1><p><a href="/register">Register with a different username</a></p>');
 });
+
+app.get('/notYourShop', (req, res) => {
+    res.send('<h1>This shop does not belong to you. You cannot edit this shop.</h1>');
+})
 
 
 

@@ -1,0 +1,279 @@
+
+<div class="single-shop-inventory">
+    <h2 class="shop-name-title"><%= shopName %></h2>
+    <table class="shop-table">
+        <thead>
+            <tr>
+                <th><button class="table-header" onclick="sortByName()">Name</button></th>
+                <th><button class="table-header" onclick="sortByType()">Type</button></th>
+                <th><button class="table-header" onclick="sortByCost()">Cost</button></th>
+                <th><button class="table-header" onclick="sortByOther()">Other</button></th>
+            </tr>
+        </thead>
+        <tbody id="shop-table-body">
+            <% if (shopArmor.length != 0) { %>
+                <% shopArmor.forEach(function(armor) { %>
+                    <tr>
+                        <td>
+                            <a href=<%= "/view-single-armor/" + shopId + "/" + armor.Armor_ID %>>
+                                <button class="view-single-item-button" type="button"><%= armor.Armor_Name %></button>
+                            </a>
+                        </td>
+
+                        <td>Armor</td>
+
+                        <td><%= armor.Armor_Total_Cost %></td>
+
+                        <td><%= armor.Armor_Property_Summary %></td>
+                    </tr>
+                <% }) %>
+            <% } %>
+
+            <% if (shopWeapons.length != 0) { %>
+                <% shopWeapons.forEach(function(weapon) { %>
+                    <tr>
+                        <td>
+                            <a href=<%= "/view-single-weapon/" + shopId + "/" + weapon.Weapon_ID %>>
+                                <button class="view-single-item-button" type="button"><%= weapon.Weapon_Name %></button>
+                            </a>
+                        </td>
+
+                        <td>Weapon</td>
+
+                        <td><%= weapon.Weapon_Total_Cost %></td>
+
+                        <td><%= weapon.Weapon_Property_Summary %></td>
+                    </tr>
+                <% }) %>
+            <% } %>
+
+            <% if (shopWondrousItems.length != 0) { %>
+                <% shopWondrousItems.forEach(function(wondrousItem) { %>
+                    <tr>
+                        <td>
+                            <a href=<%= "/view-single-magic-item/" + shopId + "/" + wondrousItem.Magic_Item_ID %>>
+                                <button class="view-single-item-button" type="button"><%= wondrousItem.Magic_Item_Name %></button>
+                            </a>
+                        </td>
+
+                        <td>Wondrous Item</td>
+                        
+                        <td><%= wondrousItem.Magic_Item_Cost %></td>
+
+                        <td></td>
+                    </tr>
+                <% }) %>
+            <% } %>
+
+            <% if (shopRings.length != 0) { %>
+                <% shopRings.forEach(function(ring) { %>
+                    <tr>
+                        <td>
+                            <a href=<%= "/view-single-magic-item/" + shopId + "/" + ring.Magic_Item_ID %>>
+                                <button class="view-single-item-button" type="button"><%= ring.Magic_Item_Name %></button>
+                            </a>
+                        </td>
+
+                        <td>Ring</td>
+
+                        <td><%= ring.Magic_Item_Cost %></td>
+
+                        <td></td>
+                    </tr>
+                <% }) %>
+            <% } %>
+
+            <% if (shopRods.length != 0) { %>
+                <% shopRods.forEach(function(rod) { %>
+                    <tr>
+                        <td>
+                            <a href=<%= "/view-single-magic-item/" + shopId + "/" + rod.Magic_Item_ID %>>
+                                <button class="view-single-item-button" type="button"><%= rod.Magic_Item_Name %></button>
+                            </a>
+                        </td>
+
+                        <td>Rod</td>
+
+                        <td><%= rod.Magic_Item_Cost %></td>
+
+                        <td></td>
+                    </tr>
+                <% }) %>
+            <% } %>
+
+            <% if (shopStaffs.length != 0) { %>
+                <% shopStaffs.forEach(function(staff) { %>
+                    <tr>
+                        <td>
+                            <a href=<%= "/view-single-magic-item/" + shopId + "/" + staff.Magic_Item_ID %>>
+                                <button class="view-single-item-button" type="button"><%= staff.Magic_Item_Name %></button>
+                            </a>
+                        </td>
+
+                        <td>Staff</td>
+
+                        <td><%= staff.Magic_Item_Cost %></td>
+
+                        <td></td>
+                    </tr>
+                <% }) %>
+            <% } %>
+
+            <% if (shopMiscItems.length != 0) { %>
+                <% shopMiscItems.forEach(function(miscItem) { %>
+                    <tr>
+                        <td>
+                            <a href=<%= "/view-single-misc-item/" + shopId + "/" + miscItem.Misc_Item_ID %>>
+                                <button class="view-single-item-button" type="button"><%= miscItem.Misc_Item_Name %></button>
+                            </a>
+                        </td>
+
+                        <td><%= miscItem.Misc_Item_Type %></td>
+
+                        <td><%= miscItem.Misc_Item_Cost %></td>
+
+                        <td></td>
+                    </tr>
+                <% }) %>
+            <% } %>
+
+            <% if (shopPotions.length != 0) { %>
+                <% shopPotions.forEach(function(potion) { %>
+                    <tr>
+                        <td>
+                            <a href=<%= "/view-single-potion/" + shopId + "/" + potion.Potion_ID %>>
+                                <button class="view-single-item-button" type="button"><%= potion.Potion_Name %></button>
+                            </a>
+                        </td>
+
+                        <td><%= potion.Potion_Type %></td>
+
+                        <td><%= potion.Potion_Cost %></td>
+
+                        <td></td>
+                    </tr>
+                <% }) %>
+            <% } %>
+
+            <% if (shopWands.length != 0) { %>
+                <% shopWands.forEach(function(wand) { %>
+                    <tr>
+                        <td>
+                            <a href=<%= "/view-single-wand/" + shopId + "/" + wand.Wand_or_Scroll_ID %>>
+                                <button class="view-single-item-button" type="button"><%= wand.Wand_or_Scroll_Name %></button>
+                            </a>
+                        </td>
+
+                        <td>Wand</td>
+
+                        <td><%= wand.Wand_or_Scroll_Cost %></td>
+
+                        <td></td>
+                    </tr>
+                <% }) %>
+            <% } %>
+
+            <% if (shopScrolls.length != 0) { %>
+                <% shopScrolls.forEach(function(scroll) { %>
+                    <tr>
+                        <td>
+                            <a href=<%= "/view-single-scroll/" + shopId + "/" + scroll.Wand_or_Scroll_ID %>>
+                                <button class="view-single-item-button" type="button"><%= scroll.Wand_or_Scroll_Name %></button>
+                            </a>
+                        </td>
+
+                        <td>Scroll</td>
+
+                        <td><%= scroll.Wand_or_Scroll_Cost %></td>
+
+                        <td></td>
+                    </tr>
+                <% }) %>
+            <% } %>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    const tableBody = document.getElementById("shop-table-body");
+
+    let lastSort = "";
+
+    function tableSort(tbody, colNum, cmp) {
+        let rows = [...tbody.rows];
+        rows.sort((a, b) => cmp(a.cells[colNum].textContent, b.cells[colNum].textContent))
+            .map(row => tbody.appendChild(row));
+    }
+
+    function sortByName() {
+        if (lastSort == "NameAsc") {
+            sortNameDescending();
+            lastSort = "NameDesc";
+        } else {
+            sortNameAscending();
+            lastSort = "NameAsc";
+        }
+    }
+
+    function sortByType() {
+        if (lastSort == "TypeAsc") {
+            sortTypeDescending();
+            lastSort = "TypeDesc";
+        } else {
+            sortTypeAscending();
+            lastSort = "TypeAsc";
+        }
+    }
+
+    function sortByCost() {
+        if (lastSort == "CostAsc") {
+            sortCostDescending();
+            lastSort = "CostDesc";
+        } else {
+            sortCostAscending();
+            lastSort = "CostAsc";
+        }
+    }
+
+    function sortByOther() {
+        if (lastSort == "OtherAsc") {
+            sortOtherDescending();
+            lastSort = "OtherDesc";
+        } else {
+            sortOtherAscending();
+            lastSort = "OtherAsc";
+        }
+    }
+
+    function sortNameAscending() {
+        tableSort(tableBody, 0, (a, b) => a.localeCompare(b));
+    }
+
+    function sortNameDescending() {
+        tableSort(tableBody, 0, (a, b) => b.localeCompare(a));
+    }
+
+    function sortTypeAscending() {
+        tableSort(tableBody, 1, (a, b) => a.localeCompare(b));
+    }
+
+    function sortTypeDescending() {
+        tableSort(tableBody, 1, (a, b) => b.localeCompare(a));
+    }
+
+    function sortCostAscending() {
+        tableSort(tableBody, 2, (a, b) => a - b);
+    }
+
+    function sortCostDescending() {
+        tableSort(tableBody, 2, (a, b) => b - a);
+    }
+
+    function sortOtherAscending() {
+        tableSort(tableBody, 3, (a, b) => a.localeCompare(b));
+    }
+
+    function sortOtherDescending() {
+        tableSort(tableBody, 3, (a, b) => b.localeCompare(a));
+    }
+</script>
