@@ -4,6 +4,10 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
+.hidden {
+    display: none;
+}
+
 a {
     text-decoration: none;
 }
@@ -313,4 +317,22 @@ td {
 
 .delete-item-button:hover {
     opacity: 1;
+}
+
+.save-changes-button {
+    border-color: green;
+    color: green;
+    cursor: pointer;
+    opacity: 0.8;
+    font-size: 30px;
+    width: 10%;
+    height: 40px;
+}
+
+.save-changes-button:hover {
+    opacity: 1;
+}
+
+.save-confirm-div {
+    padding-top: 20px;
 }

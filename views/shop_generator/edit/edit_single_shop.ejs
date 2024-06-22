@@ -18,7 +18,7 @@
                             <a href=<%= "/edit-single-armor/" + shopId + "/" + armor.Armor_ID %>>
                                 <button class="view-single-item-button" type="button"><%= armor.Armor_Name %></button>
                             </a>
-                            <button class="delete-item-button" type="button" onclick=<%- '"deleteArmor(' + armor.Armor_ID + ')"' %>>&#128465;</button>
+                            <button class="delete-item-button" type="button" onclick=<%- '"deleteArmor(this,' + armor.Armor_ID + ')"' %>>&#128465;</button>
                         </td>
 
                         <td>Armor</td>
@@ -37,7 +37,7 @@
                             <a href=<%= "/edit-single-weapon/" + shopId + "/" + weapon.Weapon_ID %>>
                                 <button class="view-single-item-button" type="button"><%= weapon.Weapon_Name %></button>
                             </a>
-                            <button class="delete-item-button" type="button" onclick=<%- '"deleteWeapon(' + weapon.Weapon_ID + ')"' %>>&#128465;</button>
+                            <button class="delete-item-button" type="button" onclick=<%- '"deleteWeapon(this,' + weapon.Weapon_ID + ')"' %>>&#128465;</button>
                         </td>
 
                         <td>Weapon</td>
@@ -56,7 +56,7 @@
                             <a href=<%= "/edit-single-magic-item/" + shopId + "/" + wondrousItem.Magic_Item_ID %>>
                                 <button class="view-single-item-button" type="button"><%= wondrousItem.Magic_Item_Name %></button>
                             </a>
-                            <button class="delete-item-button" type="button" onclick=<%- '"deleteWondrousItem(' + wondrousItem.Magic_Item_ID + ')"' %>>&#128465;</button>
+                            <button class="delete-item-button" type="button" onclick=<%- '"deleteWondrousItem(this,' + wondrousItem.Magic_Item_ID + ')"' %>>&#128465;</button>
                         </td>
 
                         <td>Wondrous Item</td>
@@ -75,7 +75,7 @@
                             <a href=<%= "/edit-single-magic-item/" + shopId + "/" + ring.Magic_Item_ID %>>
                                 <button class="view-single-item-button" type="button"><%= ring.Magic_Item_Name %></button>
                             </a>
-                            <button class="delete-item-button" type="button" onclick=<%- '"deleteRing(' + ring.Magic_Item_ID + ')"' %>>&#128465;</button>
+                            <button class="delete-item-button" type="button" onclick=<%- '"deleteRing(this,' + ring.Magic_Item_ID + ')"' %>>&#128465;</button>
                         </td>
 
                         <td>Ring</td>
@@ -94,7 +94,7 @@
                             <a href=<%= "/edit-single-magic-item/" + shopId + "/" + rod.Magic_Item_ID %>>
                                 <button class="view-single-item-button" type="button"><%= rod.Magic_Item_Name %></button>
                             </a>
-                            <button class="delete-item-button" type="button" onclick=<%- '"deleteRod(' + rod.Magic_Item_ID + ')"' %>>&#128465;</button>
+                            <button class="delete-item-button" type="button" onclick=<%- '"deleteRod(this,' + rod.Magic_Item_ID + ')"' %>>&#128465;</button>
                         </td>
 
                         <td>Rod</td>
@@ -113,7 +113,7 @@
                             <a href=<%= "/edit-single-magic-item/" + shopId + "/" + staff.Magic_Item_ID %>>
                                 <button class="view-single-item-button" type="button"><%= staff.Magic_Item_Name %></button>
                             </a>
-                            <button class="delete-item-button" type="button" onclick=<%- '"deleteStaff(' + staff.Magic_Item_ID + ')"' %>>&#128465;</button>
+                            <button class="delete-item-button" type="button" onclick=<%- '"deleteStaff(this,' + staff.Magic_Item_ID + ')"' %>>&#128465;</button>
                         </td>
 
                         <td>Staff</td>
@@ -132,7 +132,7 @@
                             <a href=<%= "/edit-single-misc-item/" + shopId + "/" + miscItem.Misc_Item_ID %>>
                                 <button class="view-single-item-button" type="button"><%= miscItem.Misc_Item_Name %></button>
                             </a>
-                            <button class="delete-item-button" type="button" onclick=<%- '"deleteMiscItem(' + miscItem.Misc_Item_ID + ')"' %>>&#128465;</button>
+                            <button class="delete-item-button" type="button" onclick=<%- '"deleteMiscItem(this,' + miscItem.Misc_Item_ID + ')"' %>>&#128465;</button>
                         </td>
 
                         <td><%= miscItem.Misc_Item_Type %></td>
@@ -151,7 +151,7 @@
                             <a href=<%= "/edit-single-potion/" + shopId + "/" + potion.Potion_ID %>>
                                 <button class="view-single-item-button" type="button"><%= potion.Potion_Name %></button>
                             </a>
-                            <button class="delete-item-button" type="button" onclick=<%- '"deletePotion(' + potion.Potion_ID + ')"' %>>&#128465;</button>
+                            <button class="delete-item-button" type="button" onclick=<%- '"deletePotion(this,' + potion.Potion_ID + ')"' %>>&#128465;</button>
                         </td>
 
                         <td><%= potion.Potion_Type %></td>
@@ -170,7 +170,7 @@
                             <a href=<%= "/edit-single-wand/" + shopId + "/" + wand.Wand_or_Scroll_ID %>>
                                 <button class="view-single-item-button" type="button"><%= wand.Wand_or_Scroll_Name %></button>
                             </a>
-                            <button class="delete-item-button" type="button" onclick=<%- '"deleteWand(' + wand.Wand_or_Scroll_ID + ')"' %>>&#128465;</button>
+                            <button class="delete-item-button" type="button" onclick=<%- '"deleteWand(this,' + wand.Wand_or_Scroll_ID + ')"' %>>&#128465;</button>
                         </td>
 
                         <td>Wand</td>
@@ -189,7 +189,7 @@
                             <a href=<%= "/edit-single-scroll/" + shopId + "/" + scroll.Wand_or_Scroll_ID %>>
                                 <button class="view-single-item-button" type="button"><%= scroll.Wand_or_Scroll_Name %></button>
                             </a>
-                            <button class="delete-item-button" type="button" onclick=<%- '"deleteScroll(' + scroll.Wand_or_Scroll_ID + ')"' %>>&#128465;</button>
+                            <button class="delete-item-button" type="button" onclick=<%- '"deleteScroll(this,' + scroll.Wand_or_Scroll_ID + ')"' %>>&#128465;</button>
                         </td>
 
                         <td>Scroll</td>
@@ -202,6 +202,10 @@
             <% } %>
         </tbody>
     </table>
+</div>
+
+<div class="save-confirm-div">
+    <button class="save-changes-button" type="button" onclick="saveChanges()">SAVE</button>
 </div>
 
 <script>
@@ -285,5 +289,117 @@
 
     function sortOtherDescending() {
         tableSort(tableBody, 3, (a, b) => b.localeCompare(a));
+    }
+
+
+
+    // Editing (deleting) section
+
+    items_to_delete = {
+        armor: [],
+        weapons: [],
+        wondrous_items: [],
+        rings: [],
+        rods: [],
+        staffs: [],
+        misc_items: [],
+        potions: [],
+        wands: [],
+        scrolls: []
+    }
+
+
+    function deleteArmor(elem,armor_id) {
+        if (items_to_delete.armor.includes(armor_id)) {
+            console.log("ERROR: items_to_delete.armor already includes an element with id = " + armor_id);
+        } else {
+            items_to_delete.armor.push(armor_id);
+            elem.parentNode.parentNode.classList.add("hidden");
+        }
+    }
+
+    function deleteWeapon(elem,weapon_id) {
+        if (items_to_delete.weapons.includes(weapon_id)) {
+            console.log("ERROR: items_to_delete.weapons already includes an element with id = " + weapon_id);
+        } else {
+            items_to_delete.weapons.push(weapon_id);
+            elem.parentNode.parentNode.classList.add("hidden");
+        }
+    }
+
+    function deleteWondrousItem(elem,wondrous_item_id) {
+        if (items_to_delete.wondrous_items.includes(wondrous_item_id)) {
+            console.log("ERROR: items_to_delete.wondrous_items already includes an element with id = " + wondrous_item_id);
+        } else {
+            items_to_delete.wondrous_items.push(wondrous_item_id);
+            elem.parentNode.parentNode.classList.add("hidden");
+        }
+    }
+
+    function deleteRing(elem,ring_id) {
+        if (items_to_delete.rings.includes(ring_id)) {
+            console.log("ERROR: items_to_delete.rings already includes an element with id = " + ring_id);
+        } else {
+            items_to_delete.rings.push(ring_id);
+            elem.parentNode.parentNode.classList.add("hidden");
+        }
+    }
+
+    function deleteRod(elem,rod_id) {
+        if (items_to_delete.rods.includes(rod_id)) {
+            console.log("ERROR: items_to_delete.rods already includes an element with id = " + rod_id);
+        } else {
+            items_to_delete.rods.push(rod_id);
+            elem.parentNode.parentNode.classList.add("hidden");
+        }
+    }
+
+    function deleteStaff(elem,staff_id) {
+        if (items_to_delete.staffs.includes(staff_id)) {
+            console.log("ERROR: items_to_delete.staffs already includes an element with id = " + staff_id);
+        } else {
+            items_to_delete.staffs.push(staff_id);
+            elem.parentNode.parentNode.classList.add("hidden");
+        }
+    }
+
+    function deleteMiscItem(elem,misc_item_id) {
+        if (items_to_delete.misc_items.includes(misc_item_id)) {
+            console.log("ERROR: items_to_delete.misc_items already includes an element with id = " + misc_item_id);
+        } else {
+            items_to_delete.misc_items.push(misc_item_id);
+            elem.parentNode.parentNode.classList.add("hidden");
+        }
+    }
+
+    function deletePotion(elem,potion_id) {
+        if (items_to_delete.potions.includes(potion_id)) {
+            console.log("ERROR: items_to_delete.potions already includes an element with id = " + potion_id);
+        } else {
+            items_to_delete.potions.push(potion_id);
+            elem.parentNode.parentNode.classList.add("hidden");
+        }
+    }
+
+    function deleteWand(elem,wand_id) {
+        if (items_to_delete.wands.includes(wand_id)) {
+            console.log("ERROR: items_to_delete.wands already includes an element with id = " + wand_id);
+        } else {
+            items_to_delete.wands.push(wand_id);
+            elem.parentNode.parentNode.classList.add("hidden");
+        }
+    }
+
+    function deleteScroll(elem,scroll_id) {
+        if (items_to_delete.scrolls.includes(scroll_id)) {
+            console.log("ERROR: items_to_delete.scrolls already includes an element with id = " + scroll_id);
+        } else {
+            items_to_delete.scrolls.push(scroll_id);
+            elem.parentNode.parentNode.classList.add("hidden");
+        }
+    }
+
+    function saveChanges() {
+        alert("Not implemented yet!");
     }
 </script>
