@@ -3,10 +3,10 @@
     <p class="spellDescriptionSubTitle">
         <%= spell.Spell_School %>
         <% if (spell.Spell_Subschool != null) { %>
-            <%= spell.Spell_Subschool %>
+            (<%= spell.Spell_Subschool %>)
         <% } %>
         <% if (spell.Spell_Descriptor != null) { %>
-            <%= spell.Spell_Descriptor %>
+            [<%= spell.Spell_Descriptor %>]
         <% } %>
     </p>
     <p class="spellDescriptionSubTitle">
