@@ -205,7 +205,7 @@
 </div>
 
 <div class="save-confirm-div">
-    <button class="save-changes-button" type="button" onclick="saveChanges()">SAVE</button>
+    <button class="save-changes-button" type="button" onclick=<%- '"saveChanges(' + shopId + ',' + userId + ')"' %>>SAVE</button>
 </div>
 
 <script>
@@ -399,7 +399,16 @@
         }
     }
 
-    function saveChanges() {
-        alert("Not implemented yet!");
+    async function saveChanges(shop_id,user_id) {
+        const rawResponse = await fetch('/deleteItemsFromShop/' + shop_id , {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(items_to_delete)
+        });
+
+        window.location.href = '/view-shop/' + user_id + '/' + shop_id;
     }
 </script>

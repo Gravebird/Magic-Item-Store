@@ -186,6 +186,7 @@ let routeController = {
 
     editShop: async function (req, res) {
         let shopId = req.params.shopId;
+        let userId = req.user.id;
 
         let [shop_name] = await user_data_controller.getShopName(shopId);
         let Armor_in_shop = await user_data_controller.getArmorInShop(shopId);
@@ -200,6 +201,7 @@ let routeController = {
         let Scrolls_in_shop = await user_data_controller.getScrollsInShop(shopId);
 
         res.render("shop_generator/edit/edit_single_shop", {
+            userId: userId,
             shopId: shopId,
             shopName: shop_name.shop_name,
             shopArmor: Armor_in_shop,
@@ -213,6 +215,55 @@ let routeController = {
             shopWands: Wands_in_shop,
             shopScrolls: Scrolls_in_shop
         });
+    },
+
+    deleteItemsFromShop: async function (req, res) {
+        let shopId = req.params.shopId;
+        bodylist = JSON.parse(JSON.stringify(req.body));
+
+        items_to_delete = {
+            armor: bodylist["armor"],
+            weapons: bodylist["weapons"],
+            magic_items: bodylist["wondrous_items"].concat(bodylist["rings"], bodylist["rods"], bodylist["staffs"]),
+            misc_items: bodylist["misc_items"],
+            potions: bodylist["potions"],
+            wands_or_scrolls: bodylist["wands"].concat(bodylist["scrolls"])
+        };
+
+        modified_items_to_delete = {
+            armor: items_to_delete.armor.join(","),
+            weapons: items_to_delete.weapons.join(","),
+            magic_items: items_to_delete.magic_items.join(","),
+            misc_items: items_to_delete.misc_items.join(","),
+            potions: items_to_delete.potions.join(","),
+            wands_or_scrolls: items_to_delete.wands_or_scrolls.join(",")
+        };
+
+        if (items_to_delete.armor.length > 0) {
+            await user_data_controller.deleteArmorFromShop(shopId,modified_items_to_delete.armor);
+        }
+
+        if (items_to_delete.weapons.length > 0) {
+            await user_data_controller.deleteWeaponsFromShop(shopId,modified_items_to_delete.weapons);
+        }
+
+        if (items_to_delete.magic_items.length > 0) {
+            await user_data_controller.deleteMagicItemsFromShop(shopId,modified_items_to_delete.magic_items);
+        }
+
+        if (items_to_delete.misc_items.length > 0) {
+            await user_data_controller.deleteMiscItemsFromShop(shopId,modified_items_to_delete.misc_items);
+        }
+
+        if (items_to_delete.potions.length > 0) {
+            await user_data_controller.deletePotionsFromShop(shopId,modified_items_to_delete.potions);
+        }
+
+        if (items_to_delete.wands_or_scrolls.length > 0) {
+            await user_data_controller.deleteWandsOrScrollsFromShop(shopId,modified_items_to_delete.wands_or_scrolls);
+        }
+
+        res.redirect('/view-shop/' + req.user.id + '/' + shopId);
     }
 }
 

@@ -257,6 +257,58 @@ let user_data_controller = {
         theQuery = `CALL up_delete_shop (${shopId});`;
 
         return await query(theQuery);
+    },
+
+    deleteArmorFromShop: async function(shopId, armorIds) {
+        theQuery = `DELETE FROM Armor WHERE shop_id = ${shopId} AND ` +
+        `Armor_ID IN (${armorIds});`;
+
+        await query(theQuery);
+
+        theQuery = `DELETE FROM Armor_Property WHERE shop_id = ${shopId} AND ` +
+        `Armor_ID IN (${armorIds});`;
+
+        return await query(theQuery);
+    },
+
+    deleteWeaponsFromShop: async function(shopId, weaponIds) {
+        theQuery = `DELETE FROM Weapon WHERE shop_id = ${shopId} AND ` +
+        `Weapon_ID IN (${weaponIds});`;
+
+        await query(theQuery);
+
+        theQuery = `DELETE FROM Weapon_Property WHERE shop_id = ${shopId} AND ` +
+        `Weapon_ID IN (${weaponIds});`;
+
+        return await query(theQuery);
+    },
+
+    deleteMagicItemsFromShop: async function(shopId, magicItemIds) {
+        theQuery = `DELETE FROM Magic_Item WHERE shop_id = ${shopId} AND ` +
+        `Magic_Item_ID IN (${magicItemIds});`;
+
+        return await query(theQuery);
+    },
+
+    deleteMiscItemsFromShop: async function(shopId, miscItemIds) {
+        theQuery = `DELETE FROM Misc_Item WHERE shop_id = ${shopId} AND ` +
+        `Misc_Item_ID IN (${miscItemIds});`;
+
+        return await query(theQuery);
+    },
+
+    deletePotionsFromShop: async function(shopId, potionIds) {
+        theQuery = `DELETE FROM Potion WHERE shop_id = ${shopId} AND ` +
+        `Potion_ID IN (${potionIds});`;
+
+        return await query(theQuery);
+    },
+
+    deleteWandsOrScrollsFromShop: async function(shopId, wandOrScrollIds) {
+        theQuery = `DELETE FROM Wand_or_Scroll WHERE shop_id = ${shopId} AND ` +
+        `Wand_or_Scroll_ID IN (${wandOrScrollIds});`;
+
+        return await query(theQuery);
     }
 }
 
