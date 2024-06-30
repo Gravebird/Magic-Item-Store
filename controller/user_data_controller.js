@@ -50,6 +50,12 @@ let user_data_controller = {
         return await query(theQuery);
     },
 
+    updateShopName: async function(shop_id, new_shop_name) {
+        theQuery = `UPDATE Shop SET shop_name = "${new_shop_name}" WHERE shop_id = ${shop_id}`;
+
+        return await query(theQuery);
+    },
+
     getUserName: async function(user_id) {
         theQuery = 'SELECT username FROM users WHERE id = ' + user_id;
         return await query(theQuery);

@@ -85,7 +85,7 @@ app.get("/edit-shop/:shopId", ensureUserOwnsShop, routeController.editShop);
 
 app.post("/shop_generator", ensureAuthenticated, shopGeneratorController.generate);
 
-app.post("/deleteItemsFromShop/:shopId", ensureUserOwnsShop, routeController.deleteItemsFromShop);
+app.post("/deleteItemsFromShop/:shopId", ensureUserOwnsShop, routeController.saveShopChanges);
 
 
 

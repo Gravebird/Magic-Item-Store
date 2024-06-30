@@ -1,6 +1,16 @@
 
 <div class="single-shop-inventory">
-    <h2 class="shop-name-title"><%= shopName %></h2>
+    <p class="information">Please click <strong>SAVE</strong> at the bottom of the page to confirm your changes.</p>
+    <div class="edit-shop-header-area">
+        <div class="editable-text-area">
+            <h2 class="edit-shop-name-header">Shop Name: </h2>
+            <input id="new-shop-name" class="edit-shop-text-input" value="<%= shopName %>" type="text" maxlength=50>
+        </div>
+        <div class="editable-text-area">
+            <h2 class="edit-shop-information-header">Shop Information: </h2>
+            <p class="edit-shop-text-input">Not implemented yet!</p>
+        </div>
+    </div>
     <table class="shop-table">
         <thead>
             <tr>
@@ -400,13 +410,19 @@
     }
 
     async function saveChanges(shop_id,user_id) {
+
+        let newShopName = document.getElementById("new-shop-name").value;
+
         const rawResponse = await fetch('/deleteItemsFromShop/' + shop_id , {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(items_to_delete)
+            body: JSON.stringify({
+                items_to_delete: items_to_delete,
+                new_shop_name: newShopName
+            })
         });
 
         window.location.href = '/view-shop/' + user_id + '/' + shop_id;

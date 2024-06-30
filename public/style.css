@@ -336,3 +336,26 @@ td {
 .save-confirm-div {
     padding-top: 20px;
 }
+
+.editable-text-area {
+    display: flex;
+    flex-direction: row;
+}
+
+.edit-shop-header-area {
+    display: block;
+}
+
+.edit-shop-name-header {
+    padding-right: 4px;
+}
+
+.edit-shop-information-header {
+    padding-right: 4px;
+}
+
+.edit-shop-text-input {
+    padding-left: 4px;
+    font-size: 30px;
+    color: orange;
+}

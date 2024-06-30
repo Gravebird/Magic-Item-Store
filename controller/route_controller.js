@@ -217,17 +217,19 @@ let routeController = {
         });
     },
 
-    deleteItemsFromShop: async function (req, res) {
+    saveShopChanges: async function (req, res) {
         let shopId = req.params.shopId;
         bodylist = JSON.parse(JSON.stringify(req.body));
 
+        let newShopName = bodylist["new_shop_name"];
+
         items_to_delete = {
-            armor: bodylist["armor"],
-            weapons: bodylist["weapons"],
-            magic_items: bodylist["wondrous_items"].concat(bodylist["rings"], bodylist["rods"], bodylist["staffs"]),
-            misc_items: bodylist["misc_items"],
-            potions: bodylist["potions"],
-            wands_or_scrolls: bodylist["wands"].concat(bodylist["scrolls"])
+            armor: bodylist["items_to_delete"]["armor"],
+            weapons: bodylist["items_to_delete"]["weapons"],
+            magic_items: bodylist["items_to_delete"]["wondrous_items"].concat(bodylist["items_to_delete"]["rings"], bodylist["items_to_delete"]["rods"], bodylist["items_to_delete"]["staffs"]),
+            misc_items: bodylist["items_to_delete"]["misc_items"],
+            potions: bodylist["items_to_delete"]["potions"],
+            wands_or_scrolls: bodylist["items_to_delete"]["wands"].concat(bodylist["items_to_delete"]["scrolls"])
         };
 
         modified_items_to_delete = {
@@ -261,6 +263,12 @@ let routeController = {
 
         if (items_to_delete.wands_or_scrolls.length > 0) {
             await user_data_controller.deleteWandsOrScrollsFromShop(shopId,modified_items_to_delete.wands_or_scrolls);
+        }
+
+        let [oldShopName] = await user_data_controller.getShopName(shopId);
+        
+        if (oldShopName.shop_name != newShopName) {
+            await user_data_controller.updateShopName(shopId,newShopName);
         }
 
         res.redirect('/view-shop/' + req.user.id + '/' + shopId);
