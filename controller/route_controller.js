@@ -168,8 +168,7 @@ let routeController = {
 
         let [spell] = await dnd_data_controller.getSingleSpell(spellId);
         let class_spells = await dnd_data_controller.getSpellCastingClasses(spellId);
-
-        console.log(class_spells);
+        
         res.render("spells/view_single_spell", {
             spell: spell,
             class_spells: class_spells

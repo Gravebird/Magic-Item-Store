@@ -201,13 +201,13 @@ passport.use(strategy);
 
 
 passport.serializeUser((user,done)=>{
-    console.log("inside serialize");
+    //console.log("inside serialize");
     done(null,user.id)
 });
 
 
 passport.deserializeUser(function(userId,done){
-    console.log('deserializeUser'+userId);
+    //console.log('deserializeUser'+userId);
     connection.query('SELECT * FROM users WHERE id = ?',[userId], function(error, results) {
         done(null,results[0]);
     });
