@@ -1,0 +1,4 @@
+INSERT INTO Magic_Armor VALUES
+    (53,4,"Cool",null,2400.00,false,true,"<p>This special ability can only be placed on a suit of armor. The suit's wearer does not take the normal -4 penalty on Fortitude saves to resist the effects of hot environments."),
+    (54,4,"Dessication Resistance",null,9000.00,false,true,"<p>This special ability can be placed only on a suit of armor. The armor absorbs the first 10 points of dessication damage per attack that the wearer would normally take."),
+    (55,4,"Scorpion Carapace",null,32000.00,false,true,"<p>This special ability can be placed only on a suit of armor. A favorite of many desert fighters, this suit of armor contains the essence of and has a visual resemblance to a desert scorpion. The wearer gains the benefit of the Scorpion's Resolve and Scorpion's Sense feats (see page 53 of <em>Sandstorm</em>).</p>");

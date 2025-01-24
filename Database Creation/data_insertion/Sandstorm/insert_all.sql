@@ -14,3 +14,12 @@ source data_insertion/Sandstorm/insert_misc_items.sql;
 
 SELECT "Inserting Sandstorm Special Materials...";
 source data_insertion/Sandstorm/insert_material.sql;
+
+SELECT "Inserting Sandstorm Magic Armor...";
+source data_insertion/Sandstorm/insert_magic_armor.sql;
+
+SELECT "Inserting Sandstorm Magic Weapons...";
+source data_insertion/Sandstorm/insert_magic_weapon.sql;
+
+SELECT "Inserting Sandstorm Rings...";
+source data_insertion/Sandstorm/insert_rings.sql;
