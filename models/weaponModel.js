@@ -172,7 +172,7 @@ async function getSpecialMaterial(baseWeapon, maxGold, sourceBooks) {
     else if (material.Material_Name == "Darkwood") {
         cost = 10 * baseWeapon.Weapon_Weight;
     }
-    else if (material.Material_Name == "Iron, Cold") {
+    else if (material.Material_Name == "Iron, Cold" || material.Material_Name == "Kheferu") {
         cost = baseWeapon.Weapon_Cost;
     }
     else if (material.Material_Name == "Mithral") {
@@ -580,7 +580,7 @@ let weaponModel = {
                     baseWeapon["Weapon_Material"] = material;
 
                     if (material.Material_Name == "Iron, Cold" || material.Material_Name == "Silver, Alchemical"
-                    || material.Material_Name == "Darkwood") {
+                    || material.Material_Name == "Darkwood" || material.Material_Name == "Kheferu") {
                         // Silver and cold iron don't automatically count as masterwork!
                         properties.push(organizeWeaponPropertyData("Masterwork", baseWeapon));
                     }
@@ -603,7 +603,7 @@ let weaponModel = {
             let remainingGoldForItem = targetGoldValue - baseWeapon.Weapon_Cost;
             if (baseWeapon.Weapon_Material != null) {
                 remainingGoldForItem -= baseWeapon.Weapon_Material.Material_Gold_Cost;
-                if (baseWeapon.Weapon_Material.Material_Name == "Iron, Cold") {
+                if (baseWeapon.Weapon_Material.Material_Name == "Iron, Cold" || baseWeapon.Weapon_Material.Material_Name == "Kheferu") {
                     extraCostForMaterialEnchantment = 2000;
                 }
             }

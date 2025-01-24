@@ -11,3 +11,6 @@ source data_insertion/Sandstorm/insert_weapon.sql;
 
 SELECT "Inserting Sandstorm Misc Items...";
 source data_insertion/Sandstorm/insert_misc_items.sql;
+
+SELECT "Inserting Sandstorm Special Materials...";
+source data_insertion/Sandstorm/insert_material.sql;
