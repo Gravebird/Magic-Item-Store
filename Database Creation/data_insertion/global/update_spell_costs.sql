@@ -107,6 +107,16 @@ UPDATE Spell
 SET Spell.Spell_Minimum_Material_Cost = 750.00
 WHERE Spell.Spell_Name = "Megalodon Empowerment";
 
+UPDATE Spell
+SET Spell.Spell_Minimum_XP_Cost = 500
+WHERE Spell.Spell_Name = "Doom of the Seas";
+
+-- SANDSTORM SPELLS
+
+UPDATE Spell
+SET Spell.Spell_Minimum_XP_Cost = 500
+WHERE Spell.Spell_Name = "Awaken Sand";
+
 
 -- Update cost of scrolls and wands
 -- The following two queries must be run at the end of this file. Any additional

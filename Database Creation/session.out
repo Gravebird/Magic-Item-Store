@@ -15,25 +15,25 @@ Query OK, 1 row affected (0.00 sec)
 Query OK, 1 row affected (0.00 sec)
 
 Database changed
-Query OK, 0 rows affected (0.03 sec)
-
-Query OK, 0 rows affected (0.03 sec)
-
-Query OK, 0 rows affected (0.04 sec)
-
-Query OK, 0 rows affected (0.03 sec)
-
-Query OK, 0 rows affected (0.03 sec)
-
-Query OK, 0 rows affected (0.03 sec)
-
-Query OK, 0 rows affected (0.03 sec)
-
 Query OK, 0 rows affected (0.04 sec)
 
 Query OK, 0 rows affected (0.04 sec)
 
 Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected (0.04 sec)
 
 Query OK, 0 rows affected (0.01 sec)
 Records: 0  Duplicates: 0  Warnings: 0
@@ -59,7 +59,7 @@ Query OK, 0 rows affected (0.01 sec)
 +---------------------+
 1 row in set (0.00 sec)
 
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.00 sec)
 
 +-------------------------+
 | Granting permissions... |
@@ -77,7 +77,7 @@ Query OK, 0 rows affected (0.00 sec)
 +----------------------+
 1 row in set (0.00 sec)
 
-Query OK, 22 rows affected (0.19 sec)
+Query OK, 22 rows affected (0.26 sec)
 
 Query OK, 1 row affected (0.01 sec)
 
@@ -125,13 +125,11 @@ Query OK, 0 rows affected (0.00 sec)
 +----------------------+
 1 row in set (0.00 sec)
 
-Query OK, 0 rows affected (0.07 sec)
-
-Query OK, 0 rows affected (0.12 sec)
-
-Query OK, 0 rows affected (0.05 sec)
+Query OK, 0 rows affected (0.04 sec)
 
 Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected (0.04 sec)
 
 Query OK, 0 rows affected (0.04 sec)
 
@@ -141,27 +139,29 @@ Query OK, 0 rows affected (0.03 sec)
 
 Query OK, 0 rows affected (0.03 sec)
 
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.11 sec)
+
+Query OK, 0 rows affected (0.13 sec)
+
+Query OK, 0 rows affected (0.11 sec)
+
 Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected (0.06 sec)
 
 Query OK, 0 rows affected (0.03 sec)
 
 Query OK, 0 rows affected (0.04 sec)
-
-Query OK, 0 rows affected (0.03 sec)
-
-Query OK, 0 rows affected (0.04 sec)
-
-Query OK, 0 rows affected (0.03 sec)
-
-Query OK, 0 rows affected (0.03 sec)
-
-Query OK, 0 rows affected (0.03 sec)
 
 Query OK, 0 rows affected (0.02 sec)
 
 Query OK, 0 rows affected (0.02 sec)
 
-Query OK, 0 rows affected (0.08 sec)
+Query OK, 0 rows affected (0.03 sec)
 
 +-------------------+
 | Creating users... |
@@ -170,7 +170,7 @@ Query OK, 0 rows affected (0.08 sec)
 +-------------------+
 1 row in set (0.00 sec)
 
-Query OK, 0 rows affected (0.04 sec)
+Query OK, 0 rows affected (0.01 sec)
 
 +-------------------------+
 | Granting permissions... |
@@ -179,9 +179,9 @@ Query OK, 0 rows affected (0.04 sec)
 +-------------------------+
 1 row in set (0.00 sec)
 
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.00 sec)
 
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.00 sec)
 
 +---------------------+
 | Creating indexes... |
@@ -190,10 +190,7 @@ Query OK, 0 rows affected (0.01 sec)
 +---------------------+
 1 row in set (0.00 sec)
 
-Query OK, 0 rows affected (0.10 sec)
-Records: 0  Duplicates: 0  Warnings: 0
-
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.02 sec)
 Records: 0  Duplicates: 0  Warnings: 0
 
 Query OK, 0 rows affected (0.01 sec)
@@ -202,7 +199,10 @@ Records: 0  Duplicates: 0  Warnings: 0
 Query OK, 0 rows affected (0.02 sec)
 Records: 0  Duplicates: 0  Warnings: 0
 
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.02 sec)
 Records: 0  Duplicates: 0  Warnings: 0
 
 Query OK, 0 rows affected (0.02 sec)
@@ -222,7 +222,7 @@ Records: 0  Duplicates: 0  Warnings: 0
 +--------------------+
 1 row in set (0.00 sec)
 
-Query OK, 4 rows affected (0.01 sec)
+Query OK, 4 rows affected (0.00 sec)
 Records: 4  Duplicates: 0  Warnings: 0
 
 +----------------------+
@@ -305,7 +305,7 @@ Records: 6  Duplicates: 0  Warnings: 0
 +------------------------+
 1 row in set (0.00 sec)
 
-Query OK, 606 rows affected (0.26 sec)
+Query OK, 606 rows affected (0.12 sec)
 Records: 606  Duplicates: 0  Warnings: 0
 
 +----------------------------------------------+
@@ -315,7 +315,7 @@ Records: 606  Duplicates: 0  Warnings: 0
 +----------------------------------------------+
 1 row in set (0.00 sec)
 
-Query OK, 1652 rows affected (0.05 sec)
+Query OK, 1652 rows affected (0.04 sec)
 Records: 1652  Duplicates: 0  Warnings: 0
 
 +----------------------+
@@ -392,7 +392,7 @@ Records: 126  Duplicates: 0  Warnings: 0
 +---------------------------------+
 1 row in set (0.00 sec)
 
-Query OK, 11 rows affected (0.01 sec)
+Query OK, 11 rows affected (0.00 sec)
 Records: 11  Duplicates: 0  Warnings: 0
 
 +-------------------------------+
@@ -402,7 +402,7 @@ Records: 11  Duplicates: 0  Warnings: 0
 +-------------------------------+
 1 row in set (0.00 sec)
 
-Query OK, 5 rows affected (0.00 sec)
+Query OK, 5 rows affected (0.01 sec)
 Records: 5  Duplicates: 0  Warnings: 0
 
 +---------------------------------+
@@ -412,7 +412,7 @@ Records: 5  Duplicates: 0  Warnings: 0
 +---------------------------------+
 1 row in set (0.00 sec)
 
-Query OK, 6 rows affected (0.00 sec)
+Query OK, 6 rows affected (0.01 sec)
 Records: 6  Duplicates: 0  Warnings: 0
 
 +-----------------------------------+
@@ -422,7 +422,7 @@ Records: 6  Duplicates: 0  Warnings: 0
 +-----------------------------------+
 1 row in set (0.00 sec)
 
-Query OK, 2 rows affected (0.00 sec)
+Query OK, 2 rows affected (0.01 sec)
 Records: 2  Duplicates: 0  Warnings: 0
 
 +--------------------------------+
@@ -432,7 +432,7 @@ Records: 2  Duplicates: 0  Warnings: 0
 +--------------------------------+
 1 row in set (0.00 sec)
 
-Query OK, 45 rows affected (0.01 sec)
+Query OK, 45 rows affected (0.03 sec)
 Records: 45  Duplicates: 0  Warnings: 0
 
 +--------------------------------------+
@@ -442,7 +442,7 @@ Records: 45  Duplicates: 0  Warnings: 0
 +--------------------------------------+
 1 row in set (0.00 sec)
 
-Query OK, 141 rows affected (0.02 sec)
+Query OK, 141 rows affected (0.07 sec)
 Records: 141  Duplicates: 0  Warnings: 0
 
 +-------------------------------------+
@@ -452,7 +452,7 @@ Records: 141  Duplicates: 0  Warnings: 0
 +-------------------------------------+
 1 row in set (0.00 sec)
 
-Query OK, 4 rows affected (0.00 sec)
+Query OK, 4 rows affected (0.01 sec)
 Records: 4  Duplicates: 0  Warnings: 0
 
 +---------------------------------------+
@@ -472,7 +472,7 @@ Records: 3  Duplicates: 0  Warnings: 0
 +-------------------------------+
 1 row in set (0.00 sec)
 
-Query OK, 3 rows affected (0.00 sec)
+Query OK, 3 rows affected (0.01 sec)
 Records: 3  Duplicates: 0  Warnings: 0
 
 +-----------------------------------------+
@@ -482,7 +482,7 @@ Records: 3  Duplicates: 0  Warnings: 0
 +-----------------------------------------+
 1 row in set (0.00 sec)
 
-Query OK, 1 row affected (0.00 sec)
+Query OK, 1 row affected (0.01 sec)
 
 Query OK, 1 row affected (0.00 sec)
 
@@ -560,7 +560,7 @@ Records: 18  Duplicates: 0  Warnings: 0
 +-----------------------------------+
 1 row in set (0.00 sec)
 
-Query OK, 19 rows affected (0.02 sec)
+Query OK, 19 rows affected (0.01 sec)
 Records: 19  Duplicates: 0  Warnings: 0
 
 +------------------------------------------+
@@ -570,7 +570,17 @@ Records: 19  Duplicates: 0  Warnings: 0
 +------------------------------------------+
 1 row in set (0.00 sec)
 
-Query OK, 1 row affected (0.01 sec)
+Query OK, 1 row affected (0.00 sec)
+
++-------------------------------+
+| Inserting Sandstorm Spells... |
++-------------------------------+
+| Inserting Sandstorm Spells... |
++-------------------------------+
+1 row in set (0.00 sec)
+
+Query OK, 21 rows affected (0.01 sec)
+Records: 21  Duplicates: 0  Warnings: 0
 
 +------------------------------------+
 | Inserting Sandstorm Magic Armor... |
@@ -579,7 +589,7 @@ Query OK, 1 row affected (0.01 sec)
 +------------------------------------+
 1 row in set (0.00 sec)
 
-Query OK, 3 rows affected (0.01 sec)
+Query OK, 3 rows affected (0.00 sec)
 Records: 3  Duplicates: 0  Warnings: 0
 
 +--------------------------------------+
@@ -589,7 +599,7 @@ Records: 3  Duplicates: 0  Warnings: 0
 +--------------------------------------+
 1 row in set (0.00 sec)
 
-Query OK, 3 rows affected (0.01 sec)
+Query OK, 3 rows affected (0.00 sec)
 Records: 3  Duplicates: 0  Warnings: 0
 
 +------------------------------+
@@ -599,7 +609,7 @@ Records: 3  Duplicates: 0  Warnings: 0
 +------------------------------+
 1 row in set (0.00 sec)
 
-Query OK, 3 rows affected (0.01 sec)
+Query OK, 3 rows affected (0.00 sec)
 Records: 3  Duplicates: 0  Warnings: 0
 
 +------------------------------------+
@@ -609,7 +619,7 @@ Records: 3  Duplicates: 0  Warnings: 0
 +------------------------------------+
 1 row in set (0.00 sec)
 
-Query OK, 51 rows affected (0.04 sec)
+Query OK, 51 rows affected (0.01 sec)
 Records: 51  Duplicates: 0  Warnings: 0
 
 Query OK, 291 rows affected (0.01 sec)
@@ -643,13 +653,13 @@ Rows matched: 16  Changed: 16  Warnings: 0
 Query OK, 21 rows affected (0.00 sec)
 Rows matched: 21  Changed: 21  Warnings: 0
 
-Query OK, 63 rows affected (0.01 sec)
+Query OK, 63 rows affected (0.00 sec)
 Rows matched: 63  Changed: 63  Warnings: 0
 
-Query OK, 26 rows affected (0.01 sec)
+Query OK, 26 rows affected (0.00 sec)
 Rows matched: 26  Changed: 26  Warnings: 0
 
-Query OK, 16 rows affected (0.01 sec)
+Query OK, 16 rows affected (0.00 sec)
 Rows matched: 16  Changed: 16  Warnings: 0
 
 Query OK, 44 rows affected (0.01 sec)
@@ -679,7 +689,7 @@ Rows matched: 4  Changed: 4  Warnings: 0
 Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
-Query OK, 10 rows affected (0.01 sec)
+Query OK, 10 rows affected (0.00 sec)
 Rows matched: 10  Changed: 10  Warnings: 0
 
 Query OK, 7 rows affected (0.00 sec)
@@ -730,13 +740,19 @@ Rows matched: 1  Changed: 1  Warnings: 0
 Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
-Query OK, 1438 rows affected (0.08 sec)
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1438 rows affected (0.04 sec)
 Rows matched: 1714  Changed: 1438  Warnings: 0
 
 Query OK, 79 rows affected (0.01 sec)
 Rows matched: 79  Changed: 79  Warnings: 0
 
-Query OK, 836 rows affected (0.05 sec)
+Query OK, 836 rows affected (0.03 sec)
 Rows matched: 982  Changed: 836  Warnings: 0
 
 Query OK, 79 rows affected (0.01 sec)
@@ -758,7 +774,7 @@ Rows matched: 2  Changed: 2  Warnings: 0
 Query OK, 9 rows affected (0.00 sec)
 Rows matched: 9  Changed: 9  Warnings: 0
 
-Query OK, 3 rows affected (0.00 sec)
+Query OK, 3 rows affected (0.01 sec)
 Rows matched: 3  Changed: 3  Warnings: 0
 
 Query OK, 12 rows affected (0.00 sec)
@@ -770,7 +786,7 @@ Rows matched: 6  Changed: 6  Warnings: 0
 Query OK, 5 rows affected (0.00 sec)
 Rows matched: 5  Changed: 5  Warnings: 0
 
-Query OK, 17 rows affected (0.01 sec)
+Query OK, 17 rows affected (0.00 sec)
 Rows matched: 17  Changed: 17  Warnings: 0
 
 Query OK, 17 rows affected (0.00 sec)
@@ -782,10 +798,10 @@ Rows matched: 7  Changed: 7  Warnings: 0
 Query OK, 15 rows affected (0.00 sec)
 Rows matched: 15  Changed: 15  Warnings: 0
 
-Query OK, 20 rows affected (0.00 sec)
+Query OK, 20 rows affected (0.01 sec)
 Rows matched: 20  Changed: 20  Warnings: 0
 
-Query OK, 21 rows affected (0.00 sec)
+Query OK, 21 rows affected (0.01 sec)
 Rows matched: 21  Changed: 21  Warnings: 0
 
 Query OK, 16 rows affected (0.00 sec)
@@ -794,16 +810,16 @@ Rows matched: 16  Changed: 16  Warnings: 0
 Query OK, 23 rows affected (0.00 sec)
 Rows matched: 23  Changed: 23  Warnings: 0
 
-Query OK, 20 rows affected (0.00 sec)
+Query OK, 20 rows affected (0.01 sec)
 Rows matched: 20  Changed: 20  Warnings: 0
 
-Query OK, 27 rows affected (0.01 sec)
+Query OK, 27 rows affected (0.00 sec)
 Rows matched: 27  Changed: 27  Warnings: 0
 
 Query OK, 21 rows affected (0.00 sec)
 Rows matched: 21  Changed: 21  Warnings: 0
 
-Query OK, 32 rows affected (0.00 sec)
+Query OK, 32 rows affected (0.01 sec)
 Rows matched: 32  Changed: 32  Warnings: 0
 
 Query OK, 9 rows affected (0.00 sec)
@@ -851,10 +867,10 @@ Rows matched: 1  Changed: 1  Warnings: 0
 Query OK, 34 rows affected (0.00 sec)
 Rows matched: 34  Changed: 34  Warnings: 0
 
-Query OK, 39 rows affected (0.00 sec)
+Query OK, 39 rows affected (0.01 sec)
 Rows matched: 39  Changed: 39  Warnings: 0
 
-Query OK, 12 rows affected (0.00 sec)
+Query OK, 12 rows affected (0.01 sec)
 Rows matched: 12  Changed: 12  Warnings: 0
 
 Query OK, 4 rows affected (0.00 sec)
@@ -1082,10 +1098,10 @@ Rows matched: 3  Changed: 3  Warnings: 0
 Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
-Query OK, 5 rows affected (0.01 sec)
+Query OK, 5 rows affected (0.00 sec)
 Rows matched: 5  Changed: 5  Warnings: 0
 
-Query OK, 3 rows affected (0.01 sec)
+Query OK, 3 rows affected (0.00 sec)
 Rows matched: 3  Changed: 3  Warnings: 0
 
 Query OK, 1 row affected (0.00 sec)
@@ -1100,7 +1116,7 @@ Rows matched: 1  Changed: 1  Warnings: 0
 Query OK, 0 rows affected (0.00 sec)
 Rows matched: 0  Changed: 0  Warnings: 0
 
-Query OK, 1 row affected (0.00 sec)
+Query OK, 1 row affected (0.01 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
 Query OK, 0 rows affected (0.00 sec)
@@ -1163,13 +1179,13 @@ Rows matched: 0  Changed: 0  Warnings: 0
 Query OK, 0 rows affected (0.00 sec)
 Rows matched: 0  Changed: 0  Warnings: 0
 
-Query OK, 2 rows affected (0.00 sec)
+Query OK, 2 rows affected (0.01 sec)
 Rows matched: 2  Changed: 2  Warnings: 0
 
-Query OK, 1 row affected (0.00 sec)
+Query OK, 1 row affected (0.01 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
-Query OK, 2 rows affected (0.00 sec)
+Query OK, 2 rows affected (0.01 sec)
 Rows matched: 2  Changed: 2  Warnings: 0
 
 Query OK, 0 rows affected (0.00 sec)
@@ -1184,29 +1200,23 @@ Rows matched: 9  Changed: 9  Warnings: 0
 Query OK, 1 row affected (0.01 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
-Query OK, 1 row affected (0.00 sec)
+Query OK, 1 row affected (0.01 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
 Query OK, 0 rows affected (0.00 sec)
 Rows matched: 0  Changed: 0  Warnings: 0
 
-Query OK, 1 row affected (0.00 sec)
+Query OK, 1 row affected (0.01 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
-Query OK, 1 row affected (0.00 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
-
-Query OK, 0 rows affected (0.00 sec)
-Rows matched: 0  Changed: 0  Warnings: 0
-
-Query OK, 1 row affected (0.00 sec)
+Query OK, 1 row affected (0.01 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
 Query OK, 0 rows affected (0.00 sec)
 Rows matched: 0  Changed: 0  Warnings: 0
 
-Query OK, 0 rows affected (0.00 sec)
-Rows matched: 0  Changed: 0  Warnings: 0
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
 
 Query OK, 0 rows affected (0.00 sec)
 Rows matched: 0  Changed: 0  Warnings: 0
@@ -1214,38 +1224,44 @@ Rows matched: 0  Changed: 0  Warnings: 0
 Query OK, 0 rows affected (0.00 sec)
 Rows matched: 0  Changed: 0  Warnings: 0
 
-Query OK, 286 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+Query OK, 286 rows affected (0.04 sec)
 Rows matched: 286  Changed: 286  Warnings: 0
 
 Query OK, 119 rows affected (0.01 sec)
 Rows matched: 119  Changed: 119  Warnings: 0
 
-Query OK, 257 rows affected (0.01 sec)
+Query OK, 257 rows affected (0.02 sec)
 Rows matched: 257  Changed: 257  Warnings: 0
 
-Query OK, 222 rows affected (0.01 sec)
+Query OK, 222 rows affected (0.02 sec)
 Rows matched: 222  Changed: 222  Warnings: 0
 
-Query OK, 158 rows affected (0.01 sec)
+Query OK, 158 rows affected (0.02 sec)
 Rows matched: 158  Changed: 158  Warnings: 0
 
-Query OK, 133 rows affected (0.01 sec)
+Query OK, 133 rows affected (0.02 sec)
 Rows matched: 133  Changed: 133  Warnings: 0
 
 Query OK, 81 rows affected (0.01 sec)
 Rows matched: 81  Changed: 81  Warnings: 0
 
-Query OK, 111 rows affected (0.01 sec)
+Query OK, 111 rows affected (0.00 sec)
 Rows matched: 111  Changed: 111  Warnings: 0
 
-Query OK, 89 rows affected (0.01 sec)
-Rows matched: 89  Changed: 89  Warnings: 0
+Query OK, 88 rows affected (0.01 sec)
+Rows matched: 88  Changed: 88  Warnings: 0
 
 Query OK, 30 rows affected (0.00 sec)
 Rows matched: 30  Changed: 30  Warnings: 0
 
-Query OK, 7 rows affected (0.00 sec)
-Rows matched: 7  Changed: 7  Warnings: 0
+Query OK, 8 rows affected (0.00 sec)
+Rows matched: 8  Changed: 8  Warnings: 0
 
 Query OK, 14 rows affected (0.00 sec)
 Rows matched: 14  Changed: 14  Warnings: 0
@@ -1313,7 +1329,7 @@ Rows matched: 0  Changed: 0  Warnings: 0
 Query OK, 0 rows affected (0.00 sec)
 Rows matched: 0  Changed: 0  Warnings: 0
 
-Query OK, 79 rows affected (0.01 sec)
+Query OK, 79 rows affected (0.00 sec)
 Rows matched: 79  Changed: 79  Warnings: 0
 
 Query OK, 140 rows affected (0.01 sec)
@@ -1334,10 +1350,10 @@ Rows matched: 1  Changed: 1  Warnings: 0
 Query OK, 0 rows affected (0.00 sec)
 Rows matched: 0  Changed: 0  Warnings: 0
 
-Query OK, 118 rows affected (0.01 sec)
+Query OK, 118 rows affected (0.00 sec)
 Rows matched: 118  Changed: 118  Warnings: 0
 
-Query OK, 121 rows affected (0.01 sec)
+Query OK, 121 rows affected (0.00 sec)
 Rows matched: 121  Changed: 121  Warnings: 0
 
 Query OK, 3 rows affected (0.00 sec)
@@ -1493,9 +1509,6 @@ Rows matched: 0  Changed: 0  Warnings: 0
 Query OK, 0 rows affected (0.00 sec)
 Rows matched: 0  Changed: 0  Warnings: 0
 
-Query OK, 0 rows affected (0.01 sec)
-Rows matched: 0  Changed: 0  Warnings: 0
-
 Query OK, 0 rows affected (0.00 sec)
 Rows matched: 0  Changed: 0  Warnings: 0
 
@@ -1505,7 +1518,10 @@ Rows matched: 0  Changed: 0  Warnings: 0
 Query OK, 0 rows affected (0.00 sec)
 Rows matched: 0  Changed: 0  Warnings: 0
 
-Query OK, 1 row affected (0.01 sec)
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
 Query OK, 0 rows affected (0.00 sec)
@@ -1517,7 +1533,7 @@ Rows matched: 0  Changed: 0  Warnings: 0
 Query OK, 0 rows affected (0.00 sec)
 Rows matched: 0  Changed: 0  Warnings: 0
 
-Query OK, 1 row affected (0.01 sec)
+Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
 Query OK, 0 rows affected (0.00 sec)
@@ -1529,31 +1545,31 @@ Rows matched: 0  Changed: 0  Warnings: 0
 Query OK, 0 rows affected (0.00 sec)
 Rows matched: 0  Changed: 0  Warnings: 0
 
-Query OK, 1 row affected (0.01 sec)
+Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
 Query OK, 0 rows affected (0.00 sec)
 Rows matched: 0  Changed: 0  Warnings: 0
 
-Query OK, 1 row affected (0.01 sec)
+Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
-Query OK, 1 row affected (0.01 sec)
+Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.00 sec)
 Rows matched: 0  Changed: 0  Warnings: 0
 
-Query OK, 1 row affected (0.01 sec)
+Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
-Query OK, 2 rows affected (0.01 sec)
+Query OK, 2 rows affected (0.00 sec)
 Rows matched: 2  Changed: 2  Warnings: 0
 
 Query OK, 0 rows affected (0.00 sec)
 Rows matched: 0  Changed: 0  Warnings: 0
 
-Query OK, 2 rows affected (0.01 sec)
+Query OK, 2 rows affected (0.00 sec)
 Rows matched: 2  Changed: 2  Warnings: 0
 
 Query OK, 0 rows affected (0.00 sec)
@@ -1586,19 +1602,19 @@ Rows matched: 0  Changed: 0  Warnings: 0
 Query OK, 0 rows affected (0.00 sec)
 Rows matched: 0  Changed: 0  Warnings: 0
 
-Query OK, 135 rows affected (0.04 sec)
+Query OK, 135 rows affected (0.01 sec)
 Rows matched: 135  Changed: 135  Warnings: 0
 
-Query OK, 11 rows affected (0.01 sec)
+Query OK, 11 rows affected (0.00 sec)
 Rows matched: 11  Changed: 11  Warnings: 0
 
-Query OK, 2 rows affected (0.01 sec)
+Query OK, 2 rows affected (0.00 sec)
 Rows matched: 2  Changed: 2  Warnings: 0
 
-Query OK, 2 rows affected (0.01 sec)
+Query OK, 2 rows affected (0.00 sec)
 Rows matched: 2  Changed: 2  Warnings: 0
 
-Query OK, 3 rows affected (0.01 sec)
+Query OK, 3 rows affected (0.00 sec)
 Rows matched: 3  Changed: 3  Warnings: 0
 
 Query OK, 0 rows affected (0.00 sec)
@@ -1637,7 +1653,7 @@ Rows matched: 0  Changed: 0  Warnings: 0
 Query OK, 0 rows affected (0.00 sec)
 Rows matched: 0  Changed: 0  Warnings: 0
 
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.00 sec)
 Rows matched: 0  Changed: 0  Warnings: 0
 
 Query OK, 0 rows affected (0.00 sec)
@@ -1699,6 +1715,6 @@ Query OK, 0 rows affected (0.01 sec)
 +--------------------+
 1 row in set (0.00 sec)
 
-Query OK, 0 rows affected (0.03 sec)
+Query OK, 0 rows affected (0.01 sec)
 
 mysql> quit

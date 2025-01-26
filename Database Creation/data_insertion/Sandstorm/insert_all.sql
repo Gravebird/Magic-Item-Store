@@ -15,6 +15,9 @@ source data_insertion/Sandstorm/insert_misc_items.sql;
 SELECT "Inserting Sandstorm Special Materials...";
 source data_insertion/Sandstorm/insert_material.sql;
 
+SELECT "Inserting Sandstorm Spells...";
+source data_insertion/Sandstorm/insert_spells.sql;
+
 SELECT "Inserting Sandstorm Magic Armor...";
 source data_insertion/Sandstorm/insert_magic_armor.sql;
 
