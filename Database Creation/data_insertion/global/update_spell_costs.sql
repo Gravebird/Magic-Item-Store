@@ -1,3 +1,4 @@
+SELECT "Updating base spell costs...";
 
 UPDATE Spell
 SET Spell.Spell_Minimum_Material_Cost = 1005.00
@@ -102,6 +103,7 @@ SET Spell.Spell_Minimum_Material_Cost = 25000.00
 WHERE Spell.Spell_Name = "True Resurrection";
 
 -- STORMWRACK SPELLS
+SELECT "Updating Stormwrack spell costs...";
 
 UPDATE Spell
 SET Spell.Spell_Minimum_Material_Cost = 750.00
@@ -112,10 +114,19 @@ SET Spell.Spell_Minimum_XP_Cost = 500
 WHERE Spell.Spell_Name = "Doom of the Seas";
 
 -- SANDSTORM SPELLS
+SELECT "Updating Sandstorm spell costs...";
 
 UPDATE Spell
 SET Spell.Spell_Minimum_XP_Cost = 500
 WHERE Spell.Spell_Name = "Awaken Sand";
+
+UPDATE Spell
+SET Spell.Spell_Minimum_Material_Cost = 5000.00
+WHERE Spell.Spell_Name = "Mantle of the Fiery Spirit";
+
+UPDATE Spell
+SET Spell.Spell_Minimum_XP_Cost = 2000
+WHERE Spell.Spell_Name = "Mantle of the Fiery Spirit";
 
 
 -- Update cost of scrolls and wands
