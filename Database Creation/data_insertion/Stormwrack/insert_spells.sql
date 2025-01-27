@@ -265,7 +265,7 @@ VALUES
     (641,3,"Tern's Persistence","Transmutation",null,null,"V, S, M/DF",
     "1 standard action","Touch",null,"Creature touched","24 hours",
     "Will negates (harmless)","Yes (harmless)",
-    "",
+    "Subject can travel overland 50% longer without fatigue.",
     "<p>The subject gains the sea bird's ability to travel great distances without undue exertion. The subject can travel overland 50% longer than normal before risking injury or fatigue. For example, a character can walk up to 12 hours overland before having to make Constitution checks to avoid fatigue, or can hustle for 90 minutes before taking nonlethal damage. The subject still can't run for extended periods but it can move at run speed tactically for a number of rounds equal to 1-1/2 times its Constitution score.</p>",
     "Arcane Material Component: A few feathers or a pinch of guano from a tern.",
     null,null),
