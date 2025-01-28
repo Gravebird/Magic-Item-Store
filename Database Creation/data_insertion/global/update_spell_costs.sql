@@ -128,6 +128,10 @@ UPDATE Spell
 SET Spell.Spell_Minimum_XP_Cost = 2000
 WHERE Spell.Spell_Name = "Mantle of the Fiery Spirit";
 
+UPDATE Spell
+SET Spell.Spell_Minimum_Material_Cost = 5000.00
+WHERE Spell.Spell_Name = "Symbol of Thirst";
+
 
 -- Update cost of scrolls and wands
 -- The following two queries must be run at the end of this file. Any additional

@@ -258,4 +258,347 @@ VALUES
     "Fortitude negates","No",
     "Creates a controlled duststorm.",
     "<p>You create a duststorm or sandstorm. <em>Sandstorm uses the parameters of <em>control winds</em> (see page 214 of the <em>Player's Handbook</em>), differing from that spell as shown above and as follows. A spellcaster who knows <em>sandstorm</em> need not be in an area of exposed, sandy soil to create the effects describes below - this spell conjures both sand and wind.</p><p><em>Dustorm Strength:</em> For every three caster levels, you can increase or decrease wind strength by one level. Wind speeds of less than severe are insuffiennt to carry suspended sand. (Wind strength and related duststorm effects are briefly summarized below, with more detail found on page 16 of <em>Sandstorm</em>.) Each round on your turn, creatures in the area must make Fortitude saves or suffer the effects of being in the wind, as well as the effects of suspended grit.</p><p>A severe wind (31+ mph) causes minor ship and building damage, and creates a duststorm with fine grains of sand that reduces visibility, smother unprotected flames, and even chokes protected flames.</p><p>A windstorm (51+ mph) drives most flying creatures from the skies, uproots small trees, knocks down light wooden structures, tears off roofs, and endangers ships. Wind of this speed creates a sandstorm that badly reduces visibility and deals 1d2 points of nonlethal damage each round to anyone caught out in the open.</p><p>Hurricane force winds (75+ mph) destroy wooden buildings, sometimes uproot even large trees, and cause most ships to founder. Wind of this speed creates a flensing sandstorm that severely reduces visibility and deals 1d3 points of lethal damage each round to anyone caught out in the open.</p><p>A tornado (175+ mph) destroys all nonfortified buildings and often uproots large trees. Tornado-force sandstorms are of the flensing variety.</p>",
+    null,null,null),
+    
+    (686,4,"Scalding Mud","Transmutation",null,"Earth, Fire","V, S, M/DF",
+    "1 standard action","Medium",null,null,"Permanent; see text",
+    "See text","No",
+    "Transmute rock or earth into boiling muck.",
+    "<p>This spell functions like <em>transmute rock to mud</em> (see page 295 of the <em>Player's Handbook</em>), except that it can be cast on sand, earth, and unworked, nonmagical rock (within the normal restrictions for <em>transmute rock to mud</em>), and the mud created is boiling hot. Creatures mired in the hot mud take 5d6 points of fire damage per round, while those completely submerged in the sludge take 10d6 points of fire damage per round. Creatures atop the mud (such as those standing on straw) take 1d6 points of fire damage each round from hot steam. Damage from boiling mud continues for 1d3 rounds after exposure ceases, but this additional damage is only 1d6 points of fire damage per round.</p><p>The transmuted material cools after a period of 1 round per caster level. The number of dice of damage the mud deals is halved each round after this duration expires. The transmuted rock remains as mud even after it cools. It eventually dries into soil, as per <em>transmute rock to mud</em>.</p>",
+    "Arcane Material Component: A pinch of a mixture of clay, sulfur, and water.",
+    null,null),
+    
+    (687,4,"Scimitar of Sand","Evocation",null,"Earth","V, S, M/DF",
+    "1 standard action","0 ft.","Scimitar of grinding sand",null,"1 min./level (D)",
+    "Fortitude partial","Yes",
+    "Sand sword deals 1d6 damage +1/2 levels and renders the target dehydrated.",
+    "<p>A curved, 3-foot long blade of sand springs forth from your hand, screaming and churning like a caged sandstorm. Attacks with a <em>scimitar of sand</em> are melee touch attacks. The blade deals 1d6 points of damage +1 point per two caster levels (maximum +10). The blade is not solid, so your Strength modifier does not apply to the damage. You can use a <em>scimitar of sand</em> without penalty even if you lack proficiency with a normal scimitar. In addition to being dealt damage, a creature struck by your weapon must succeed on a Fortitude save or become dehydrated.</p>",
+    "Arcane Material Component: A pinch of sand, salt, and iron filings.",
+    null,null),
+    
+    (688,4,"Searing Exposure","Evocation",null,"Fire, Light", "V, S, M/DF",
+    "1 standard action","Medium",null,"One living creature","Instantaneous",
+    "Fortitude partial; see text","Yes",
+    "Target suffers hours of wasteland exposure in a moment.",
+    "<p>You expose the target to the effect of hours of exposure to severe heat and the desert sun in only a moment. The subject must make a Fortitude saving throw or take 1d4 points of nonlethal damage per caster level (maximum 15d4). Nonlethal damage that exceeds the subject's hit points is considered lethal damage. In addition, the subject is dazzled (as if by sun glare), dehydrated, and sunburned (see Chapter 1 of <em>Sandstorm</em>). Protection from heat and exposure (such as a keepcool salve or a hydration suit; see Chapter 4 of <em>Sandstorm</em>) helps mitigate these effects, providing the target with a +4 bonus on the Fortitude save. A creature wearing heavy clothing or armor takes a -4 penalty on the Fortitude saving throw, but is not sunburned. Those that succeed on their Fortitude saves take half damage, are dehydrated, and are dazzled for 1d4+1 rounds.</p>",
+    "Arcane Material Component: A shard of thick glass",
+    null,null),
+    
+    (689,4,"Skin of the Cactus","Abjuration",null,null,"V, S, M",
+    "1 standard action","Touch",null,"Living creature touched","10 min./level",
+    "None","Yes (harmless)",
+    "Grants natural armor, thorns, and resistance to dehydration.",
+    "<p>This spell grants a living creature the toughness, resilience, and needles of a cactus. The effect grants a +3 enhancement bonus to the creature's existing natural armor bonus. This enhancement bonus increases to +4 at caster level 10th and to a maximum of +5 at caster level 13th.</p><p>In addition to the enhancement bonus, <em>skin of the cactus</em> causes the subject to grow needles from its skin, clothing, or armor. Any creature grappling the subject or striking it with natural weapons takes 1d6 points of piercing damage from the needles.</p><p>Finally, the subject of this spell is protected from nonlethal damage due to dehydration. <em>Skin of the cactus</em> provides the subject with a +4 bonus on saves to resist becoming dehydrated from heat or exposure, but it offers no protection against dessication damage or spells that cause a target to become dehydrated.</p><p>The enhancement bonus provided by <em>skin of the cactus</em> stacks with the target's natural armor bonus, but not with other enhancement bonuses to natural armor. A creature without natural armor has an effective natural armor bonus of +0, much as a character wearing only normal clothing has an armor bonus of +0.</p>",
+    "Material Component: A cactus spine.",
+    null,null),
+    
+    (690,4,"Sleep Mote","Enchantment","Compulsion","Mind-Affecting","V, S, M/DF",
+    "1 standard action","Medium","5-ft.-diameter sphere",null,"1 round/level; see text",
+    "Will partial","Yes",
+    "Dust devil of magic sand puts foes to sleep.",
+    "<p>You create a dust devil composed of slumber-inducing particles. It flies at a speed of 30 feet per round (perfect maneuverability), and you can concentrate on controlling its every movement or specify a simple program. Directing the vortex's movement is a move action, while changing its programmed movement is a standard action. If you don't move or program the vortex, it merely stays at rest, spinning and howling. The vortex dissipates if it exceeds the spell's range.</p><p>If the <em>sleep mote</em> enters a space with a creature, it stops moving for the round and causes a magical slumber to come upon any creature whose space it completely engulfs that fails a Will saving throw (thus, creatures larger than Medium size have immunity to a <em>sleep mote</em>. Even on a successful Will saving throw, affected creatures are sleepy, and take a -2 penalty on all Wisdom, Intelligence, and Charisma checks for the spell's duration.</p><p>Sleeping creatures are helpless. Sapping or wounding awakens an affected creature, but normal noise does not. Awakening a creature is a standard action (an application of the aid another action). <em>Sleep mote</em> has no effect on unconscious creatures.</p>",
+    "Arcane Material Component: A pinch of fine sand and a live cricket.",
+    null,null),
+    
+    (691,4,"Slipsand","Transmutation",null,null,"V, S, M",
+    "1 standard action","Close","One 10-ft.-cube region of slipsand/level",null,"Permanent",
+    "See text","No",
+    "Creates a volume of slipsand.",
+    "<p>This spell turns an area of natural sand into a pit of deadly slipand (see page 25 of <em>Sandstorm</em>). Supernatural sandlike materials, such as black sand or slumber sand, are not affected by the spell. A creature unable to free itself from the slipsand immediately sinks to the bottom and must hold its breath or begin to suffocate.</p><p>If <em>slipsand</em> is cast on a structure of fused sand or on a sandy foundation, it causes the affected part (or more) of the structure to collapse. If the spell is cast on a building's material, slipsand spreads out to fill the available space, possibly burying those within its area. The collapsing structure is also dangerous (see Cave-ins and Collapses, page 66 of the <em>Dungeon Master's Guide</em>).</p><p><em>Slipsand</em> creates a magic trap that is difficult to detect. A character must succeed on a Survival check (DC equals the save DC of the spell) to notice a pit of slipsand. Running or charging characters have no chance to detect the trap. A rogue can find the trap with a successful Search check, but cannot disable it. The DC is 25 + spell level, or 29 for <em>slipsand</em>.</p>",
+    "Material Component: A pinch of slipsand.",
+    null,null),
+    
+    (692,4,"Soul of the Waste","Transmutation",null,"Earth","V, S, DF",
+    "1 standard action","Personal",null,"You","10 min./level (D)",
+    null,null,
+    "Meld into surrounding sand.",
+    "<p>You meld your body and possessions into an accumulation of sand, dust, ash, or even loose earth. The area must be large enough to acommodate your body in all three dimensions. When the casting is complete, you and not more than 100 pounds of nonliving gear merge with the sand. While in the sand, you remain aware of the passage of time, can cast spells on yourself, and can still hear on the surface above you, but you cannot see or communicate.</p><p>Since the substance you inhabit is an accumulation of many particles, it is difficult to damage the material (and you). If some creature were to shovel or otherwise remove sufficient sand from the area so that you no longer fit within it, you are expelled and take 5d6 points of damage. Any time before the duration expires, you can step out of the sand (or become physical while still partially or wholly within the sand). If the spell's duration expires or the effect is dispelled before you voluntarily exit, you are violently expelled and take 5d6 points of damage.</p><p>The following spells affect you if you cast upon the sand you are occupying: <em>Control sand</em> and <em>move earth</em> merely move you along with their effects. <em>Transmute sand to glass</em> or <em>transmute sand to stone</em> expels you and slays you instantly unless you make a DC 18 Fortitude save, in which case you are expelled and take 5d6 points of damage.</p>",
+    null,null,null),
+    
+    (693,4,"Storm Mote","Evocation",null,"Air, Earth","V, S, M/DF",
+    "1 standard action","Medium","Cylinder (5-ft. radius, 10 ft. high)",null,"1 round/level",
+    "Fortitude half","Yes",
+    "Dust devil of flesning sand.",
+    "<p>You create a whirling vortex of sand. It flies at a speed of 60 feet per round (perfect maneuverability), and you can concentrate on controlling its every movement or specify a simple program. Directing the vortex's movement is a move action, while changing its programmed movement is a standard action. If you don't move or program the vortex, it merely stays at rest, spinning and howling. The vortex dissipates if it exceeds the spell's range.</p><p>If a <em>storm mote</em> enters a space with a creature, it stops moving for the round and deals 2d8 points of damage to the creature. A successful Fortitude save reduces the damage by half.</p><p>Those outside the vortex have concealment against those inside. The vortex extinguishes all nonmagical flame.</p>",
+    "Arcane Material Component: A pinch of sand",
+    null,null),
+    
+    (694,4,"Summon Desert Ally I","Conjuration","Summoning",null,"V, S, DF",
+    "1 round","Close","One summoned creature",null,"1 round/level (D)",
+    "None","No",
+    "Calls dustform creature to fight.",
+    "<p>This spell summons a dustform creature (see page 161). It appears where you designate and acts immediately on your turn. It attacks your opponents to the best of its ability. If you can communicate with the creature, you can direct it not to attack, to attack particular enemies, or to perform other actions.</p><p>A summoned creature cannot summon or otherwise conjure another creature, nor can it use any teleporation or planar travel abilities. Creatures cannot be summoned into an environment that cannot support them.</p><p>This spell conjures one of the creatures from the 1st-level list on the accompanying Summon Desert Ally table. You choose which kind of creature to summon, and you can change that choice each time you cast the spell. All the creatures on the table are neutral unless otherwise noted.</p>",
+    null,null,null),
+    
+    (695,4,"Summon Desert Ally II","Conjuration","Summoning",null,"V, S, DF",
+    "1 round","Close","One or more creatures, no two of which can be more than 30 ft. apart",null,"1 round/level (D)",
+    "None","No",
+    "Calls dustform creature to fight.",
+    "<p>This spell functions like <em>summon desert ally I</em>, except that you can summon one 2nd-level creature or 1d3 1st-level creatures of the same kind.</p>",
+    null,null,null),
+    
+    (696,4,"Summon Desert Ally III","Conjuration","Summoning",null,"V, S, DF",
+    "1 round","Close","One or more creatures, no two of which can be more than 30 ft. apart",null,"1 round/level (D)",
+    "None","No",
+    "Calls dustform creature to fight.",
+    "<p>This spell functions like <em>summon desert ally I</em>, except that you can summon one 3rd-level creature or 1d3 2nd-level creatures of the same kind, or 1d4+1 1st-level creatures of the same kind.</p>",
+    null,null,null),
+    
+    (697,4,"Summon Desert Ally IV","Conjuration","Summoning",null,"V, S, DF",
+    "1 round","Close","One or more creatures, no two of which can be more than 30 ft. apart",null,"1 round/level (D)",
+    "None","No",
+    "Calls dustform creature to fight.",
+    "<p>This spell functions like <em>summon desert ally I</em>, except that you can summon one 4th-level creature or 1d3 3rd-level creatures of the same kind, or 1d4+1 lower-level creatures of the same kind.</p>",
+    null,null,null),
+    
+    (698,4,"Summon Desert Ally V","Conjuration","Summoning",null,"V, S, DF",
+    "1 round","Close","One or more creatures, no two of which can be more than 30 ft. apart",null,"1 round/level (D)",
+    "None","No",
+    "Calls dustform creature to fight.",
+    "<p>This spell functions like <em>summon desert ally I</em>, except that you can summon one 5th-level creature or 1d3 4th-level creatures of the same kind, or 1d4+1 lower-level creatures of the same kind.</p>",
+    null,null,null),
+
+    (699,4,"Summon Desert Ally VI","Conjuration","Summoning",null,"V, S, DF",
+    "1 round","Close","One or more creatures, no two of which can be more than 30 ft. apart",null,"1 round/level (D)",
+    "None","No",
+    "Calls dustform creature to fight.",
+    "<p>This spell functions like <em>summon desert ally I</em>, except that you can summon one 6th-level creature or 1d3 5th-level creatures of the same kind, or 1d4+1 lower-level creatures of the same kind.</p>",
+    null,null,null),
+
+    (700,4,"Summon Desert Ally VII","Conjuration","Summoning",null,"V, S, DF",
+    "1 round","Close","One or more creatures, no two of which can be more than 30 ft. apart",null,"1 round/level (D)",
+    "None","No",
+    "Calls dustform creature to fight.",
+    "<p>This spell functions like <em>summon desert ally I</em>, except that you can summon one 7th-level creature or 1d3 6th-level creatures of the same kind, or 1d4+1 lower-level creatures of the same kind.</p>",
+    null,null,null),
+
+    (701,4,"Summon Desert Ally VIII","Conjuration","Summoning",null,"V, S, DF",
+    "1 round","Close","One or more creatures, no two of which can be more than 30 ft. apart",null,"1 round/level (D)",
+    "None","No",
+    "Calls dustform creature to fight.",
+    "<p>This spell functions like <em>summon desert ally I</em>, except that you can summon one 8th-level creature or 1d3 7th-level creatures of the same kind, or 1d4+1 lower-level creatures of the same kind.</p>",
+    null,null,null),
+
+    (702,4,"Summon Desert Ally IX","Conjuration","Summoning",null,"V, S, DF",
+    "1 round","Close","One or more creatures, no two of which can be more than 30 ft. apart",null,"1 round/level (D)",
+    "None","No",
+    "Calls dustform creature to fight.",
+    "<p>This spell functions like <em>summon desert ally I</em>, except that you can summon one 9th-level creature or 1d3 8th-level creatures of the same kind, or 1d4+1 lower-level creatures of the same kind.</p><table>
+    <thead>
+        <tr>
+            <th><strong>1st Level</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>Baboon</td></tr>
+        <tr><td>Badger</td></tr>
+        <tr><td>Dire rat</td></tr>
+        <tr><td>Dog</td></tr>
+        <tr><td>Giant fire beetle</td></tr>
+        <tr><td>Hawk</td></tr>
+        <tr><td>Jackal*</td></tr>
+        <tr><td>Monstrous centipede, Medium</td></tr>
+        <tr><td>Monstrous scorpion, Small</td></tr>
+        <tr><td>Monstrous spider, Small</td></tr>
+        <tr><td>Owl</td></tr>
+        <tr><td>Raven</td></tr>
+        <tr><td>Serval*</td></tr>
+        <tr><td>Snake, Small viper</td></tr>
+    </tbody>
+</table>
+<table>
+    <thead>
+        <tr>
+            <th><strong>2nd Level</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>Donkey</td></tr>
+        <tr><td>Eagle</td></tr>
+        <tr><td>Formian worker</td></tr>
+        <tr><td>Giant ant, worker</td></tr>
+        <tr><td>Hyena</td></tr>
+        <tr><td>Monstrous scorpion, Medium</td></tr>
+        <tr><td>Monstrous spider, Medium</td></tr>
+        <tr><td>Riding dog</td></tr>
+        <tr><td>Snake, Medium viper</td></tr>
+        <tr><td>Vulture*</td></tr>
+    </tbody>
+</table>
+<table>
+    <thead>
+        <tr>
+            <th><strong>3rd Level</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>Ashworm*</td></tr>
+        <tr><td>Bat swarm</td></tr>
+        <tr><td>Camel</td></tr>
+        <tr><td>Cheetah</td></tr>
+        <tr><td>Dire badger</td></tr>
+        <tr><td>Dire bat</td></tr>
+        <tr><td>Giant ant, soldier</td></tr>
+        <tr><td>Monstrous centipede, Large</td></tr>
+        <tr><td>Snake, Large viper</td></tr>
+    </tbody>
+</table>
+<table>
+    <thead>
+        <tr>
+            <th><strong>4th Level</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>Ankheg</td></tr>
+        <tr><td>Deinonychus</td></tr>
+        <tr><td>Dire jackal*</td></tr>
+        <tr><td>Giant ant, queen</td></tr>
+        <tr><td>Giant eagle</td></tr>
+        <tr><td>Giant owl</td></tr>
+        <tr><td>Monstrous spider, Large</td></tr>
+        <tr><td>Protoceratops*</td></tr>
+    </tbody>
+</table>
+<table>
+    <thead>
+        <tr>
+            <th><strong>5th Level</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>Dire vulture*</td></tr>
+        <tr><td>Formian, warrior</td></tr>
+        <tr><td>Lion</td></tr>
+        <tr><td>Locust swarm</td></tr>
+        <tr><td>Monstrous centipede, Huge</td></tr>
+        <tr><td>Monstrous scorpion, Large</td></tr>
+        <tr><td>Snake, Huge viper</td></tr>
+    </tbody>
+</table>
+<table>
+    <thead>
+        <tr>
+            <th><strong>6th Level</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>Diprotodon*</td></tr>
+        <tr><td>Dire lion</td></tr>
+        <tr><td>Giant stag beetle</td></tr>
+        <tr><td>Hippopotamus*</td></tr>
+        <tr><td>Megaraptor</td></tr>
+        <tr><td>Monstrous centipede, Gargantuan</td></tr>
+        <tr><td>Monstrous spider, Huge</td></tr>
+        <tr><td>Rhinoceros</td></tr>
+    </tbody>
+</table>
+<table>
+    <thead>
+        <tr>
+            <th><strong>7th Level</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>Elephant</td></tr>
+        <tr><td>Formian, taskmaster</td></tr>
+        <tr><td>Giant banded lizard*</td></tr>
+        <tr><td>Monstrous scorpion, Huge</td></tr>
+    </tbody>
+</table>
+<table>
+    <thead>
+        <tr>
+            <th><strong>8th Level</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>Dire tortoise*</td></tr>
+        <tr><td>Dunewinder*</td></tr>
+        <tr><td>Monstrous centipede, Colossal</td></tr>
+        <tr><td>Monstrous spider, Gargantuan</td></tr>
+        <tr><td>Triceratops</td></tr>
+        <tr><td>Tyrannosaurus</td></tr>
+    </tbody>
+</table>
+<table>
+    <thead>
+        <tr>
+            <th><strong>9th Level</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>Monstrous scorpion, Gargantuan</td></tr>
+        <tr><td>Monstrous spider, Colossal</td></tr>
+    </tbody>
+</table>
+<p>* New monster described in Chapter 6 of <em>Sandstorm</em></p>",
+    null,null,null),
+    
+    (703,4,"Sunstroke","Necromancy",null,null,"V, S",
+    "1 standard action","Close",null,"One living creature","Instantaneous",
+    "Fortitude partial; see text","Yes",
+    "Target takes 2d6 nonlethal damage and is fatigued.",
+    "<p>You cause a living creature to experience the effects of heatstroke. The target takes 2d6 points of nonlethal damage. If the target fails a Fortitude save, it immediately becomes fatigued, or exhausted if already fatigued. Since this spell causes heatstroke, the damage and fatigue dealt can only be healed after that condition is treated properly (see page 13 of <em>Sandstorm</em>).</p>",
+    null,null,null),
+    
+    (704,4,"Surelife","Abjuration",null,null,"V, S, M",
+    "1 round","Personal",null,"You","1 min./level",
+    null,null,
+    "Protects you from death due to hazards.",
+    "<p>This spell protects you against some condition - such as being immersed in boiling oil or buried under an avalanche - that would ordinarily cause certain death. You can protect yourself only against a natural occurance or nonmagical condition, not against a spell or the action of a creature (such as the breath of a dragon or the swords of a group of bandits). At the time of the casting, you must specify the condition against which you wish to protect yourself, and the spell is effective against only that condition. Should you be subjected to that condition during the duration of the spell, you feel no discomfort and take no damage from the condition, though the spell does not protect any items you carry. If you are still subject to the condition at the end of the spell's duration, you experience its full normal effects.</p>",
+    "Material Component: An ointment of peach syrup and cinnabar.",
+    null,null),
+    
+    (705,4,"Symbol of Thirst","Enchantment","Compulsion","Mind-Affecting","V, S, M",
+    "10 minutes","0 ft.; see text",null,"One symbol","See text",
+    "Will negates","Yes",
+    "Triggered rune overwhelms nearby creatures with thirst.",
+    "<p>This spell functions like <em>symbol of death</em> (see page 289 of the <em>Player's Handbook</em>), except that all creatures within 60 feet of a <em>symbol of thirst are consumed by a terrible sense of thirst (as the <em>tormenting thirst</em> spell; see page 124 of <em>Sandstorm</em>) for 10 minutes per caster level.</p><p><em>Note:</em> Magic traps, such as <em>symbol of thirst</em>, are hard to detect and disable. A rogue (only) can use the Search skill to find a <em>symbol of thirst</em> and Disable Device to thwart it. The DC in each case is 25 + spell level, or 32 for <em>symbol of thirst</em>.</p>",
+    "Material Component: Mercury and phosphorus, plus powdered diamond and opal with a total value of at least 5,000 gp.",
+    null,null),
+    
+    (706,4,"Tormenting Thirst","Enchantment","Compulsion","Mind-Affecting","V, S",
+    "1 standard action","Close",null,"One living creature","1 round/level",
+    "Will negates","Yes",
+    "Subject is overwhelmed by thirst.",
+    "<p>This spell fills the subject with a terrible sense of thirst. Desperate and unable to focus on any other goal, it must drink as deeply as it can. The affected creature runs to the nearest body of water in sight, grabs and empties the closest container of water or liquor (even those carried by allies), or runs toward the nearest known source of water. No matter how much the subject drinks, the sensation of thirst is not quenched.</p><p>If denied the opportunity to quench its thirst, an affected creature flies into a rage similar to the barbarian class feature (see page 25 of the <em>Player's Handbook</em>). The subject attacks friend and foe alike in its quest to find water, though not necessarily with lethal force.</p>",
+    null,null,null),
+    
+    (707,4,"Transcribe Symbol","Abjuration",null,null,"V, S, F",
+    "1 standard action","Touch",null,"Magic symbol touched","10 minutes or until discharged",
+    "None","No",
+    "Safely moves an untriggered magical symbol to another location.",
+    "<p>You place a protective spell upon your hand that allows you to touch an untriggered magic sigil (such as a <em>glyph of warding</em> or <em>symbol of death</em>), and even move it, without triggering it. To pick up the symbol in this manner, you must make a successful caster level check (DC 20 + spell level). Failure indicates that you trigger the magic sigil. If the check is successful, you transfer the sigil to your hand. You can then use a standard action to place it upon a surface of the sort on which it can normally be inscribed. The transferred sigil works normally thereafter and retains its original triggering conditions, although its new location might make those conditions difficult or impossible to achieve.</p><p>You can maintain the magic sigil on your hand as long as you concentrate, up to the duration of the spell. If your concentration lapses or the spell duration expires while the sigil is stored, it immediately triggers upon you (and only you), even if you would normally not meet its trigger conditions. The effect has the same saving throw and spell resistance aspects as the original sigil did. The only safe way to rid yourself of a stored sigil is to place it upon a suitable surface.</p>",
+    null,"Focus: A piece of slate that is smooth on one side.",null),
+    
+    (708,4,"Transmute Sand to Glass","Transmutation",null,"Earth","V, S, M/DF",
+    "1 standard action","Medium","Up to two 10-ft. cubes/level (S)",null,"Permanent",
+    "See text","No",
+    "Transforms two 10-ft. cubes per level.",
+    "<p>This spell transforms a mass of normal sand of any depth into solid glass permanently. Any creature in the sand is allowed a Reflex save to escape before the area is hardened to glass. Creatures unable to escape the area become trapped and must be broken out. A creature so caught can break free by making a Strength check to break the glass or by dealing damage to the glass. Glass has hardness 1, 1 hit point per inch of thickness, and a break DC of 12, +1 per inch of thickness. A creature partially caught in the glass takes a -2 penalty on attack rolls and a -4 penalty to Dexterity, and is unable to move. When breaking glass, a creature takes 1d6 points of damage each time it makes a successful Strength check to break free. If broken free by others, the creature takes 1d6 points of damage from broken glass. A creature trapped beneath the surface of the glass may begin to suffocate (see page 304 of the <em>Dungeon Master's Guide</em>).</p>",
+    "Arcane Material Component: A mixture of crushed glass and sand.",
+    null,null),
+    
+    (709,4,"Transmute Sand to Stone","Transmutation",null,"Earth","V, S, M/DF",
+    "1 standard action","Medium","Up to two 10-ft. cubes/level (S)",null,"Permanent",
+    "See text","No",
+    "Transforms two 10-ft. cubes per level.",
+    "<p>This spell transforms a mass of sand of any depth into solid stone permanently. Any creature in the sand is allowed a Reflex save to escape before the area is hardened to stone. If the creature fails its save, it is entangled and can't move. It is not considered helpless, however, and it can break out by damaging the stone. Stone has hardness 8 and 15 hit points per inch of thickness. The creature can also make a Strength check to break free. The break DC is 20, +2 per inch of thickness of the stone.</p><p><em>Transmute sand to stone</em> counters and dispels <em>transmute stone to sand</em>.</p>",
+    "Arcane Material Component: Sand, dirt, and water.",
+    null,null),
+    
+    (710,4,"Transmute Stone to Sand","Transmutation",null,"Earth","V, S, M/DF",
+    "1 standard action","Medium","Up to two 10-ft. cubes/level (S)",null,"Permanent",
+    "See text","No",
+    "Transforms two 10-ft. cubes per level.",
+    "<p>This spell turns natural, uncut, or unworked stone of any sort into an equal volume of sand. If the spell is cast upon a boulder, for example, the boulder collapses into a heap of sand. Magical stone is not affected by this spell. The depth of the sand created cannot exceed 10 feet.</p><p>If <em>transmute stone to sand</em> is cast upon the ceiling of a cavern or tunnel, the sand falls to the floor and scatters in a pile 5 feet deep. For example, a 10th-level caster could convert twenty 10-foot cubes into sand. Piling on the floor, this sand would cover an area of forty 10-foot squares to a depth of 5 feet. The falling sand and ensuing cave-in deal 8d6 points of bludgeoning damage to anyone caught directly beneath the area, or half damage to those who succeed on Reflex saves.</p><p>Castles and large stone buildings generally have immunity to this spell, since <em>transmute stone to sand</em> can't affect worked stone and doesn't reach deep enough to undermine such building's foundations. However, small buildings or structures often rest upon foundations shallow enough to be damaged or even partially toppled by this spell.</p><p>The sand remains until a successful <em>dispel magic</em> or <em>transmute sand to stone</em> spell restores its substance - though not necessarily its form.</p>",
+    "Arcane Material Component: Sandstone and granite.",
+    null,null),
+    
+    (711,4,"Unearthly Heat","Transmutation",null,null,"V, S",
+    "1 standard action","Touch",null,"Living creature touched","1 round/level",
+    "Fortitude negates; see text","Yes",
+    "Target is subjected to unearthly heat for 1 round/level.",
+    "<p>Your touch raises the effective body temperature of the target as though it were exposed to unearthly heat. Each round, the subject takes 1d6 points of lethal damage and 1d4 points of nonlethal damage. A creature can make a Fortitude save each round for the spell's duration to negate the damage. A creature that takes damage from the spell is fatigued (or exhausted if it is already fatigued). Partially protected creatures can reduce the effects and make Fortitude saves to avoid damage and fatigue each round (see Protection against Heat, page 14 of <em>Sandstorm</em>). A creature wearing heavy clothing or armor takes a -4 penalty on its save.</p>",
     null,null,null);
