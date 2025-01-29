@@ -18,6 +18,9 @@ source data_insertion/Sandstorm/insert_material.sql;
 SELECT "Inserting Sandstorm Spells...";
 source data_insertion/Sandstorm/insert_spells.sql;
 
+SELECT "Inserting Sandstorm Class Spells...";
+source data_insertion/Sandstorm/insert_class_spells.sql;
+
 SELECT "Inserting Sandstorm Magic Armor...";
 source data_insertion/Sandstorm/insert_magic_armor.sql;
 
