@@ -29,3 +29,9 @@ source data_insertion/Sandstorm/insert_magic_weapon.sql;
 
 SELECT "Inserting Sandstorm Rings...";
 source data_insertion/Sandstorm/insert_rings.sql;
+
+SELECT "Inserting Sandstorm Rods and Staffs...";
+source data_insertion/Sandstorm/insert_rods_and_staffs.sql;
+
+SELECT "Inserting Sandstorm Wondrous Items...";
+source data_insertion/Sandstorm/insert_wondrous_items.sql;
