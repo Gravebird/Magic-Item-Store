@@ -35,3 +35,6 @@ source data_insertion/Sandstorm/insert_rods_and_staffs.sql;
 
 SELECT "Inserting Sandstorm Wondrous Items...";
 source data_insertion/Sandstorm/insert_wondrous_items.sql;
+
+SELECT "Inserting Sandstorm Potions...";
+source data_insertion/Sandstorm/insert_potion.sql;
