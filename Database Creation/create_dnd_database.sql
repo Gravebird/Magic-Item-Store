@@ -234,7 +234,7 @@ CREATE TABLE Staff (
 CREATE TABLE Class (
     Class_ID int NOT NULL UNIQUE,
     Book_ID int NOT NULL,
-    Class_Name varchar(20) NOT NULL,
+    Class_Name varchar(26) NOT NULL,
     Class_is_Prestige bool NOT NULL,
     Class_is_Domain bool NOT NULL,
     Class_Hit_Dice int CHECK (Class_Hit_Dice IN (4, 6, 8, 10, 12)),
@@ -337,6 +337,9 @@ source data_insertion/Stormwrack/insert_all.sql;
 
 SELECT "SANDSTORM";
 source data_insertion/Sandstorm/insert_all.sql;
+
+SELECT "FROSTBURN";
+source data_insertion/Frostburn/insert_all.sql;
 
 
 -- Global insertions must be handled last
