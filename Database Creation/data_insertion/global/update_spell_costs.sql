@@ -132,6 +132,19 @@ UPDATE Spell
 SET Spell.Spell_Minimum_Material_Cost = 5000.00
 WHERE Spell.Spell_Name = "Symbol of Thirst";
 
+-- FROSTBURN SPELLS
+UPDATE Spell
+SET Spell.Spell_Minimum_Material_Cost = 50.00
+WHERE Spell.Spell_Name = "Crack Ice";
+
+UPDATE Spell
+SET Spell.Spell_Minimum_Material_Cost = 500.00
+WHERE Spell.Spell_Name = "Entomb";
+
+UPDATE Spell
+SET Spell.Spell_Minimum_XP_Cost = 100
+WHERE Spell.Spell_Name = "Fimbulwinter";
+
 
 -- Update cost of scrolls and wands
 -- The following two queries must be run at the end of this file. Any additional
