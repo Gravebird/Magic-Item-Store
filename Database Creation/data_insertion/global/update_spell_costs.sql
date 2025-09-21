@@ -153,6 +153,10 @@ UPDATE Spell
 SET Spell.Spell_Minimum_XP_Cost = 5000
 WHERE Spell.Spell_Name = "Ice Assassin";
 
+UPDATE Spell
+SET Spell.Spell_Minimum_Material_Cost = 200.00
+WHERE Spell.Spell_Name = "Ice Ship";
+
 
 -- Update cost of scrolls and wands
 -- The following two queries must be run at the end of this file. Any additional
