@@ -531,4 +531,41 @@ VALUES
     "Creates webs of coldfire that entangle and deal 1d6 frostburn damage/round.",
     "<p><em>Ice web</em> creates a many-layered mass of strong, frigid strands of pure coldfire. These masses must be anchored to two or more solid and diametrically opposed points - floor and ceiling, opposite walls, or the like - or else the <em>ice web</em> collapses upon itself and disappears. Creatures caught within the <em>ice web</em> become entangled in the strands. Attacking a creature in an <em>ice web</em> won't cause you to become entangled.</p><p>Any creature moving into or through the spell's area takes 1d6 points of frostburn damage per round.</p><p>In addition, anyone in the effect's area when the spell is cast must make a Reflex save. If this save succeeds, the creature is entangled, but not prevented from moving, though moving is more difficult than normal (see below). If the save fails, the creature is entangled and can't move from its space, but can break loose by spending 1 round and making a DC 20 Strength check or a DC 25 Escape Artist check. Once loose (either by making the initial Reflex save, or a later Strength check or Escape Artist check), a creature remains entangled, but may move through the <em>ice web</em> very slowly. Each round devoted to moving allows the creature to make a new Strength check or Escape Artist check. The creature moves 5 feet for each full 5 points by which the check exceeds 10.</p><p>If you have at least 5 feet of <em>ice web</em> between yourself and an opponent, it provides cover. If you have at least 20 feet of <em>ice web</em> between you, it provides total cover.</p><p>The strands of an <em>ice web</em> are immune to damage from cold. Any fire - a torch, burning oil, a flaming sword, and so forth - can melt 5 square feet of coldfire strands in 1 round.</p><p><em>Ice web</em> can be made permanent with a <em>permanency</em> spell. A permanent <em>ice web</em> that is damage (but not destroyed) regrows in 10 minutes.</p><p>Creatures with the cold subtype may pass unimpeded and unharmed through an <em>ice web</em>.</p>",
     "Coldfire Component: Two ounces of coldfire.",
-    null,null);
+    null,null),
+    
+    (794,5,"Iceberg","Evocation",null,"Cold","V, S",
+    "1 standard action","Long","60-foot radius",null,"Instantaneous",
+    "None or Reflex half; see text","Yes",
+    "Block of ice falls from sky, dealign 20d6 damage and burying subjects.",
+    "<p><em>Iceberg</em> is a brutal and direct spell. When cast, the spell creates a single large block of ice that drops from the sky onto a spot you select. The iceberg then shatters if it encounters a solid surface. Elephant-sized blocks of ice scatter in all directions, affecting nearby creatures based on how far they are from the center of the area.</p><p><em>Within 20 Feet of the Center Point</em>: Any creature or object directly beneath the iceberg takes 20d6 points of crushing damage (no save) and is buried in snow (see page 90 of <em>Frostburn</em>).</p><p><em>Between 20 Feet and 40 Feet of the Center Point</em>: Creatures and objects in the middle section of the area also take 20d6 points of crushing damage, but are entitled to a Reflex save for half damage. They are buried in snow (see page 90 of <em>Frostburn</em>).</p><p><em>Between 40 Feet and 60 Feet of the Center Point</em>: Creatures in the outermost section may be struck by flying debris for 10d6 points of damage. They are entitled to a Reflex save for half damage, and are not buried regardless of whether the saving throw is successful or not.</p>",
+    null,null,null),
+    
+    (795,5,"Icicle","Abjuration",null,"Cold","V, S",
+    "1 standard action","Close","One 10-ft. square section of ceiling or doorframe",null,"Until discharged (D)",
+    "See text","Yes",
+    "Magical trap hangs from ceiling, dealing 4d6 damage when triggered.",
+    "<p>You create icicles on a ceiling, doorway, or similar overhang. The icicles fall when a creature walks beneath them, dealing 4d6 points of piercing damage. Anyone directly under the area takes damage with no saving throw. Others within 5 feet of the icicles take half damage, or none if they succeed on a saving throw.</p><p>The caster and any characters you choose can walk under the icicles or through the doorway without triggering the ice attack. Likewise, you can remove the icicles whenever desired. Others can remove them with a successful <em>dispel magic</em> or 10 points of fire damage. However, an unsuccessful attempt to dispel or melt the icicles automatically triggers the attack.</p>",
+    null,null,null),
+    
+    (796,5,"Ivory Flesh","Transmutation",null,null,"V, S",
+    "1 standard action","Touch",null,"Creature touched","1 hour/level",
+    "Will negates (harmless)","Yes (harmless)",
+    "Flesh turns white, granting +5 circumstance bonus on Hide checks in snow and ice.",
+    "<p>The subject's flesh and all his equipment turn white, granting him a +5 circumstance bonus on Hide checks in heavy snow or ice areas. In any nonwhite-hued area (including ebony ice), <em>ivory flesh</em> incurs a -5 penalty on Hide checks.</p>",
+    null,null,null),
+    
+    (797,5,"Tiny Igloo","Evocation",null,"Cold","V, S, M",
+    "1 standard action","5 ft.","5-ft.-radius sphere, with 1-in.-thick wall/level centered on your location",null,"2 hours/level (D)",
+    "None","No",
+    "Creates igloo that lasts for 2 hours/level.",
+    "<p>You create a small domed snow house with a single entrance passage. Up to one Large or three Medium or twelve Small creatures can fit into the igloo with you; they can freely pass into and out of the hut without harming it.</p><p>The temperature inside the igloo is magically warm, at exactly 50 degrees F, and the walls do not melt. The igloo has two features that help arctic survival: a sleeping platform and a lamp. The snow sleeping platform takes advantage of the warm air trapped below the low roof, generated by body heat and a stone lamp. The magical smokeless lamp provides heat for comfort and for cooking.</p><p>The igloo also provides protection against the elements, such as wind, snow, and hail. The igloo withstands any wind of less than hurricane force, but a hurrcane (75+ mph wind speed) or greater force destroys it.</p><p>The loose-packed snow of the igloo has a hardness of 0, and 3 hp per inch of thickness.</p>",
+    "Material Component: A small dollop of sea fat or caribou fat.",
+    null,null),
+    
+    (798,5,"Mantle of the Icy Soul","Transmutation",null,null,"V, S, M, XP",
+    "1 standard action","Touch",null,"Creature touched","Instantaneous",
+    "Will negates (harmless)","Yes (harmless)",
+    "Gives subject the cold subtype.",
+    "<p><em>Mantle of the icy soul</em> permanently adds the cold subtype to the targeted creature. The skin, hair, and scales of the creature subtly change color to take on an icy blue tint, and its breath does not frost in cold temperatures. The recipient of a <em>mantle of the icy soul</em> gains immunity to cold, but has vulnerability to fire, which means that it takes half again as much damage (+50%) as normal from fire regardless of whether a saving throw is allowed, or if it is a success or a failure. There is no change to the creature's Challenge Rating or effective character level. The effects of this spell can be removed with a <em>limited wish</em> or <em>wish</em>.</p>",
+    "Material Component: A handful of ice or snow that must be pressed to the target's body.",
+    null,"2,000 XP");
